@@ -1,18 +1,17 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Wali Reheman",
+    "label": "PhD Student",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "rw8143a@american.edu",
+    "phone": "(202) 391-3091",
+    "url": "https://wali-reheman.github.io",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
+      "address": "4400 Massachusetts Avenue NW",
+      "postalCode": "DC 20016",
+      "city": "Washington",
       "countryCode": "US",
-      "region": "California"
+      "region": "District of Columbia"
     },
     "profiles": [
       {
