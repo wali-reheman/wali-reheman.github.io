@@ -14,8 +14,8 @@ profile:
     <p>Washington, DC 20016</p>
 
 news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: true # includes social icons at the bottom of the page
 ---
 
 Wali Reheman is a doctoral student at the Department of Government, American University. He studies comparative politics and political methodology, concentrating on ethnic politics, political socialization, and public opinion.
