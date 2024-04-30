@@ -22,10 +22,10 @@ Here are some of the courses I have lectured, along with detailed session inform
 - **Course Overview:**
   This course provides an in-depth look at the critical issues shaping Chinese politics today. From governance models to social policies, the course covers a wide array of subjects to offer students a comprehensive understanding of China's political landscape.
 
-- **Session on State and Society:**
-  Minority Policies in China, April 2023
-- **Session on State and Society:**
-  Ethnic Relations in History of China, April 2023
+- **April 2024**
+  Session on State and Society:Minority Policies in China
+- **April 2023**
+  Session on State and Society:Ethnic Relations in History of China, 
 
 ### Teaching Materials
 
