@@ -18,6 +18,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-Wali Reheman is a doctoral student at the Department of Government, American University. He studies comparative politics and political methodology, concentrating on ethnic politics, political socialization, and public opinion. 
+Wali Reheman is a doctoral student at the Department of Government, American University. He studies comparative politics and political methodology, concentrating on ethnic politics, political socialization, and public opinion.
 
 Wali currently works with Dr. David Lublin, assisting in his work on minority representation and inclusion. He also works with Dr. Elizabeth Suhay on the political socialization of American immigrants.
