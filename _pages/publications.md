@@ -10,7 +10,7 @@ nav_order: 2
 
 <div class="publications">
 
-<h1>Working Paper</h1>
+<h1>Work in Progress</h1>
 
 {% bibliography %}
 
