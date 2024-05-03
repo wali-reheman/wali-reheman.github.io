@@ -1,17 +1,18 @@
 {
   "basics": {
-    "name": "Wali Reheman",
-    "label": "PhD Student",
+    "name": "Albert Einstein",
+    "label": "Scientist",
     "image": "",
-    "email": "rw8143a@american.edu",
-    "phone": "(202) 391-3091",
-    "url": "https://wali-reheman.github.io",
+    "email": "albert@einstein.de",
+    "phone": "(912) 123-4567",
+    "url": "https://alshedivat.github.io/al-folio/",
+    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
     "location": {
-      "address": "4400 Massachusetts Avenue NW",
-      "postalCode": "DC 20016",
-      "city": "Washington",
+      "address": "2712 Broadway St",
+      "postalCode": "CA 94115",
+      "city": "San Francisco",
       "countryCode": "US",
-      "region": "District of Columbia"
+      "region": "California"
     },
     "profiles": [
       {
@@ -41,10 +42,7 @@
       "startDate": "2014-04-01",
       "endDate": "2015-07-01",
       "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": [
-        "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.",
-        "Men of the year 2014 by Time magazine"
-      ]
+      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
     }
   ],
   "education": [

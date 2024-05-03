@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2023-08-31
+date: 2015-10-22 15:59:00-0400
 inline: true
 related_posts: false
 ---
 
-**Working Paper**: "Seeking a Land of Opportunity: Immigrants’ Belief in the American Dream", with Elizabeth Suhay and Mark Tenenbaum (Presented at APSA annual conference 2023)
+A simple inline announcement.
