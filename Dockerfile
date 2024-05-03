@@ -1,32 +1,41 @@
 FROM ubuntu:latest
+ENV DEBIAN_FRONTEND noninteractive
 
-# Install dependencies
-RUN apt-get update && apt-get install -y curl git nodejs \
-    && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
-    && apt-get install -y nodejs
+Label MAINTAINER Amir Pourmand
 
-# Install rbenv and Ruby
-RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv \
-    && cd ~/.rbenv && src/configure && make -C src \
-    && echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc \
-    && echo 'eval "$(rbenv init -)"' >> ~/.bashrc \
-    && exec $SHELL \
-    && git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build \
-    && rbenv install 2.7.2 \
-    && rbenv global 2.7.2
+RUN apt-get update -y && apt-get install -y --no-install-recommends \
+    locales \
+    imagemagick \
+    ruby-full \
+    build-essential \
+    zlib1g-dev \
+    jupyter-nbconvert \
+    inotify-tools procps && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-# Set working directory
+
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
+    locale-gen
+
+
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8 \
+    JEKYLL_ENV=production
+
+# install jekyll and dependencies
+RUN gem install jekyll bundler
+
+RUN mkdir /srv/jekyll
+
+ADD Gemfile /srv/jekyll
+
 WORKDIR /srv/jekyll
 
-# Copy the Gemfile and Gemfile.lock
-COPY Gemfile* /srv/jekyll/
-
-# Install gems
-RUN bash -l -c "gem install bundler && bundle install --no-cache"
-
-# Copy rest of the application code
-COPY . /srv/jekyll
-
+RUN bundle install --no-cache
+# && rm -rf /var/lib/gems/3.1.0/cache
 EXPOSE 8080
 
-CMD ["bash", "-c", "exec jekyll serve"]
+COPY bin/entry_point.sh /tmp/entry_point.sh
+
+CMD ["/tmp/entry_point.sh"]
