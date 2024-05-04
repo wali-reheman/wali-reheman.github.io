@@ -26,3 +26,5 @@ group :other_plugins do
     gem 'feedjira'
     gem 'httparty'
 end
+
+gem "json", "~> 2.7"
