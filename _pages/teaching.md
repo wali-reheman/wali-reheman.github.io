@@ -21,7 +21,7 @@ Here are some of the courses I have lectured, along with detailed session inform
 #### Columbia University
 
 **Course Overview:**
-This course provides an in-depth look at the critical issues shaping Chinese politics. From governance models to social policies, the course covers a wide array of subjects to offer students a comprehensive understanding of China's political landscape.
+This course offers a historical and thematic survey of Chinese politics and of salient issues in China’s public policy and governance. The first half of the course reviews the patterns and dynamics of political development in China, focusing mainly on the last two hundred years, during which the country has been on a rugged yet fascinating path toward modernity. We will examine major political events including the collapse of the Imperial China, the rise of the Communist Party, the Cultural Revolution, and the post-Mao shift toward reform and opening. The second half of the course will look various special topics, including the structure of the party and the state, the relationship between state and society, the modes of economic development, and the governance of the media and the Internet. Throughout the course, special attention will be paid to how China’s domestic political and economic processes intersected with major world events and transnational forces, such as imperialism, world wars, and economic globalization.
 
 - **April 2024**
   Session on State and Society: Minority Policies in China
