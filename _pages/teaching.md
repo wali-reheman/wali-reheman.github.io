@@ -20,7 +20,7 @@ nav_order: 6
     <div class="p-3">
       <div class="row">
         <div class="col-sm-10">
-          <h5 class="card-title">Chinese Politics GU4471</h5>
+          <h5 class="card-title"><strong>Chinese Politics GU4471<span class="badge badge-primary">GU4471</span></strong></h5>
           <h6 class="card-subtitle font-italic">Spring 2024: Guest Lecturer</h6>
         </div>
         <div class="col-sm-2 text-sm-right">
@@ -48,7 +48,7 @@ nav_order: 6
     <div class="p-3">
       <div class="row">
         <div class="col-sm-10">
-          <h5 class="card-title">Chinese Politics GU4471</h5>
+          <h5 class="card-title"><strong>Chinese Politics GU4471<span class="badge badge-primary">GU4471</span></strong></h5>
           <h6 class="card-subtitle font-italic">Spring 2023: Guest Lecturer</h6>
         </div>
         <div class="col-sm-2 text-sm-right">
