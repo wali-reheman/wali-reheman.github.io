@@ -13,6 +13,7 @@ nav_order: 6
 - Social Science Research Design
 
 ## Courses Taught
+
 <article>
   <h3 id="columbia-university">Columbia University</h3>
 

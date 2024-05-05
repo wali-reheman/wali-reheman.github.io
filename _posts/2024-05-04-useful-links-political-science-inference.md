@@ -1,8 +1,8 @@
 ---
 layout: post
-title: You don't have to be advanced in statistics 
+title: You don't have to be advanced in statistics
 date: 2024-05-04 11:59:00-0400
-description: 
+description:
 tags: formatting toc
 categories: sample-posts
 giscus_comments: true
@@ -16,13 +16,6 @@ This post shows how to add a table of contents in the beginning of the post.
 ## Basic Knowledge for fun
 
 [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html)
-
-
-
-
-
-
-
 
 To add a table of contents to a post, simply add
 
