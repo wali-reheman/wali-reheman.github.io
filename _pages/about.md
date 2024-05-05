@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: <a href='https://www.american.edu/'>American University</a>
+subtitle: **PhD Student** @ <a href='https://www.american.edu/'>American University</a>
 
 profile:
   align: right
