@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: <strong>PhD student</strong> @ <a href='https://www.american.edu/'>American University</a>
+subtitle: <strong>Department of Government</strong> @ <a href='https://www.american.edu/'>American University</a>
 
 profile:
   align: right
@@ -17,8 +17,10 @@ news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
-
+Hey, thanks for stopping by! 👋🏼
 <br/><br/> 
-Wali Reheman is a doctoral student at the Department of Government, American University. He studies comparative politics and political methodology, concentrating on ethnic politics, political socialization, and public opinion.
-
-Wali currently works with Dr. David Lublin, assisting in his work on minority representation and inclusion. He also works with Dr. Elizabeth Suhay on the political socialization of American immigrants.
+I'm a PhD student of Political Science at [American University](https://www.american.edu/).
+<br/><br/> 
+I study comparative politics and political methodology, concentrating on ethnic politics, political socialization, and public opinion.
+<br/><br/> 
+I'm currently working with Dr. David Lublin, assisting in his work on minority representation and inclusion. I'm also working with Dr. Elizabeth Suhay on the political socialization of American immigrants.
