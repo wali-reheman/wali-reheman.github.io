@@ -13,28 +13,62 @@ nav_order: 6
 - Social Science Research Design
 
 ## Courses Taught
-### Columbia University
+<article>
+  <h3 id="columbia-university">Columbia University</h3>
 
-<div class="card">
-  <div class="card-header">
-    <h3>Chinese Politics GU4471</h3>
-    <em>Spring 2024: Guest Lecturer</em>
+  <div class="card mt-3">
+    <div class="p-3">
+      <div class="row">
+        <div class="col-sm-10">
+          <h5 class="card-title">Chinese Politics GU4471</h5>
+          <h6 class="card-subtitle font-italic">Spring 2024: Guest Lecturer</h6>
+        </div>
+        <div class="col-sm-2 text-sm-right">
+          <span class="badge">GU4471</span>
+        </div>
+      </div>
+      <ul class="card-text font-weight-light list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm-9">
+              Lecture 12: State and Society - Minority Policies in China
+            </div>
+            <div class="col-sm-3">
+              <a href="https://link-to-slides" target="_blank" rel="noopener noreferrer">slides</a>
+              <a href="https://link-to-notes" target="_blank" rel="noopener noreferrer">notes</a>
+            </div>
+          </div>
+        </li>
+        <!-- Additional lectures can be added here in similar format -->
+      </ul>
+    </div>
   </div>
-  <div class="card-body">
-    <h4>Lecture 12: State and Society - Minority Policies in China</h4>
-    <a href="https://link-to-slides" class="btn btn-primary">Slides</a>
-    <a href="https://link-to-notes" class="btn btn-secondary">Notes</a>
-  </div>
-</div>
 
-<div class="card">
-  <div class="card-header">
-    <h3>Chinese Politics GU4471</h3>
-    <em>Spring 2023: Guest Lecturer</em>
+  <div class="card mt-3">
+    <div class="p-3">
+      <div class="row">
+        <div class="col-sm-10">
+          <h5 class="card-title">Chinese Politics GU4471</h5>
+          <h6 class="card-subtitle font-italic">Spring 2023: Guest Lecturer</h6>
+        </div>
+        <div class="col-sm-2 text-sm-right">
+          <span class="badge">GU4471</span>
+        </div>
+      </div>
+      <ul class="card-text font-weight-light list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm-9">
+              Lecture 12: State and Society - Ethnic Relations in History of China
+            </div>
+            <div class="col-sm-3">
+              <a href="https://link-to-slides" target="_blank" rel="noopener noreferrer">slides</a>
+              <a href="https://link-to-notes" target="_blank" rel="noopener noreferrer">notes</a>
+            </div>
+          </div>
+        </li>
+        <!-- Additional lectures can be added here in similar format -->
+      </ul>
+    </div>
   </div>
-  <div class="card-body">
-    <h4>Lecture 12: State and Society - Ethnic Relations in History of China</h4>
-    <a href="https://link-to-slides" class="btn btn-primary">Slides</a>
-    <a href="https://link-to-notes" class="btn btn-secondary">Notes</a>
-  </div>
-</div>
+</article>
