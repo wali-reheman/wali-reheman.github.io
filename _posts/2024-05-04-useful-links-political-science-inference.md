@@ -3,12 +3,12 @@ layout: post
 title: You don't have to be advanced in statistics
 date: 2024-05-04 11:59:00-0400
 description:
-tags: formatting toc
-categories: sample-posts
+tags: 
+categories: 
 giscus_comments: true
 related_posts: false
 toc:
-  beginning: true
+  sidebar: left
 ---
 
 This post shows how to add a table of contents in the beginning of the post.
