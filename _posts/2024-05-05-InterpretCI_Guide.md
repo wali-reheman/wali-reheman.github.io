@@ -3,8 +3,8 @@ layout: post
 title: Introduction to the `interpretCI` R Package
 date: 2024-05-05 11:59:00-0400
 description:
-tags: 
-categories: 
+tags:
+categories:
 giscus_comments: true
 related_posts: false
 toc:
