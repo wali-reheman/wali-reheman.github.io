@@ -163,7 +163,7 @@ disqus_shortname: # put your disqus short-name
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
   - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+    rss_url:
 
 # -----------------------------------------------------------------------------
 # Collections
