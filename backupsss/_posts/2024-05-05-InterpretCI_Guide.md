@@ -11,9 +11,6 @@ toc:
   beginning: true
 ---
 
-
-
-
 ## Introduction to the `{interpretCI}` R Package
 
 This article introduces an R package called `{interpretCI}`, which is designed for plotting confidence intervals for means and differences between means. It also features automatic documentation generation, further aiding in the interpretation of statistical results. This tool is particularly useful for understanding the core statistical concept of confidence intervals.
