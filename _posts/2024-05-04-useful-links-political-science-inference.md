@@ -20,4 +20,12 @@ If I have to pick one book to recommend to social science students for a foundat
 
 This book provides a practical introduction to statistical modeling and data analysis from a Bayesian perspective, which complements frequentist methods by emphasizing predictions and Bayesian model averaging. Co-authored by Andrew Gelman, Jennifer Hill, and Aki Vehtari, the text builds on simple foundations to develop an intuitive understanding of regression models. It’s particularly useful for those who want a deep dive into the philosophy and application of statistics in the social sciences. The accompanying examples and code in R make it accessible and practically oriented, ensuring that readers not only understand statistical concepts but also know how to implement them in real-world scenarios.
 
+## Look at your Data
+
+### Statistical inference based on observational data
+
+As a student, we are at really early stage of our career, it might be hard for us to get first-hand data. Starting from existing datasets might be helpful, there are always good research published using existing observational datasets. Dr. Yiqing XU has a very useful checklist for conducting research using observational data:
+
+- [A Basic Checklist for Observational Studies in Political Science](https://yiqingxu.org/public/checklist.pdf)
+
 
