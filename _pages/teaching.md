@@ -60,7 +60,7 @@ nav_order: 6
         <li class="list-group-item">
           <div class="row">
             <div class="col-sm-9">
-              Lecture 12: State and Society - Ethnic Relations in History of China
+              Lecture 12: State and Society - Ethnic Relations in the History of China
             </div>
             <div class="col-sm-3">
               <a href="https://link-to-slides" target="_blank" rel="noopener noreferrer">slides</a>
