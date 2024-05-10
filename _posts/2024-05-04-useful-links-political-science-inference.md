@@ -10,7 +10,9 @@ related_posts: false
 toc:
   sidebar: left
 ---
+
 ## Introduction to Practical Statistical Learning
+
 Embarking on your journey as a first-year PhD student can be overwhelming, especially when you're faced with the seemingly daunting realm of statistics. But here's a reassuring truth: you don't need to be an advanced statistician to excel in research. Instead of focusing on highly technical methods right from the start, you can develop a strong foundation by taking a practical approach to statistical learning.
 
 As students, we sometimes fall into the trap of believing that mastering complex statistical concepts is the only way to conduct rigorous research. In reality, understanding the essentials and applying them effectively is far more valuable. The goal should be to develop a clear comprehension of statistical inference, explore data thoughtfully, and apply appropriate models for your research questions.
@@ -34,7 +36,3 @@ This book provides a practical introduction to statistical modeling and data ana
 As a student, we are at really early stage of our career, it might be hard for us to get first-hand data. Starting from existing datasets might be helpful, there are always good research published using existing observational datasets. Dr. Yiqing XU has a very useful checklist for conducting research using observational data:
 
 - [A Basic Checklist for Observational Studies in Political Science](https://yiqingxu.org/public/checklist.pdf)
-
-
-
-
