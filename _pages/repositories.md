@@ -34,7 +34,6 @@ nav_order: 4
 {% endif %}
 {% endif %}
 
-{% comment %}
 
 ## GitHub Repositories
 
@@ -47,4 +46,4 @@ nav_order: 4
 </div>
 {% endif %}
 
-{% endcomment %}
+
