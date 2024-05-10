@@ -2,10 +2,5 @@ github_users:
   - wali-reheman
 
 github_repos:
-#  - alshedivat/al-folio
-#  - twbs/bootstrap
-#  - jekyll/jekyll
-#  - jquery/jquery
-#  - FortAwesome/Font-Awesome
-#  - jpswalsh/academicons
-#  - mathjax/MathJax
+  - wali-reheman/Extract-data-from-old-pdf
+
