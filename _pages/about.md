@@ -24,4 +24,4 @@ I'm a PhD student of `Political Science` at [American University](https://www.am
 
 I study comparative politics and political methodology, concentrating on ethnic politics, political socialization, and public opinion.
 
-I'm currently working with Dr. [David Lublin](https://www.american.edu/spa/faculty/dlublin.cfm), assisting in his work on minority representation and inclusion. I'm also working with Dr. [Elizabeth Suhay](https://www.american.edu/spa/faculty/suhay.cfm) on the political socialization of American immigrants.
+I'm currently working with Dr. [David Lublin](https://www.american.edu/spa/faculty/dlublin.cfm), assisting in his work on minority representation and inclusion. I'm also working with Dr. [Elizabeth Suhay](https://www.american.edu/spa/faculty/suhay.cfm) on the generational change of American immigrants's inequality attribution. I'm also working with Dr. [Junyan Jiang](https://polisci.columbia.edu/content/junyan-jiang) on the History of the Chinese Communist Party Organizations.
