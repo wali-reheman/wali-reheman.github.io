@@ -46,6 +46,9 @@ nav_order: 6
 </article>
 
 
+<hr style="border:1px solid black">
+
+
 <article>
   <h3 id="columbia-university">Columbia University</h3>
 
