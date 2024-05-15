@@ -46,7 +46,7 @@ nav_order: 6
 </article>
 
 
-<hr style="border:1px solid black">
+<hr>
 
 
 <article>
