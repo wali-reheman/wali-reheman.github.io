@@ -5,6 +5,7 @@ title: Teaching
 nav: true
 nav_order: 6
 ---
+
 <style>
   .dark-blue {
     color: darkblue;
