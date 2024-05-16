@@ -14,7 +14,7 @@ nav_order: 6
 
 ## Teaching Experience
 <article>
-  <h3 id="american-university">American University</h3>
+  <h3 id="american-university" class="dark-blue">American University</h3>
 
   <div class="card mt-3">
     <div class="p-3">
@@ -50,7 +50,7 @@ nav_order: 6
 
 
 <article>
-  <h3 id="columbia-university">Columbia University</h3>
+  <h3 id="columbia-university" class="dark-blue">Columbia University</h3>
 
   <div class="card mt-3">
     <div class="p-3">
