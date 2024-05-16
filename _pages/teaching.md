@@ -5,6 +5,11 @@ title: Teaching
 nav: true
 nav_order: 6
 ---
+<style>
+  .dark-blue {
+    color: darkblue;
+  }
+</style>
 
 ## Teaching Interests
 
@@ -13,6 +18,7 @@ nav_order: 6
 - Social Science Research Design
 
 ## Teaching Experience
+
 <article>
   <h3 id="american-university" class="dark-blue">American University</h3>
 
@@ -45,9 +51,7 @@ nav_order: 6
   </div>
 </article>
 
-
 <hr>
-
 
 <article>
   <h3 id="columbia-university" class="dark-blue">Columbia University</h3>
