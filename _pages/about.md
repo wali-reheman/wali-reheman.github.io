@@ -6,7 +6,7 @@ subtitle: <strong>Department of Government</strong> @ <a href='https://www.ameri
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: 
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Kerwin Hall, Room 230</p>
