@@ -6,13 +6,9 @@ subtitle: <strong>Department of Government</strong> @ <a href='https://www.ameri
 
 profile:
   align: right
-  image: false
+  image:
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Kerwin Hall, Room 230</p>
-    <p>4400 Massachusetts Avenue NW</p>
-    <p>Washington, DC 20016</p>
-
+  more_info:
 news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
