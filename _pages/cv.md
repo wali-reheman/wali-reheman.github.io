@@ -4,7 +4,7 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-cv_pdf: CV WaliReheman.pdf
+cv_pdf: CV_WaliReheman.pdf
 ---
 
 <iframe src="/assets/pdf/CV_WaliReheman.pdf" width="100%" height="750px" style="border: none;">
