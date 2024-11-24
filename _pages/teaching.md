@@ -5,7 +5,6 @@ title: Teaching
 nav: true
 nav_order: 6
 ---
-
 <style>
   /* Light Mode Defaults */
   :root {
@@ -65,8 +64,6 @@ nav_order: 6
   }
 </style>
 
-
-<!-- Page Content -->
 <h2>Teaching Interests</h2>
 <ul>
   <li>Chinese Politics</li>
@@ -104,7 +101,7 @@ nav_order: 6
   </div>
 </article>
 
-<hr>
+<hr />
 
 <article>
   <h3 id="columbia-university">Columbia University</h3>
