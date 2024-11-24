@@ -7,22 +7,77 @@ nav_order: 6
 ---
 
 <style>
-  .dark-blue {
-    color: darkblue;
+  /* Light Mode Defaults */
+  :root {
+    --text-primary: darkblue;
+    --background-light: white;
+    --text-light: black;
+    --list-background: #f8f9fa;
+  }
+
+  /* Global Styles */
+  body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+  }
+
+  h3 {
+    color: var(--text-primary);
+  }
+
+  .card {
+    background-color: var(--background-light);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .list-group-item {
+    background-color: var(--list-background);
+  }
+
+  /* Dark Mode Adjustments */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #4a90e2;
+      --background-light: #2c2c2c;
+      --text-light: #f0f0f0;
+      --list-background: #3b3b3b;
+    }
+
+    body {
+      background-color: var(--background-light);
+      color: var(--text-light);
+    }
+
+    h3 {
+      color: var(--text-primary);
+    }
+
+    .card {
+      background-color: var(--background-light);
+      border-color: #444;
+    }
+
+    .list-group-item {
+      background-color: var(--list-background);
+    }
   }
 </style>
 
-## Teaching Interests
 
-- Chinese Politics
-- R for Social Science
-- Social Science Research Design
+<!-- Page Content -->
+<h2>Teaching Interests</h2>
+<ul>
+  <li>Chinese Politics</li>
+  <li>R for Social Science</li>
+  <li>Social Science Research Design</li>
+</ul>
 
-## Teaching Experience
+<h2>Teaching Experience</h2>
 
 <article>
-  <h3 id="american-university" class="dark-blue">American University</h3>
-
+  <h3 id="american-university">American University</h3>
   <div class="card mt-3">
     <div class="p-3">
       <div class="row">
@@ -37,16 +92,13 @@ nav_order: 6
       <ul class="card-text font-weight-light list-group list-group-flush">
         <li class="list-group-item">
           <div class="row">
-            <div class="col-sm-9">
-                     <!-- Additional lectures can be added here in similar format -->
-            </div>
+            <div class="col-sm-9"></div>
             <div class="col-sm-3">
               <a href="https://link-to-slides" target="_blank" rel="noopener noreferrer">slides</a>
               <a href="https://link-to-notes" target="_blank" rel="noopener noreferrer">notes</a>
             </div>
           </div>
         </li>
-        <!-- Additional lectures can be added here in similar format -->
       </ul>
     </div>
   </div>
@@ -55,14 +107,13 @@ nav_order: 6
 <hr>
 
 <article>
-  <h3 id="columbia-university" class="dark-blue">Columbia University</h3>
-
+  <h3 id="columbia-university">Columbia University</h3>
   <div class="card mt-3">
     <div class="p-3">
       <div class="row">
         <div class="col-sm-10">
           <h5 class="card-title"><strong>Chinese Politics</strong></h5>
-          <h6 class="card-subtitle font-italic">Spring 2024: Guest Lecturer</h6>
+          <h6 class="card-subtitle font-italic">Spring 2023, 2024: Guest Lecturer</h6>
         </div>
         <div class="col-sm-2 text-sm-right">
           <span class="badge badge-primary">GU4471</span>
@@ -80,35 +131,6 @@ nav_order: 6
             </div>
           </div>
         </li>
-        <!-- Additional lectures can be added here in similar format -->
-      </ul>
-    </div>
-  </div>
-
-  <div class="card mt-3">
-    <div class="p-3">
-      <div class="row">
-        <div class="col-sm-10">
-          <h5 class="card-title"><strong>Chinese Politics</strong></h5>
-          <h6 class="card-subtitle font-italic">Spring 2023: Guest Lecturer</h6>
-        </div>
-        <div class="col-sm-2 text-sm-right">
-          <span class="badge badge-primary">GU4471</span>
-        </div>
-      </div>
-      <ul class="card-text font-weight-light list-group list-group-flush">
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-sm-9">
-              Lecture 12: State and Society - Ethnic Relations in the History of China
-            </div>
-            <div class="col-sm-3">
-              <a href="https://link-to-slides" target="_blank" rel="noopener noreferrer">slides</a>
-              <a href="https://link-to-notes" target="_blank" rel="noopener noreferrer">notes</a>
-            </div>
-          </div>
-        </li>
-        <!-- Additional lectures can be added here in similar format -->
       </ul>
     </div>
   </div>
