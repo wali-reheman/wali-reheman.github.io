@@ -18,6 +18,6 @@ Hey, thanks for stopping by! 👋🏼
 
 I'm a 3rd year Ph.D. student of `Political Science` at [American University](https://www.american.edu/).
 
-I study comparative politics and political methodology, concentrating on identity politics, political socialization, and public opinion.
+My research focuses on ethnic and religious identity politics, political socialization, and public opinion. 
 
-I'm currently working with Dr. [David Lublin](https://www.american.edu/spa/faculty/dlublin.cfm), assisting in his work on minority representation and inclusion. I'm also working with Dr. [Elizabeth Suhay](https://www.american.edu/spa/faculty/suhay.cfm) on the generational change of American immigrants' inequality attribution. 
+I am currently working with Dr. David Lublin to examine ingroup support for ethnic parties using ecological inference, and with Dr. Elizabeth Suhay to explore how meritocratic values evolve across generations among American immigrants and shape their policy preferences. 
