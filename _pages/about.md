@@ -16,8 +16,9 @@ social: true # includes social icons at the bottom of the page
 
 Hey, thanks for stopping by! 👋🏼
 
-I'm a 3rd year Ph.D. student of `Political Science` at [American University](https://www.american.edu/).
+I'm an Adjunct Lecturer and doctoral student of `Political Science` at [American University](https://www.american.edu/).
 
 My research focuses on ethnic and religious identity politics, political socialization, and public opinion. 
 
-I am currently collaborating with Dr. [David Lublin](https://www.american.edu/spa/faculty/dlublin.cfm) to study ingroup support for ethnic parties using the ecological inference method, and with Dr. [Elizabeth Suhay](https://www.american.edu/spa/faculty/suhay.cfm) to examine how meritocratic values evolve across generations among American immigrants and how they affect American immigrants’ policy preferences.
+I am currently working with Dr. [David Lublin](https://www.american.edu/spa/faculty/dlublin.cfm) to study in-group support for ethnic parties using the ecological Bayesian inference method, and with Dr. [Elizabeth Suhay](https://www.american.edu/spa/faculty/suhay.cfm) to examine how meritocratic values evolve across four generations of American immigrants and how they affect American immigrants’ policy preferences.
+
