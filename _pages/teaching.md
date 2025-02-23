@@ -5,14 +5,12 @@ title: Teaching
 nav: true
 nav_order: 6
 ---
-<!-- Optional: Link to a custom CSS file for further customization -->
-<link rel="stylesheet" href="/assets/css/custom.css">
+<!-- Include Lato font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
 
 <style>
-  /* Inline styles as an example */
   body {
-    font-family: 'Merriweather', serif;
-    color: #333;
+    font-family: 'Lato', sans-serif;
   }
   h2, h3 {
     border-bottom: 2px solid #ccc;
@@ -22,14 +20,8 @@ nav_order: 6
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     border-radius: 8px;
   }
-  .card .card-title {
-    font-size: 1.25rem;
-  }
   .badge {
-    background-color: #0056b3; /* A professional accent color */
-  }
-  .nav, .footer {
-    margin: 20px 0;
+    background-color: #0056b3;
   }
 </style>
 
@@ -60,7 +52,7 @@ nav_order: 6
           <div class="row">
             <div class="col-sm-9"></div>
             <div class="col-sm-3">
-              <a href="https://www.wali-reheman.com/blog/2024/Teaching_Conduct_I_Lab/" target="_blank" rel="noopener noreferrer">Handouts</a>
+              <a href="https://www.wali-reheman.com/blog/2024/Teaching_Conduct_I_Lab/" target="_blank" rel="noopener noreferrer">Syllabus and Handouts</a>
             </div>
           </div>
         </li>
