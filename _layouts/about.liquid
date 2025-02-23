@@ -1,76 +1,109 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
+
+<!-- 1. A simple "hero" style header for your homepage -->
+<section class="hero-section text-center" style="padding: 3rem 1rem; background-color: #f7f7f7;">
+  <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+    {% if site.title == 'blank' %}
+      <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </h1>
+  <p class="desc" style="font-size: 1.2rem; color: #666;">{{ page.subtitle }}</p>
+</section>
+
+<div class="container" style="max-width: 800px; margin: 2rem auto;">
+
+  <!-- 2. Profile Card Section -->
+  {% if page.profile %}
+  <div class="card mb-4 p-3" style="border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <div class="row no-gutters">
+      {% if page.profile.image %}
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% if page.profile.image_circular %}
+          {% assign profile_image_class = 'img-fluid rounded-circle' %}
+        {% else %}
+          {% assign profile_image_class = 'img-fluid rounded' %}
+        {% endif %}
+        <img src="{{ profile_image_path }}" class="{{ profile_image_class }}" alt="Profile image" style="max-height: 250px; object-fit: cover;">
+      </div>
       {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
 
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title mb-3" style="font-size: 1.5rem; color: #333;">
+            {{ site.first_name }} {{ site.last_name }}
+          </h2>
+          {% if page.profile.more_info %}
+          <div class="more-info mb-2" style="font-family: monospace;">{{ page.profile.more_info }}</div>
           {% endif %}
-          {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+          <p class="card-text" style="line-height: 1.6;">
+            <!-- This is where the introduction text will go -->
+            {% if content contains 'Hey, thanks' %}
+              <!-- If you want to keep the content from your existing page, just let the main content appear below -->
+            {% endif %}
+          </p>
+        </div>
       </div>
-    {% endif %}
+    </div>
+  </div>
+  {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
-
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <!-- Latest posts -->
-    {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons" style="font-size: 3rem;">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
+  <!-- 3. Main About Content -->
+  <article class="mb-4">
+    <div class="clearfix">
+      {{ content }}
+    </div>
   </article>
+
+  <!-- 4. News Section -->
+  {% if page.news and site.announcements.enabled %}
+  <section class="mb-4">
+    <h2 style="border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">
+      <a href="{{ '/news/' | relative_url }}" style="color: inherit; text-decoration: none;">News</a>
+    </h2>
+    {% include news.liquid limit=true %}
+  </section>
+  {% endif %}
+
+  <!-- 5. Latest Posts -->
+  {% if site.latest_posts.enabled %}
+  <section class="mb-4">
+    <h2 style="border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">
+      <a href="{{ '/blog/' | relative_url }}" style="color: inherit; text-decoration: none;">Latest Posts</a>
+    </h2>
+    {% include latest_posts.liquid %}
+  </section>
+  {% endif %}
+
+  <!-- 6. Selected/Upcoming Papers (Placeholder if no publications yet) -->
+  {% if page.selected_papers %}
+  <section class="mb-4">
+    <h2 style="border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">
+      <a href="{{ '/publications/' | relative_url }}" style="color: inherit; text-decoration: none;">Research Projects</a>
+    </h2>
+    <p class="mt-2">
+      No publications yet, but working on:
+      <ul>
+        <li>Working Paper 1: Studying XX topic</li>
+        <li>Working Paper 2: Analyzing YY phenomenon</li>
+      </ul>
+    </p>
+    <!-- or remove the bullet list until you have content -->
+  </section>
+  {% endif %}
+
+  <!-- 7. Social Icons -->
+  {% if page.social %}
+  <section class="text-center social mt-4">
+    <div class="contact-icons" style="font-size: 3rem;">
+      {% include social.liquid %}
+    </div>
+    <div class="contact-note">{{ site.contact_note }}</div>
+  </section>
+  {% endif %}
+
 </div>

@@ -16,12 +16,23 @@ nav_order: 6
     border-bottom: 2px solid #ccc;
     padding-bottom: 5px;
   }
+  hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem 0;
+  }
   .card {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     border-radius: 8px;
+    margin-bottom: 2rem; /* Extra space to separate cards */
   }
   .badge {
     background-color: #0056b3;
+  }
+  /* Remove default borders on list items */
+  .list-group-item {
+    border: none !important;
   }
 </style>
 
@@ -52,7 +63,11 @@ nav_order: 6
           <div class="row">
             <div class="col-sm-9"></div>
             <div class="col-sm-3">
-              <a href="https://www.wali-reheman.com/blog/2024/Teaching_Conduct_I_Lab/" target="_blank" rel="noopener noreferrer">Syllabus and Handouts</a>
+              <a href="https://www.wali-reheman.com/blog/2024/Teaching_Conduct_I_Lab/" 
+                 target="_blank" 
+                 rel="noopener noreferrer">
+                 Syllabus and Handouts
+              </a>
             </div>
           </div>
         </li>
@@ -83,8 +98,16 @@ nav_order: 6
               Lecture 12: State and Society - Minority Policies in China
             </div>
             <div class="col-sm-3">
-              <a href="https://link-to-slides" target="_blank" rel="noopener noreferrer">slides</a>
-              <a href="https://link-to-notes" target="_blank" rel="noopener noreferrer">notes</a>
+              <a href="https://link-to-slides" 
+                 target="_blank" 
+                 rel="noopener noreferrer">
+                 slides
+              </a>
+              <a href="https://link-to-notes" 
+                 target="_blank" 
+                 rel="noopener noreferrer">
+                 notes
+              </a>
             </div>
           </div>
         </li>

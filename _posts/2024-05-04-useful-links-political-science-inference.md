@@ -11,7 +11,7 @@ toc:
   sidebar: left
 ---
 
-# Introduction to Practical Statistical Learning
+## Introduction to Practical Statistical Learning
 
 Embarking on your journey as a first-year PhD student can be overwhelming, especially when you're faced with the seemingly daunting realm of statistics. But here's a reassuring truth: you don't need to be an advanced statistician to excel in research. Instead of focusing on highly technical methods right from the start, you can develop a strong foundation by taking a practical approach to statistical learning.
 
