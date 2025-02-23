@@ -56,11 +56,8 @@ toc:
 
   <h2>Syllabus</h2>
   <div class="resource-section">
-    <ul>
-      <li>
+    <p>The syllabus outlines the course objectives, grading, and schedule for the Conduct of Inquiry I Lab.</p>
         <a href="/assets/pdf/conduct_1_lab/SPA_096_Conduct_of_inquiry_Lab.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">Download Syllabus</a>
-      </li>
-    </ul>
   </div>
 
   <h2>Session 1: Basic R Operations</h2>
