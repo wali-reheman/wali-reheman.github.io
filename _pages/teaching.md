@@ -13,8 +13,8 @@ nav_order: 6
     font-family: 'Lato', sans-serif;
   }
   h2, h3 {
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 5px;
+    border-bottom: none;
+    padding-bottom: 0;
   }
   hr {
     border: 0;
