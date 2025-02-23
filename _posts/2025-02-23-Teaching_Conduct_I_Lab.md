@@ -3,8 +3,8 @@ layout: post
 title: Course Hub for Conduct of Inquiry I Lab (SPA 612)
 date: 2024-05-05 11:59:00-0400
 description:
-tags:#Courses #R #Stata
-categories: #Courses
+tags:
+categories:
 giscus_comments: true
 related_posts: false
 toc:
