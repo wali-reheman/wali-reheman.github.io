@@ -11,19 +11,6 @@ toc:
   sidebar: left
 ---
 
----
-layout: post
-title: Handouts for Conduct I Lab
-date: 2024-05-05 11:59:00-0400
-description:
-tags:
-categories:
-giscus_comments: true
-related_posts: false
-toc:
-  sidebar: left
----
-
 <!-- Include Lato Font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
 
