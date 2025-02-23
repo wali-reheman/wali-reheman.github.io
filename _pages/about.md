@@ -13,7 +13,7 @@ news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
-
+<br><br>
 Hey, thanks for stopping by! 👋🏼<br><br>
 
 I'm an Adjunct Lecturer and doctoral student of `Political Science` at [American University](https://www.american.edu/).<br><br>
