@@ -24,6 +24,15 @@ jobs:
       - name: Prettier Check 🔎
         id: prettier
         run: npx prettier . --check
+      - name: Format code with Prettier ✨
+        run: npx prettier . --write
+      - name: Commit formatted code 💾
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: actions@github.com
+          message: "Apply Prettier formatting"
+          push: true
       - name: Create diff 📝
         # https://docs.github.com/en/actions/learn-github-actions/expressions#failure
         if: ${{ failure() }}
