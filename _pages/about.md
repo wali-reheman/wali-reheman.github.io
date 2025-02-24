@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: <strong>Department of Government</strong> @ <a href='https://www.american.edu/'>American University</a>
+subtitle: 🏫<strong>Department of Government</strong> @ <a href='https://www.american.edu/'>American University</a>
 
 profile:
   align: right
