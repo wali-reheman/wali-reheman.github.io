@@ -97,6 +97,7 @@ nav_order: 6
             <div class="col-sm-9">
               Lecture 12: State and Society - Minority Policies in China
             </div>
+  {% comment %}
             <div class="col-sm-3">
               <a href="https://link-to-slides" 
                  target="_blank" 
@@ -109,6 +110,7 @@ nav_order: 6
                  notes
               </a>
             </div>
+    {% endcomment %}
           </div>
         </li>
       </ul>
