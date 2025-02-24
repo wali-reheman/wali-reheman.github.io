@@ -5,6 +5,7 @@ title: Teaching
 nav: true
 nav_order: 6
 ---
+
 <!-- Include Lato font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
 

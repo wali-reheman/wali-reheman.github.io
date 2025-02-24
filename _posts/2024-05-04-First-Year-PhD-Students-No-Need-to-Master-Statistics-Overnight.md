@@ -47,45 +47,55 @@ As a student, we are at a really early stage of our career, it might be hard for
 
 Below are some suggestions to help you get comfortable with statistical learning and research during your first year:
 
-1. **Start With Familiar Tools**  
-   - Pick one statistical software (R, Python, Stata, etc.) and stick to it until you’re comfortable with the basics.  
+1. **Start With Familiar Tools**
+
+   - Pick one statistical software (R, Python, Stata, etc.) and stick to it until you’re comfortable with the basics.
    - Focus on common tasks: data cleaning, descriptive statistics, simple plots, and standard regression models.
 
-2. **Embrace Exploratory Data Analysis (EDA)**  
-   - Always begin by exploring your dataset: check for missing values, outliers, and distributions of key variables.  
+2. **Embrace Exploratory Data Analysis (EDA)**
+
+   - Always begin by exploring your dataset: check for missing values, outliers, and distributions of key variables.
    - Create simple visualizations (histograms, scatter plots) to get an intuitive feel for the data before diving into complex models.
 
-3. **Set Realistic Goals**  
-   - Avoid the pressure to use cutting-edge techniques right away. Work step by step, mastering one concept at a time.  
+3. **Set Realistic Goals**
+
+   - Avoid the pressure to use cutting-edge techniques right away. Work step by step, mastering one concept at a time.
    - Schedule weekly goals, such as learning a specific R function or replicating a simple analysis from a journal article.
 
-4. **Focus on Interpretation, Not Just Computation**  
-   - When you run a regression, make sure you understand the meaning of coefficients, standard errors, and p-values.  
+4. **Focus on Interpretation, Not Just Computation**
+
+   - When you run a regression, make sure you understand the meaning of coefficients, standard errors, and p-values.
    - Practice explaining your findings in plain language. This helps you see if you actually understand what the model is telling you.
 
-5. **Collaborate and Ask Questions**  
-   - Share your analysis process with peers—collaboration often leads to insights you might not catch alone.  
+5. **Collaborate and Ask Questions**
+
+   - Share your analysis process with peers—collaboration often leads to insights you might not catch alone.
    - Don’t be shy about asking for help. Online forums (like StackOverflow for coding questions) are great resources if you feel stuck.
 
-6. **Document Your Steps**  
-   - Keep a detailed log of your code, decisions, and reasoning. It helps when you revisit a project months later.  
+6. **Document Your Steps**
+
+   - Keep a detailed log of your code, decisions, and reasoning. It helps when you revisit a project months later.
    - Version control tools like Git (with GitHub) can save you headaches and help you track changes over time.
 
-7. **Learn from Existing Projects**  
-   - Explore data repositories (e.g., ICPSR, World Bank Open Data) to find datasets related to your field.  
+7. **Learn from Existing Projects**
+
+   - Explore data repositories (e.g., ICPSR, World Bank Open Data) to find datasets related to your field.
    - Attempt to replicate results from published studies. Replication hones your analytical skills and deepens your understanding of methods.
 
-8. **Stay Organized**  
-   - Design a clear folder structure for your research projects, separating raw data, cleaned data, code, and outputs.  
+8. **Stay Organized**
+
+   - Design a clear folder structure for your research projects, separating raw data, cleaned data, code, and outputs.
    - This will help you keep track of each step in your analysis and make it easier to share your work with advisors or collaborators.
 
-9. **Engage with Your Research Community**  
-   - Attend seminars, workshops, or brown-bag discussions in your department.  
+9. **Engage with Your Research Community**
+
+   - Attend seminars, workshops, or brown-bag discussions in your department.
    - These sessions often reveal new methods, provide feedback on ongoing research, and offer networking opportunities.
 
-10. **Develop a Growth Mindset**  
-   - Expect to make mistakes—that’s part of the learning curve.  
-   - Each time you get stuck, view it as a chance to deepen your understanding.
+10. **Develop a Growth Mindset**
+
+- Expect to make mistakes—that’s part of the learning curve.
+- Each time you get stuck, view it as a chance to deepen your understanding.
 
 ---
 
