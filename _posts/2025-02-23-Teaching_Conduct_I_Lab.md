@@ -27,13 +27,13 @@ toc:
   }
   /* Removed the max-width and auto margin */
   .post-content {
-    margin: 0 1rem;  /* Minimally inset from left & right */
+    margin: none;  /* Minimally inset from left & right */
     padding: 1rem 0; /* Additional vertical padding */
   }
   .resource-section {
     background: #f7f7f7;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: none;
     margin-bottom: 1.5rem;
   }
   .download-btn {
