@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Course Hub for Conduct of Inquiry I Lab - SPA 612
+title: "Course Hub for Conduct of Inquiry I Lab - SPA 612"
 date: 2024-05-05 11:59:00-0400
 description:
 tags: Rstats
@@ -25,10 +25,10 @@ toc:
     border-bottom: 1px solid #eaeaea;
     padding-bottom: 0.5rem;
   }
+  /* Removed the max-width and auto margin */
   .post-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
+    margin: 0 1rem;  /* Minimally inset from left & right */
+    padding: 1rem 0; /* Additional vertical padding */
   }
   .resource-section {
     background: #f7f7f7;
@@ -52,17 +52,21 @@ toc:
 </style>
 
 <div class="post-content">
-<p>This course is a lab supplement to the <strong>SPA 612: Conduct of Inquiry I</strong>. This lab is an introduction to R programming, focusing on data wrangling and visualization. The course aims to equip students with essential skills to manipulate, analyze, and visualize data using R and Stata.</p>
+  <p>This course is a lab supplement to the <strong>SPA 612: Conduct of Inquiry I</strong>. This lab is an introduction to R programming, focusing on data wrangling and visualization. The course aims to equip students with essential skills to manipulate, analyze, and visualize data using R and Stata.</p>
 
-<h2>Syllabus</h2>
-<div class="resource-section">
-  <p>The syllabus outlines the course objectives, grading, and schedule for the Conduct of Inquiry I Lab.</p>
-      <a href="/assets/pdf/conduct_1_lab/SPA_096_Conduct_of_inquiry_Lab.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">Download Syllabus</a>
-</div>
+  <h2>Syllabus</h2>
+  <div class="resource-section">
+    <p>The syllabus outlines the course objectives, grading, and schedule for the Conduct of Inquiry I Lab.</p>
+    <a href="/assets/pdf/conduct_1_lab/SPA_096_Conduct_of_inquiry_Lab.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+      Download Syllabus
+    </a>
+  </div>
 
-<h2>Session 1: Basic R Operations</h2>
-<div class="resource-section">
-  <p>Session 1 covers the fundamental R operations to introduce students to basic data manipulation, arithmetic, and vectorized operations in R.</p>
-  <a href="/assets/pdf/conduct_1_lab/Session 1 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">Download Handout</a>
-</div>
+  <h2>Session 1: Basic R Operations</h2>
+  <div class="resource-section">
+    <p>Session 1 covers the fundamental R operations to introduce students to basic data manipulation, arithmetic, and vectorized operations in R.</p>
+    <a href="/assets/pdf/conduct_1_lab/Session 1 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+      Download Handout
+    </a>
+  </div>
 </div>
