@@ -3,8 +3,8 @@ layout: post
 title: First-Year PhD Students! No Need to Master Statistics Overnight
 date: 2024-05-04 11:59:00-0400
 description:
-tags:
-categories:
+tags: advise
+categories: teaching
 giscus_comments: true
 related_posts: false
 toc:
