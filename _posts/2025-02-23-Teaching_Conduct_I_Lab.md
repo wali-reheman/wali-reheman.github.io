@@ -69,4 +69,11 @@ toc:
       Download Handout
     </a>
   </div>
+  <h2>Session 2: Introduction to dplyr</h2>
+  <div class="resource-section">
+    <p>Session 1 covers dplyr package for data manipulation in R. You will learn how to use its key functions such as select(), filter(), arrange(), and mutate(). We will also cover advanced topics like using across() for applying functions to multiple columns, grouping and summarizing data, and joining datasets.</p>
+    <a href="/assets/pdf/conduct_2_lab/Session 1 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+      Download Handout
+    </a>
+  </div>
 </div>
