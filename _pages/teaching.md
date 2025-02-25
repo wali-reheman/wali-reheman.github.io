@@ -64,11 +64,7 @@ nav_order: 6
           <div class="row">
             <div class="col-sm-9"></div>
             <div class="col-sm-3">
-              <a href="https://www.wali-reheman.com/blog/2024/Teaching_Conduct_I_Lab/" 
-                 target="_blank" 
-                 rel="noopener noreferrer">
-                 Syllabus and Handouts
-              </a>
+              <a href="https://www.wali-reheman.com/blog/2024/Teaching_Conduct_I_Lab/" target="_blank" rel="noopener noreferrer"> Syllabus and Handouts</a>
             </div>
           </div>
         </li>
