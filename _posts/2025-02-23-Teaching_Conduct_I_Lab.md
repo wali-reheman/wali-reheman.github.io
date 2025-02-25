@@ -7,6 +7,7 @@ tags: Rstats
 categories: teaching
 giscus_comments: true
 related_posts: false
+thumbnail: assets/img/B-roll/icons_Data Analytics.jpg
 toc:
   sidebar: left
 ---
