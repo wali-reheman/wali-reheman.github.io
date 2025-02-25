@@ -52,7 +52,7 @@ toc:
 </style>
 
 <div class="post-content">
-  <p>This course is a lab supplement to the <strong>SPA 612: Conduct of Inquiry I</strong>. This lab is an introduction to R programming, focusing on data wrangling and visualization. The course aims to equip students with essential skills to manipulate, analyze, and visualize data using R and Stata.</p>
+  <p>This course is a lab supplement to the <strong>SPA 612: Conduct of Inquiry I</strong>. This lab is an introduction to R and Stata programming, focusing on data wrangling, visualization, basic regression and result output. The course aims to equip students with essential skills to manipulate, analyze, and visualize data using R and Stata.</p>
 
   <h2>Syllabus</h2>
   <div class="resource-section">
