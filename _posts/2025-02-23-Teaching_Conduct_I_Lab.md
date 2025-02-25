@@ -64,15 +64,22 @@ toc:
 
   <h2>Session 1: Basic R Operations</h2>
   <div class="resource-section">
-    <p>Session 1 covers the fundamental R operations to introduce students to basic data manipulation, arithmetic, and vectorized operations in R.</p>
+    <p>Session 1 covers the basic R operations to introduce students to basic data manipulation, arithmetic, and vectorized operations in R.</p>
     <a href="/assets/pdf/conduct_1_lab/Session 1 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Handout
     </a>
   </div>
   <h2>Session 2: Introduction to dplyr</h2>
   <div class="resource-section">
-    <p>Session 2 covers dplyr package for data manipulation in R. You will learn how to use its key functions such as select(), filter(), arrange(), and mutate(). We will also cover advanced topics like using across() for applying functions to multiple columns, grouping and summarizing data, and joining datasets.</p>
+    <p>Session 2 covers dplyr package for data manipulation in R. You will learn how to use its key functions such as `select()`, `filter()`, `arrange()`, and `mutate()`. We will also cover advanced topics like using `across()` for applying functions to multiple columns.</p>
     <a href="/assets/pdf/conduct_1_lab/Session 2 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+      Download Handout
+    </a>
+  </div>
+    <h2>Session 3: Basic Stata Operations and Data Manipulation</h2>
+  <div class="resource-section">
+    <p>Session 3 covers into the basic Stata operations, and provides an introduction to the Data Manipulation equivalent of `dplyr` in Stata.</p>
+    <a href="/assets/pdf/conduct_1_lab/Session 3 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Handout
     </a>
   </div>
