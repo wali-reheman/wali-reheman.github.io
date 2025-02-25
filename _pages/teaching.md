@@ -63,7 +63,7 @@ nav_order: 6
         <li class="list-group-item">
           <div class="row">
             <div class="col-sm-9"></div>
-            <div class="col-sm-3">
+            <div class="col-sm-3 text-nowrap">
               <a href="https://www.wali-reheman.com/blog/2024/Teaching_Conduct_I_Lab/" target="_blank" rel="noopener noreferrer"> Syllabus and Handouts </a>
               <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-612" target="_blank" rel="noopener noreferrer"> Interactive Tutorials </a>
             </div>
