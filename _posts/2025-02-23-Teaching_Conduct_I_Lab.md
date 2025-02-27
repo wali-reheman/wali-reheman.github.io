@@ -93,7 +93,7 @@ toc:
   </div>
     <h2>Session 5: Aggregating and reshaping DataA </h2>
   <div class="resource-section">
-    <p>The summarize() function from the dplyr package is a powerful tool for creating summary statistics of your data. It allows you to collapse a dataset to a single row or a summary for each group of observations. In this tutorial, we’ll explore the basic and advanced uses of summarize(), as well as ways to reshape data.</p>
+    <p>The <code>summarize()</code> function from the dplyr package is a powerful tool for creating summary statistics of your data. It allows you to collapse a dataset to a single row or a summary for each group of observations. In this tutorial, we’ll explore the basic and advanced uses of <code>summarize()</code>, as well as ways to reshape data.</p>
     <a href="/assets/pdf/conduct_1_lab/Session 5 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Handout
     </a>
