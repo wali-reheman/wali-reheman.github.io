@@ -84,6 +84,13 @@ toc:
       Download Handout
     </a>
   </div>
+    <h2>Session 4: R Practice A </h2>
+  <div class="resource-section">
+    <p>Session 4 is a in-class pratice session for R, we will use R packages we learned so far to complete a in-class practice.</p>
+    <a href="/assets/pdf/conduct_1_lab/Session 4 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+      Download Handout
+    </a>
+  </div>
 </div>
 
 {% include figure.liquid loading="eager" path="assets/img/B-roll/icons_Data Analytics.jpg" class="img-fluid rounded z-depth-1" %}
