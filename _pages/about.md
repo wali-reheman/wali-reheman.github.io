@@ -6,8 +6,8 @@ subtitle: 🏫 <strong>Department of Government</strong> @ <a href='https://www.
 
 profile:
   align: right
-  image:profile.png
-  image_circular: false # crops the image to make it circular
+  image: /assets/img/profile.png
+  image_circular: true # crops the image to make it circular
   more_info:
 news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
