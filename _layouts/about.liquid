@@ -1,26 +1,27 @@
 ---
 layout: default
 ---
-
 <!-- Clean Hero Section -->
 <section class="hero-section" style="padding: 4rem 0 2rem 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
   <div class="container" style="max-width: 900px;">
     <div class="row align-items-center">
       <!-- Profile Image -->
       {% if page.profile.image %}
-      <div class="col-md-3 text-center mb-4 mb-md-0">
-        {% if page.profile.image_circular %}
-          {% assign profile_image_class = 'img-fluid rounded-circle shadow' %}
-        {% else %}
-          {% assign profile_image_class = 'img-fluid rounded shadow' %}
-        {% endif %}
-        <img src="{{ page.profile.image }}"
-             class="{{ profile_image_class }}"
-             alt="Profile image"
-             style="max-height: 200px; width: 200px; object-fit: cover;">
-      </div>
+        <div class="col-md-3 text-center mb-4 mb-md-0">
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid rounded-circle shadow' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid rounded shadow' %}
+          {% endif %}
+          <img
+            src="{{ page.profile.image }}"
+            class="{{ profile_image_class }}"
+            alt="Profile image"
+            style="max-height: 200px; width: 200px; object-fit: cover;"
+          >
+        </div>
       {% endif %}
-      
+
       <!-- Name and Title -->
       <div class="col-md-6 text-center text-md-left">
         <h1 style="font-size: 2.8rem; font-weight: 300; margin-bottom: 0.5rem; color: #2c3e50;">
@@ -35,7 +36,7 @@ layout: default
           {{ page.subtitle }}
         </p>
       </div>
-      
+
       <!-- AU Logo -->
       <div class="col-md-3 text-center text-md-right">
         <img
@@ -95,14 +96,14 @@ layout: default
 
   <!-- Social Icons -->
   {% if page.social %}
-  <section class="text-center social mt-5">
-    <div class="contact-icons" style="font-size: 2.5rem;">
-      {% include social.liquid %}
-    </div>
-    <div class="contact-note" style="margin-top: 1rem; color: #6c757d;">
-      {{ site.contact_note }}
-    </div>
-  </section>
+    <section class="text-center social mt-5">
+      <div class="contact-icons" style="font-size: 2.5rem;">
+        {% include social.liquid %}
+      </div>
+      <div class="contact-note" style="margin-top: 1rem; color: #6c757d;">
+        {{ site.contact_note }}
+      </div>
+    </section>
   {% endif %}
 </div>
 <!-- End .container -->
