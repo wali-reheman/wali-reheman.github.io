@@ -36,46 +36,49 @@ layout: default
 <div class="container" style="max-width: 800px; margin: 2rem auto;">
   <!-- 2. Profile Section with Image and AU Logo -->
   {% if page.profile %}
-  <div class="row mb-4">
-    <!-- Profile Image Column -->
-    {% if page.profile.image %}
-    <div class="col-md-4 text-center mb-3">
-      {% if page.profile.image_circular %}
-        {% assign profile_image_class = 'img-fluid rounded-circle' %}
-      {% else %}
-        {% assign profile_image_class = 'img-fluid rounded' %}
-      {% endif %}
-      <img src="{{ page.profile.image }}"
-           class="{{ profile_image_class }}"
-           alt="Profile image"
-           style="max-height: 250px; object-fit: cover;">
-    </div>
-    {% endif %}
-    
-    <!-- Content Column -->
-    <div class="col-md-8">
-      <div class="d-flex justify-content-between align-items-start">
-        <div>
-          <h2 class="mb-3" style="font-size: 1.5rem; color: #333;">
-            {{ site.first_name }} {{ site.last_name }}
-          </h2>
-          {% if page.profile.more_info %}
-          <div class="more-info mb-2" style="font-family: monospace;">
-            {{ page.profile.more_info }}
-          </div>
+    <div class="row mb-4">
+      <!-- Profile Image Column -->
+      {% if page.profile.image %}
+        <div class="col-md-4 text-center mb-3">
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid rounded' %}
           {% endif %}
-        </div>
-        <!-- AU Logo in top right of content area -->
-        <div class="ml-3">
           <img
-            src="/assets/img/AU_mark.png"
-            alt="American University Logo"
-            style="max-height: 50px; opacity: 0.8;"
+            src="{{ page.profile.image }}"
+            class="{{ profile_image_class }}"
+            alt="Profile image"
+            style="max-height: 250px; object-fit: cover;"
           >
+        </div>
+      {% endif %}
+
+      <!-- Content Column -->
+      <div class="col-md-8">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h2 class="mb-3" style="font-size: 1.5rem; color: #333;">
+              {{ site.first_name }}
+              {{ site.last_name }}
+            </h2>
+            {% if page.profile.more_info %}
+              <div class="more-info mb-2" style="font-family: monospace;">
+                {{ page.profile.more_info }}
+              </div>
+            {% endif %}
+          </div>
+          <!-- AU Logo in top right of content area -->
+          <div class="ml-3">
+            <img
+              src="/assets/img/AU_mark.png"
+              alt="American University Logo"
+              style="max-height: 50px; opacity: 0.8;"
+            >
+          </div>
         </div>
       </div>
     </div>
-  </div>
   {% endif %}
 
   <!-- 3. Main About Content -->
