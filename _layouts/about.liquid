@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <!-- Clean Hero Section -->
 <section class="hero-section" style="padding: 4rem 0 2rem 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
   <div class="container" style="max-width: 900px;">
@@ -20,15 +19,17 @@ layout: default
           {{ page.subtitle }}
         </p>
       </div>
-      
+
       <!-- Profile Image - Right Side -->
       {% if page.profile.image %}
-      <div class="col-md-4 text-center">
-        <img src="{{ page.profile.image }}"
-             class="img-fluid rounded-circle shadow"
-             alt="Profile image"
-             style="height: 200px; width: 200px; object-fit: cover; border: 4px solid white; border-radius: 50%;">
-      </div>
+        <div class="col-md-4 text-center">
+          <img
+            src="{{ page.profile.image }}"
+            class="img-fluid rounded-circle shadow"
+            alt="Profile image"
+            style="height: 200px; width: 200px; object-fit: cover; border: 4px solid white; border-radius: 50%;"
+          >
+        </div>
       {% endif %}
     </div>
   </div>
@@ -81,14 +82,14 @@ layout: default
 
   <!-- Social Icons -->
   {% if page.social %}
-  <section class="text-center social mt-5">
-    <div class="contact-icons" style="font-size: 2.5rem;">
-      {% include social.liquid %}
-    </div>
-    <div class="contact-note" style="margin-top: 1rem; color: #6c757d;">
-      {{ site.contact_note }}
-    </div>
-  </section>
+    <section class="text-center social mt-5">
+      <div class="contact-icons" style="font-size: 2.5rem;">
+        {% include social.liquid %}
+      </div>
+      <div class="contact-note" style="margin-top: 1rem; color: #6c757d;">
+        {{ site.contact_note }}
+      </div>
+    </section>
   {% endif %}
 </div>
 <!-- End .container -->
