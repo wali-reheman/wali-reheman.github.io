@@ -34,45 +34,49 @@ layout: default
 
 <!-- Main Content Container -->
 <div class="container" style="max-width: 800px; margin: 2rem auto;">
-  {% comment %}
-    <!-- 2. Profile Card Section (Commented Out)
-         Uncomment if you want to display a profile image/card later. -->
-    {% if page.profile %}
-    <div class="card mb-4 p-3" style="border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-      <div class="row no-gutters">
-        {% if page.profile.image %}
-        <div class="col-md-4 d-flex justify-content-center align-items-center">
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid rounded' %}
-          {% endif %}
-          <img src="{{ profile_image_path }}"
-               class="{{ profile_image_class }}"
-               alt="Profile image"
-               style="max-height: 250px; object-fit: cover;">
-        </div>
-        {% endif %}
-        <div class="col-md-8">
-          <div class="card-body">
-            <h2 class="card-title mb-3" style="font-size: 1.5rem; color: #333;">
-              {{ site.first_name }} {{ site.last_name }}
-            </h2>
-            {% if page.profile.more_info %}
-            <div class="more-info mb-2" style="font-family: monospace;">
-              {{ page.profile.more_info }}
-            </div>
-            {% endif %}
-            <p class="card-text" style="line-height: 1.6;">
-              <!-- If your main content has "Hey, thanks," do any special handling here. -->
-            </p>
+  <!-- 2. Profile Section with Image and AU Logo -->
+  {% if page.profile %}
+  <div class="row mb-4">
+    <!-- Profile Image Column -->
+    {% if page.profile.image %}
+    <div class="col-md-4 text-center mb-3">
+      {% if page.profile.image_circular %}
+        {% assign profile_image_class = 'img-fluid rounded-circle' %}
+      {% else %}
+        {% assign profile_image_class = 'img-fluid rounded' %}
+      {% endif %}
+      <img src="{{ page.profile.image }}"
+           class="{{ profile_image_class }}"
+           alt="Profile image"
+           style="max-height: 250px; object-fit: cover;">
+    </div>
+    {% endif %}
+    
+    <!-- Content Column -->
+    <div class="col-md-8">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <h2 class="mb-3" style="font-size: 1.5rem; color: #333;">
+            {{ site.first_name }} {{ site.last_name }}
+          </h2>
+          {% if page.profile.more_info %}
+          <div class="more-info mb-2" style="font-family: monospace;">
+            {{ page.profile.more_info }}
           </div>
+          {% endif %}
+        </div>
+        <!-- AU Logo in top right of content area -->
+        <div class="ml-3">
+          <img
+            src="/assets/img/AU_mark.png"
+            alt="American University Logo"
+            style="max-height: 50px; opacity: 0.8;"
+          >
         </div>
       </div>
     </div>
-    {% endif %}
-  {% endcomment %}
+  </div>
+  {% endif %}
 
   <!-- 3. Main About Content -->
   <article class="mb-4">
