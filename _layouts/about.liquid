@@ -1,13 +1,29 @@
 ---
 layout: default
 ---
-<!-- 1. Hero Section with Logo on the Right -->
-<section class="hero-section" style="padding: 3rem 0; background-color: #f7f7f7;">
-  <div class="container">
+
+<!-- Clean Hero Section -->
+<section class="hero-section" style="padding: 4rem 0 2rem 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+  <div class="container" style="max-width: 900px;">
     <div class="row align-items-center">
-      <!-- Text Column -->
-      <div class="col-md-9 text-center text-md-left mb-3 mb-md-0">
-        <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+      <!-- Profile Image -->
+      {% if page.profile.image %}
+      <div class="col-md-3 text-center mb-4 mb-md-0">
+        {% if page.profile.image_circular %}
+          {% assign profile_image_class = 'img-fluid rounded-circle shadow' %}
+        {% else %}
+          {% assign profile_image_class = 'img-fluid rounded shadow' %}
+        {% endif %}
+        <img src="{{ page.profile.image }}"
+             class="{{ profile_image_class }}"
+             alt="Profile image"
+             style="max-height: 200px; width: 200px; object-fit: cover;">
+      </div>
+      {% endif %}
+      
+      <!-- Name and Title -->
+      <div class="col-md-6 text-center text-md-left">
+        <h1 style="font-size: 2.8rem; font-weight: 300; margin-bottom: 0.5rem; color: #2c3e50;">
           {% if site.title == 'blank' %}
             <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
             {{ site.last_name }}
@@ -15,17 +31,17 @@ layout: default
             {{ site.title }}
           {% endif %}
         </h1>
-        <p class="desc" style="font-size: 1.2rem; color: #666;">
+        <p class="desc" style="font-size: 1.1rem; color: #6c757d; margin-bottom: 0;">
           {{ page.subtitle }}
         </p>
       </div>
-      <!-- Logo Column -->
+      
+      <!-- AU Logo -->
       <div class="col-md-3 text-center text-md-right">
-        <!-- Replace /assets/img/AU_mark.png with the path to your actual logo -->
         <img
           src="/assets/img/AU_mark.png"
-          alt="School Logo"
-          style="max-height: 60px;"
+          alt="American University"
+          style="max-height: 80px; opacity: 0.9;"
         >
       </div>
     </div>
@@ -33,85 +49,38 @@ layout: default
 </section>
 
 <!-- Main Content Container -->
-<div class="container" style="max-width: 800px; margin: 2rem auto;">
-  <!-- 2. Profile Section with Image and AU Logo -->
-  {% if page.profile %}
-    <div class="row mb-4">
-      <!-- Profile Image Column -->
-      {% if page.profile.image %}
-        <div class="col-md-4 text-center mb-3">
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid rounded' %}
-          {% endif %}
-          <img
-            src="{{ page.profile.image }}"
-            class="{{ profile_image_class }}"
-            alt="Profile image"
-            style="max-height: 250px; object-fit: cover;"
-          >
-        </div>
-      {% endif %}
-
-      <!-- Content Column -->
-      <div class="col-md-8">
-        <div class="d-flex justify-content-between align-items-start">
-          <div>
-            <h2 class="mb-3" style="font-size: 1.5rem; color: #333;">
-              {{ site.first_name }}
-              {{ site.last_name }}
-            </h2>
-            {% if page.profile.more_info %}
-              <div class="more-info mb-2" style="font-family: monospace;">
-                {{ page.profile.more_info }}
-              </div>
-            {% endif %}
-          </div>
-          <!-- AU Logo in top right of content area -->
-          <div class="ml-3">
-            <img
-              src="/assets/img/AU_mark.png"
-              alt="American University Logo"
-              style="max-height: 50px; opacity: 0.8;"
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
-  <!-- 3. Main About Content -->
-  <article class="mb-4">
-    <div class="clearfix">
+<div class="container" style="max-width: 800px; margin: 0 auto; padding: 2rem 0;">
+  <!-- Main About Content -->
+  <article class="mb-5">
+    <div class="clearfix" style="line-height: 1.7; font-size: 1.1rem;">
       {{ content }}
     </div>
   </article>
 
-  <!-- 4. News Section -->
+  <!-- News Section -->
   {% if page.news and site.announcements.enabled %}
-    <section class="mb-4">
-      <h2 style="border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">
+    <section class="mb-5">
+      <h2 style="border-bottom: 2px solid #dee2e6; padding-bottom: 0.5rem; color: #495057;">
         <a href="{{ '/news/' | relative_url }}" style="color: inherit; text-decoration: none;"> News </a>
       </h2>
       {% include news.liquid limit=true %}
     </section>
   {% endif %}
 
-  <!-- 5. Latest Posts -->
+  <!-- Latest Posts -->
   {% if site.latest_posts.enabled %}
-    <section class="mb-4">
-      <h2 style="border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">
+    <section class="mb-5">
+      <h2 style="border-bottom: 2px solid #dee2e6; padding-bottom: 0.5rem; color: #495057;">
         <a href="{{ '/blog/' | relative_url }}" style="color: inherit; text-decoration: none;"> Latest Posts </a>
       </h2>
       {% include latest_posts.liquid %}
     </section>
   {% endif %}
 
-  <!-- 6. Selected/Upcoming Papers -->
+  <!-- Selected/Upcoming Papers -->
   {% if page.selected_papers %}
-    <section class="mb-4">
-      <h2 style="border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">
+    <section class="mb-5">
+      <h2 style="border-bottom: 2px solid #dee2e6; padding-bottom: 0.5rem; color: #495057;">
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit; text-decoration: none;"> Research Projects </a>
       </h2>
       <p class="mt-2">
@@ -124,16 +93,16 @@ layout: default
     </section>
   {% endif %}
 
-  <!-- 7. Social Icons -->
+  <!-- Social Icons -->
   {% if page.social %}
-    <section class="text-center social mt-4">
-      <div class="contact-icons" style="font-size: 3rem;">
-        {% include social.liquid %}
-      </div>
-      <div class="contact-note">
-        {{ site.contact_note }}
-      </div>
-    </section>
+  <section class="text-center social mt-5">
+    <div class="contact-icons" style="font-size: 2.5rem;">
+      {% include social.liquid %}
+    </div>
+    <div class="contact-note" style="margin-top: 1rem; color: #6c757d;">
+      {{ site.contact_note }}
+    </div>
+  </section>
   {% endif %}
 </div>
 <!-- End .container -->
