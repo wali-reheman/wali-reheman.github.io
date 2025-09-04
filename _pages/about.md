@@ -6,7 +6,7 @@ subtitle: 🏫 <strong>Department of Government</strong> @ <a href='https://www.
 
 profile:
   align: right
-  image:
+  image:profile.png
   image_circular: false # crops the image to make it circular
   more_info:
 news: true # includes a list of news items
