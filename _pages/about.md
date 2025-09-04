@@ -2,8 +2,6 @@
 layout: about
 title: Home
 permalink: /
-nav: true
-nav_order: 1
 subtitle: 🏫 <strong>Department of Government</strong> @ <a href='https://www.american.edu/'>American University</a>
 
 profile:
