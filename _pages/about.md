@@ -1,11 +1,9 @@
 ---
 layout: about
 title: Home
-permalink: /
 nav: true
-nav_order: 1
+permalink: /
 subtitle: 🏫 <strong>Department of Government</strong> @ <a href='https://www.american.edu/'>American University</a>
-
 profile:
   align: right
   image: /assets/img/profile.png
