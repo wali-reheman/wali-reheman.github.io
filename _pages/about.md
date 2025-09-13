@@ -16,7 +16,7 @@ social: true # includes social icons at the bottom of the page
 
 Hey, thanks for stopping by! 👋🏼<br><br>
 
-I'm an Adjunct Lecturer and PhD Candidate of `Political Science` at [American University](https://www.american.edu/).<br><br>
+I'm an Adjunct Lecturer and PhD Candidate in `Political Science` at [American University](https://www.american.edu/).<br><br>
 
 My research focuses on ethnic and religious identity politics, political socialization, and public opinion. <br><br>
 
