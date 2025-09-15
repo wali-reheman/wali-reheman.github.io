@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Conference**: State Islam in the Middle East, hosted by [SEPAD](https://www.sepad.org.uk/) 📍*Lancaster,UK*
+**Workshop**: State Islam in the Middle East, hosted by [SEPAD](https://www.sepad.org.uk/) 📍*Lancaster,UK*

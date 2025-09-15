@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-12-11
+date: 2025-09-13
 inline: true
 related_posts: false
 ---
 
-**Dissertation Chapter**: "State vs. Faith: State-Led Secularization, Religious Backlash and Political Islamism" (Presented at IRES Graduate Student Workshop 2025, APSA 2025)
+**Conference**: "State vs. Faith: State-Led Secularization, Religious Backlash and Political Islamism" (APSA 2025)
