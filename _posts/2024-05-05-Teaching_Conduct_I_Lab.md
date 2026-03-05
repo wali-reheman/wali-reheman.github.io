@@ -28,13 +28,13 @@ toc:
   }
   /* Removed the max-width and auto margin */
   .post-content {
-    margin: none;  /* Minimally inset from left & right */
+    margin: 0;  /* Minimally inset from left & right */
     padding: 1rem 0; /* Additional vertical padding */
   }
   .resource-section {
     background: #f7f7f7;
     padding: 20px;
-    border-radius: none;
+    border-radius: 0;
     margin-bottom: 1.5rem;
   }
   .download-btn {
@@ -49,6 +49,14 @@ toc:
   }
   .download-btn:hover {
     background-color: #003f7f;
+  }
+  .coming-soon {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #6c757d;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: 0.5rem;
   }
 </style>
 
@@ -79,19 +87,17 @@ toc:
   </div>
     <h2>Session 3: Basic Stata Operations and Data Manipulation</h2>
   <div class="resource-section">
-    <p>Session 3 covers into the basic Stata operations, and provides an introduction to the Data Manipulation equivalent of <code>dplyr</code> in Stata.</p>
-    <a href="/assets/pdf/conduct_1_lab/Session 3 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
-      Download Handout
-    </a>
+    <p>Session 3 introduces basic Stata operations and data manipulation workflows that parallel <code>dplyr</code> concepts in R.</p>
+    <span class="coming-soon">Handout Coming Soon</span>
   </div>
-    <h2>Session 4: R Practice A </h2>
+    <h2>Session 4: R Practice </h2>
   <div class="resource-section">
-    <p>Session 4 is a in-class pratice session for R, we will use R packages we learned so far to complete a in-class practice.</p>
+    <p>Session 4 is an in-class practice session for R. We will use the packages learned so far to complete an in-class exercise.</p>
     <a href="/assets/pdf/conduct_1_lab/Session 4 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Handout
     </a>
   </div>
-    <h2>Session 5: Aggregating and reshaping DataA </h2>
+    <h2>Session 5: Aggregating and Reshaping Data </h2>
   <div class="resource-section">
     <p>The <code>summarize()</code> function from the dplyr package is a powerful tool for creating summary statistics of your data. It allows you to collapse a dataset to a single row or a summary for each group of observations. In this tutorial, we’ll explore the basic and advanced uses of <code>summarize()</code>, as well as ways to reshape data.</p>
     <a href="/assets/pdf/conduct_1_lab/Session 5 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
