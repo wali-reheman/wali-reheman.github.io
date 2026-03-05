@@ -1,26 +1,27 @@
 <div class="repo p-2">
-  <a href="https://github.com/{{ include.username }}" class="text-decoration-none" target="_blank" rel="noopener noreferrer">
-    <div class="card h-100">
-      <div class="card-body d-flex align-items-center">
-        <img
-          class="repo-avatar rounded-circle mr-3"
-          alt="{{ include.username }}"
-          src="https://github.com/{{ include.username }}.png?size=144"
-          loading="lazy"
-        >
-        <div class="text-left">
-          <h5 class="card-title mb-1">@{{ include.username }}</h5>
-          <p class="mb-2">GitHub profile</p>
-          <div class="repo-badges">
-            <img
-              alt="{{ include.username }} followers"
-              src="https://img.shields.io/github/followers/{{ include.username }}?style=flat-square&logo=github&label=followers"
-              loading="lazy"
-              onerror="this.style.display='none';"
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+  <a href="https://github.com/{{ include.username }}">
+    <img
+      class="repo-img-light w-100"
+      alt="{{ include.username }}"
+      src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&show_icons=true"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&show_icons=true';"
+    >
+    <img
+      class="repo-img-dark w-100"
+      alt="{{ include.username }}"
+      src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&show_icons=true"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&show_icons=true';"
+    >
   </a>
+  <div class="repo-meta d-flex flex-wrap justify-content-center mt-2">
+    <img
+      class="repo-badge m-1"
+      alt="{{ include.username }} followers"
+      src="https://img.shields.io/github/followers/{{ include.username }}?style=flat-square&logo=github&label=followers&color=2ea44f"
+      loading="lazy"
+      onerror="this.style.display='none';"
+    >
+  </div>
 </div>
