@@ -445,6 +445,12 @@ footer.sticky-bottom .container {
     max-width: 50%;
   }
 }
+.repo .repo-meta {
+  line-height: 1;
+}
+.repo .repo-badge {
+  max-width: 100%;
+}
 
 /* Blog Post Header */
 .header-bar {

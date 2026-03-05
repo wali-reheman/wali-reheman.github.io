@@ -66,7 +66,7 @@ toc:
   <h2>Syllabus</h2>
   <div class="resource-section">
     <p>The syllabus outlines the course objectives, grading, and schedule for the Conduct of Inquiry I Lab.</p>
-    <a href="/assets/pdf/conduct_1_lab/SPA_096_Conduct_of_inquiry_Lab.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+    <a href="{{ '/assets/pdf/conduct_1_lab/SPA_096_Conduct_of_inquiry_Lab.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Syllabus
     </a>
   </div>
@@ -74,14 +74,14 @@ toc:
   <h2>Session 1: Basic R Operations</h2>
   <div class="resource-section">
     <p>Session 1 covers the basic R operations to introduce students to basic data manipulation, arithmetic, and vectorized operations in R.</p>
-    <a href="/assets/pdf/conduct_1_lab/Session 1 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+    <a href="{{ '/assets/pdf/conduct_1_lab/Session 1 Handout.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Handout
     </a>
   </div>
   <h2>Session 2: Introduction to dplyr</h2>
   <div class="resource-section">
     <p>Session 2 covers dplyr package for data manipulation in R. You will learn how to use its key functions such as <code>select()</code>, <code>filter()</code>, <code>arrange()</code>, and <code>mutate()</code>. We will also cover advanced topics like using <code>across()</code> for applying functions to multiple columns.</p>
-    <a href="/assets/pdf/conduct_1_lab/Session 2 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+    <a href="{{ '/assets/pdf/conduct_1_lab/Session 2 Handout.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Handout
     </a>
   </div>
@@ -93,14 +93,14 @@ toc:
     <h2>Session 4: R Practice </h2>
   <div class="resource-section">
     <p>Session 4 is an in-class practice session for R. We will use the packages learned so far to complete an in-class exercise.</p>
-    <a href="/assets/pdf/conduct_1_lab/Session 4 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+    <a href="{{ '/assets/pdf/conduct_1_lab/Session 4 Handout.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Handout
     </a>
   </div>
     <h2>Session 5: Aggregating and Reshaping Data </h2>
   <div class="resource-section">
     <p>The <code>summarize()</code> function from the dplyr package is a powerful tool for creating summary statistics of your data. It allows you to collapse a dataset to a single row or a summary for each group of observations. In this tutorial, we’ll explore the basic and advanced uses of <code>summarize()</code>, as well as ways to reshape data.</p>
-    <a href="/assets/pdf/conduct_1_lab/Session 5 Handout.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+    <a href="{{ '/assets/pdf/conduct_1_lab/Session 5 Handout.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
       Download Handout
     </a>
   </div>
