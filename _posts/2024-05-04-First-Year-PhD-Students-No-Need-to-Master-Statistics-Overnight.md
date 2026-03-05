@@ -94,8 +94,8 @@ Below are some suggestions to help you get comfortable with statistical learning
 
 10. **Develop a Growth Mindset**
 
-   - Expect to make mistakes; that is part of the learning curve.
-   - Each time you get stuck, view it as a chance to deepen your understanding.
+- Expect to make mistakes; that is part of the learning curve.
+- Each time you get stuck, view it as a chance to deepen your understanding.
 
 ---
 
