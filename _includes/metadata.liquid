@@ -97,7 +97,7 @@
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
   {% if site.lattes_id %}
-    {% capture link %}http://lattes.cnpq.br/{{ site.lattes_id }}{% endcapture %}
+    {% capture link %}https://lattes.cnpq.br/{{ site.lattes_id }}{% endcapture %}
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
   {% if site.osf_id %}
