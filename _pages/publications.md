@@ -10,8 +10,12 @@ nav_order: 2
 
 <div class="publications">
 
+<h1>Job Market Paper</h1>
+
+{% bibliography --group_by none --query @*[job_market_paper=true]* %}
+
 <h1>Work in Progress</h1>
 
-{% bibliography %}
+{% bibliography --query @*[work_in_progress=true]* %}
 
 </div>
