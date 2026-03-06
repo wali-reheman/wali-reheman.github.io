@@ -3758,10 +3758,15 @@ $(document).ready(function ()  {
             await ensureDataFiles(webR, code, out);
             await ensurePackages(webR, code, out);
             out.textContent = "Running...";
-            const result = await webR.evalR(code);
+            const runner = "paste(capture.output({\n" +
+              ".__coursehub_res <- ({\n" + code + "\n})\n" +
+              "if (exists('.__coursehub_res', inherits = FALSE)) print(.__coursehub_res)\n" +
+              "}, type = 'output'), collapse = '\\n')";
+            const result = await webR.evalR(runner);
             let text = "";
             try { text = await result.toString(); } catch(e) { text = ""; }
-            out.textContent = text && text.trim() ? text : "Code executed. (For plots, use the Show Plot toggle below.)";
+            const clean = (text || "").trim();
+            out.textContent = clean && !/^\[object RObject:/.test(clean) ? clean : "Code executed.";
           } catch (err) {
             out.classList.add("error");
             out.textContent = "Run failed: " + (err && err.message ? err.message : String(err));
