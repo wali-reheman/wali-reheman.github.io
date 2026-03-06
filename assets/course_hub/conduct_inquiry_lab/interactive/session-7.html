@@ -3835,12 +3835,12 @@ $(document).ready(function ()  {
 
   function extractFileRefs(code){
     const refs = [];
-    const re = /["\']([^"\']+\.(csv|dta|sav|rda|RData|rds|RDS|xlsx|txt))["\']/g;
+    const re = /["\']([^"\']+\.(csv|dta|sav|rda|rdata|rds|xlsx?|txt|tsv|json|png|pdf))["\']/gi;
     let m;
     while((m = re.exec(code)) !== null){
       if(m[1]) refs.push(m[1]);
     }
-    return Array.from(new Set(refs));
+    return Array.from(new Set(refs.map((r)=>String(r).trim().replace(/^\.\//, "")).filter(Boolean)));
   }
 
   function encodePath(path){
@@ -3853,30 +3853,46 @@ $(document).ready(function ()  {
     return new Uint8Array(await res.arrayBuffer());
   }
 
+  function ensureDirs(fs, path){
+    const parts = String(path || "").split("/").filter(Boolean);
+    if(parts.length <= 1) return;
+    let cur = "";
+    for(let i = 0; i < parts.length - 1; i++){
+      cur += `/${parts[i]}`;
+      try { fs.mkdir(cur); } catch(e) {}
+    }
+  }
+
   async function ensureDataFiles(webR, code, out){
     if(!sessionNum) return;
     const files = extractFileRefs(code);
     for(const ref of files){
       const base = ref.split("/").pop();
-      if(!base) continue;
-      const key = `${sessionNum}:${base}`;
-      if(state.loadedFiles.has(key)) continue;
+      const variants = Array.from(new Set([ref, base].filter(Boolean)));
+      if(!variants.length) continue;
+      if(variants.some((v)=>state.loadedFiles.has(`${sessionNum}:${v}`))) continue;
 
-      const localUrl = `/assets/course_hub/conduct_inquiry_lab/source/session-${sessionNum}/${encodePath(base)}`;
-      const githubUrl = `https://raw.githubusercontent.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/main/Session%20${sessionNum}/${encodePath(base)}`;
-
-      out.textContent = `Loading data file: ${base} ...`;
+      out.textContent = `Loading data file: ${base || ref} ...`;
       let bytes = null;
-      try { bytes = await fetchAsBytes(localUrl); } catch(e) {}
+      for(const v of variants){
+        const localUrl = `/assets/course_hub/conduct_inquiry_lab/source/session-${sessionNum}/${encodePath(v)}`;
+        try { bytes = await fetchAsBytes(localUrl); break; } catch(e) {}
+      }
       if(!bytes){
-        try { bytes = await fetchAsBytes(githubUrl); } catch(e) {}
+        for(const v of variants){
+          const githubUrl = `https://raw.githubusercontent.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/main/Session%20${sessionNum}/${encodePath(v)}`;
+          try { bytes = await fetchAsBytes(githubUrl); break; } catch(e) {}
+        }
       }
       if(!bytes) continue;
 
-      try {
-        webR.FS.writeFile(base, bytes);
-        state.loadedFiles.add(key);
-      } catch(e) {}
+      for(const v of variants){
+        try {
+          ensureDirs(webR.FS, v);
+          webR.FS.writeFile(v, bytes);
+          state.loadedFiles.add(`${sessionNum}:${v}`);
+        } catch(e) {}
+      }
     }
   }
 
