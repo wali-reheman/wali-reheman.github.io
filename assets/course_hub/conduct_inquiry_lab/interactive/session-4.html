@@ -2805,93 +2805,169 @@ border-radius: 0px;
 
 
 <style id="coursehub-interactive-style">
-.main-container { max-width: 1180px; }
+:root {
+  --course-accent: #0f4d92;
+  --course-accent-soft: #e8f1fd;
+  --course-ink: #1f2a38;
+  --course-muted: #5a6b80;
+}
+body {
+  background:
+    radial-gradient(920px 320px at 0% 0%, rgba(15,77,146,0.09), transparent 58%),
+    radial-gradient(900px 300px at 100% 0%, rgba(15,77,146,0.07), transparent 60%);
+}
+.main-container {
+  max-width: 1140px;
+  margin-top: 0.9rem;
+  margin-bottom: 1.35rem;
+  padding: 1.15rem 1.1rem 1.4rem;
+  border: 1px solid #d8e4f5;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(16, 46, 89, 0.07);
+}
+.main-container h1, .main-container h2, .main-container h3 {
+  color: var(--course-ink);
+}
+.main-container h1 { margin-bottom: 0.95rem; }
+.main-container h2 {
+  margin-top: 1.3rem;
+  border-bottom: 1px solid #e6edf9;
+  padding-bottom: 0.24rem;
+}
+.tocify {
+  border: 1px solid #d8e4f5;
+  border-radius: 10px;
+  padding: 0.35rem;
+  background: #f8fbff;
+}
+.tocify .tocify-item.active > a {
+  color: var(--course-accent);
+  font-weight: 700;
+}
 .interactive-note {
-  border: 1px solid #c9ddf6;
-  background: #f5f9ff;
-  border-radius: 8px;
-  padding: 0.55rem 0.7rem;
+  border: 1px solid #c6dcfa;
+  background: linear-gradient(135deg, #f5f9ff, #edf5ff);
+  border-radius: 10px;
+  padding: 0.62rem 0.82rem;
   margin: 0.7rem 0 1rem;
   font-size: 0.92rem;
+  color: var(--course-muted);
 }
-.sourceCode, pre[class] {
+.sourceCode, pre[class], pre {
   cursor: pointer;
+  border-left: 4px solid #d4e4fb;
+  border-radius: 10px;
+  background: #f9fbff;
+  box-shadow: inset 0 0 0 1px #e3edf9;
+  margin-bottom: 0.45rem;
 }
-.sourceCode, pre[class] {
-  border-left: 3px solid #d7e6fb;
-}
+.sourceCode code, pre code { font-size: 0.84rem; line-height: 1.45; }
 .code-toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.36rem;
-  margin: 0.28rem 0 0.55rem;
+  gap: 0.4rem;
+  margin: 0.22rem 0 0.62rem;
 }
 .code-btn {
-  padding: 0.22rem 0.56rem;
-  border: 1px solid #0f4d92;
-  border-radius: 6px;
-  background: #f0f6ff;
-  color: #0f4d92;
-  font-size: 0.74rem;
+  padding: 0.26rem 0.64rem;
+  border: 1px solid #bdd4f5;
+  border-radius: 7px;
+  background: #f4f9ff;
+  color: var(--course-accent);
+  font-size: 0.76rem;
   font-weight: 700;
   cursor: pointer;
+  transition: all 120ms ease;
 }
-.code-btn:hover { background: #e2efff; }
+.code-btn:hover { background: #e8f2ff; border-color: #9ec0ee; }
+.code-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+.code-btn.run-btn {
+  background: var(--course-accent);
+  border-color: var(--course-accent);
+  color: #fff;
+}
+.code-btn.run-btn:hover { filter: brightness(0.95); }
 .code-editor {
   width: 100%;
-  min-height: 150px;
+  min-height: 160px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.82rem;
+  font-size: 0.83rem;
   line-height: 1.35;
-  border: 1px solid #c8d9f0;
-  border-radius: 8px;
-  padding: 0.55rem;
-  margin: 0.3rem 0 0.55rem;
+  border: 1px solid #c0d5f3;
+  border-radius: 10px;
+  padding: 0.62rem;
+  margin: 0.26rem 0 0.6rem;
   box-sizing: border-box;
+  background: #fff;
 }
 .code-output {
-  border: 1px solid #d3e1f4;
-  background: #f8fbff;
-  border-radius: 8px;
-  padding: 0.45rem 0.58rem;
-  margin: 0.3rem 0 0.7rem;
+  border: 1px solid #cfdef3;
+  background: #f7fbff;
+  border-radius: 10px;
+  padding: 0.52rem 0.62rem;
+  margin: 0.35rem 0 0.72rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
+  color: #1f3042;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 .code-output.error {
-  border-color: #f0c4c4;
-  background: #fff7f7;
-  color: #7b2020;
+  border-color: #edc5c5;
+  background: #fff6f6;
+  color: #7a1f1f;
 }
 .plot-toggle-btn {
-  margin: 0.3rem 0 0.85rem;
-  padding: 0.26rem 0.62rem;
-  border: 1px solid #0f4d92;
-  border-radius: 7px;
-  background: #f0f6ff;
-  color: #0f4d92;
-  font-size: 0.78rem;
+  margin: 0.25rem 0 0.9rem;
+  padding: 0.28rem 0.66rem;
+  border: 1px solid #bdd4f5;
+  border-radius: 8px;
+  background: #f4f9ff;
+  color: var(--course-accent);
+  font-size: 0.77rem;
   font-weight: 700;
   cursor: pointer;
+  transition: all 120ms ease;
 }
-.plot-toggle-btn:hover { background: #e2efff; }
+.plot-toggle-btn:hover { background: #e8f2ff; border-color: #9ec0ee; }
 .plot-hidden { display: none !important; }
+.table {
+  font-size: 0.9rem;
+  width: 100%;
+}
+.table thead th {
+  background: #f2f7ff;
+  border-bottom-color: #d6e4f8;
+}
+.table-responsive, .pagedtable-wrapper {
+  border: 1px solid #dbe8f8;
+  border-radius: 10px;
+  overflow: auto;
+}
 .figure, .figure img, p > img, img {
   max-width: 100% !important;
   height: auto !important;
 }
 .figure img, p > img {
-  max-height: 62vh !important;
+  max-height: 70vh !important;
   width: auto !important;
   object-fit: contain;
   display: block;
-  margin: 0.4rem auto;
+  margin: 0.5rem auto;
+  border-radius: 8px;
 }
-pre, .sourceCode { overflow-x: auto; }
+pre, .sourceCode, .code-output { overflow-x: auto; }
+a { color: var(--course-accent); }
+a:hover { color: #0a3d74; }
 @media (max-width: 900px) {
-  .main-container { max-width: 100%; padding-left: 0.7rem; padding-right: 0.7rem; }
-  .figure img, p > img { max-height: 52vh !important; }
+  .main-container {
+    max-width: 100%;
+    padding: 0.85rem 0.72rem 1rem;
+    border-radius: 10px;
+  }
+  .figure img, p > img { max-height: 56vh !important; }
+  .code-editor { min-height: 138px; }
 }
 </style>
 </head>
@@ -3660,6 +3736,7 @@ $(document).ready(function ()  {
       const runBtn = document.createElement("button");
       runBtn.type = "button";
       runBtn.className = "code-btn";
+      runBtn.classList.add("run-btn");
       runBtn.textContent = lang === "r" ? "Run R Code" : "Run";
 
       const out = document.createElement("div");
@@ -3681,14 +3758,45 @@ $(document).ready(function ()  {
             await ensurePackages(webR, code, out);
             out.textContent = "Running...";
             const runner = "paste(capture.output({\n" +
-              ".__coursehub_res <- ({\n" + code + "\n})\n" +
-              "if (exists('.__coursehub_res', inherits = FALSE)) print(.__coursehub_res)\n" +
+              ".__coursehub_vis <- withVisible({\n" + code + "\n})\n" +
+              "if (isTRUE(.__coursehub_vis$visible)) {\n" +
+              "  .__coursehub_res <- .__coursehub_vis$value\n" +
+              "  if (inherits(.__coursehub_res, 'data.frame')) {\n" +
+              "    .n <- NROW(.__coursehub_res); .k <- NCOL(.__coursehub_res)\n" +
+              "    if (.n > 12) {\n" +
+              "      cat(sprintf('[showing first 12 of %d rows x %d columns]\\n', .n, .k))\n" +
+              "      print(utils::head(.__coursehub_res, 12))\n" +
+              "    } else {\n" +
+              "      print(.__coursehub_res)\n" +
+              "    }\n" +
+              "  } else if (is.matrix(.__coursehub_res)) {\n" +
+              "    .n <- NROW(.__coursehub_res); .k <- NCOL(.__coursehub_res)\n" +
+              "    if (.n > 12) {\n" +
+              "      cat(sprintf('[showing first 12 of %d rows x %d columns]\\n', .n, .k))\n" +
+              "      print(utils::head(.__coursehub_res, 12))\n" +
+              "    } else {\n" +
+              "      print(.__coursehub_res)\n" +
+              "    }\n" +
+              "  } else if (is.atomic(.__coursehub_res) && length(.__coursehub_res) > 80) {\n" +
+              "    cat(sprintf('[showing first 80 of %d values]\\n', length(.__coursehub_res)))\n" +
+              "    print(utils::head(.__coursehub_res, 80))\n" +
+              "  } else {\n" +
+              "    print(.__coursehub_res)\n" +
+              "  }\n" +
+              "}\n" +
               "}, type = 'output'), collapse = '\\n')";
             const result = await webR.evalR(runner);
             let text = "";
             try { text = await result.toString(); } catch(e) { text = ""; }
             const clean = (text || "").trim();
-            out.textContent = clean && !/^\[object RObject:/.test(clean) ? clean : "Code executed.";
+            const rendered = clean && !/^\[object RObject:/.test(clean) ? clean : "Code executed.";
+            const lines = rendered.split(/\r?\n/);
+            if (rendered.length > 1200 || lines.length > 25) {
+              const clipped = lines.slice(0, 25).join("\n").slice(0, 1200);
+              out.textContent = clipped + "\n... [output truncated for readability]";
+            } else {
+              out.textContent = rendered;
+            }
           } catch (err) {
             out.classList.add("error");
             out.textContent = "Run failed: " + (err && err.message ? err.message : String(err));
