@@ -81,14 +81,18 @@
                   </div>
                 </li>
               {% else %}
-                {% assign parent_link = p.url | remove: 'index.html' %}
-                {% if parent_link == '/' %}
+                {% if p.permalink contains '/blog/' %}
+                  {% assign url = '/blog/' %}
+                {% else %}
+                  {% assign url = p.url %}
+                {% endif %}
+                {% assign url_clean = url | remove: 'index.html' %}
+                {% if url_clean == '/' %}
                   {% assign is_active = page.url == '/' %}
                 {% else %}
-                  {% assign is_active = page.url contains parent_link %}
+                  {% assign is_active = page.url contains url_clean %}
                 {% endif %}
                 <li class="nav-item {% if is_active %}active{% endif %}">
-                  {% if p.permalink contains '/blog/' %}{% assign url = '/blog/' %} {% else %}{% assign url = p.url %}{% endif %}
                   <a class="nav-link" href="{{ url | relative_url }}">
                     {{- p.title }}
                     {% if is_active %}
