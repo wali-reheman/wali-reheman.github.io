@@ -28,20 +28,6 @@ sync_cmd <- sprintf(
 )
 if (system(sync_cmd) != 0L) stop('Failed to sync course materials with rsync')
 
-# Keep Stata source artifacts available on website.
-dir.create(file.path(source_root, 'session-3'), recursive = TRUE, showWarnings = FALSE)
-dir.create(file.path(source_root, 'session-9'), recursive = TRUE, showWarnings = FALSE)
-file.copy(file.path(course_tmp, 'Session 3', 'Stata Basic and Data Manipulation.do'),
-          file.path(source_root, 'session-3', 'Stata Basic and Data Manipulation.do'), overwrite = TRUE)
-file.copy(file.path(course_tmp, 'Session 3', 'auto_data.csv'),
-          file.path(source_root, 'session-3', 'auto_data.csv'), overwrite = TRUE)
-file.copy(file.path(course_tmp, 'Session 9', 'Week 10.do'),
-          file.path(source_root, 'session-9', 'Week 10.do'), overwrite = TRUE)
-file.copy(file.path(course_tmp, 'Session 9', 'Graph.png'),
-          file.path(source_root, 'session-9', 'Graph.png'), overwrite = TRUE)
-file.copy(file.path(course_tmp, 'Session 9', 'NHANES_Graphs.pdf'),
-          file.path(source_root, 'session-9', 'NHANES_Graphs.pdf'), overwrite = TRUE)
-
 strip_yaml <- function(lines) {
   idx <- which(trimws(lines) == '---')
   if (length(idx) >= 2 && idx[1] == 1 && idx[2] <= 80) return(lines[(idx[2] + 1):length(lines)])
@@ -74,7 +60,7 @@ sanitize_line <- function(line) {
   out
 }
 
-body_prelude <- function(title, workdir_rel) {
+body_prelude <- function(title) {
   c(
     '---',
     sprintf('title: "%s"', title),
@@ -98,7 +84,6 @@ body_prelude <- function(title, workdir_rel) {
     '  dpi = 120',
     ')',
     'options(width = 100)',
-    sprintf('setwd("%s")', workdir_rel),
     '```',
     '',
     '<div class="interactive-note">',
@@ -267,12 +252,12 @@ inject_interactivity <- function(html) {
     '',
     '  function extractFileRefs(code){',
     '    const refs = [];',
-    '    const re = /[\"\\\']([^\"\\\']+\\.(csv|dta|sav|rda|RData|rds|RDS|xlsx|txt))[\"\\\']/g;',
+    '    const re = /[\"\\\']([^\"\\\']+\\.(csv|dta|sav|rda|rdata|rds|xlsx?|txt|tsv|json|png|pdf))[\"\\\']/gi;',
     '    let m;',
     '    while((m = re.exec(code)) !== null){',
     '      if(m[1]) refs.push(m[1]);',
     '    }',
-    '    return Array.from(new Set(refs));',
+    '    return Array.from(new Set(refs.map((r)=>String(r).trim().replace(/^\\.\\//, \"\")).filter(Boolean)));',
     '  }',
     '',
     '  function encodePath(path){',
@@ -285,30 +270,46 @@ inject_interactivity <- function(html) {
     '    return new Uint8Array(await res.arrayBuffer());',
     '  }',
     '',
+    '  function ensureDirs(fs, path){',
+    '    const parts = String(path || \"\").split(\"/\").filter(Boolean);',
+    '    if(parts.length <= 1) return;',
+    '    let cur = \"\";',
+    '    for(let i = 0; i < parts.length - 1; i++){',
+    '      cur += `/${parts[i]}`;',
+    '      try { fs.mkdir(cur); } catch(e) {}',
+    '    }',
+    '  }',
+    '',
     '  async function ensureDataFiles(webR, code, out){',
     '    if(!sessionNum) return;',
     '    const files = extractFileRefs(code);',
     '    for(const ref of files){',
     '      const base = ref.split(\"/\").pop();',
-    '      if(!base) continue;',
-    '      const key = `${sessionNum}:${base}`;',
-    '      if(state.loadedFiles.has(key)) continue;',
+    '      const variants = Array.from(new Set([ref, base].filter(Boolean)));',
+    '      if(!variants.length) continue;',
+    '      if(variants.some((v)=>state.loadedFiles.has(`${sessionNum}:${v}`))) continue;',
     '',
-    '      const localUrl = `/assets/course_hub/conduct_inquiry_lab/source/session-${sessionNum}/${encodePath(base)}`;',
-    '      const githubUrl = `https://raw.githubusercontent.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/main/Session%20${sessionNum}/${encodePath(base)}`;',
-    '',
-    '      out.textContent = `Loading data file: ${base} ...`;',
+    '      out.textContent = `Loading data file: ${base || ref} ...`;',
     '      let bytes = null;',
-    '      try { bytes = await fetchAsBytes(localUrl); } catch(e) {}',
+    '      for(const v of variants){',
+    '        const localUrl = `/assets/course_hub/conduct_inquiry_lab/source/session-${sessionNum}/${encodePath(v)}`;',
+    '        try { bytes = await fetchAsBytes(localUrl); break; } catch(e) {}',
+    '      }',
     '      if(!bytes){',
-    '        try { bytes = await fetchAsBytes(githubUrl); } catch(e) {}',
+    '        for(const v of variants){',
+    '          const githubUrl = `https://raw.githubusercontent.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/main/Session%20${sessionNum}/${encodePath(v)}`;',
+    '          try { bytes = await fetchAsBytes(githubUrl); break; } catch(e) {}',
+    '        }',
     '      }',
     '      if(!bytes) continue;',
     '',
-    '      try {',
-    '        webR.FS.writeFile(base, bytes);',
-    '        state.loadedFiles.add(key);',
-    '      } catch(e) {}',
+    '      for(const v of variants){',
+    '        try {',
+    '          ensureDirs(webR.FS, v);',
+    '          webR.FS.writeFile(v, bytes);',
+    '          state.loadedFiles.add(`${sessionNum}:${v}`);',
+    '        } catch(e) {}',
+    '      }',
     '    }',
     '  }',
     '',
@@ -501,13 +502,65 @@ session_specs <- list(
   list(id = 12, title = 'Session 12: Semester Review', type = 'rmd', files = c('Session 12/semester_review.Rmd'), workdir = 'Session 12')
 )
 
+stage_session_sources <- function(specs) {
+  ref_pattern <- "['\"]([^'\"]+\\.(csv|dta|sav|rda|rdata|rds|xlsx?|txt|tsv|json|png|pdf|do))['\"]"
+
+  extract_refs <- function(file) {
+    if (!file.exists(file)) return(character())
+    txt <- paste(readLines(file, warn = FALSE, encoding = 'UTF-8'), collapse = "\n")
+    m <- gregexpr(ref_pattern, txt, perl = TRUE, ignore.case = TRUE)
+    hits <- regmatches(txt, m)[[1]]
+    if (!length(hits) || identical(hits, character(1)) && hits[[1]] == "-1") return(character())
+    refs <- sub("^['\"]", "", hits)
+    refs <- sub("['\"]$", "", refs)
+    refs
+  }
+
+  for (spec in specs) {
+    src_dir <- file.path(course_tmp, spec$workdir)
+    if (!dir.exists(src_dir)) next
+
+    out_dir <- file.path(source_root, sprintf('session-%d', spec$id))
+    if (dir.exists(out_dir)) unlink(out_dir, recursive = TRUE, force = TRUE)
+    dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+
+    refs <- character()
+    refs <- c(refs, basename(unlist(spec$files)))
+    for (f in spec$files) refs <- c(refs, extract_refs(file.path(course_tmp, f)))
+
+    if (spec$id == 3) refs <- c(refs, 'auto_data.csv')
+    if (spec$id == 9) refs <- c(refs, 'Graph.png', 'NHANES_Graphs.pdf')
+
+    refs <- unique(gsub('^\\./', '', refs))
+    refs <- refs[nzchar(refs)]
+
+    for (ref in refs) {
+      ref <- gsub('\\\\', '/', ref)
+      candidates <- unique(c(
+        file.path(src_dir, ref),
+        file.path(src_dir, basename(ref)),
+        file.path(course_tmp, ref),
+        file.path(course_tmp, basename(ref))
+      ))
+      src <- candidates[file.exists(candidates)][1]
+      if (is.na(src) || !nzchar(src)) next
+
+      to <- file.path(out_dir, ref)
+      dir.create(dirname(to), recursive = TRUE, showWarnings = FALSE)
+      file.copy(src, to, overwrite = TRUE)
+    }
+  }
+}
+
+stage_session_sources(session_specs)
+
 if (dir.exists(page_root)) unlink(page_root, recursive = TRUE, force = TRUE)
 dir.create(page_root, recursive = TRUE, showWarnings = FALSE)
 
 for (spec in session_specs) {
   message('Building session-', spec$id, ' ...')
 
-  lines <- body_prelude(spec$title, spec$workdir)
+	  lines <- body_prelude(spec$title)
 
   if (identical(spec$type, 'rmd')) {
     for (f in spec$files) {
@@ -568,10 +621,13 @@ for (spec in session_specs) {
     output_file = out_file,
     quiet = TRUE,
     envir = new.env(parent = globalenv()),
-    knit_root_dir = course_tmp
+    knit_root_dir = file.path(course_tmp, spec$workdir)
   )
 
   html <- paste(readLines(out_file, warn = FALSE), collapse = '\n')
+  if (isTRUE(spec$id == 9)) {
+    html <- gsub('src="Graph.png"', 'src="/assets/course_hub/conduct_inquiry_lab/source/session-9/Graph.png"', html, fixed = TRUE)
+  }
   html <- inject_interactivity(html)
   writeLines(strsplit(html, '\n', fixed = TRUE)[[1]], out_file)
 }

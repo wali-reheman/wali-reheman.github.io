@@ -2940,53 +2940,122 @@ Plot</em> button to reveal/hide its corresponding plot.</p>
 <pre class="r"><code>library(dplyr)
 library(readr)
 library(haven)</code></pre>
-<pre class="r"><code>data &lt;- haven::read_dta(&quot;nyc_schools.dta&quot;)</code></pre>
-<pre><code>## Error:
-## ! &#39;nyc_schools.dta&#39; does not exist in current working directory (&#39;/Users/wali/Documents/GitHub/wali-reheman.github.io/.tmp/conduct_lab_interactive/course&#39;).</code></pre>
-<pre class="r"><code># Source: New York City Department of Education records, assembled by Nathan Favero</code></pre>
+<pre class="r"><code>data &lt;- haven::read_dta(&quot;nyc_schools.dta&quot;)
+# Source: New York City Department of Education records, assembled by Nathan Favero</code></pre>
 </div>
 <div id="renaming-variables" class="section level2">
 <h2>Renaming Variables</h2>
 <pre class="r"><code>head(data)</code></pre>
-<pre><code>##                                                                             
-## 1 function (..., list = character(), package = NULL, lib.loc = NULL,        
-## 2     verbose = getOption(&quot;verbose&quot;), envir = .GlobalEnv, overwrite = TRUE) 
-## 3 {                                                                         
-## 4     fileExt &lt;- function(x) {                                              
-## 5         db &lt;- grepl(&quot;\\\\.[^.]+\\\\.(gz|bz2|xz)$&quot;, x)                     
-## 6         ans &lt;- sub(&quot;.*\\\\.&quot;, &quot;&quot;, x)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["dbn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["schoolname"],"name":[2],"type":["chr"],"align":["left"]},{"label":["schooltype"],"name":[3],"type":["chr"],"align":["left"]},{"label":["overallscore"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["overallgrade"],"name":[5],"type":["chr"],"align":["left"]},{"label":["percentilerank"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["progressgrade"],"name":[7],"type":["chr"],"align":["left"]},{"label":["performancegrade"],"name":[8],"type":["chr"],"align":["left"]},{"label":["environmentgrade"],"name":[9],"type":["chr"],"align":["left"]},{"label":["closingtheachievementgappoints"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["principal"],"name":[11],"type":["chr"],"align":["left"]},{"label":["enrollment"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["district"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["iep"],"name":[14],"type":["chr"],"align":["left"]},{"label":["economicneedindex"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["blackhispanic"],"name":[16],"type":["chr"],"align":["left"]},{"label":["ell"],"name":[17],"type":["chr"],"align":["left"]},{"label":["thgrmathela"],"name":[18],"type":["chr"],"align":["left"]},{"label":["peerindex"],"name":[19],"type":["dbl"],"align":["right"]}],"data":[{"1":"01M015","2":"P.S. 015 Roberto Clemente","3":"Elementary","4":"39.0","5":"C","6":"15","7":"F","8":"C","9":"A","10":"2.4","11":"Irene Sanchez","12":"176","13":"1","14":"29.5%","15":"1.20","16":"90.9%","17":"12.5%","18":"2.80","19":"73.38"},{"1":"01M019","2":"P.S. 019 Asher Levy","3":"Elementary","4":"55.9","5":"B","6":"56","7":"B","8":"C","9":"B","10":"3.6","11":"Jacqueline Flanagan","12":"296","13":"1","14":"22.0%","15":"0.58","16":"76.4%","17":"11.1%","18":"2.97","19":"47.89"},{"1":"01M020","2":"P.S. 020 Anna Silver","3":"Elementary","4":"40.2","5":"C","6":"17","7":"D","8":"D","9":"A","10":"2.7","11":"James Lee","12":"574","13":"1","14":"17.9%","15":"0.81","16":"68.1%","17":"22.3%","18":"2.93","19":"52.38"},{"1":"01M034","2":"P.S. 034 Franklin D. Roosevelt","3":"K-8","4":"67.5","5":"A","6":"83","7":"B","8":"A","9":"B","10":"4.4","11":"Joyce Stallings Harte","12":"387","13":"1","14":"31.8%","15":"0.99","16":"92.0%","17":"8.8%","18":"2.92","19":"67.83"},{"1":"01M063","2":"P.S. 063 William McKinley","3":"Elementary","4":"59.3","5":"B","6":"63","7":"B","8":"B","9":"B","10":"4.8","11":"Darlene Despeignes","12":"158","13":"1","14":"31.0%","15":"0.79","16":"86.7%","17":"3.8%","18":"3.10","19":"59.43"},{"1":"01M064","2":"P.S. 064 Robert Simon","3":"Elementary","4":"48.9","5":"C","6":"37","7":"C","8":"C","9":"B","10":"4.1","11":"Marlon L. Hosang","12":"297","13":"1","14":"35.7%","15":"0.78","16":"85.9%","17":"9.8%","18":"2.83","19":"60.73"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <pre class="r"><code># Rename a variable
-data &lt;- data %&gt;% rename(school = schoolname)</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;rename&#39; applied to an object of class &quot;function&quot;</code></pre>
-<pre class="r"><code># See if changes made
+data &lt;- data %&gt;% rename(school = schoolname)
+
+# See if changes made
 head(data)</code></pre>
-<pre><code>##                                                                             
-## 1 function (..., list = character(), package = NULL, lib.loc = NULL,        
-## 2     verbose = getOption(&quot;verbose&quot;), envir = .GlobalEnv, overwrite = TRUE) 
-## 3 {                                                                         
-## 4     fileExt &lt;- function(x) {                                              
-## 5         db &lt;- grepl(&quot;\\\\.[^.]+\\\\.(gz|bz2|xz)$&quot;, x)                     
-## 6         ans &lt;- sub(&quot;.*\\\\.&quot;, &quot;&quot;, x)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["dbn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["school"],"name":[2],"type":["chr"],"align":["left"]},{"label":["schooltype"],"name":[3],"type":["chr"],"align":["left"]},{"label":["overallscore"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["overallgrade"],"name":[5],"type":["chr"],"align":["left"]},{"label":["percentilerank"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["progressgrade"],"name":[7],"type":["chr"],"align":["left"]},{"label":["performancegrade"],"name":[8],"type":["chr"],"align":["left"]},{"label":["environmentgrade"],"name":[9],"type":["chr"],"align":["left"]},{"label":["closingtheachievementgappoints"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["principal"],"name":[11],"type":["chr"],"align":["left"]},{"label":["enrollment"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["district"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["iep"],"name":[14],"type":["chr"],"align":["left"]},{"label":["economicneedindex"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["blackhispanic"],"name":[16],"type":["chr"],"align":["left"]},{"label":["ell"],"name":[17],"type":["chr"],"align":["left"]},{"label":["thgrmathela"],"name":[18],"type":["chr"],"align":["left"]},{"label":["peerindex"],"name":[19],"type":["dbl"],"align":["right"]}],"data":[{"1":"01M015","2":"P.S. 015 Roberto Clemente","3":"Elementary","4":"39.0","5":"C","6":"15","7":"F","8":"C","9":"A","10":"2.4","11":"Irene Sanchez","12":"176","13":"1","14":"29.5%","15":"1.20","16":"90.9%","17":"12.5%","18":"2.80","19":"73.38"},{"1":"01M019","2":"P.S. 019 Asher Levy","3":"Elementary","4":"55.9","5":"B","6":"56","7":"B","8":"C","9":"B","10":"3.6","11":"Jacqueline Flanagan","12":"296","13":"1","14":"22.0%","15":"0.58","16":"76.4%","17":"11.1%","18":"2.97","19":"47.89"},{"1":"01M020","2":"P.S. 020 Anna Silver","3":"Elementary","4":"40.2","5":"C","6":"17","7":"D","8":"D","9":"A","10":"2.7","11":"James Lee","12":"574","13":"1","14":"17.9%","15":"0.81","16":"68.1%","17":"22.3%","18":"2.93","19":"52.38"},{"1":"01M034","2":"P.S. 034 Franklin D. Roosevelt","3":"K-8","4":"67.5","5":"A","6":"83","7":"B","8":"A","9":"B","10":"4.4","11":"Joyce Stallings Harte","12":"387","13":"1","14":"31.8%","15":"0.99","16":"92.0%","17":"8.8%","18":"2.92","19":"67.83"},{"1":"01M063","2":"P.S. 063 William McKinley","3":"Elementary","4":"59.3","5":"B","6":"63","7":"B","8":"B","9":"B","10":"4.8","11":"Darlene Despeignes","12":"158","13":"1","14":"31.0%","15":"0.79","16":"86.7%","17":"3.8%","18":"3.10","19":"59.43"},{"1":"01M064","2":"P.S. 064 Robert Simon","3":"Elementary","4":"48.9","5":"C","6":"37","7":"C","8":"C","9":"B","10":"4.1","11":"Marlon L. Hosang","12":"297","13":"1","14":"35.7%","15":"0.78","16":"85.9%","17":"9.8%","18":"2.83","19":"60.73"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <div id="summary-statistics-for-subsets" class="section level2">
 <h2>Summary Statistics for Subsets</h2>
 <div id="method-1" class="section level3">
 <h3>Method 1</h3>
 <pre class="r"><code>summary(data$overallscore[data$schooltype == &quot;Elementary&quot;])</code></pre>
-<pre><code>## Error in `data$overallscore`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   12.70   44.83   53.80   54.54   64.70  102.20       8</code></pre>
 <pre class="r"><code>summary(data$overallscore[data$schooltype == &quot;Middle&quot;])</code></pre>
-<pre><code>## Error in `data$overallscore`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   13.40   45.90   55.30   55.94   65.47  102.20      25</code></pre>
 <pre class="r"><code>summary(data$overallscore[data$schooltype == &quot;K-8&quot;])</code></pre>
-<pre><code>## Error in `data$overallscore`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   26.20   44.22   53.95   54.98   64.27   91.90       1</code></pre>
 <pre class="r"><code>#Guess what will following codes generate
 
 data$schooltype == &quot;Elementary&quot;</code></pre>
-<pre><code>## Error in `data$schooltype`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>##    [1]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE
+##   [16]  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+##   [31]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE
+##   [46] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE
+##   [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE
+##   [76]  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+##   [91] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE
+##  [106] FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE
+##  [121] FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE
+##  [136]  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+##  [151] FALSE FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [166]  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE
+##  [181]  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [196] FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE
+##  [211] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE
+##  [226]  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+##  [241] FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [256] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [271]  TRUE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE
+##  [286] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE
+##  [301] FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE
+##  [316]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE
+##  [331]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE
+##  [346]  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE
+##  [361]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [376]  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE
+##  [391] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [406]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE
+##  [421] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [436]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE
+##  [451]  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE
+##  [466] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE
+##  [481] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+##  [496]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [511]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+##  [526] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [541] FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+##  [556] FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE
+##  [571] FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE
+##  [586] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE
+##  [601]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [616]  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [631] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE
+##  [646]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE
+##  [661] FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE
+##  [676]  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+##  [691]  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE
+##  [706] FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+##  [721] FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE
+##  [736] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [751] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [766]  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE
+##  [781] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
+##  [796]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE
+##  [811] FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [826]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE
+##  [841]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE
+##  [856] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE
+##  [871]  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE
+##  [886] FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE
+##  [901]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [916] FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE
+##  [931]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE
+##  [946]  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+##  [961] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
+##  [976]  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [991]  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
+## [1006] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE
+## [1021]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1036] FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE
+## [1051] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE
+## [1066] FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [1081] FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE
+## [1096] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE
+## [1111]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE FALSE
+## [1126] FALSE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+## [1141] FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+## [1156]  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE</code></pre>
 <p><strong>Breaking Down the Command:</strong></p>
 <ol style="list-style-type: decimal">
 <li><p><strong><code>data$overallscore</code>:</strong> This selects
@@ -3012,14 +3081,20 @@ of <code>overallscore</code>.</p></li>
   filter(schooltype==&quot;Elementary&quot;)%&gt;%
   select(overallscore)%&gt;%
   summary()</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;filter&#39; applied to an object of class &quot;function&quot;</code></pre>
+<pre><code>##   overallscore   
+##  Min.   : 12.70  
+##  1st Qu.: 44.83  
+##  Median : 53.80  
+##  Mean   : 54.54  
+##  3rd Qu.: 64.70  
+##  Max.   :102.20  
+##  NA&#39;s   :8</code></pre>
 <pre class="r"><code>data%&gt;%
   filter(schooltype==&quot;Middle&quot;)%&gt;%
   .$overallscore%&gt;% # see the break-downs below
   summary()</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;filter&#39; applied to an object of class &quot;function&quot;</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##   13.40   45.90   55.30   55.94   65.47  102.20      25</code></pre>
 <p><strong>Breaking Down the Command:</strong></p>
 <ol style="list-style-type: decimal">
 <li><p><strong><code>data %&gt;%</code>:</strong> Starts a pipeline
@@ -3044,27 +3119,25 @@ quartile, and maximum for middle schools.</p></li>
 <div id="rescaling-variables" class="section level2">
 <h2>Rescaling Variables</h2>
 <pre class="r"><code>head(data)</code></pre>
-<pre><code>##                                                                             
-## 1 function (..., list = character(), package = NULL, lib.loc = NULL,        
-## 2     verbose = getOption(&quot;verbose&quot;), envir = .GlobalEnv, overwrite = TRUE) 
-## 3 {                                                                         
-## 4     fileExt &lt;- function(x) {                                              
-## 5         db &lt;- grepl(&quot;\\\\.[^.]+\\\\.(gz|bz2|xz)$&quot;, x)                     
-## 6         ans &lt;- sub(&quot;.*\\\\.&quot;, &quot;&quot;, x)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["dbn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["school"],"name":[2],"type":["chr"],"align":["left"]},{"label":["schooltype"],"name":[3],"type":["chr"],"align":["left"]},{"label":["overallscore"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["overallgrade"],"name":[5],"type":["chr"],"align":["left"]},{"label":["percentilerank"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["progressgrade"],"name":[7],"type":["chr"],"align":["left"]},{"label":["performancegrade"],"name":[8],"type":["chr"],"align":["left"]},{"label":["environmentgrade"],"name":[9],"type":["chr"],"align":["left"]},{"label":["closingtheachievementgappoints"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["principal"],"name":[11],"type":["chr"],"align":["left"]},{"label":["enrollment"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["district"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["iep"],"name":[14],"type":["chr"],"align":["left"]},{"label":["economicneedindex"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["blackhispanic"],"name":[16],"type":["chr"],"align":["left"]},{"label":["ell"],"name":[17],"type":["chr"],"align":["left"]},{"label":["thgrmathela"],"name":[18],"type":["chr"],"align":["left"]},{"label":["peerindex"],"name":[19],"type":["dbl"],"align":["right"]}],"data":[{"1":"01M015","2":"P.S. 015 Roberto Clemente","3":"Elementary","4":"39.0","5":"C","6":"15","7":"F","8":"C","9":"A","10":"2.4","11":"Irene Sanchez","12":"176","13":"1","14":"29.5%","15":"1.20","16":"90.9%","17":"12.5%","18":"2.80","19":"73.38"},{"1":"01M019","2":"P.S. 019 Asher Levy","3":"Elementary","4":"55.9","5":"B","6":"56","7":"B","8":"C","9":"B","10":"3.6","11":"Jacqueline Flanagan","12":"296","13":"1","14":"22.0%","15":"0.58","16":"76.4%","17":"11.1%","18":"2.97","19":"47.89"},{"1":"01M020","2":"P.S. 020 Anna Silver","3":"Elementary","4":"40.2","5":"C","6":"17","7":"D","8":"D","9":"A","10":"2.7","11":"James Lee","12":"574","13":"1","14":"17.9%","15":"0.81","16":"68.1%","17":"22.3%","18":"2.93","19":"52.38"},{"1":"01M034","2":"P.S. 034 Franklin D. Roosevelt","3":"K-8","4":"67.5","5":"A","6":"83","7":"B","8":"A","9":"B","10":"4.4","11":"Joyce Stallings Harte","12":"387","13":"1","14":"31.8%","15":"0.99","16":"92.0%","17":"8.8%","18":"2.92","19":"67.83"},{"1":"01M063","2":"P.S. 063 William McKinley","3":"Elementary","4":"59.3","5":"B","6":"63","7":"B","8":"B","9":"B","10":"4.8","11":"Darlene Despeignes","12":"158","13":"1","14":"31.0%","15":"0.79","16":"86.7%","17":"3.8%","18":"3.10","19":"59.43"},{"1":"01M064","2":"P.S. 064 Robert Simon","3":"Elementary","4":"48.9","5":"C","6":"37","7":"C","8":"C","9":"B","10":"4.1","11":"Marlon L. Hosang","12":"297","13":"1","14":"35.7%","15":"0.78","16":"85.9%","17":"9.8%","18":"2.83","19":"60.73"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <pre class="r"><code># Rescale the overall score to range from 0 to 1
 data &lt;- data %&gt;% 
-  mutate(overallscore = overallscore / 100)</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;mutate&#39; applied to an object of class &quot;function&quot;</code></pre>
-<pre class="r"><code>summary(data$overallscore)</code></pre>
-<pre><code>## Error in `data$overallscore`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+  mutate(overallscore = overallscore / 100)
+
+summary(data$overallscore)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##  0.1270  0.4497  0.5415  0.5505  0.6490  1.0220      34</code></pre>
 </div>
 <div id="creating-dummy-variables-for-grades" class="section level2">
 <h2>Creating Dummy Variables for Grades</h2>
 <pre class="r"><code>table(data$overallgrade)</code></pre>
-<pre><code>## Error in `data$overallgrade`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>## 
+##       A   B   C   D   F 
+##  34 287 399 348  76  22</code></pre>
 <pre class="r"><code># Create dummy variables for letter grades
 data &lt;- data %&gt;% mutate(
   gradeA = ifelse(overallgrade == &quot;A&quot;, 1, ifelse(overallgrade == &quot;&quot;, NA, 0)),
@@ -3073,20 +3146,19 @@ data &lt;- data %&gt;% mutate(
   gradeD = ifelse(overallgrade == &quot;D&quot;, 1, ifelse(overallgrade == &quot;&quot;, NA, 0)),
   gradeF = ifelse(overallgrade == &quot;F&quot;, 1, ifelse(overallgrade == &quot;&quot;, NA, 0)),
   grade_NA = ifelse(overallgrade == &quot;&quot;, 1, 0)
-)</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;mutate&#39; applied to an object of class &quot;function&quot;</code></pre>
-<pre class="r"><code>head(data)</code></pre>
-<pre><code>##                                                                             
-## 1 function (..., list = character(), package = NULL, lib.loc = NULL,        
-## 2     verbose = getOption(&quot;verbose&quot;), envir = .GlobalEnv, overwrite = TRUE) 
-## 3 {                                                                         
-## 4     fileExt &lt;- function(x) {                                              
-## 5         db &lt;- grepl(&quot;\\\\.[^.]+\\\\.(gz|bz2|xz)$&quot;, x)                     
-## 6         ans &lt;- sub(&quot;.*\\\\.&quot;, &quot;&quot;, x)</code></pre>
+)
+
+head(data)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["dbn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["school"],"name":[2],"type":["chr"],"align":["left"]},{"label":["schooltype"],"name":[3],"type":["chr"],"align":["left"]},{"label":["overallscore"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["overallgrade"],"name":[5],"type":["chr"],"align":["left"]},{"label":["percentilerank"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["progressgrade"],"name":[7],"type":["chr"],"align":["left"]},{"label":["performancegrade"],"name":[8],"type":["chr"],"align":["left"]},{"label":["environmentgrade"],"name":[9],"type":["chr"],"align":["left"]},{"label":["closingtheachievementgappoints"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["principal"],"name":[11],"type":["chr"],"align":["left"]},{"label":["enrollment"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["district"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["iep"],"name":[14],"type":["chr"],"align":["left"]},{"label":["economicneedindex"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["blackhispanic"],"name":[16],"type":["chr"],"align":["left"]},{"label":["ell"],"name":[17],"type":["chr"],"align":["left"]},{"label":["thgrmathela"],"name":[18],"type":["chr"],"align":["left"]},{"label":["peerindex"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["gradeA"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["gradeB"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["gradeC"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["gradeD"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["gradeF"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["grade_NA"],"name":[25],"type":["dbl"],"align":["right"]}],"data":[{"1":"01M015","2":"P.S. 015 Roberto Clemente","3":"Elementary","4":"0.390","5":"C","6":"15","7":"F","8":"C","9":"A","10":"2.4","11":"Irene Sanchez","12":"176","13":"1","14":"29.5%","15":"1.20","16":"90.9%","17":"12.5%","18":"2.80","19":"73.38","20":"0","21":"0","22":"1","23":"0","24":"0","25":"0"},{"1":"01M019","2":"P.S. 019 Asher Levy","3":"Elementary","4":"0.559","5":"B","6":"56","7":"B","8":"C","9":"B","10":"3.6","11":"Jacqueline Flanagan","12":"296","13":"1","14":"22.0%","15":"0.58","16":"76.4%","17":"11.1%","18":"2.97","19":"47.89","20":"0","21":"1","22":"0","23":"0","24":"0","25":"0"},{"1":"01M020","2":"P.S. 020 Anna Silver","3":"Elementary","4":"0.402","5":"C","6":"17","7":"D","8":"D","9":"A","10":"2.7","11":"James Lee","12":"574","13":"1","14":"17.9%","15":"0.81","16":"68.1%","17":"22.3%","18":"2.93","19":"52.38","20":"0","21":"0","22":"1","23":"0","24":"0","25":"0"},{"1":"01M034","2":"P.S. 034 Franklin D. Roosevelt","3":"K-8","4":"0.675","5":"A","6":"83","7":"B","8":"A","9":"B","10":"4.4","11":"Joyce Stallings Harte","12":"387","13":"1","14":"31.8%","15":"0.99","16":"92.0%","17":"8.8%","18":"2.92","19":"67.83","20":"1","21":"0","22":"0","23":"0","24":"0","25":"0"},{"1":"01M063","2":"P.S. 063 William McKinley","3":"Elementary","4":"0.593","5":"B","6":"63","7":"B","8":"B","9":"B","10":"4.8","11":"Darlene Despeignes","12":"158","13":"1","14":"31.0%","15":"0.79","16":"86.7%","17":"3.8%","18":"3.10","19":"59.43","20":"0","21":"1","22":"0","23":"0","24":"0","25":"0"},{"1":"01M064","2":"P.S. 064 Robert Simon","3":"Elementary","4":"0.489","5":"C","6":"37","7":"C","8":"C","9":"B","10":"4.1","11":"Marlon L. Hosang","12":"297","13":"1","14":"35.7%","15":"0.78","16":"85.9%","17":"9.8%","18":"2.83","19":"60.73","20":"0","21":"0","22":"1","23":"0","24":"0","25":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <pre class="r"><code>table(data$gradeA,data$overallgrade)</code></pre>
-<pre><code>## Error in `data$gradeA`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>##    
+##           A   B   C   D   F
+##   0   0   0 399 348  76  22
+##   1   0 287   0   0   0   0</code></pre>
 <p>Breaking Down the Command:</p>
 <ul>
 <li><p><strong><code>gradeA = ifelse(overallgrade == &quot;A&quot;, 1, ifelse(overallgrade == &quot;&quot;, NA, 0))</code>:</strong></p>
@@ -3137,25 +3209,34 @@ data &lt;- data %&gt;% mutate(
     TRUE ~ NA_real_
   ),
   index = (progress + performance)/2
-)</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;mutate&#39; applied to an object of class &quot;function&quot;</code></pre>
-<pre class="r"><code>head(data)</code></pre>
-<pre><code>##                                                                             
-## 1 function (..., list = character(), package = NULL, lib.loc = NULL,        
-## 2     verbose = getOption(&quot;verbose&quot;), envir = .GlobalEnv, overwrite = TRUE) 
-## 3 {                                                                         
-## 4     fileExt &lt;- function(x) {                                              
-## 5         db &lt;- grepl(&quot;\\\\.[^.]+\\\\.(gz|bz2|xz)$&quot;, x)                     
-## 6         ans &lt;- sub(&quot;.*\\\\.&quot;, &quot;&quot;, x)</code></pre>
+)
+
+head(data)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["dbn"],"name":[1],"type":["chr"],"align":["left"]},{"label":["school"],"name":[2],"type":["chr"],"align":["left"]},{"label":["schooltype"],"name":[3],"type":["chr"],"align":["left"]},{"label":["overallscore"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["overallgrade"],"name":[5],"type":["chr"],"align":["left"]},{"label":["percentilerank"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["progressgrade"],"name":[7],"type":["chr"],"align":["left"]},{"label":["performancegrade"],"name":[8],"type":["chr"],"align":["left"]},{"label":["environmentgrade"],"name":[9],"type":["chr"],"align":["left"]},{"label":["closingtheachievementgappoints"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["principal"],"name":[11],"type":["chr"],"align":["left"]},{"label":["enrollment"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["district"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["iep"],"name":[14],"type":["chr"],"align":["left"]},{"label":["economicneedindex"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["blackhispanic"],"name":[16],"type":["chr"],"align":["left"]},{"label":["ell"],"name":[17],"type":["chr"],"align":["left"]},{"label":["thgrmathela"],"name":[18],"type":["chr"],"align":["left"]},{"label":["peerindex"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["gradeA"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["gradeB"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["gradeC"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["gradeD"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["gradeF"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["grade_NA"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["progress"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["performance"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["index"],"name":[28],"type":["dbl"],"align":["right"]}],"data":[{"1":"01M015","2":"P.S. 015 Roberto Clemente","3":"Elementary","4":"0.390","5":"C","6":"15","7":"F","8":"C","9":"A","10":"2.4","11":"Irene Sanchez","12":"176","13":"1","14":"29.5%","15":"1.20","16":"90.9%","17":"12.5%","18":"2.80","19":"73.38","20":"0","21":"0","22":"1","23":"0","24":"0","25":"0","26":"0","27":"2","28":"1.0"},{"1":"01M019","2":"P.S. 019 Asher Levy","3":"Elementary","4":"0.559","5":"B","6":"56","7":"B","8":"C","9":"B","10":"3.6","11":"Jacqueline Flanagan","12":"296","13":"1","14":"22.0%","15":"0.58","16":"76.4%","17":"11.1%","18":"2.97","19":"47.89","20":"0","21":"1","22":"0","23":"0","24":"0","25":"0","26":"3","27":"2","28":"2.5"},{"1":"01M020","2":"P.S. 020 Anna Silver","3":"Elementary","4":"0.402","5":"C","6":"17","7":"D","8":"D","9":"A","10":"2.7","11":"James Lee","12":"574","13":"1","14":"17.9%","15":"0.81","16":"68.1%","17":"22.3%","18":"2.93","19":"52.38","20":"0","21":"0","22":"1","23":"0","24":"0","25":"0","26":"1","27":"1","28":"1.0"},{"1":"01M034","2":"P.S. 034 Franklin D. Roosevelt","3":"K-8","4":"0.675","5":"A","6":"83","7":"B","8":"A","9":"B","10":"4.4","11":"Joyce Stallings Harte","12":"387","13":"1","14":"31.8%","15":"0.99","16":"92.0%","17":"8.8%","18":"2.92","19":"67.83","20":"1","21":"0","22":"0","23":"0","24":"0","25":"0","26":"3","27":"4","28":"3.5"},{"1":"01M063","2":"P.S. 063 William McKinley","3":"Elementary","4":"0.593","5":"B","6":"63","7":"B","8":"B","9":"B","10":"4.8","11":"Darlene Despeignes","12":"158","13":"1","14":"31.0%","15":"0.79","16":"86.7%","17":"3.8%","18":"3.10","19":"59.43","20":"0","21":"1","22":"0","23":"0","24":"0","25":"0","26":"3","27":"3","28":"3.0"},{"1":"01M064","2":"P.S. 064 Robert Simon","3":"Elementary","4":"0.489","5":"C","6":"37","7":"C","8":"C","9":"B","10":"4.1","11":"Marlon L. Hosang","12":"297","13":"1","14":"35.7%","15":"0.78","16":"85.9%","17":"9.8%","18":"2.83","19":"60.73","20":"0","21":"0","22":"1","23":"0","24":"0","25":"0","26":"2","27":"2","28":"2.0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <pre class="r"><code># Note: NA + 10 = ?
 
 table(data$progressgrade,data$progress)</code></pre>
-<pre><code>## Error in `data$progressgrade`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>##    
+##       0   1   2   3   4
+##       0   0   0   0   0
+##   A   0   0   0   0 185
+##   B   0   0   0 316   0
+##   C   0   0 367   0   0
+##   D   0 162   0   0   0
+##   F 102   0   0   0   0</code></pre>
 <pre class="r"><code>table(data$performancegrade,data$performance)</code></pre>
-<pre><code>## Error in `data$performancegrade`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>##    
+##       0   1   2   3   4
+##       0   0   0   0   0
+##   A   0   0   0   0 439
+##   B   0   0   0 302   0
+##   C   0   0 247   0   0
+##   D   0  95   0   0   0
+##   F  49   0   0   0   0</code></pre>
 <table>
 <colgroup>
 <col width="100%" />
@@ -3215,25 +3296,23 @@ with <code>NA</code>.</p></li>
 <p>Convert Percentage Variables to Numeric</p>
 <pre class="r"><code># We want to know how many black or hispanic students those schools have
 summary(data$blackhispanic)</code></pre>
-<pre><code>## Error in `data$blackhispanic`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+<pre><code>##    Length     Class      Mode 
+##      1166 character character</code></pre>
 <pre class="r"><code>#We need to convert this variable to just numbers.
 # Convert blackhispanic and ell variables to numeric
 
 data &lt;- data %&gt;% mutate(
   blackhispanic = as.numeric(gsub(&quot;%&quot;, &quot;&quot;, blackhispanic))
-)</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;mutate&#39; applied to an object of class &quot;function&quot;</code></pre>
-<pre class="r"><code>data &lt;- data %&gt;% mutate(
+)
+
+data &lt;- data %&gt;% mutate(
   blackhispanic = gsub(&quot;%&quot;, &quot;&quot;, blackhispanic),
   blackhispanic = as.numeric(blackhispanic)
-)</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;mutate&#39; applied to an object of class &quot;function&quot;</code></pre>
-<pre class="r"><code>summary(data$blackhispanic)</code></pre>
-<pre><code>## Error in `data$blackhispanic`:
-## ! object of type &#39;closure&#39; is not subsettable</code></pre>
+)
+
+summary(data$blackhispanic)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    3.60   52.52   92.35   74.99   97.40  100.00</code></pre>
 <p><strong>Breaking Down the Command:</strong></p>
 <p><strong><code>mutate(blackhispanic = as.numeric(gsub(&quot;%&quot;, &quot;&quot;, blackhispanic)))</code>:</strong></p>
 <ul>
@@ -3262,10 +3341,9 @@ data &lt;- data %&gt;% mutate(
   distnum = substr(dbn, 1, 2),
   borough = substr(dbn, 3, 3),
   schoolnum = substr(dbn, 4, 6)
-)</code></pre>
-<pre><code>## Error in `UseMethod()`:
-## ! no applicable method for &#39;mutate&#39; applied to an object of class &quot;function&quot;</code></pre>
-<pre class="r"><code>substr(&quot;abcdef&quot;, 2, 5)</code></pre>
+)
+
+substr(&quot;abcdef&quot;, 2, 5)</code></pre>
 <pre><code>## [1] &quot;bcde&quot;</code></pre>
 </div>
 <div id="save-the-data" class="section level2">
@@ -3419,12 +3497,12 @@ $(document).ready(function ()  {
 
   function extractFileRefs(code){
     const refs = [];
-    const re = /["\']([^"\']+\.(csv|dta|sav|rda|RData|rds|RDS|xlsx|txt))["\']/g;
+    const re = /["\']([^"\']+\.(csv|dta|sav|rda|rdata|rds|xlsx?|txt|tsv|json|png|pdf))["\']/gi;
     let m;
     while((m = re.exec(code)) !== null){
       if(m[1]) refs.push(m[1]);
     }
-    return Array.from(new Set(refs));
+    return Array.from(new Set(refs.map((r)=>String(r).trim().replace(/^\.\//, "")).filter(Boolean)));
   }
 
   function encodePath(path){
@@ -3437,30 +3515,46 @@ $(document).ready(function ()  {
     return new Uint8Array(await res.arrayBuffer());
   }
 
+  function ensureDirs(fs, path){
+    const parts = String(path || "").split("/").filter(Boolean);
+    if(parts.length <= 1) return;
+    let cur = "";
+    for(let i = 0; i < parts.length - 1; i++){
+      cur += `/${parts[i]}`;
+      try { fs.mkdir(cur); } catch(e) {}
+    }
+  }
+
   async function ensureDataFiles(webR, code, out){
     if(!sessionNum) return;
     const files = extractFileRefs(code);
     for(const ref of files){
       const base = ref.split("/").pop();
-      if(!base) continue;
-      const key = `${sessionNum}:${base}`;
-      if(state.loadedFiles.has(key)) continue;
+      const variants = Array.from(new Set([ref, base].filter(Boolean)));
+      if(!variants.length) continue;
+      if(variants.some((v)=>state.loadedFiles.has(`${sessionNum}:${v}`))) continue;
 
-      const localUrl = `/assets/course_hub/conduct_inquiry_lab/source/session-${sessionNum}/${encodePath(base)}`;
-      const githubUrl = `https://raw.githubusercontent.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/main/Session%20${sessionNum}/${encodePath(base)}`;
-
-      out.textContent = `Loading data file: ${base} ...`;
+      out.textContent = `Loading data file: ${base || ref} ...`;
       let bytes = null;
-      try { bytes = await fetchAsBytes(localUrl); } catch(e) {}
+      for(const v of variants){
+        const localUrl = `/assets/course_hub/conduct_inquiry_lab/source/session-${sessionNum}/${encodePath(v)}`;
+        try { bytes = await fetchAsBytes(localUrl); break; } catch(e) {}
+      }
       if(!bytes){
-        try { bytes = await fetchAsBytes(githubUrl); } catch(e) {}
+        for(const v of variants){
+          const githubUrl = `https://raw.githubusercontent.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/main/Session%20${sessionNum}/${encodePath(v)}`;
+          try { bytes = await fetchAsBytes(githubUrl); break; } catch(e) {}
+        }
       }
       if(!bytes) continue;
 
-      try {
-        webR.FS.writeFile(base, bytes);
-        state.loadedFiles.add(key);
-      } catch(e) {}
+      for(const v of variants){
+        try {
+          ensureDirs(webR.FS, v);
+          webR.FS.writeFile(v, bytes);
+          state.loadedFiles.add(`${sessionNum}:${v}`);
+        } catch(e) {}
+      }
     }
   }
 
