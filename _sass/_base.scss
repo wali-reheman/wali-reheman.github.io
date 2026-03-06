@@ -605,6 +605,10 @@ footer.sticky-bottom .container {
 }
 .publications ol.bibliography li {
   margin-bottom: 1rem;
+  padding: 1rem 1rem 0.75rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  background-color: var(--global-card-bg-color);
 }
 .publications ol.bibliography li .abbr {
   margin-bottom: 0.5rem;
@@ -623,6 +627,50 @@ footer.sticky-bottom .container {
 }
 .publications ol.bibliography li .title {
   font-weight: bolder;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+.publications ol.bibliography li .pub-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.4rem;
+}
+.publications ol.bibliography li .pub-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--global-theme-color);
+}
+.publications ol.bibliography li .pub-status-rr {
+  background-color: #a66a00;
+}
+.publications ol.bibliography li .pub-status-published {
+  background-color: #1e7d32;
+}
+.publications ol.bibliography li .pub-status-working-paper {
+  background-color: #245d9b;
+}
+.publications ol.bibliography li .pub-venue {
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+}
+.publications ol.bibliography li .pub-coauthors {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.86rem;
+  color: var(--global-text-color-light);
+}
+.publications ol.bibliography li .pub-coauthors span {
+  color: var(--global-text-color);
+  font-weight: 600;
 }
 .publications ol.bibliography li .author a {
   border-bottom: 1px dashed var(--global-theme-color);
@@ -643,8 +691,14 @@ footer.sticky-bottom .container {
 .publications ol.bibliography li .links a.btn {
   color: var(--global-text-color);
   border: 1px solid var(--global-text-color);
-  padding: 0.25rem 1rem;
-  margin-left: 0;
+  padding: 0.12rem 0.45rem;
+  margin: 0 0.2rem 0.2rem 0;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+.publications ol.bibliography li .links .pub-action {
+  text-transform: uppercase;
 }
 .publications ol.bibliography li .links a.btn:hover {
   color: var(--global-theme-color);
