@@ -6,8 +6,6 @@ nav: true
 nav_order: 6
 ---
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap">
-
 <div class="teaching-page">
   <section class="teaching-hero">
     <h2>Teaching</h2>
@@ -71,15 +69,11 @@ nav_order: 6
 </div>
 
 <style>
-  .teaching-page {
-    font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
   .teaching-page h2,
   .teaching-page h3,
   .teaching-page h4,
   .teaching-page h5 {
     border-bottom: none;
-    font-family: "Source Serif 4", Georgia, serif;
   }
   .teaching-hero {
     border: 1px solid var(--global-divider-color);
