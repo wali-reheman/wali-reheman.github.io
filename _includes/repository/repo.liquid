@@ -8,7 +8,7 @@
         alt="{{ include.repository }}"
         src="https://opengraph.githubassets.com/1/{{ include.repository }}"
         loading="lazy"
-        onerror="this.style.display='none';"
+        onerror="this.onerror=null;this.src='{{ '/assets/img/github-repo-placeholder.svg' | relative_url }}';"
       >
     </a>
     <div class="card-body py-3">
