@@ -1,110 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Session 9 Interactive | Graphs in Stata</title>
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --accent: #1d4ed8;
-      --border: #e2e8f0;
-    }
-    body {
-      margin: 0;
-      padding: 24px;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.55;
-    }
-    .wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      margin-bottom: 18px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    }
-    .muted {
-      color: var(--muted);
-    }
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      background: var(--accent);
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-weight: 600;
-      margin-right: 10px;
-      margin-bottom: 10px;
-    }
-    pre {
-      background: #0f172a;
-      color: #e2e8f0;
-      padding: 14px;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-size: 13px;
-      max-height: 360px;
-    }
-    img {
-      max-width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    iframe {
-      width: 100%;
-      min-height: 620px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #fff;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Session 9 Interactive Walkthrough</h1>
-      <p class="muted">Stata graphing workflow with NHANES data.</p>
-      <a class="btn" href="/assets/course_hub/conduct_inquiry_lab/source/session-9/Week%2010.do" target="_blank" rel="noopener noreferrer">Download .do File</a>
-      <a class="btn" href="/assets/course_hub/conduct_inquiry_lab/source/session-9/NHANES_Graphs.pdf" target="_blank" rel="noopener noreferrer">Download Graph PDF</a>
-    </div>
+<html lang xml:lang>
+  <head>
+    <title>Session 9: Graphing in Stata</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Wali Reheman" />
+    <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+    <style type="text/css">a, a > code {
+color: rgb(249, 38, 114);
+text-decoration: none;
+}
+.footnote {
+position: absolute;
+bottom: 3em;
+padding-right: 4em;
+font-size: 90%;
+}
+.remark-code-line-highlighted { background-color: #ffff88; }
+.inverse {
+background-color: #272822;
+color: #d6d6d6;
+text-shadow: 0 0 20px #333;
+}
+.inverse h1, .inverse h2, .inverse h3 {
+color: #f3f3f3;
+}
 
-    <div class="card">
-      <h2>Stata Script</h2>
-      <pre id="stata-script">Loading script...</pre>
-    </div>
+.left-column {
+color: #777;
+width: 20%;
+height: 92%;
+float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+color: #000;
+}
+.right-column {
+width: 75%;
+float: right;
+padding-top: 1em;
+}
+.pull-left {
+float: left;
+width: 47%;
+}
+.pull-right {
+float: right;
+width: 47%;
+}
+.pull-right + * {
+clear: both;
+}
+img, video, iframe {
+max-width: 100%;
+}
+blockquote {
+border-left: solid 5px lightgray;
+padding-left: 1em;
+}
+.remark-slide table {
+margin: auto;
+border-top: 1px solid #666;
+border-bottom: 1px solid #666;
+}
+.remark-slide table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) { background: #eee }
+@page { margin: 0; }
+@media print {
+.remark-slide-scaler {
+width: 100% !important;
+height: 100% !important;
+transform: scale(1) !important;
+top: 0 !important;
+left: 0 !important;
+}
+}
+</style>
+    <style type="text/css">}
+h1, h2, h3 {
+font-family: 'Yanone Kaffeesatz';
+font-weight: normal;
+}
+.remark-code, .remark-inline-code { font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; }
+</style>
+  </head>
+  <body>
+    <textarea id="source">
 
-    <div class="card">
-      <h2>Graph Output Preview</h2>
-      <p class="muted">Sample exported graph:</p>
-      <img src="/assets/course_hub/conduct_inquiry_lab/source/session-9/Graph.png" alt="Session 9 graph output" />
-    </div>
 
-    <div class="card">
-      <h2>Full Graph Report (PDF)</h2>
-      <iframe src="/assets/course_hub/conduct_inquiry_lab/source/session-9/NHANES_Graphs.pdf"></iframe>
-    </div>
-  </div>
+&lt;style&gt;
+.remark-slide-content {
+  font-family: &quot;Avenir Next&quot;, &quot;Segoe UI&quot;, Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1.35;
+  padding: 1em 1.35em;
+  overflow-y: auto;
+}
+.remark-slide-content h1, .remark-slide-content h2, .remark-slide-content h3 {
+  color: #123a70;
+}
+.remark-code, .remark-inline-code {
+  font-size: 0.78em;
+}
+.remark-slide-number {
+  color: #6b7280;
+}
+.muted { color: #6b7280; }
+&lt;/style&gt;
 
-  <script>
-    async function loadScript() {
-      const url = '/assets/course_hub/conduct_inquiry_lab/source/session-9/Week%2010.do';
-      const text = await fetch(url).then(r => r.text());
-      document.getElementById('stata-script').textContent = text;
+class: center, middle
+
+# Session 9: Graphing in Stata
+### Interactive Session Deck
+
+&lt;div class=&quot;muted&quot;&gt;Use arrow keys to navigate slides.&lt;/div&gt;
+
+---
+
+## Session Roadmap
+
+- Code walkthrough
+- Output preview
+- Applied interpretation
+
+---
+
+
+
+---
+
+## Learning Goals
+
+- Understand the script workflow line-by-line.
+- Connect each command block to expected output.
+- Reuse the script for your own data tasks.
+
+---
+
+## Script Walkthrough (Part 1)
+
+```stata
+* Load the NHANES dataset (assuming it&#39;s saved as NHANES.dta)
+use &quot;NHANES.dta&quot;, clear
+
+* Data Preparation: Drop rows with missing values (equivalent to data_clean in R)
+drop if  missing(BMI) | missing(MaritalStatus) | ///
+        missing(Depressed) | missing(Poverty) | missing(Gender) | ///
+        missing(Age) | missing(SmokeNow) | missing(PhysActive) | ///
+        missing(HHIncomeMid)
+
+* 1. Summary of Data
+summarize BMI MaritalStatus Depressed HHIncomeMid Gender Age SmokeNow PhysActive
+tabulate Gender
+tabulate MaritalStatus
+
+* 2. Basic Graphs
+
+* 2.1. Histogram of BMI
+histogram BMI, bin(30) color(ltblue) lcolor(black) ///
+    title(&quot;Histogram of BMI&quot;) xlabel(, noticks)
+
+* 2.2. Boxplot of BMI by Gender
+graph box BMI, over(Gender) ///
+    title(&quot;Boxplot of BMI by Gender&quot;) ///
+    ytitle(&quot;BMI&quot;)
+
+* 2.3. Scatterplot of Age vs BMI with Transparency (Alpha)
+twoway (scatter BMI Age, mcolor(blue%50) msymbol(circle) msize(medium)), ///
+    title(&quot;Scatterplot of BMI vs Age with Transparency&quot;) ///
+    ytitle(&quot;BMI&quot;) xtitle(&quot;Age&quot;)
+
+* 3. Scatterplot with
+* 3.1. Scatterplot of HHIncomeMid vs BMI by Gender with Transparency
+twoway (scatter BMI Age, mcolor(blue%30) msymbol(circle) msize(small)), ///
+    by(Gender, title(&quot;Scatter Plot of BMI vs HHIncomeMid by Gender&quot;))
+
+* 3.2. Scatterplot with LOESS Trend Line and Alpha
+twoway (scatter BMI Age, mcolor(green%40) msymbol(circle) msize(medium)) ///
+       (lowess BMI Age, lcolor(red) lwidth(medium)), ///
+    title(&quot;BMI vs Age with Trend Line&quot;) ///
+    ytitle(&quot;BMI&quot;) xtitle(&quot;Age&quot;) legend(off)
+
+* 3.3. Scatterplot with Linear Trend Line Faceted by Marital Status
+graph twoway scatter BMI Age || lfit BMI Age, by(MaritalStatus) ///
+    title(&quot;BMI vs Age by Marital Status&quot;)
+
+* 4. Bar Plot: Gender Distribution
+graph bar (mean) BMI, over(Gender, label(angle(45))) ///
+    title(&quot;Mean BMI by Gender&quot;)
+
+* 5. Boxplot of BMI by Depression Levels
+graph box BMI, over(Depressed) ///
+    title(&quot;BMI by Depression Levels&quot;) ///
+    ytitle(&quot;BMI&quot;)
+
+* Export all graphs as PDF for reporting
+graph export &quot;NHANES_Graphs.pdf&quot;, replace
+```
+
+---
+
+## Graph Output Preview
+
+
+```
+## Error in `knitr::include_graphics()`:
+## ! Cannot find the file(s): &quot;Graph.png&quot;
+```
+
+---
+
+## Full Graph Report
+
+[Open NHANES Graph Report (PDF)](/assets/course_hub/conduct_inquiry_lab/source/session-9/NHANES_Graphs.pdf)
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="/assets/course_hub/conduct_inquiry_lab/interactive/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "ratio": "16:10",
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
     }
-    loadScript().catch(() => {
-      document.getElementById('stata-script').textContent = 'Unable to load script file.';
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
     });
-  </script>
-</body>
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<script>(function(data, token) {
+  // data is an object of the form { path: base64 data }; we need to move base64
+  // data back to HTML nodes (e.g., into the 'src' attribute of <img>, <audio>, <video>, <source>)
+  var i, s, d, el, els;
+  els = document.querySelectorAll(['img', 'audio', 'video', 'source'].map(x => x + '[src^="' + token + '"]').join(','));
+  for (i = 0; i < els.length; i++) {
+    el = els[i]; s = el.src.replace(token, ''); d = data[s];
+    if (d) el.src = d;
+  }
+  els = document.querySelectorAll('div.remark-slide-content[style]');
+  for (i = 0; i < els.length; i++) {
+    el = els[i]; s = el.style.backgroundImage; if (!s) continue;
+    s = s.match(/^url\("?(.+?)"?\)$/); if (!s || s.length < 2) continue;
+    s = s[1].replace(token, ''); d = data[s];
+    if (d) el.style.backgroundImage = 'url("' + d + '")';
+  }
+})({}, 'data:image/png;base64,#');</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
 </html>
