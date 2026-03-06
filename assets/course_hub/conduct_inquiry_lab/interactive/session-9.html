@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session 9 Interactive | Graphs in Stata</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1d4ed8;
+      --border: #e2e8f0;
+    }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 13px;
+      max-height: 360px;
+    }
+    img {
+      max-width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    iframe {
+      width: 100%;
+      min-height: 620px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Session 9 Interactive Walkthrough</h1>
+      <p class="muted">Stata graphing workflow with NHANES data.</p>
+      <a class="btn" href="/assets/course_hub/conduct_inquiry_lab/source/session-9/Week%2010.do" target="_blank" rel="noopener noreferrer">Download .do File</a>
+      <a class="btn" href="/assets/course_hub/conduct_inquiry_lab/source/session-9/NHANES_Graphs.pdf" target="_blank" rel="noopener noreferrer">Download Graph PDF</a>
+    </div>
+
+    <div class="card">
+      <h2>Stata Script</h2>
+      <pre id="stata-script">Loading script...</pre>
+    </div>
+
+    <div class="card">
+      <h2>Graph Output Preview</h2>
+      <p class="muted">Sample exported graph:</p>
+      <img src="/assets/course_hub/conduct_inquiry_lab/source/session-9/Graph.png" alt="Session 9 graph output" />
+    </div>
+
+    <div class="card">
+      <h2>Full Graph Report (PDF)</h2>
+      <iframe src="/assets/course_hub/conduct_inquiry_lab/source/session-9/NHANES_Graphs.pdf"></iframe>
+    </div>
+  </div>
+
+  <script>
+    async function loadScript() {
+      const url = '/assets/course_hub/conduct_inquiry_lab/source/session-9/Week%2010.do';
+      const text = await fetch(url).then(r => r.text());
+      document.getElementById('stata-script').textContent = text;
+    }
+    loadScript().catch(() => {
+      document.getElementById('stata-script').textContent = 'Unable to load script file.';
+    });
+  </script>
+</body>
+</html>

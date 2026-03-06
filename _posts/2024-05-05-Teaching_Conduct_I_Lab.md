@@ -10,97 +10,207 @@ related_posts: false
 thumbnail: assets/img/B-roll/icons_Data Analytics.jpg
 ---
 
-<!-- Include Lato Font -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
-
 <style>
-  body {
-    font-family: 'Lato', sans-serif;
-    line-height: 1.6;
-    color: #333;
+  .course-hub-wrap {
+    margin: 0;
+    padding: 0.5rem 0 1.5rem;
   }
-  h2, h3 {
-    margin-top: 1.5rem;
-    border-bottom: 1px solid #eaeaea;
-    padding-bottom: 0.5rem;
+
+  .course-intro {
+    margin-bottom: 1.25rem;
+    color: var(--global-text-color);
   }
-  /* Removed the max-width and auto margin */
-  .post-content {
-    margin: 0;  /* Minimally inset from left & right */
-    padding: 1rem 0; /* Additional vertical padding */
+
+  .session-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
   }
+
   .resource-section {
-    background: #f7f7f7;
-    padding: 20px;
-    border-radius: 0;
-    margin-bottom: 1.5rem;
+    background: color-mix(in srgb, var(--global-bg-color) 88%, var(--global-theme-color) 12%);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 24%, transparent);
+    border-radius: 12px;
+    padding: 1rem;
   }
+
+  .resource-section h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: var(--global-heading-color);
+  }
+
+  .resource-section p {
+    margin: 0 0 0.8rem;
+    color: var(--global-text-color-light);
+    font-size: 0.96rem;
+  }
+
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
   .download-btn {
     display: inline-block;
-    padding: 8px 16px;
-    background-color: #0056b3;
+    padding: 0.42rem 0.75rem;
+    border-radius: 8px;
+    background: var(--global-theme-color);
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    margin-top: 0.5rem;
+    font-size: 0.86rem;
+    font-weight: 600;
   }
+
   .download-btn:hover {
-    background-color: #003f7f;
-  }
-  .coming-soon {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #6c757d;
     color: #fff;
-    border-radius: 4px;
-    margin-top: 0.5rem;
+    filter: brightness(0.92);
+  }
+
+  .secondary-btn {
+    display: inline-block;
+    padding: 0.42rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+    color: var(--global-theme-color);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 600;
+    background: transparent;
+  }
+
+  .secondary-btn:hover {
+    color: var(--global-hover-color);
+    border-color: var(--global-hover-color);
+    text-decoration: none;
   }
 </style>
 
-<div class="post-content">
-  <p>This course is a lab supplement to the <strong>SPA 612: Conduct of Inquiry I</strong>. This lab is an introduction to R and Stata programming, focusing on data wrangling, visualization, basic regression and result output. The course aims to equip students with essential skills to manipulate, analyze, and visualize data using R and Stata.</p>
+<div class="course-hub-wrap">
+  <p class="course-intro">
+    This lab supplements <strong>SPA 612: Conduct of Inquiry I</strong> with hands-on training in R and Stata,
+    focused on data wrangling, visualization, and applied analysis workflows.
+  </p>
 
   <h2>Syllabus</h2>
-  <div class="resource-section">
-    <p>The syllabus outlines the course objectives, grading, and schedule for the Conduct of Inquiry I Lab.</p>
-    <a href="{{ '/assets/pdf/conduct_1_lab/SPA_096_Conduct_of_inquiry_Lab.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
-      Download Syllabus
-    </a>
+  <div class="resource-section" style="margin-bottom: 1rem;">
+    <p>Course objectives, grading policy, and the full weekly sequence.</p>
+    <div class="btn-row">
+      <a href="{{ '/assets/pdf/conduct_1_lab/SPA_096_Conduct_of_inquiry_Lab.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Syllabus PDF</a>
+      <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096" class="secondary-btn" target="_blank" rel="noopener noreferrer">Materials Repo</a>
+    </div>
   </div>
 
-  <h2>Session 1: Basic R Operations</h2>
-  <div class="resource-section">
-    <p>Session 1 covers the basic R operations to introduce students to basic data manipulation, arithmetic, and vectorized operations in R.</p>
-    <a href="{{ '/assets/pdf/conduct_1_lab/Session 1 Handout.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
-      Download Handout
-    </a>
-  </div>
-  <h2>Session 2: Introduction to dplyr</h2>
-  <div class="resource-section">
-    <p>Session 2 covers dplyr package for data manipulation in R. You will learn how to use its key functions such as <code>select()</code>, <code>filter()</code>, <code>arrange()</code>, and <code>mutate()</code>. We will also cover advanced topics like using <code>across()</code> for applying functions to multiple columns.</p>
-    <a href="{{ '/assets/pdf/conduct_1_lab/Session 2 Handout.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
-      Download Handout
-    </a>
-  </div>
-    <h2>Session 3: Basic Stata Operations and Data Manipulation</h2>
-  <div class="resource-section">
-    <p>Session 3 introduces basic Stata operations and data manipulation workflows that parallel <code>dplyr</code> concepts in R.</p>
-    <span class="coming-soon">Handout Coming Soon</span>
-  </div>
-    <h2>Session 4: R Practice </h2>
-  <div class="resource-section">
-    <p>Session 4 is an in-class practice session for R. We will use the packages learned so far to complete an in-class exercise.</p>
-    <a href="{{ '/assets/pdf/conduct_1_lab/Session 4 Handout.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
-      Download Handout
-    </a>
-  </div>
-    <h2>Session 5: Aggregating and Reshaping Data </h2>
-  <div class="resource-section">
-    <p>The <code>summarize()</code> function from the dplyr package is a powerful tool for creating summary statistics of your data. It allows you to collapse a dataset to a single row or a summary for each group of observations. In this tutorial, we’ll explore the basic and advanced uses of <code>summarize()</code>, as well as ways to reshape data.</p>
-    <a href="{{ '/assets/pdf/conduct_1_lab/Session 5 Handout.pdf' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">
-      Download Handout
-    </a>
+  <h2>Core Session Structure</h2>
+  <div class="session-grid">
+    <div class="resource-section">
+      <h3>Session 0: Setup and R/RStudio</h3>
+      <p>Environment setup, first scripts, and workflow basics.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-0.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 1: Basic R Operations</h3>
+      <p>Vectors, objects, and introductory data manipulation in R.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-1.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+        <a href="{{ '/assets/pdf/conduct_1_lab/Session 1 Handout.pdf' | relative_url }}" class="secondary-btn" target="_blank" rel="noopener noreferrer">Handout PDF</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 2: Introduction to dplyr</h3>
+      <p><code>select()</code>, <code>filter()</code>, <code>arrange()</code>, and <code>mutate()</code> for practical workflows.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-2.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+        <a href="{{ '/assets/pdf/conduct_1_lab/Session 2 Handout.pdf' | relative_url }}" class="secondary-btn" target="_blank" rel="noopener noreferrer">Handout PDF</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 3: Basic Stata Operations</h3>
+      <p>Core Stata commands, sorting, graphing, and data export workflow.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-3.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 4: R Practice</h3>
+      <p>Practice tasks combining data cleaning and transformation.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-4.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+        <a href="{{ '/assets/pdf/conduct_1_lab/Session 4 Handout.pdf' | relative_url }}" class="secondary-btn" target="_blank" rel="noopener noreferrer">Handout PDF</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 5: Aggregating and Reshaping Data</h3>
+      <p>Grouped summaries and reshaping strategies for analysis-ready tables.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-5.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+        <a href="{{ '/assets/pdf/conduct_1_lab/Session 5 Handout.pdf' | relative_url }}" class="secondary-btn" target="_blank" rel="noopener noreferrer">Handout PDF</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 6: Reporting Tables and Results</h3>
+      <p>Model output formatting and reproducible reporting practices.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-6.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 7: Review Exercises</h3>
+      <p>Applied review tasks to consolidate workflow and coding fundamentals.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-7.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 8: Plots in R (ggplot2)</h3>
+      <p>Layered visualization, aesthetics, and clean chart design in R.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-8.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 9: Graphing in Stata</h3>
+      <p>Graph commands and output preview with the NHANES workflow.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-9.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 10: EDA Exercise</h3>
+      <p>Exploratory analysis workflow and project preparation.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-10.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 11: Prediction</h3>
+      <p>Prediction concepts and model-based estimation practice.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-11.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
+
+    <div class="resource-section">
+      <h3>Session 12: Semester Review</h3>
+      <p>Integrated review and final practice materials.</p>
+      <div class="btn-row">
+        <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-12.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">download_btn: Interactive Webpage</a>
+      </div>
+    </div>
   </div>
 </div>
 
