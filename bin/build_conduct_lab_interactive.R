@@ -60,6 +60,70 @@ sanitize_line <- function(line) {
   out
 }
 
+apply_session_hotfixes <- function(lines, session_id) {
+  out <- lines
+
+  if (isTRUE(session_id == 2)) {
+    out <- gsub(
+      'right_join\\s*\\(\\s*mtcars\\s*,\\s*by\\s*=\\s*"model"\\s*\\)',
+      'right_join(mtcars_joined, by = "model")',
+      out,
+      perl = TRUE
+    )
+  }
+
+  if (isTRUE(session_id == 5)) {
+    idx <- grep('^\\s*cross_sectional_data <- gapminder %>%\\s*$', out, perl = TRUE)
+    if (length(idx) >= 1L) {
+      i <- idx[[1]]
+      if (i < length(out) && !grepl('mutate\\(country\\s*=\\s*as\\.character\\(country\\)\\)', out[[i + 1]], perl = TRUE)) {
+        out <- append(out, '  mutate(country = as.character(country)) %>%', after = i)
+      }
+    }
+
+    j <- grep('^\\s*world_map_data <- world_map %>%\\s*$', out, perl = TRUE)
+    if (length(j) >= 1L) {
+      i <- j[[1]]
+      prefix <- c('cross_sectional_data$country <- as.character(cross_sectional_data$country)',
+                  'world_map$name <- as.character(world_map$name)')
+      out <- append(out, prefix, after = i - 1L)
+    }
+
+    out <- gsub(
+      'cross_sectional_data\\$country\\s*<-\\s*haven::as_factor\\(cross_sectional_data\\$country\\)',
+      'cross_sectional_data$country <- as.character(cross_sectional_data$country)',
+      out,
+      perl = TRUE
+    )
+  }
+
+  if (isTRUE(session_id == 6)) {
+    out <- gsub(
+      '^\\s*system\\("pandoc -s regression_table\\.html -o regression_table\\.pdf"\\)\\s*$',
+      'if (nzchar(Sys.which("pandoc"))) system("pandoc -s regression_table.html -o regression_table.pdf") else message("pandoc not available in this runtime; skipping PDF conversion.")',
+      out,
+      perl = TRUE
+    )
+  }
+
+  if (isTRUE(session_id == 12)) {
+    out <- gsub('^\\s*library\\(devtools\\)\\s*$', 'anes_data <- readRDS("anes_pilot_2020.RDS")', out, perl = TRUE)
+
+    drop <- grepl('^\\s*install_github\\("jamesmartherus/anesr"\\)\\s*$', out, perl = TRUE) |
+      grepl('^\\s*library\\(anesr\\)\\s*$', out, perl = TRUE) |
+      grepl('^\\s*data\\(package\\s*=\\s*"anesr"\\)\\s*.*$', out, perl = TRUE) |
+      grepl('^\\s*data\\(pilot_2020\\)\\s*.*$', out, perl = TRUE) |
+      grepl('^\\s*anes_data\\s*<-\\s*pilot_2020\\s*$', out, perl = TRUE)
+    out <- out[!drop]
+
+    out <- gsub('haven::write_dta(pilot_2020,', 'haven::write_dta(anes_data,', out, fixed = TRUE)
+    out <- gsub('saveRDS(pilot_2020,', 'saveRDS(anes_data,', out, fixed = TRUE)
+    out <- gsub('write.csv(pilot_2020,', 'write.csv(anes_data,', out, fixed = TRUE)
+  }
+
+  out
+}
+
 body_prelude <- function(title) {
   c(
     '---',
@@ -552,7 +616,13 @@ stage_session_sources <- function(specs) {
 
       to <- file.path(out_dir, ref)
       dir.create(dirname(to), recursive = TRUE, showWarnings = FALSE)
-      file.copy(src, to, overwrite = TRUE)
+      if (grepl('\\.rmd$', src, ignore.case = TRUE, perl = TRUE)) {
+        txt <- readLines(src, warn = FALSE, encoding = 'UTF-8')
+        txt <- apply_session_hotfixes(txt, spec$id)
+        writeLines(txt, to, useBytes = TRUE)
+      } else {
+        file.copy(src, to, overwrite = TRUE)
+      }
     }
   }
 }
@@ -572,6 +642,7 @@ for (spec in session_specs) {
       full <- file.path(course_tmp, f)
       if (!file.exists(full)) next
       body <- readLines(full, warn = FALSE, encoding = 'UTF-8')
+      body <- apply_session_hotfixes(body, spec$id)
       body <- strip_yaml(body)
       body <- remove_setup_chunks(body)
       body <- vapply(body, sanitize_line, FUN.VALUE = character(1), USE.NAMES = FALSE)

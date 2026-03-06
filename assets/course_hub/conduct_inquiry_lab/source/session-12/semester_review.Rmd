@@ -26,21 +26,16 @@ We will load the ANES 2020 dataset directly from a public URL. This ensures our 
 
 ```{r}
 # URL for the ANES 2020 dataset
-library(devtools)
-install_github("jamesmartherus/anesr")
-library(anesr)
+anes_data <- readRDS("anes_pilot_2020.RDS")
 
-data(package="anesr") #View a list of available datasets
 
-data(pilot_2020) #Load 2020
 
-haven::write_dta(pilot_2020,"anes_pilot_2020.dta")
+haven::write_dta(anes_data,"anes_pilot_2020.dta")
 
-saveRDS(pilot_2020,"anes_pilot_2020.RDS")
+saveRDS(anes_data,"anes_pilot_2020.RDS")
 
-write.csv(pilot_2020,"anes_pilot_2020.csv")
+write.csv(anes_data,"anes_pilot_2020.csv")
 
-anes_data<-pilot_2020
 ```
 
 ## 3. Initial Data Exploration

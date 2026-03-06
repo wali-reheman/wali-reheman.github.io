@@ -79,6 +79,7 @@ Create a cross-sectional dataset that includes the average life expectancy, aver
 
 ```{r}
 cross_sectional_data <- gapminder %>%
+  mutate(country = as.character(country)) %>%
   group_by(continent) %>%
   summarize(
     avg_lifeExp = mean(lifeExp),
@@ -238,11 +239,13 @@ Next, we will merge the `country_data` (average life expectancy) with the `wo
 
 ```{r}
 # Merging the country-level life expectancy with the world map
+cross_sectional_data$country <- as.character(cross_sectional_data$country)
+world_map$name <- as.character(world_map$name)
 world_map_data <- world_map %>%
   left_join(cross_sectional_data, by = c("name" = "country"))
 
 #why error? 
-cross_sectional_data$country<-haven::as_factor(cross_sectional_data$country)
+cross_sectional_data$country <- as.character(cross_sectional_data$country)
 
 
 world_map_data <- world_map %>%

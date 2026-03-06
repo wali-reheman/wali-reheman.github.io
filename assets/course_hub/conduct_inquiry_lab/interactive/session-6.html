@@ -3086,7 +3086,7 @@ stargazer(model1,model2, type = &quot;html&quot;, out = &quot;regression_table.h
 ## &lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;F Statistic&lt;/td&gt;&lt;td&gt;45.808&lt;sup&gt;***&lt;/sup&gt; (df = 2; 29)&lt;/td&gt;&lt;td&gt;30.877&lt;sup&gt;***&lt;/sup&gt; (df = 3; 28)&lt;/td&gt;&lt;/tr&gt;
 ## &lt;tr&gt;&lt;td colspan=&quot;3&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/td&gt;&lt;td colspan=&quot;2&quot; style=&quot;text-align:right&quot;&gt;&lt;sup&gt;*&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;**&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;***&lt;/sup&gt;p&lt;0.01&lt;/td&gt;&lt;/tr&gt;
 ## &lt;/table&gt;</code></pre>
-<pre class="r"><code>system(&quot;pandoc -s regression_table.html -o regression_table.pdf&quot;)</code></pre>
+<pre class="r"><code>if (nzchar(Sys.which(&quot;pandoc&quot;))) system(&quot;pandoc -s regression_table.html -o regression_table.pdf&quot;) else message(&quot;pandoc not available in this runtime; skipping PDF conversion.&quot;)</code></pre>
 </div>
 </div>
 <div id="exercise-wages" class="section level2">

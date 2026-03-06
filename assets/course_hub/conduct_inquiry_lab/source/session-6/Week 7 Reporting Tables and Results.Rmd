@@ -72,7 +72,7 @@ stargazer(mtcars, type = "html", out = "summary_table.doc")
 
 stargazer(model1,model2, type = "html", out = "regression_table.html")
 
-system("pandoc -s regression_table.html -o regression_table.pdf")
+if (nzchar(Sys.which("pandoc"))) system("pandoc -s regression_table.html -o regression_table.pdf") else message("pandoc not available in this runtime; skipping PDF conversion.")
 
 
 ```

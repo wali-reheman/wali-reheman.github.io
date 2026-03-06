@@ -220,7 +220,7 @@ mtcars_joined <- mtcars %>%
   rownames_to_column(var = "model")
 
 car_info%>%
-  right_join(mtcars, by = "model")
+  right_join(mtcars_joined, by = "model")
 head(mtcars_joined)
 
 
