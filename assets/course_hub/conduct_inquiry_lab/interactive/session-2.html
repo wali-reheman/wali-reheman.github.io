@@ -3283,7 +3283,7 @@ $(document).ready(function ()  {
 
 <script id="coursehub-interactive-script">
 (function(){
-  const state = { webR: null, webRReady: null };
+  const state = { webR: null, webRReady: null, installedPkgs: new Set() };
 
   function codeText(block){
     const codeEl = block.querySelector("code");
@@ -3296,6 +3296,54 @@ $(document).ready(function ()  {
     if(/stata|language-stata/.test(cls)) return "stata";
     if(/python|language-python/.test(cls)) return "python";
     return "code";
+  }
+
+  function extractPackages(code){
+    const pkgs = [];
+    const re = /(?:library|require)\s*\(\s*["\']?([A-Za-z][A-Za-z0-9._]*)["\']?.*?\)/g;
+    let m;
+    while((m = re.exec(code)) !== null){
+      if(m[1]) pkgs.push(m[1]);
+    }
+    if(/%>%/.test(code) || /\|>/.test(code)) pkgs.push("dplyr");
+    if(/\bdrop_na\s*\(/.test(code)) pkgs.push("tidyr");
+    if(/\bglimpse\s*\(/.test(code)) pkgs.push("dplyr");
+    if(/\bggplot\s*\(/.test(code)) pkgs.push("ggplot2");
+    if(/\bread_dta\s*\(/.test(code)) pkgs.push("haven");
+    if(/\bNHANES\b/.test(code)) pkgs.push("NHANES");
+    return pkgs;
+  }
+
+  function normalizePackages(pkgs){
+    const out = [];
+    pkgs.forEach((p)=>{
+      if(!p) return;
+      const name = String(p).trim();
+      if(!name) return;
+      if(name.toLowerCase() === "tidyverse"){
+        out.push("dplyr", "tidyr", "ggplot2", "magrittr");
+      } else {
+        out.push(name);
+      }
+    });
+    return Array.from(new Set(out.map((p)=>p.replace(/[^A-Za-z0-9._]/g, "")).filter(Boolean)));
+  }
+
+  async function ensurePackages(webR, code, out){
+    const wanted = normalizePackages(extractPackages(code)).filter((p)=>!state.installedPkgs.has(p));
+    if(!wanted.length) return;
+    await webR.evalRVoid("options(repos = c(CRAN = 'https://repo.r-wasm.org'))");
+    for(const pkg of wanted){
+      out.textContent = `Preparing package: ${pkg} (first run may take 10-60s)...`;
+      const setup = [
+        `if (!suppressWarnings(requireNamespace('${pkg}', quietly = TRUE))) {` ,
+        `  tryCatch(install.packages('${pkg}', quiet = TRUE), error = function(e) NULL)` ,
+        `}`,
+        `suppressPackageStartupMessages(try(library('${pkg}', character.only = TRUE), silent = TRUE))`
+      ].join("\\n");
+      await webR.evalRVoid(setup);
+      state.installedPkgs.add(pkg);
+    }
   }
 
   async function ensureWebR(){
@@ -3394,6 +3442,7 @@ $(document).ready(function ()  {
           try {
             const webR = await ensureWebR();
             const code = (block.dataset.editing === "1" && block._editor) ? block._editor.value : codeText(block);
+            await ensurePackages(webR, code, out);
             out.textContent = "Running...";
             const result = await webR.evalR(code);
             let text = "";
