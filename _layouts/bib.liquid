@@ -62,6 +62,11 @@
         {% assign status_text = 'Working Paper' %}
       {% endif %}
     {% endif %}
+    {% assign status_down = status_text | downcase | strip %}
+    {% assign show_status_badge = true %}
+    {% if abbr_down != '' and abbr_down == status_down %}
+      {% assign show_status_badge = false %}
+    {% endif %}
     {% assign status_slug = status_text | downcase | replace: '&', '' | replace: ' ', '-' | replace: '/', '-' %}
     {% assign venue_label = '' %}
     {% if entry.journal %}
@@ -73,12 +78,16 @@
     {% elsif entry.note %}
       {% assign venue_label = entry.note %}
     {% endif %}
-    <div class="pub-meta-row">
-      <span class="pub-status pub-status-{{ status_slug }}">{{ status_text }}</span>
-      {% if venue_label != '' %}
-        <span class="pub-venue">{{ venue_label }}</span>
-      {% endif %}
-    </div>
+    {% if show_status_badge or venue_label != '' %}
+      <div class="pub-meta-row">
+        {% if show_status_badge %}
+          <span class="pub-status pub-status-{{ status_slug }}">{{ status_text }}</span>
+        {% endif %}
+        {% if venue_label != '' %}
+          <span class="pub-venue">{{ venue_label }}</span>
+        {% endif %}
+      </div>
+    {% endif %}
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
