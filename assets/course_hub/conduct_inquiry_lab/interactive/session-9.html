@@ -2814,11 +2814,55 @@ border-radius: 0px;
   margin: 0.7rem 0 1rem;
   font-size: 0.92rem;
 }
-.sourceCode, pre.sourceCode {
+.sourceCode, pre[class] {
   cursor: pointer;
 }
-.sourceCode {
+.sourceCode, pre[class] {
   border-left: 3px solid #d7e6fb;
+}
+.code-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.36rem;
+  margin: 0.28rem 0 0.55rem;
+}
+.code-btn {
+  padding: 0.22rem 0.56rem;
+  border: 1px solid #0f4d92;
+  border-radius: 6px;
+  background: #f0f6ff;
+  color: #0f4d92;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.code-btn:hover { background: #e2efff; }
+.code-editor {
+  width: 100%;
+  min-height: 150px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  border: 1px solid #c8d9f0;
+  border-radius: 8px;
+  padding: 0.55rem;
+  margin: 0.3rem 0 0.55rem;
+  box-sizing: border-box;
+}
+.code-output {
+  border: 1px solid #d3e1f4;
+  background: #f8fbff;
+  border-radius: 8px;
+  padding: 0.45rem 0.58rem;
+  margin: 0.3rem 0 0.7rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  white-space: pre-wrap;
+}
+.code-output.error {
+  border-color: #f0c4c4;
+  background: #fff7f7;
+  color: #7b2020;
 }
 .plot-toggle-btn {
   margin: 0.3rem 0 0.85rem;
@@ -3044,10 +3088,37 @@ $(document).ready(function ()  {
 
 <script id="coursehub-interactive-script">
 (function(){
+  const state = { webR: null, webRReady: null };
+
+  function codeText(block){
+    const codeEl = block.querySelector("code");
+    return (codeEl ? codeEl.textContent : block.textContent || "").trim();
+  }
+
+  function langOf(block){
+    const cls = ((block.className || "") + " " + ((block.querySelector("code")||{}).className || "")).toLowerCase();
+    if(/(^|\s)r(\s|$)|language-r/.test(cls)) return "r";
+    if(/stata|language-stata/.test(cls)) return "stata";
+    if(/python|language-python/.test(cls)) return "python";
+    return "code";
+  }
+
+  async function ensureWebR(){
+    if(state.webR) return state.webR;
+    if(state.webRReady) return state.webRReady;
+    state.webRReady = (async ()=>{
+      const mod = await import("https://webr.r-wasm.org/latest/webr.mjs");
+      state.webR = new mod.WebR({ interactive: false });
+      await state.webR.init();
+      return state.webR;
+    })();
+    return state.webRReady;
+  }
+
   function isSourceBlock(el){
     if(!el) return false;
-    if(el.matches && el.matches("div.sourceCode, pre.sourceCode")) return true;
-    if(el.tagName === "PRE" && el.querySelector("code[class*=language-], code.r, code.stata")) return true;
+    if(el.matches && el.matches("div.sourceCode, pre.sourceCode, pre[class]")) return true;
+    if(el.tagName === "PRE" && el.classList && el.classList.length > 0 && el.querySelector("code")) return true;
     return false;
   }
   function findPlotTarget(source){
@@ -3065,26 +3136,104 @@ $(document).ready(function ()  {
     return null;
   }
   function wire(){
-    const blocks = Array.from(document.querySelectorAll("div.sourceCode, pre.sourceCode"));
+    const blocks = Array.from(document.querySelectorAll("div.sourceCode, pre.sourceCode, pre[class]"));
     blocks.forEach((block)=>{
       if(block.dataset.interactiveWired === "1") return;
-      const target = findPlotTarget(block);
-      if(!target){ block.dataset.interactiveWired = "1"; return; }
-      target.classList.add("plot-hidden");
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "plot-toggle-btn";
-      btn.textContent = "Show Plot";
-      const toggle = ()=>{
-        const hidden = target.classList.toggle("plot-hidden");
-        btn.textContent = hidden ? "Show Plot" : "Hide Plot";
-      };
-      btn.addEventListener("click", toggle);
-      block.addEventListener("click", (ev)=>{
-        if(ev.target && ev.target.closest("button")) return;
-        toggle();
+
+      const lang = langOf(block);
+      const toolbar = document.createElement("div");
+      toolbar.className = "code-toolbar";
+
+      const copyBtn = document.createElement("button");
+      copyBtn.type = "button";
+      copyBtn.className = "code-btn";
+      copyBtn.textContent = "Copy Code";
+      copyBtn.addEventListener("click", async (ev)=>{
+        ev.stopPropagation();
+        const txt = block.dataset.editing === "1" && block._editor ? block._editor.value : codeText(block);
+        try { await navigator.clipboard.writeText(txt); copyBtn.textContent = "Copied"; setTimeout(()=>copyBtn.textContent="Copy Code", 900); }
+        catch { copyBtn.textContent = "Copy Failed"; setTimeout(()=>copyBtn.textContent="Copy Code", 1200); }
       });
-      block.insertAdjacentElement("afterend", btn);
+      toolbar.appendChild(copyBtn);
+
+      const editBtn = document.createElement("button");
+      editBtn.type = "button";
+      editBtn.className = "code-btn";
+      editBtn.textContent = "Edit";
+      editBtn.addEventListener("click", (ev)=>{
+        ev.stopPropagation();
+        if(!block._editor){
+          const ta = document.createElement("textarea");
+          ta.className = "code-editor";
+          ta.value = codeText(block);
+          block.insertAdjacentElement("afterend", ta);
+          block._editor = ta;
+          block.dataset.editing = "1";
+          editBtn.textContent = "Hide Editor";
+        } else {
+          const on = block._editor.style.display !== "none";
+          block._editor.style.display = on ? "none" : "block";
+          block.dataset.editing = on ? "0" : "1";
+          editBtn.textContent = on ? "Edit" : "Hide Editor";
+        }
+      });
+      toolbar.appendChild(editBtn);
+
+      const runBtn = document.createElement("button");
+      runBtn.type = "button";
+      runBtn.className = "code-btn";
+      runBtn.textContent = lang === "r" ? "Run R Code" : "Run";
+
+      const out = document.createElement("div");
+      out.className = "code-output plot-hidden";
+
+      if(lang !== "r"){
+        runBtn.disabled = true;
+        runBtn.textContent = "Run (R only)";
+        runBtn.title = "In-browser execution is enabled for R code blocks.";
+      } else {
+        runBtn.addEventListener("click", async (ev)=>{
+          ev.stopPropagation();
+          out.classList.remove("plot-hidden", "error");
+          out.textContent = "Initializing R runtime...";
+          try {
+            const webR = await ensureWebR();
+            const code = (block.dataset.editing === "1" && block._editor) ? block._editor.value : codeText(block);
+            out.textContent = "Running...";
+            const result = await webR.evalR(code);
+            let text = "";
+            try { text = await result.toString(); } catch(e) { text = ""; }
+            out.textContent = text && text.trim() ? text : "Code executed. (For plots, use the Show Plot toggle below.)";
+          } catch (err) {
+            out.classList.add("error");
+            out.textContent = "Run failed: " + (err && err.message ? err.message : String(err));
+          }
+        });
+      }
+      toolbar.appendChild(runBtn);
+
+      block.insertAdjacentElement("afterend", toolbar);
+      toolbar.insertAdjacentElement("afterend", out);
+
+      const target = findPlotTarget(block);
+      if(target){
+        target.classList.add("plot-hidden");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "plot-toggle-btn";
+        btn.textContent = "Show Plot";
+        const toggle = ()=>{
+          const hidden = target.classList.toggle("plot-hidden");
+          btn.textContent = hidden ? "Show Plot" : "Hide Plot";
+        };
+        btn.addEventListener("click", toggle);
+        block.addEventListener("click", (ev)=>{
+          if(ev.target && ev.target.closest("button, textarea")) return;
+          toggle();
+        });
+        out.insertAdjacentElement("afterend", btn);
+      }
+
       block.dataset.interactiveWired = "1";
     });
   }
