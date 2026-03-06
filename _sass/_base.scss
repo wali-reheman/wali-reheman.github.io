@@ -662,15 +662,9 @@ footer.sticky-bottom .container {
   font-size: 0.8rem;
   color: var(--global-text-color-light);
 }
-.publications ol.bibliography li .pub-coauthors {
-  margin-top: 0.35rem;
-  margin-bottom: 0.35rem;
-  font-size: 0.86rem;
+.publications ol.bibliography li .periodical-note {
+  font-size: 0.8rem;
   color: var(--global-text-color-light);
-}
-.publications ol.bibliography li .pub-coauthors span {
-  color: var(--global-text-color);
-  font-weight: 600;
 }
 .publications ol.bibliography li .author a {
   border-bottom: 1px dashed var(--global-theme-color);
