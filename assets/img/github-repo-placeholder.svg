@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub Repository Placeholder</title>
+  <desc id="desc">Fallback image shown when external repository preview is unavailable.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#24292f" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)" />
+  <circle cx="600" cy="240" r="74" fill="#f0f6fc" />
+  <path
+    fill="#0d1117"
+    d="M600 188c-29 0-52 24-52 53 0 23 15 43 35 50 3 1 4-1 4-3v-10c-14 3-17-6-17-6-2-6-6-8-6-8-5-3 0-3 0-3 5 0 8 5 8 5 4 8 11 6 14 5 0-3 2-6 4-7-11-1-23-6-23-25 0-5 2-10 5-13 0-1-2-6 1-13 0 0 4-1 14 5a48 48 0 0 1 25 0c10-6 14-5 14-5 3 7 1 12 1 13 3 4 5 8 5 13 0 19-12 24-23 25 2 2 4 5 4 10v15c0 2 1 4 4 3 20-7 35-27 35-50 0-29-23-53-52-53z"
+  />
+  <text x="600" y="390" fill="#f0f6fc" font-size="48" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">
+    GitHub Repository
+  </text>
+  <text x="600" y="442" fill="#8b949e" font-size="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">
+    Preview unavailable, badges still live
+  </text>
+</svg>
