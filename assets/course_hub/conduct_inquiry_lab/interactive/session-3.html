@@ -3650,7 +3650,7 @@ $(document).ready(function ()  {
       if(!name) return;
       if(blocked.has(name.toLowerCase())) return;
       if(name.toLowerCase() === "tidyverse"){
-        out.push("dplyr", "tidyr", "ggplot2", "magrittr");
+        out.push("tidyverse", "dplyr", "tidyr", "ggplot2", "magrittr");
       } else {
         out.push(name);
       }
@@ -3729,10 +3729,10 @@ $(document).ready(function ()  {
       out.textContent = `Preparing package: ${pkg} (first run may take 10-60s)...`;
       const setup = [
         `if (!suppressWarnings(requireNamespace('${pkg}', quietly = TRUE))) {` ,
-        `  tryCatch(install.packages('${pkg}', quiet = TRUE), error = function(e) NULL)` ,
+        `  tryCatch(webr::install('${pkg}'), error = function(e) NULL)` ,
         `}`,
         `suppressPackageStartupMessages(try(library('${pkg}', character.only = TRUE), silent = TRUE))`
-      ].join("\\n");
+      ].join("\n");
       await webR.evalRVoid(setup);
       try {
         await webR.evalRVoid(`if (!suppressWarnings(requireNamespace('${pkg}', quietly = TRUE))) stop('missing')`);
