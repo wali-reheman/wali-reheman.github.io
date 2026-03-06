@@ -658,13 +658,14 @@ footer.sticky-bottom .container {
 .publications ol.bibliography li .pub-status-working-paper {
   background-color: #245d9b;
 }
-.publications ol.bibliography li .pub-venue {
-  font-size: 0.8rem;
+.publications ol.bibliography li .pub-venue,
+.publications ol.bibliography li .periodical-note {
+  font-size: 0.78rem;
   color: var(--global-text-color-light);
+  line-height: 1.35;
 }
 .publications ol.bibliography li .periodical-note {
-  font-size: 0.8rem;
-  color: var(--global-text-color-light);
+  margin-top: 0.08rem;
 }
 .publications ol.bibliography li .author a {
   border-bottom: 1px dashed var(--global-theme-color);
