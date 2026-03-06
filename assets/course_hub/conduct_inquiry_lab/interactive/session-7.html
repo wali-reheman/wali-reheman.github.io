@@ -3773,7 +3773,9 @@ $(document).ready(function ()  {
 
 <script id="coursehub-interactive-script">
 (function(){
-  const state = { webR: null, webRReady: null, installedPkgs: new Set() };
+  const state = { webR: null, webRReady: null, installedPkgs: new Set(), failedPkgs: new Set(), loadedFiles: new Set() };
+  const sessionMatch = window.location.pathname.match(/session-(\d+)\.html/i);
+  const sessionNum = sessionMatch ? sessionMatch[1] : null;
 
   function codeText(block){
     const codeEl = block.querySelector("code");
@@ -3790,10 +3792,20 @@ $(document).ready(function ()  {
 
   function extractPackages(code){
     const pkgs = [];
-    const re = /(?:library|require)\s*\(\s*["\']?([A-Za-z][A-Za-z0-9._]*)["\']?.*?\)/g;
+    const add = (p)=>{ if(p) pkgs.push(p); };
     let m;
-    while((m = re.exec(code)) !== null){
-      if(m[1]) pkgs.push(m[1]);
+    const libPatterns = [
+      /(?:library|require)\s*\(\s*(?:package\s*=\s*)?["\']?([A-Za-z][A-Za-z0-9._]*)["\']?/g,
+      /requireNamespace\s*\(\s*["\']?([A-Za-z][A-Za-z0-9._]*)["\']?/g
+    ];
+    libPatterns.forEach((re)=>{
+      while((m = re.exec(code)) !== null){
+        add(m[1]);
+      }
+    });
+    const nsRe = /\b([A-Za-z][A-Za-z0-9._]*)\s*(?:::|::)\s*[A-Za-z][A-Za-z0-9._]*/g;
+    while((m = nsRe.exec(code)) !== null){
+      add(m[1]);
     }
     if(/%>%/.test(code) || /\|>/.test(code)) pkgs.push("dplyr");
     if(/\bdrop_na\s*\(/.test(code)) pkgs.push("tidyr");
@@ -3806,10 +3818,12 @@ $(document).ready(function ()  {
 
   function normalizePackages(pkgs){
     const out = [];
+    const blocked = new Set(["package", "character.only", "quietly", "warn.conflicts", "lib.loc"]);
     pkgs.forEach((p)=>{
       if(!p) return;
       const name = String(p).trim();
       if(!name) return;
+      if(blocked.has(name.toLowerCase())) return;
       if(name.toLowerCase() === "tidyverse"){
         out.push("dplyr", "tidyr", "ggplot2", "magrittr");
       } else {
@@ -3819,8 +3833,55 @@ $(document).ready(function ()  {
     return Array.from(new Set(out.map((p)=>p.replace(/[^A-Za-z0-9._]/g, "")).filter(Boolean)));
   }
 
+  function extractFileRefs(code){
+    const refs = [];
+    const re = /["\']([^"\']+\.(csv|dta|sav|rda|RData|rds|RDS|xlsx|txt))["\']/g;
+    let m;
+    while((m = re.exec(code)) !== null){
+      if(m[1]) refs.push(m[1]);
+    }
+    return Array.from(new Set(refs));
+  }
+
+  function encodePath(path){
+    return path.split("/").map(encodeURIComponent).join("/");
+  }
+
+  async function fetchAsBytes(url){
+    const res = await fetch(url);
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    return new Uint8Array(await res.arrayBuffer());
+  }
+
+  async function ensureDataFiles(webR, code, out){
+    if(!sessionNum) return;
+    const files = extractFileRefs(code);
+    for(const ref of files){
+      const base = ref.split("/").pop();
+      if(!base) continue;
+      const key = `${sessionNum}:${base}`;
+      if(state.loadedFiles.has(key)) continue;
+
+      const localUrl = `/assets/course_hub/conduct_inquiry_lab/source/session-${sessionNum}/${encodePath(base)}`;
+      const githubUrl = `https://raw.githubusercontent.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/main/Session%20${sessionNum}/${encodePath(base)}`;
+
+      out.textContent = `Loading data file: ${base} ...`;
+      let bytes = null;
+      try { bytes = await fetchAsBytes(localUrl); } catch(e) {}
+      if(!bytes){
+        try { bytes = await fetchAsBytes(githubUrl); } catch(e) {}
+      }
+      if(!bytes) continue;
+
+      try {
+        webR.FS.writeFile(base, bytes);
+        state.loadedFiles.add(key);
+      } catch(e) {}
+    }
+  }
+
   async function ensurePackages(webR, code, out){
-    const wanted = normalizePackages(extractPackages(code)).filter((p)=>!state.installedPkgs.has(p));
+    const wanted = normalizePackages(extractPackages(code)).filter((p)=>!state.installedPkgs.has(p) && !state.failedPkgs.has(p));
     if(!wanted.length) return;
     await webR.evalRVoid("options(repos = c(CRAN = 'https://repo.r-wasm.org'))");
     for(const pkg of wanted){
@@ -3832,7 +3893,13 @@ $(document).ready(function ()  {
         `suppressPackageStartupMessages(try(library('${pkg}', character.only = TRUE), silent = TRUE))`
       ].join("\\n");
       await webR.evalRVoid(setup);
-      state.installedPkgs.add(pkg);
+      try {
+        await webR.evalRVoid(`if (!suppressWarnings(requireNamespace('${pkg}', quietly = TRUE))) stop('missing')`);
+        state.installedPkgs.add(pkg);
+      } catch(e) {
+        state.failedPkgs.add(pkg);
+        out.textContent = `Package ${pkg} is unavailable in this browser runtime.`;
+      }
     }
   }
 
@@ -3932,6 +3999,7 @@ $(document).ready(function ()  {
           try {
             const webR = await ensureWebR();
             const code = (block.dataset.editing === "1" && block._editor) ? block._editor.value : codeText(block);
+            await ensureDataFiles(webR, code, out);
             await ensurePackages(webR, code, out);
             out.textContent = "Running...";
             const result = await webR.evalR(code);
