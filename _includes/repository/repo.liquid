@@ -1,48 +1,44 @@
 {% assign repo_url = include.repository | split: '/' %}
-{% if site.data.repositories.github_users contains repo_url.first %}
-  {% assign show_owner = false %}
-{% else %}
-  {% assign show_owner = true %}
-{% endif %}
 
-<div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.repository }}">
-    <img
-      class="repo-img-light w-100"
-      alt="{{ include.repository }}"
-      src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_light }}&show_owner={{ show_owner }}"
-      loading="lazy"
-      onerror="this.onerror=null;this.src='https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_light }}&show_owner={{ show_owner }}';"
-    >
-    <img
-      class="repo-img-dark w-100"
-      alt="{{ include.repository }}"
-      src="https://github-readme-stats.vercel.app/api/pin/?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_dark }}&show_owner={{ show_owner }}"
-      loading="lazy"
-      onerror="this.onerror=null;this.src='https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/pin/?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_dark }}&show_owner={{ show_owner }}';"
-    >
-  </a>
-  <div class="repo-meta d-flex flex-wrap justify-content-center mt-2">
-    <img
-      class="repo-badge m-1"
-      alt="{{ include.repository }} stars"
-      src="https://img.shields.io/github/stars/{{ include.repository }}?style=flat-square&logo=github&label=stars&color=f59e0b"
-      loading="lazy"
-      onerror="this.style.display='none';"
-    >
-    <img
-      class="repo-badge m-1"
-      alt="{{ include.repository }} forks"
-      src="https://img.shields.io/github/forks/{{ include.repository }}?style=flat-square&logo=github&label=forks&color=1f6feb"
-      loading="lazy"
-      onerror="this.style.display='none';"
-    >
-    <img
-      class="repo-badge m-1"
-      alt="{{ include.repository }} last commit"
-      src="https://img.shields.io/github/last-commit/{{ include.repository }}?style=flat-square&logo=github&label=updated&color=6f42c1"
-      loading="lazy"
-      onerror="this.style.display='none';"
-    >
+<div class="repo p-2">
+  <div class="card h-100 repo-card">
+    <a href="https://github.com/{{ include.repository }}" class="repo-preview-link" aria-label="{{ include.repository }} repository">
+      <img
+        class="repo-preview w-100"
+        alt="{{ include.repository }}"
+        src="https://opengraph.githubassets.com/1/{{ include.repository }}"
+        loading="lazy"
+        onerror="this.style.display='none';"
+      >
+    </a>
+    <div class="card-body py-3">
+      <h5 class="card-title mb-1">
+        <a href="https://github.com/{{ include.repository }}">{{ repo_url[1] }}</a>
+      </h5>
+      <p class="card-text small mb-2 text-muted">{{ include.repository }}</p>
+      <div class="repo-meta d-flex flex-wrap align-items-center">
+        <img
+          class="repo-badge mr-1 mb-1"
+          alt="{{ include.repository }} stars"
+          src="https://img.shields.io/github/stars/{{ include.repository }}?style=flat-square&logo=github&label=stars&color=f59e0b"
+          loading="lazy"
+          onerror="this.style.display='none';"
+        >
+        <img
+          class="repo-badge mr-1 mb-1"
+          alt="{{ include.repository }} forks"
+          src="https://img.shields.io/github/forks/{{ include.repository }}?style=flat-square&logo=github&label=forks&color=1f6feb"
+          loading="lazy"
+          onerror="this.style.display='none';"
+        >
+        <img
+          class="repo-badge mr-1 mb-1"
+          alt="{{ include.repository }} last commit"
+          src="https://img.shields.io/github/last-commit/{{ include.repository }}?style=flat-square&logo=github&label=updated&color=6f42c1"
+          loading="lazy"
+          onerror="this.style.display='none';"
+        >
+      </div>
+    </div>
   </div>
 </div>

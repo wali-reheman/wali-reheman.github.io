@@ -451,6 +451,20 @@ footer.sticky-bottom .container {
 .repo .repo-badge {
   max-width: 100%;
 }
+.repo .repo-card {
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+}
+.repo .repo-preview {
+  border-bottom: 1px solid var(--global-divider-color);
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+}
+.repo .repo-avatar {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--global-divider-color);
+}
 
 /* Blog Post Header */
 .header-bar {

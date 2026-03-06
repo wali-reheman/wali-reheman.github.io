@@ -1,27 +1,39 @@
 <div class="repo p-2">
-  <a href="https://github.com/{{ include.username }}">
-    <img
-      class="repo-img-light w-100"
-      alt="{{ include.username }}"
-      src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&show_icons=true"
-      loading="lazy"
-      onerror="this.onerror=null;this.src='https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&show_icons=true';"
-    >
-    <img
-      class="repo-img-dark w-100"
-      alt="{{ include.username }}"
-      src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&show_icons=true"
-      loading="lazy"
-      onerror="this.onerror=null;this.src='https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&show_icons=true';"
-    >
-  </a>
-  <div class="repo-meta d-flex flex-wrap justify-content-center mt-2">
-    <img
-      class="repo-badge m-1"
-      alt="{{ include.username }} followers"
-      src="https://img.shields.io/github/followers/{{ include.username }}?style=flat-square&logo=github&label=followers&color=2ea44f"
-      loading="lazy"
-      onerror="this.style.display='none';"
-    >
+  <div class="card h-100 repo-card">
+    <div class="card-body py-3">
+      <div class="d-flex align-items-center mb-2">
+        <a href="https://github.com/{{ include.username }}" class="mr-3" aria-label="{{ include.username }} profile">
+          <img
+            class="repo-avatar rounded-circle"
+            alt="{{ include.username }}"
+            src="https://github.com/{{ include.username }}.png?size=128"
+            loading="lazy"
+            onerror="this.style.display='none';"
+          >
+        </a>
+        <div>
+          <h5 class="card-title mb-1">
+            <a href="https://github.com/{{ include.username }}">{{ include.username }}</a>
+          </h5>
+          <p class="card-text small mb-0 text-muted">GitHub profile</p>
+        </div>
+      </div>
+      <div class="repo-meta d-flex flex-wrap align-items-center">
+        <img
+          class="repo-badge mr-1 mb-1"
+          alt="{{ include.username }} followers"
+          src="https://img.shields.io/github/followers/{{ include.username }}?style=flat-square&logo=github&label=followers&color=2ea44f"
+          loading="lazy"
+          onerror="this.style.display='none';"
+        >
+        <img
+          class="repo-badge mr-1 mb-1"
+          alt="{{ include.username }} repositories"
+          src="https://img.shields.io/github/repos/{{ include.username }}?style=flat-square&logo=github&label=repos&color=6f42c1"
+          loading="lazy"
+          onerror="this.style.display='none';"
+        >
+      </div>
+    </div>
   </div>
 </div>
