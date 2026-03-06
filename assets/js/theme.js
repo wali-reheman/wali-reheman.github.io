@@ -28,6 +28,7 @@ let applyTheme = () => {
   transTheme();
   setHighlight(theme);
   setGiscusTheme(theme);
+  setSearchTheme(theme);
 
   // if mermaid is not defined, do nothing
   if (typeof mermaid !== "undefined") {
@@ -151,12 +152,7 @@ let setDiff2htmlTheme = (theme) => {
     // Get the code block content from previous element, since it is the diff code itself as defined in Markdown, but it is hidden
     let textData = elem.previousSibling.childNodes[0].innerHTML;
     elem.innerHTML = "";
-    const configuration = {
-      colorScheme: theme,
-      drawFileList: true,
-      highlight: true,
-      matching: "lines",
-    };
+    const configuration = { colorScheme: theme, drawFileList: true, highlight: true, matching: "lines" };
     const diff2htmlUi = new Diff2HtmlUI(elem, textData, configuration);
     diff2htmlUi.draw();
   });
@@ -189,6 +185,17 @@ let setVegaLiteTheme = (theme) => {
       vegaEmbed(elem, JSON.parse(jsonData));
     }
   });
+};
+
+let setSearchTheme = (theme) => {
+  const ninjaKeys = document.querySelector("ninja-keys");
+  if (!ninjaKeys) return;
+
+  if (theme === "dark") {
+    ninjaKeys.classList.add("dark");
+  } else {
+    ninjaKeys.classList.remove("dark");
+  }
 };
 
 let transTheme = () => {

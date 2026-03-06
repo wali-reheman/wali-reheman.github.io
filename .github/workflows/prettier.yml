@@ -21,16 +21,9 @@ jobs:
         uses: actions/setup-node@v4
       - name: Install Prettier 💾
         run: npm install --save-dev --save-exact prettier @shopify/prettier-plugin-liquid
-      - name: Format code with Prettier ✨
+      - name: Prettier Check 🔎
         id: prettier
-        run: npx prettier . --write
-      - name: Commit formatted code 💾
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: GitHub Actions
-          author_email: actions@github.com
-          message: "Apply Prettier formatting"
-          push: true
+        run: npx prettier . --check
       - name: Create diff 📝
         # https://docs.github.com/en/actions/learn-github-actions/expressions#failure
         if: ${{ failure() }}

@@ -11,13 +11,14 @@ group :jekyll_plugins do
     gem 'jekyll-link-attributes'
     gem 'jekyll-minifier'
     gem 'jekyll-paginate-v2'
+    gem 'jekyll-regex-replace'
     gem 'jekyll-scholar'
     gem 'jekyll-sitemap'
     gem 'jekyll-tabs'
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
-    gem 'mini_racer', '~> 0.8.0'
+    gem 'mini_racer'
     gem 'unicode_utils'
     gem 'webrick'
 end
@@ -26,5 +27,3 @@ group :other_plugins do
     gem 'feedjira'
     gem 'httparty'
 end
-
-gem "json", "~> 2.7"

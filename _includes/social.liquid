@@ -13,6 +13,9 @@
 {% if site.scholar_userid %}
   <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
 {% endif %}
+{% if site.inspirehep_id %}
+  <a href="https://inspirehep.net/authors/{{ site.inspirehep_id }}" title="Inspire HEP"><i class="ai ai-inspire"></i></a>
+{% endif %}
 {% if site.semanticscholar_id %}
   <a href="https://www.semanticscholar.org/author/{{ site.semanticscholar_id }}" title="Semantic Scholar"><i class="ai ai-semantic-scholar"></i></a>
 {% endif %}
@@ -20,7 +23,7 @@
   <a href="https://publons.com/a/{{ site.publons_id }}/" title="Publons"><i class="ai ai-publons"></i></a>
 {% endif %}
 {% if site.lattes_id %}
-  <a href="https://lattes.cnpq.br/{{ site.lattes_id }}" target="_blank" title="Lattes"><i class="ai ai-lattes"></i></a>
+  <a href="http://lattes.cnpq.br/{{ site.lattes_id }}" target="_blank" title="Lattes"><i class="ai ai-lattes"></i></a>
 {% endif %}
 {% if site.osf_id %}
   <a href="https://osf.io/{{ site.osf_id }}/" title="Open Science Framework"><i class="ai ai-osf"></i></a>

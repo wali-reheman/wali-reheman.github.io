@@ -2,11 +2,11 @@
   <script
     src="{{ site.third_party_libraries.leaflet.url.js }}"
     integrity="{{ site.third_party_libraries.leaflet.integrity.js }}"
-    crossorigin=""
+    crossorigin="anonymous"
   ></script>
   <script>
     /* Create leaflet map as another node and hide the code block, appending the leaflet node after it */
-    document.onreadystatechange = () => {
+    document.addEventListener('readystatechange', () => {
       if (document.readyState === 'complete') {
         document.querySelectorAll('pre>code.language-geojson').forEach((elem) => {
           const jsonData = elem.textContent;
@@ -20,12 +20,12 @@
           var map = L.map(mapElement);
           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
           }).addTo(map);
           let geoJSON = L.geoJSON(JSON.parse(jsonData)).addTo(map);
           map.fitBounds(geoJSON.getBounds());
         });
       }
-    };
+    });
   </script>
 {% endif %}
