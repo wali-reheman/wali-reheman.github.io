@@ -87,10 +87,15 @@
                   {% assign url = p.url %}
                 {% endif %}
                 {% assign url_clean = url | remove: 'index.html' %}
+                {% assign is_active = false %}
                 {% if url_clean == '/' %}
-                  {% assign is_active = page.url == '/' %}
+                  {% if page.url == '/' %}
+                    {% assign is_active = true %}
+                  {% endif %}
                 {% else %}
-                  {% assign is_active = page.url contains url_clean %}
+                  {% if page.url contains url_clean %}
+                    {% assign is_active = true %}
+                  {% endif %}
                 {% endif %}
                 <li class="nav-item {% if is_active %}active{% endif %}">
                   <a class="nav-link" href="{{ url | relative_url }}">
