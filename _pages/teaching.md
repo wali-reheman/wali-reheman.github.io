@@ -42,7 +42,7 @@ nav_order: 6
         <p class="course-note">Lab supplement for first-year methods training in R and Stata, including data wrangling, visualization, and introductory quantitative analysis.</p>
         <div class="course-links">
           <a href="{{ '/blog/2024/Teaching_Conduct_I_Lab/' | relative_url }}" target="_blank" rel="noopener noreferrer">Syllabus + Handouts</a>
-          <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-612" target="_blank" rel="noopener noreferrer">Interactive Tutorials</a>
+          <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096" target="_blank" rel="noopener noreferrer">Interactive Tutorials</a>
         </div>
       </div>
     </article>
