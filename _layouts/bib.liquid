@@ -1,51 +1,29 @@
 ---
 ---
 <div class="row publication-card-row">
-  {% if site.enable_publication_thumbnails %}
+  {% assign entry_col_class = 'col-sm-10' %}
+  {% if site.enable_publication_thumbnails and entry.preview %}
+    {% assign entry_col_class = 'col-sm-8' %}
     <div class="col col-sm-2 abbr">
-      {%- if entry.abbr -%}
-        {%- if site.data.venues[entry.abbr] -%}
-          {% assign venue_style = null %}
-          {% if site.data.venues[entry.abbr].color != blank %}
-            {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
-          {%- endif -%}
-          <abbr
-            class="badge rounded w-100"
-            {% if venue_style %}
-              {{ venue_style }}
-            {% endif -%}
-          >
-            {% if site.data.venues[entry.abbr].url %}
-              <a href="{{ site.data.venues[entry.abbr].url }}">{{ entry.abbr }}</a>
-            {% else %}
-              <div>{{- entry.abbr -}}</div>
-            {% endif %}
-          </abbr>
-        {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
-        {% endif %}
-      {% endif %}
-      {% if entry.preview %}
-        {% if entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
-        {% else %}
-          {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
-          {%
-            include figure.liquid
-            loading="eager"
-            path=entry_path
-            sizes = "200px"
-            class="preview z-depth-1 rounded"
-            zoomable=true
-            alt=entry.preview
-          %}
-        {% endif %}
+      {% if entry.preview contains '://' %}
+        <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
+      {% else %}
+        {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+        {%
+          include figure.liquid
+          loading="eager"
+          path=entry_path
+          sizes = "200px"
+          class="preview z-depth-1 rounded"
+          zoomable=true
+          alt=entry.preview
+        %}
       {% endif %}
     </div>
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{ entry.key }}" class="{{ entry_col_class }}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     {% assign status_text = entry.status | strip %}
@@ -62,11 +40,6 @@
         {% assign status_text = 'Working Paper' %}
       {% endif %}
     {% endif %}
-    {% assign status_down = status_text | downcase | strip %}
-    {% assign show_status_badge = true %}
-    {% if abbr_down != '' and abbr_down == status_down %}
-      {% assign show_status_badge = false %}
-    {% endif %}
     {% assign status_slug = status_text | downcase | replace: '&', '' | replace: ' ', '-' | replace: '/', '-' %}
     {% assign venue_label = '' %}
     {% if entry.journal %}
@@ -78,16 +51,12 @@
     {% elsif entry.note %}
       {% assign venue_label = entry.note %}
     {% endif %}
-    {% if show_status_badge or venue_label != '' %}
-      <div class="pub-meta-row">
-        {% if show_status_badge %}
-          <span class="pub-status pub-status-{{ status_slug }}">{{ status_text }}</span>
-        {% endif %}
-        {% if venue_label != '' %}
-          <span class="pub-venue">{{ venue_label }}</span>
-        {% endif %}
-      </div>
-    {% endif %}
+    <div class="pub-meta-row">
+      <span class="pub-status pub-status-{{ status_slug }}">{{ status_text }}</span>
+      {% if venue_label != '' %}
+        <span class="pub-venue">{{ venue_label }}</span>
+      {% endif %}
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
