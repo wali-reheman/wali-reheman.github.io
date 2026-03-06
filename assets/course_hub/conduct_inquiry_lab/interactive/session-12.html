@@ -2964,24 +2964,15 @@ the <code>readr</code> package (part of <code>tidyverse</code>) which is
 generally faster and more reliable than the base R
 <code>read.csv</code>.</p>
 <pre class="r"><code># URL for the ANES 2020 dataset
-library(devtools)
-install_github(&quot;jamesmartherus/anesr&quot;)</code></pre>
-<pre><code>## Error:
-## ! Failed to install &#39;anesr&#39; from GitHub:
-##   Could not resolve hostname [api.github.com]: Could not resolve host: api.github.com</code></pre>
-<pre class="r"><code>library(anesr)
+anes_data &lt;- readRDS(&quot;anes_pilot_2020.RDS&quot;)
 
-data(package=&quot;anesr&quot;) #View a list of available datasets
 
-data(pilot_2020) #Load 2020
 
-haven::write_dta(pilot_2020,&quot;anes_pilot_2020.dta&quot;)
+haven::write_dta(anes_data,&quot;anes_pilot_2020.dta&quot;)
 
-saveRDS(pilot_2020,&quot;anes_pilot_2020.RDS&quot;)
+saveRDS(anes_data,&quot;anes_pilot_2020.RDS&quot;)
 
-write.csv(pilot_2020,&quot;anes_pilot_2020.csv&quot;)
-
-anes_data&lt;-pilot_2020</code></pre>
+write.csv(anes_data,&quot;anes_pilot_2020.csv&quot;)</code></pre>
 </div>
 <div id="initial-data-exploration" class="section level2">
 <h2>3. Initial Data Exploration</h2>
