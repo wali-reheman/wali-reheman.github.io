@@ -81,8 +81,8 @@
                   </div>
                 </li>
               {% else %}
-                {% assign parent_link = p.permalink | remove: 'index.html' %}
-                {% if p.permalink == '/' %}
+                {% assign parent_link = p.url | remove: 'index.html' %}
+                {% if parent_link == '/' %}
                   {% assign is_active = page.url == '/' %}
                 {% else %}
                   {% assign is_active = page.url contains parent_link %}
