@@ -30,37 +30,32 @@ social: true # includes social icons at the bottom of the page
 ---
 
 <section class="home-section home-featured">
-  <div class="home-section__header">
-    <p class="home-section__kicker">Selected Work</p>
-    <h2>Research</h2>
-  </div>
-  <div class="home-work-list home-work-list--minimal">
-    <article class="home-work-item">
-      <div class="home-work-item__meta">Job Market Paper</div>
-      <h3>State vs. Faith: State-led Secularization, Political Backlash and Political Islamism among Muslims</h3>
-      <p>How coercive secularization policies can strengthen religious identity and trigger long-run political backlash.</p>
-      <a href="{{ '/publications/#MPSA2024' | relative_url }}">Research details</a>
-    </article>
-    <article class="home-work-item">
-      <div class="home-work-item__meta">Working Paper</div>
-      <h3>Exploring Institutional Explanations for Ingroup Support for Ethnic Parties</h3>
-      <p>Institutional effects on in-group support for ethnic parties using ecological inference and survey data.</p>
-      <a href="{{ '/publications/#dlublin;wreheman' | relative_url }}">Research details</a>
-    </article>
-    <article class="home-work-item">
-      <div class="home-work-item__meta">Working Paper</div>
-      <h3>Seeking the American Dream: Immigrants' Belief in Meritocracy across Generations</h3>
-      <p>How beliefs about opportunity evolve across immigrant generations in the United States.</p>
-      <a href="{{ '/publications/#APSA2023' | relative_url }}">Research details</a>
-    </article>
-  </div>
+  <h2>Research</h2>
+  <p>
+    I am an Adjunct Instructor and PhD Candidate in <em>Political Science</em> at
+    <a href="https://www.american.edu/">American University</a>. My research focuses on religion and politics,
+    ethnic identity, political socialization, and public opinion. My dissertation, <em>State vs. Faith</em>,
+    examines how state-led secularization can reshape religious identity, collective action, and long-run political backlash.
+  </p>
+  <p>
+    <strong>Job Market Paper.</strong>
+    <a href="{{ '/publications/#MPSA2024' | relative_url }}">State vs. Faith: State-led Secularization, Political Backlash and Political Islamism among Muslims</a>.
+    How coercive secularization policies can strengthen religious identity and trigger long-run political backlash.
+  </p>
+  <p>
+    <strong>Working Paper.</strong>
+    <a href="{{ '/publications/#dlublin;wreheman' | relative_url }}">Exploring Institutional Explanations for Ingroup Support for Ethnic Parties</a>.
+    Institutional effects on in-group support for ethnic parties using ecological inference and survey data.
+  </p>
+  <p>
+    <strong>Working Paper.</strong>
+    <a href="{{ '/publications/#APSA2023' | relative_url }}">Seeking the American Dream: Immigrants' Belief in Meritocracy across Generations</a>.
+    How beliefs about opportunity evolve across immigrant generations in the United States.
+  </p>
 </section>
 
 <section class="home-section">
-  <div class="home-section__header">
-    <p class="home-section__kicker">Overview</p>
-    <h2>At a Glance</h2>
-  </div>
+  <h2>At a Glance</h2>
   <ul>
     <li>Adjunct Instructor and PhD Candidate in Political Science at American University.</li>
     <li>Dissertation project: <em>State vs. Faith</em> (three-paper framework).</li>
@@ -69,10 +64,7 @@ social: true # includes social icons at the bottom of the page
 </section>
 
 <section class="home-section">
-  <div class="home-section__header">
-    <p class="home-section__kicker">Ongoing Projects</p>
-    <h2>Current Collaborations</h2>
-  </div>
+  <h2>Current Collaborations</h2>
   <ul>
     <li>With <a href="https://www.american.edu/spa/faculty/dlublin.cfm">David Lublin</a>: institutions and ethnic-party support.</li>
     <li>With <a href="https://www.american.edu/spa/faculty/suhay.cfm">Elizabeth Suhay</a>: meritocratic values across immigrant generations.</li>
