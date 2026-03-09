@@ -5,7 +5,7 @@ nav: true
 permalink: /
 subtitle: 🏫 <strong>Department of Government</strong> @ <a href='https://www.american.edu/'>American University</a>
 eyebrow: Political Science PhD Candidate
-research_one_liner: I study how state-led secularization shapes religious identity, political behavior, and long-run backlash.
+research_one_liner: I study how state-led secularization shapes religious identity, political behavior, and long-run backlash using survey methodology, ecological inference, and machine learning.
 research_areas:
   - Religion and politics
   - Ethnic identity
