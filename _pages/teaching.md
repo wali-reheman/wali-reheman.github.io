@@ -65,5 +65,6 @@ nav_order: 6
         <p class="course-note">Lecture 12: State and Society - Minority Policies in China.</p>
       </div>
     </article>
+
   </section>
 </div>

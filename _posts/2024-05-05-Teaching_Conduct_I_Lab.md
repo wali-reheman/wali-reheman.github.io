@@ -135,6 +135,7 @@ thumbnail: assets/img/B-roll/icons_Data Analytics.jpg
         <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-12.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">Open Interactive Webpage</a>
       </div>
     </div>
+
   </div>
 </div>
 

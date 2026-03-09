@@ -284,7 +284,10 @@
   border-radius: 14px;
   padding: 1rem;
   box-shadow: 0 8px 18px rgba(20, 92, 161, 0.05);
-  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    border-color 120ms ease;
 }
 
 .course-hub-wrap .resource-section--featured {
