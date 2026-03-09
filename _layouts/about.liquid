@@ -5,6 +5,9 @@ layout: default
   <div class="container home-hero__inner">
     <div class="row align-items-center">
       <div class="col-md-8">
+        {% if page.eyebrow %}
+          <p class="home-hero__eyebrow">{{ page.eyebrow }}</p>
+        {% endif %}
         <h1 class="home-hero__name">
           {% if site.title == 'blank' %}
             <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
@@ -19,6 +22,20 @@ layout: default
         {% endif %}
         {% if page.research_one_liner %}
           <p class="home-hero__agenda">{{ page.research_one_liner }}</p>
+        {% endif %}
+        {% if page.research_areas %}
+          <div class="home-hero__chips">
+            {% for area in page.research_areas %}
+              <span class="home-hero__chip">{{ area }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if page.hero_links %}
+          <div class="home-hero__links">
+            {% for link in page.hero_links %}
+              <a href="{{ link.url | relative_url }}">{{ link.label }}</a>
+            {% endfor %}
+          </div>
         {% endif %}
       </div>
 
@@ -36,17 +53,17 @@ layout: default
     <div class="clearfix">{{ content }}</div>
   </article>
 
-  {% if site.latest_posts.enabled %}
-    <section class="home-block">
-      <h2 class="home-block__title"><a href="{{ '/blog/' | relative_url }}">Latest Posts</a></h2>
-      {% include latest_posts.liquid %}
-    </section>
-  {% endif %}
-
   {% if page.social %}
     <section class="home-social text-center social">
       <div class="contact-icons">{% include social.liquid %}</div>
       <div class="contact-note">{{ site.contact_note }}</div>
+    </section>
+  {% endif %}
+
+  {% if site.latest_posts.enabled %}
+    <section class="home-block">
+      <h2 class="home-block__title"><a href="{{ '/blog/' | relative_url }}">Latest Posts</a></h2>
+      {% include latest_posts.liquid %}
     </section>
   {% endif %}
 
