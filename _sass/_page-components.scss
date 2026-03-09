@@ -520,9 +520,17 @@
   border-top: 1px solid var(--global-divider-color);
 }
 
+.home-work-list--minimal {
+  border-top: 0;
+}
+
 .home-work-item {
   padding: 0.95rem 0 1rem;
   border-bottom: 1px solid var(--global-divider-color);
+}
+
+.home-work-list--minimal .home-work-item:first-child {
+  padding-top: 0.2rem;
 }
 
 .home-work-item__meta {

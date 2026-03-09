@@ -34,7 +34,7 @@ social: true # includes social icons at the bottom of the page
     <p class="home-section__kicker">Selected Work</p>
     <h2>Research</h2>
   </div>
-  <div class="home-work-list">
+  <div class="home-work-list home-work-list--minimal">
     <article class="home-work-item">
       <div class="home-work-item__meta">Job Market Paper</div>
       <h3>State vs. Faith: State-led Secularization, Political Backlash and Political Islamism among Muslims</h3>
@@ -64,7 +64,7 @@ social: true # includes social icons at the bottom of the page
   <ul>
     <li>Adjunct Instructor and PhD Candidate in Political Science at American University.</li>
     <li>Dissertation project: <em>State vs. Faith</em> (three-paper framework).</li>
-    <li>Substantive areas: religion and politics, ethnic identity, public opinion, political behavior.</li>
+    <li>Substantive areas: religion and politics, ethnic identity, public opinion, and political behavior.</li>
   </ul>
 </section>
 
