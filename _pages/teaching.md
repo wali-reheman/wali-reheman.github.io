@@ -3,12 +3,13 @@ layout: page
 permalink: /teaching/
 title: Teaching
 nav: true
-nav_order: 6
+nav_order: 2
+description: Teaching experience, courses, and pedagogy in political science methods and comparative politics.
 ---
 
 <div class="teaching-page">
   <section class="teaching-hero">
-    <h2>Teaching</h2>
+    <h2>Approach</h2>
     <p>I teach courses that combine substantive political questions with practical research skills, with a focus on analytical rigor and reproducible workflows.</p>
   </section>
 

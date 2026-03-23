@@ -26,13 +26,9 @@
           loading="lazy"
           onerror="this.style.display='none';"
         >
-        <img
-          class="repo-badge mr-1 mb-1"
-          alt="{{ include.username }} repositories"
-          src="https://img.shields.io/github/repos/{{ include.username }}?style=flat-square&logo=github&label=repos&color=6f42c1"
-          loading="lazy"
-          onerror="this.style.display='none';"
-        >
+        <a href="https://github.com/{{ include.username }}?tab=repositories" class="repo-profile-link small" aria-label="{{ include.username }} repositories">
+          View repositories
+        </a>
       </div>
     </div>
   </div>

@@ -3,6 +3,7 @@ layout: about
 title: Home
 nav: true
 permalink: /
+description: Political science PhD candidate at American University studying religion and politics, ethnic identity, and public opinion.
 subtitle: 🏫 <strong>Department of Government</strong> @ <a href='https://www.american.edu/'>American University</a>
 eyebrow: Political Science PhD Candidate
 research_one_liner: I study how state-led secularization shapes religious identity, political behavior, and long-run backlash using survey methodology, ecological inference, and machine learning.
@@ -18,6 +19,8 @@ hero_links:
     url: /teaching/
   - label: CV
     url: /cv/
+  - label: Email
+    url: mailto:rw8143a@american.edu
 profile:
   align: right
   image: /assets/img/profile.png
@@ -35,6 +38,10 @@ social: true # includes social icons at the bottom of the page
     <a href="https://www.american.edu/">American University</a>. My research focuses on religion and politics,
     ethnic identity, political socialization, and public opinion. My dissertation, <em>State vs. Faith</em>,
     examines how state-led secularization can reshape religious identity, collective action, and long-run political backlash.
+    You can read a summary of the job market paper on
+    <a href="{{ '/research/state-vs-faith/' | relative_url }}">its project page</a>
+    or browse the broader
+    <a href="{{ '/publications/' | relative_url }}">research portfolio</a>.
   </p>
 </section>
 

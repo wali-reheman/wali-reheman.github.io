@@ -1,9 +1,10 @@
 ---
 layout: default
 permalink: /blog/
-title: blog
+title: Writing
 nav: true
-nav_order: 1
+nav_order: 4
+description: Writing on research, teaching, and methods.
 pagination:
   enabled: true
   collection: posts

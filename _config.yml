@@ -8,13 +8,15 @@ middle_name:
 last_name: Reheman
 email: rw8143a@american.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
+  Political science PhD candidate at American University studying religion and politics,
+  ethnic identity, public opinion, and the political consequences of state-led secularization.
 
 footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
-keywords: # add your own keywords or leave empty
+keywords: political science, religion and politics, ethnic identity, public opinion, political behavior, secularization, American University
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://wali-reheman.com # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -46,7 +48,7 @@ rss_icon: false
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 
 # Dimensions
 max_width: 800px
@@ -58,9 +60,9 @@ max_width: 800px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
+og_image: https://wali-reheman.com/assets/img/social-card.png # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -106,7 +108,7 @@ x_username: RehemanW # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
-contact_note:
+contact_note: "Best way to reach me: <a href=\"mailto:rw8143a@american.edu\">rw8143a@american.edu</a>."
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -125,8 +127,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: # blog_name will be displayed in your blog page
-blog_description:
+blog_name: Writing # blog_name will be displayed in your blog page
+blog_description: Notes on research, methods, and teaching.
 permalink: /blog/:year/:title/
 
 # Pagination

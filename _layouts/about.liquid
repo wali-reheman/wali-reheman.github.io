@@ -33,7 +33,16 @@ layout: default
         {% if page.hero_links %}
           <div class="home-hero__links">
             {% for link in page.hero_links %}
-              <a href="{{ link.url | relative_url }}">{{ link.label }}</a>
+              {% assign link_is_external = false %}
+              {% if link.url contains '://' or link.url contains 'mailto:' %}
+                {% assign link_is_external = true %}
+              {% endif %}
+              <a
+                href="{% if link_is_external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
+                {% if link.url contains '://' %}
+                  target="_blank" rel="noopener noreferrer"
+                {% endif %}
+              >{{ link.label }}</a>
             {% endfor %}
           </div>
         {% endif %}
