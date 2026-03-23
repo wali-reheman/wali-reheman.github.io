@@ -8,10 +8,9 @@ description: Teaching experience, courses, and pedagogy in political science met
 ---
 
 <div class="teaching-page">
-  <section class="teaching-hero">
-    <h2>Approach</h2>
-    <p>I teach courses that combine substantive political questions with practical research skills, with a focus on analytical rigor and reproducible workflows.</p>
-  </section>
+  <p class="page-lead">
+    I teach courses that combine substantive political questions with practical research skills, with a focus on analytical rigor and reproducible workflows.
+  </p>
 
   <section class="teaching-block">
     <h3>Teaching Interests</h3>
