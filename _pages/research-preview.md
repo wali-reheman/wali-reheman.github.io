@@ -22,10 +22,10 @@ nav: false
     </article>
     <article class="featured-card">
       <span class="badge status-working">Working Paper</span>
-      <h3>State vs. Faith: State-led Secularization and Political Islamism</h3>
+      <h3>The Rise of Islamophobic Parties in Europe Depresses Muslims' Support for Democracy</h3>
       <p>Examines political backlash dynamics among Muslim populations under varying secularization regimes.</p>
       <div class="card-links">
-        <a href="/publications/#MPSA2024">Details</a>
+        <a href="/publications/#sgrewal;wreheman">Details</a>
         <a href="/publications/">Research Page</a>
       </div>
     </article>

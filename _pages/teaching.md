@@ -25,13 +25,11 @@ description: Teaching experience, courses, and pedagogy in political science met
     <h3>Teaching Experience</h3>
 
     <article class="institution">
-      <header>
-        <h4 id="american-university">American University</h4>
-      </header>
       <div class="course-card">
         <div class="course-top">
           <div>
-            <h5>Conduct of Inquiry Lab</h5>
+            <h5 id="american-university">Conduct of Inquiry Lab</h5>
+            <p class="course-org">American University</p>
             <p class="term">Fall 2024; Fall 2025</p>
           </div>
           <div class="badges">
@@ -48,13 +46,11 @@ description: Teaching experience, courses, and pedagogy in political science met
     </article>
 
     <article class="institution">
-      <header>
-        <h4 id="columbia-university">Columbia University</h4>
-      </header>
       <div class="course-card">
         <div class="course-top">
           <div>
-            <h5>Chinese Politics</h5>
+            <h5 id="columbia-university">Chinese Politics</h5>
+            <p class="course-org">Columbia University</p>
             <p class="term">Spring 2023; Spring 2024</p>
           </div>
           <div class="badges">

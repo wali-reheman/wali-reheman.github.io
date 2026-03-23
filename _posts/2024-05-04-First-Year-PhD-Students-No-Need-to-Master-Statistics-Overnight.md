@@ -2,7 +2,7 @@
 layout: post
 title: First-Year PhD Students! No Need to Master Statistics Overnight
 date: 2024-05-04 11:59:00-0400
-description:
+description: A practical note on learning statistics gradually, focusing on strong foundations and useful habits rather than premature technical mastery.
 tags: advise
 categories: teaching
 giscus_comments: true

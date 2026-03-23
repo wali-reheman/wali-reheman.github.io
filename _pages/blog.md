@@ -110,13 +110,26 @@ pagination:
     {% assign year = post.date | date: "%Y" %}
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
+    {% assign post_blurb = post.description | to_s | strip %}
+    {% if post_blurb == "" %}
+      {% assign post_blurb = post.excerpt | strip_html | strip | truncatewords: 28 %}
+    {% endif %}
+    {% assign primary_label = "" %}
+    {% assign primary_type = "" %}
+    {% if post.tags and post.tags.size > 0 %}
+      {% assign primary_label = post.tags[0] %}
+      {% assign primary_type = "tag" %}
+    {% elsif post.categories and post.categories.size > 0 %}
+      {% assign primary_label = post.categories[0] %}
+      {% assign primary_type = "category" %}
+    {% endif %}
 
     <li>
 
 {% if post.thumbnail %}
 
 <div class="row">
-          <div class="col-sm-9">
+          <div class="col-sm-10">
 {% endif %}
         <h3>
         {% if post.redirect == blank %}
@@ -130,46 +143,30 @@ pagination:
           <a class="post-title" href="{{ post.redirect | relative_url }}">{{ post.title }}</a>
         {% endif %}
       </h3>
-      <p>{{ post.description }}</p>
-      <p class="post-meta">
-        {{ read_time }} min read &nbsp; &middot; &nbsp;
-        {{ post.date | date: '%B %d, %Y' }}
+      <p class="post-list-desc">{{ post_blurb }}</p>
+      <p class="post-meta post-meta-compact">
+        <span>{{ post.date | date: '%B %d, %Y' }}</span>
+        <span>&middot;</span>
+        <span>{{ read_time }} min read</span>
+        {% if primary_label != "" %}
+          <span>&middot;</span>
+          {% if primary_type == "tag" %}
+            <span># {{ primary_label }}</span>
+          {% else %}
+            <span>{{ primary_label }}</span>
+          {% endif %}
+        {% endif %}
         {% if post.external_source %}
-        &nbsp; &middot; &nbsp; {{ post.external_source }}
+          <span>&middot;</span>
+          <span>{{ post.external_source }}</span>
         {% endif %}
       </p>
-      <p class="post-tags">
-        <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-          <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
-
-          {% if tags != "" %}
-          &nbsp; &middot; &nbsp;
-            {% for tag in post.tags %}
-            <a href="{{ tag | slugify | prepend: '/blog/tag/' | prepend: site.baseurl}}">
-              <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
-              {% unless forloop.last %}
-                &nbsp;
-              {% endunless %}
-              {% endfor %}
-          {% endif %}
-
-          {% if categories != "" %}
-          &nbsp; &middot; &nbsp;
-            {% for category in post.categories %}
-            <a href="{{ category | slugify | prepend: '/blog/category/' | prepend: site.baseurl}}">
-              <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
-              {% unless forloop.last %}
-                &nbsp;
-              {% endunless %}
-              {% endfor %}
-          {% endif %}
-    </p>
 
 {% if post.thumbnail %}
 
 </div>
 
-  <div class="col-sm-3">
+  <div class="col-sm-2 post-list-thumb-wrap">
     <img class="card-img post-list-thumbnail" src="{{post.thumbnail | relative_url}}" alt="image">
   </div>
 </div>

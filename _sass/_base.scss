@@ -602,17 +602,25 @@ footer.sticky-bottom .container {
 .post-list li {
   border-bottom: 1px solid var(--global-divider-color);
   list-style: none;
-  padding: 2rem 0;
+  padding: 1.8rem 0;
 }
 .post-list li .post-meta {
   color: var(--global-text-color-light);
-  font-size: 0.875rem;
+  font-size: 0.82rem;
   margin-bottom: 0;
 }
-.post-list li .post-tags {
-  color: var(--global-text-color-light);
-  font-size: 0.875rem;
-  padding: 0.25rem 0;
+.post-list li .post-title {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+}
+.post-list li .post-list-desc {
+  color: var(--global-text-color);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 0.45rem;
+}
+.post-list li .post-meta-compact span {
+  white-space: nowrap;
 }
 .post-list li a {
   color: var(--global-text-color);
@@ -852,22 +860,36 @@ html.transition *:after {
 
 /* Extra Markdown Styles for Posts */
 .post {
-  .post-meta {
-    color: var(--global-text-color-light);
-    font-size: 0.875rem;
-    margin-bottom: 0;
+  .post-header {
+    margin-bottom: 1.4rem;
   }
-  .post-tags {
+  .post-back-link {
+    display: inline-block;
+    margin-bottom: 0.9rem;
     color: var(--global-text-color-light);
-    font-size: 0.875rem;
-    padding: 0.25rem 0 1rem;
-  }
-  .post-tags a {
-    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
     text-decoration: none;
   }
-  .post-tags a:hover {
+  .post-back-link:hover {
     color: var(--global-theme-color);
+    text-decoration: none;
+  }
+  .post-title {
+    margin-bottom: 0.55rem;
+    max-width: 26ch;
+  }
+  .post-dek {
+    max-width: 42rem;
+    color: var(--global-text-color-light);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+  }
+  .post-meta {
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    margin-bottom: 0;
   }
 }
 
@@ -1016,6 +1038,12 @@ nav[data-toggle="toc"] .nav-link.active:hover {
   font-size: 0.875rem;
   margin-bottom: 0;
   padding-top: 0.5rem;
+}
+
+.post-list-thumb-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 /* Unloaded Elements */

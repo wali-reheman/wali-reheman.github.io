@@ -36,6 +36,8 @@
         {% assign status_text = 'Published' %}
       {% elsif abbr_down contains 'published' %}
         {% assign status_text = 'Published' %}
+      {% elsif entry.abbr and entry.abbr != '' %}
+        {% assign status_text = entry.abbr %}
       {% else %}
         {% assign status_text = 'Working Paper' %}
       {% endif %}

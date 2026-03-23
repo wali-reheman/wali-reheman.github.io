@@ -3,7 +3,7 @@ layout: post
 title: "Course Hub for Conduct of Inquiry I Lab - SPA 096"
 date: 2024-05-05 11:59:00-0400
 permalink: /blog/2024/teaching-conduct-i-lab/
-description:
+description: Course hub for Conduct of Inquiry I Lab, with the syllabus, session materials, and interactive tutorials in R and Stata.
 tags: Rstats
 categories: teaching
 giscus_comments: true

@@ -4,6 +4,16 @@ layout: default
 {% assign year = page.date | date: '%Y' %}
 {% assign tags = page.tags | join: '' %}
 {% assign categories = page.categories | join: '' %}
+{% assign read_time = page.content | number_of_words | divided_by: 180 | plus: 1 %}
+{% assign primary_label = '' %}
+{% assign primary_type = '' %}
+{% if page.tags and page.tags.size > 0 %}
+  {% assign primary_label = page.tags[0] %}
+  {% assign primary_type = 'tag' %}
+{% elsif page.categories and page.categories.size > 0 %}
+  {% assign primary_label = page.categories[0] %}
+  {% assign primary_type = 'category' %}
+{% endif %}
 
 {% if page._styles %}
   <!-- Page/Post style -->
@@ -16,48 +26,27 @@ layout: default
 
 <div class="post">
   <header class="post-header">
+    {% if url_beginning == '/blog/' %}
+      <a class="post-back-link" href="{{ '/blog/' | relative_url }}">Back to Writing</a>
+    {% endif %}
     <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description and page.description != '' %}
+      <p class="post-dek">{{ page.description }}</p>
+    {% endif %}
     <p class="post-meta">
-      Created in {{ page.date | date: '%B %d, %Y' }}
+      {{ page.date | date: '%B %d, %Y' }}
+      &nbsp; &middot; &nbsp; {{ read_time }} min read
+      {% if primary_label != '' %}
+        &nbsp; &middot; &nbsp;
+        {% if primary_type == 'tag' %}
+          # {{ primary_label }}
+        {% else %}
+          {{ primary_label }}
+        {% endif %}
+      {% endif %}
       {% if page.author %}by {{ page.author }}{% endif %}
       {% if page.last_updated %}, last updated in {{ page.last_updated | date: '%B %d, %Y' }}{% endif %}
       {% if page.meta %}• {{ page.meta }}{% endif %}
-    </p>
-    <p class="post-tags">
-      {% if url_beginning == '/blog/' %}
-        <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
-      {% else %}
-        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
-      {% endif %}
-      {% if tags != '' %}
-        &nbsp; &middot; &nbsp;
-        {% for tag in page.tags %}
-          {% if url_beginning == '/blog/' %}
-            <a href="{{ tag | slugify | prepend: '/blog/tag/' | prepend: site.baseurl}}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
-          {% else %}
-            <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
-          {% endif %}
-          {% unless forloop.last %}
-            &nbsp;
-          {% endunless %}
-        {% endfor %}
-      {% endif %}
-
-      {% if categories != '' %}
-        &nbsp; &middot; &nbsp;
-        {% for category in page.categories %}
-          {% if url_beginning == '/blog/' %}
-            <a href="{{ category | slugify | prepend: '/blog/category/' | prepend: site.baseurl}}">
-              <i class="fa-solid fa-tag fa-sm"></i> {{ category -}}
-            </a>
-          {% else %}
-            <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
-          {% endif %}
-          {% unless forloop.last %}
-            &nbsp;
-          {% endunless %}
-        {% endfor %}
-      {% endif %}
     </p>
   </header>
 
