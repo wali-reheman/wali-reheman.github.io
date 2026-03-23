@@ -38,10 +38,8 @@ social: true # includes social icons at the bottom of the page
     <a href="https://www.american.edu/">American University</a>. My research focuses on religion and politics,
     ethnic identity, political socialization, and public opinion. My dissertation, <em>State vs. Faith</em>,
     examines how state-led secularization can reshape religious identity, collective action, and long-run political backlash.
-    You can read a summary of the job market paper on
-    <a href="{{ '/research/state-vs-faith/' | relative_url }}">its project page</a>
-    or browse the broader
-    <a href="{{ '/publications/' | relative_url }}">research portfolio</a>.
+    You can browse the broader <a href="{{ '/publications/' | relative_url }}">research portfolio</a>
+    or request the latest draft by <a href="mailto:rw8143a@american.edu">email</a>.
   </p>
 </section>
 

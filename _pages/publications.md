@@ -17,7 +17,7 @@ description: Job market paper and current working papers on religion and politic
   </p>
 
   <div class="page-actions">
-    <a href="{{ '/research/state-vs-faith/' | relative_url }}" class="btn btn-sm z-depth-0 pub-action" role="button">Project Summary</a>
+    <a href="mailto:rw8143a@american.edu" class="btn btn-sm z-depth-0 pub-action" role="button">Request Draft</a>
     <a href="{{ '/cv/' | relative_url }}" class="btn btn-sm z-depth-0 pub-action" role="button">View CV</a>
   </div>
 

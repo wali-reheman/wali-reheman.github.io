@@ -24,18 +24,27 @@
       </div>
       <div class="repo-stats mb-3">
         <a href="https://github.com/{{ include.username }}" aria-label="{{ include.username }} GitHub stats">
-          <img
-            class="repo-img-light repo-stats-image"
-            alt="{{ include.username }} GitHub stats"
-            src="https://github-readme-stats.vercel.app/api?username={{ include.username }}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&theme={{ site.repo_theme_light }}"
-            loading="lazy"
-          >
-          <img
-            class="repo-img-dark repo-stats-image"
-            alt="{{ include.username }} GitHub stats"
-            src="https://github-readme-stats.vercel.app/api?username={{ include.username }}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&theme={{ site.repo_theme_dark }}"
-            loading="lazy"
-          >
+          {% if site.enable_darkmode %}
+            <img
+              class="repo-img-light repo-stats-image"
+              alt="{{ include.username }} GitHub stats"
+              src="https://github-readme-stats.vercel.app/api?username={{ include.username }}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&theme={{ site.repo_theme_light }}"
+              loading="lazy"
+            >
+            <img
+              class="repo-img-dark repo-stats-image"
+              alt="{{ include.username }} GitHub stats"
+              src="https://github-readme-stats.vercel.app/api?username={{ include.username }}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&theme={{ site.repo_theme_dark }}"
+              loading="lazy"
+            >
+          {% else %}
+            <img
+              class="repo-stats-image"
+              alt="{{ include.username }} GitHub stats"
+              src="https://github-readme-stats.vercel.app/api?username={{ include.username }}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&theme={{ site.repo_theme_light }}"
+              loading="lazy"
+            >
+          {% endif %}
         </a>
       </div>
       <div class="repo-actions">
