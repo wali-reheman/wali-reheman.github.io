@@ -444,6 +444,9 @@ footer.sticky-bottom .container {
   .repo {
     max-width: 50%;
   }
+  .repo.repo-profile {
+    max-width: 100%;
+  }
 }
 .repo .repo-meta {
   gap: 0.45rem;
@@ -463,6 +466,21 @@ footer.sticky-bottom .container {
   width: 56px;
   height: 56px;
   border: 1px solid var(--global-divider-color);
+}
+.repo .repo-stats {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 14px;
+  padding: 0.4rem;
+  background: linear-gradient(180deg, rgba(20, 92, 161, 0.05), transparent 80%);
+}
+.repo .repo-stats a {
+  display: block;
+}
+.repo .repo-stats-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 .repo .repo-description {
   color: var(--global-text-color-light);
