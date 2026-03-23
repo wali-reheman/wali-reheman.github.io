@@ -2,5 +2,19 @@ github_users:
   - wali-reheman
 
 github_repos:
-  - wali-reheman/Extract-data-from-old-pdf
-  - wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096
+  - repository: wali-reheman/Extract-data-from-old-pdf
+    title: Extract Data from Old PDF
+    description: Tools for extracting structured data from difficult archival and legacy PDF files.
+    language: Python
+    tags:
+      - Data extraction
+      - OCR
+      - Archival workflows
+  - repository: wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096
+    title: Conduct of Inquiry Lab
+    description: Course materials, tutorials, and reproducible methods workflows for first-year political science training.
+    language: Stata + R
+    tags:
+      - Teaching
+      - Methods
+      - Reproducibility

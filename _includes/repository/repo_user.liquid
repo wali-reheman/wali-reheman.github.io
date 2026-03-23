@@ -15,18 +15,16 @@
           <h5 class="card-title mb-1">
             <a href="https://github.com/{{ include.username }}">{{ include.username }}</a>
           </h5>
-          <p class="card-text small mb-0 text-muted">GitHub profile</p>
+          <p class="card-text small mb-0 text-muted">Teaching materials, reproducible workflows, and research support code.</p>
         </div>
       </div>
       <div class="repo-meta d-flex flex-wrap align-items-center">
-        <img
-          class="repo-badge mr-1 mb-1"
-          alt="{{ include.username }} followers"
-          src="https://img.shields.io/github/followers/{{ include.username }}?style=flat-square&logo=github&label=followers&color=2ea44f"
-          loading="lazy"
-          onerror="this.style.display='none';"
-        >
-        <a href="https://github.com/{{ include.username }}?tab=repositories" class="repo-profile-link small" aria-label="{{ include.username }} repositories">
+        <span class="repo-pill repo-pill-primary">GitHub profile</span>
+        <span class="repo-pill">Selected public repositories</span>
+      </div>
+      <div class="repo-actions">
+        <a href="https://github.com/{{ include.username }}" class="repo-action-link">Profile</a>
+        <a href="https://github.com/{{ include.username }}?tab=repositories" class="repo-action-link repo-action-link-muted" aria-label="{{ include.username }} repositories">
           View repositories
         </a>
       </div>

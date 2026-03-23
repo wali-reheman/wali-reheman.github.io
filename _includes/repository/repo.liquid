@@ -1,43 +1,43 @@
-{% assign repo_url = include.repository | split: '/' %}
+{% assign repo_id = include.repository.repository | default: include.repository %}
+{% assign repo_url = repo_id | split: '/' %}
+{% assign repo_title = include.repository.title | default: repo_url[1] %}
+{% assign repo_description = include.repository.description %}
+{% assign repo_language = include.repository.language %}
+{% assign repo_tags = include.repository.tags %}
 
 <div class="repo p-2">
   <div class="card h-100 repo-card">
-    <a href="https://github.com/{{ include.repository }}" class="repo-preview-link" aria-label="{{ include.repository }} repository">
+    <a href="https://github.com/{{ repo_id }}" class="repo-preview-link" aria-label="{{ repo_id }} repository">
       <img
         class="repo-preview w-100"
-        alt="{{ include.repository }}"
-        src="https://opengraph.githubassets.com/1/{{ include.repository }}"
+        alt="{{ repo_id }}"
+        src="https://opengraph.githubassets.com/1/{{ repo_id }}"
         loading="lazy"
         onerror="this.onerror=null;this.src='{{ '/assets/img/github-repo-placeholder.svg' | relative_url }}';"
       >
     </a>
     <div class="card-body py-3">
       <h5 class="card-title mb-1">
-        <a href="https://github.com/{{ include.repository }}">{{ repo_url[1] }}</a>
+        <a href="https://github.com/{{ repo_id }}">{{ repo_title }}</a>
       </h5>
-      <p class="card-text small mb-2 text-muted">{{ include.repository }}</p>
+      <p class="card-text small mb-2 text-muted">{{ repo_id }}</p>
+      {% if repo_description %}
+        <p class="repo-description mb-3">{{ repo_description }}</p>
+      {% endif %}
       <div class="repo-meta d-flex flex-wrap align-items-center">
-        <img
-          class="repo-badge mr-1 mb-1"
-          alt="{{ include.repository }} stars"
-          src="https://img.shields.io/github/stars/{{ include.repository }}?style=flat-square&logo=github&label=stars&color=f59e0b"
-          loading="lazy"
-          onerror="this.style.display='none';"
-        >
-        <img
-          class="repo-badge mr-1 mb-1"
-          alt="{{ include.repository }} forks"
-          src="https://img.shields.io/github/forks/{{ include.repository }}?style=flat-square&logo=github&label=forks&color=1f6feb"
-          loading="lazy"
-          onerror="this.style.display='none';"
-        >
-        <img
-          class="repo-badge mr-1 mb-1"
-          alt="{{ include.repository }} last commit"
-          src="https://img.shields.io/github/last-commit/{{ include.repository }}?style=flat-square&logo=github&label=updated&color=6f42c1"
-          loading="lazy"
-          onerror="this.style.display='none';"
-        >
+        {% if repo_language %}
+          <span class="repo-pill repo-pill-primary">{{ repo_language }}</span>
+        {% endif %}
+        {% if repo_tags %}
+          {% for tag in repo_tags limit: 3 %}
+            <span class="repo-pill">{{ tag }}</span>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="repo-actions">
+        <a href="https://github.com/{{ repo_id }}" class="repo-action-link">View on GitHub</a>
+        <a href="https://github.com/{{ repo_id }}/stargazers" class="repo-action-link repo-action-link-muted">Stars</a>
+        <a href="https://github.com/{{ repo_id }}/commits" class="repo-action-link repo-action-link-muted">Recent activity</a>
       </div>
     </div>
   </div>

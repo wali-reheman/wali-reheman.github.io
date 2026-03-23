@@ -446,10 +446,9 @@ footer.sticky-bottom .container {
   }
 }
 .repo .repo-meta {
-  line-height: 1;
-}
-.repo .repo-badge {
-  max-width: 100%;
+  gap: 0.45rem;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
 }
 .repo .repo-card {
   background-color: var(--global-card-bg-color);
@@ -464,6 +463,46 @@ footer.sticky-bottom .container {
   width: 56px;
   height: 56px;
   border: 1px solid var(--global-divider-color);
+}
+.repo .repo-description {
+  color: var(--global-text-color-light);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.repo .repo-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--global-divider-color);
+  color: var(--global-text-color-light);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.repo .repo-pill-primary {
+  border-color: rgba(20, 92, 161, 0.25);
+  background: rgba(20, 92, 161, 0.08);
+  color: var(--global-theme-color);
+}
+.repo .repo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.repo .repo-action-link {
+  color: var(--global-text-color);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.repo .repo-action-link:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+.repo .repo-action-link-muted {
+  color: var(--global-text-color-light);
 }
 
 /* Blog Post Header */
