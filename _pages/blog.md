@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /blog/
-title: Writing
+title: Posts
 nav: true
 nav_order: 4
-description: Writing on research, teaching, and methods.
+description: Posts on research, teaching, and methods.
 pagination:
   enabled: true
   collection: posts

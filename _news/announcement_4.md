@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**Conference**: "State vs. Faith: State-Led Secularization, Religious Backlash and Political Islamism" (APSA 2025)
+**Conference**: Presented "State vs. Faith: State-Led Secularization, Backlash, and Islamism among Muslims" at APSA 2025

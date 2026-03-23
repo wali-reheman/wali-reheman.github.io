@@ -322,6 +322,10 @@ ul.task-list input[type="checkbox"] {
 }
 .navbar.navbar-light .navbar-nav .nav-item .nav-link {
   color: var(--global-text-color);
+  font-size: 15px;
+}
+.navbar .dropdown-item {
+  font-size: 15px;
 }
 .navbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
   color: var(--global-hover-color);

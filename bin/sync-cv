@@ -1,0 +1,145 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DEFAULT_SOURCE="${HOME}/Documents/American University/Dissertation/Application Materials"
+TARGET_PATH="${ROOT_DIR}/assets/pdf/CV_WaliReheman.pdf"
+POLL_SECONDS=2
+WATCH_MODE=0
+SOURCE_PATH="${DEFAULT_SOURCE}"
+
+usage() {
+  cat <<EOF
+Usage: $(basename "$0") [--source /path/to/cv.pdf|/path/to/folder] [--watch] [--interval seconds]
+
+Copies a local CV PDF into the website's live CV path:
+  ${TARGET_PATH}
+
+Options:
+  --source PATH      Source PDF or folder to watch. Default: ${DEFAULT_SOURCE}
+  --watch            Keep watching the source file and sync on changes.
+  --interval N       Polling interval in seconds for --watch mode. Default: ${POLL_SECONDS}
+  -h, --help         Show this help message.
+EOF
+}
+
+log() {
+  printf '[sync-cv] %s\n' "$*"
+}
+
+mtime() {
+  local path="$1"
+  stat -f '%m' "${path}"
+}
+
+resolve_source_file() {
+  if [[ -f "${SOURCE_PATH}" ]]; then
+    printf '%s\n' "${SOURCE_PATH}"
+    return 0
+  fi
+
+  if [[ -d "${SOURCE_PATH}" ]]; then
+    local latest_file=""
+    local latest_mtime=0
+    local candidate candidate_mtime base_name
+
+    shopt -s nocasematch
+    while IFS= read -r -d '' candidate; do
+      base_name="$(basename "${candidate}")"
+      if [[ ! "${base_name}" =~ cv|curriculum.*vitae|resume ]]; then
+        continue
+      fi
+
+      candidate_mtime="$(mtime "${candidate}")"
+      if [[ "${candidate_mtime}" -gt "${latest_mtime}" ]]; then
+        latest_mtime="${candidate_mtime}"
+        latest_file="${candidate}"
+      fi
+    done < <(find "${SOURCE_PATH}" -maxdepth 1 -type f -iname '*.pdf' -print0)
+    shopt -u nocasematch
+
+    if [[ -n "${latest_file}" ]]; then
+      printf '%s\n' "${latest_file}"
+      return 0
+    fi
+  fi
+
+  return 1
+}
+
+sync_once() {
+  local source_file
+  if ! source_file="$(resolve_source_file)"; then
+    log "No CV-like PDF found at: ${SOURCE_PATH}" >&2
+    exit 1
+  fi
+
+  mkdir -p "$(dirname "${TARGET_PATH}")"
+
+  if [[ -f "${TARGET_PATH}" ]] && cmp -s "${source_file}" "${TARGET_PATH}"; then
+    log "No change. Website CV already matches source."
+    return 0
+  fi
+
+  cp "${source_file}" "${TARGET_PATH}"
+  log "Updated website CV from ${source_file}"
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --source)
+      SOURCE_PATH="$2"
+      shift 2
+      ;;
+    --watch)
+      WATCH_MODE=1
+      shift
+      ;;
+    --interval)
+      POLL_SECONDS="$2"
+      shift 2
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "Unknown argument: $1" >&2
+      usage >&2
+      exit 1
+      ;;
+  esac
+done
+
+if [[ "${WATCH_MODE}" -eq 0 ]]; then
+  sync_once
+fi
+
+if [[ "${WATCH_MODE}" -eq 1 ]]; then
+  log "Watching ${SOURCE_PATH} for CV PDF changes every ${POLL_SECONDS}s"
+  last_source_file="$(resolve_source_file || true)"
+  last_mtime=""
+  if [[ -n "${last_source_file}" ]]; then
+    sync_once
+    last_mtime="$(mtime "${last_source_file}")"
+  else
+    log "No matching CV PDF yet. Waiting for one to appear."
+  fi
+
+  while true; do
+    sleep "${POLL_SECONDS}"
+
+    current_source_file="$(resolve_source_file || true)"
+    if [[ -z "${current_source_file}" ]]; then
+      continue
+    fi
+
+    current_mtime="$(mtime "${current_source_file}")"
+    if [[ "${current_source_file}" != "${last_source_file}" || "${current_mtime}" != "${last_mtime}" ]]; then
+      sync_once
+      last_source_file="${current_source_file}"
+      last_mtime="${current_mtime}"
+    fi
+  done
+fi

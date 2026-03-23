@@ -11,8 +11,9 @@ description: Job market paper and current working papers on religion and politic
 
 <div class="publications research-page">
   <p class="page-lead">
-    My research examines religion and politics, ethnic identity, political socialization, and public opinion.
-    For the latest job market paper draft or related questions, please
+    My research examines how state-building campaigns reshape ethnic and religious identity, public opinion,
+    and political behavior. It draws on survey research, ecological inference, multilevel modeling, and
+    computational methods. For the latest job market paper draft or related questions, please
     <a href="mailto:rw8143a@american.edu">reach out by email</a>.
   </p>
 
