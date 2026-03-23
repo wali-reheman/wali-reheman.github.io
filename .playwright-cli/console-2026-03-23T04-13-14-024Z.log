@@ -1,0 +1,3 @@
+[     262ms] TypeError: Cannot read properties of null (reading 'getTotalLength')
+    at HTMLDocument.<anonymous> (https://mightyalex.com/ui.js?v=10:54:28)
+[     445ms] [WARNING] Hotjar not launching due to suspicious userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/146.0.0.0 Safari/537.36 @ https://static.hotjar.com/c/hotjar-3929354.js?sv=6:2

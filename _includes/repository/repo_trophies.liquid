@@ -1,16 +1,18 @@
 {% assign repo_trophy_base_url = site.repo_trophies.base_url | default: 'https://github-profile-trophy.vercel.app' %}
+{% assign repo_trophy_query = 'title=MultiLanguage,LongTimeUser,Commits,PullRequest,Stars,Repositories' %}
+{% assign repo_trophy_version = 'v=selected-six' %}
 <div class="repo p-2 text-center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
     <span class="d-none d-sm-none d-md-block">
       <img
         class="repo-img-light"
         alt="{{ include.username }}"
-        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6"
+        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6&{{ repo_trophy_query }}&{{ repo_trophy_version }}"
       >
       <img
         class="repo-img-dark"
         alt="{{ include.username }}"
-        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6"
+        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6&{{ repo_trophy_query }}&{{ repo_trophy_version }}"
       >
     </span>
 
@@ -18,12 +20,12 @@
       <img
         class="repo-img-light"
         alt="{{ include.username }}"
-        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4"
+        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4&{{ repo_trophy_query }}&{{ repo_trophy_version }}"
       >
       <img
         class="repo-img-dark"
         alt="{{ include.username }}"
-        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4"
+        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4&{{ repo_trophy_query }}&{{ repo_trophy_version }}"
       >
     </span>
 
@@ -31,12 +33,12 @@
       <img
         class="repo-img-light"
         alt="{{ include.username }}"
-        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3"
+        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3&{{ repo_trophy_query }}&{{ repo_trophy_version }}"
       >
       <img
         class="repo-img-dark"
         alt="{{ include.username }}"
-        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3"
+        src="{{ repo_trophy_base_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3&{{ repo_trophy_query }}&{{ repo_trophy_version }}"
       >
     </span>
   </a>

@@ -3,54 +3,48 @@ layout: default
 ---
 <section class="home-hero">
   <div class="container home-hero__inner">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-        {% if page.eyebrow %}
-          <p class="home-hero__eyebrow">{{ page.eyebrow }}</p>
-        {% endif %}
-        <h1 class="home-hero__name">
-          {% if site.title == 'blank' %}
-            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-            {{ site.last_name }}
-          {% else %}
-            {{ site.title }}
+    <div class="row align-items-start home-hero__row">
+      <div class="{% if page.profile.image %}col-lg-8 col-md-8{% else %}col-lg-9{% endif %}">
+        <div class="home-hero__copy">
+          {% if page.eyebrow %}
+            <p class="home-hero__eyebrow">{{ page.eyebrow }}</p>
           {% endif %}
-        </h1>
-        <p class="home-hero__subtitle">{{ page.subtitle }}</p>
-        {% if page.tagline %}
-          <p class="home-hero__tagline">{{ page.tagline }}</p>
-        {% endif %}
-        {% if page.research_one_liner %}
-          <p class="home-hero__agenda">{{ page.research_one_liner }}</p>
-        {% endif %}
-        {% if page.research_areas %}
-          <div class="home-hero__chips">
-            {% for area in page.research_areas %}
-              <span class="home-hero__chip">{{ area }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-        {% if page.hero_links %}
-          <div class="home-hero__links">
-            {% for link in page.hero_links %}
-              {% assign link_is_external = false %}
-              {% if link.url contains '://' or link.url contains 'mailto:' %}
-                {% assign link_is_external = true %}
-              {% endif %}
-              <a
-                href="{% if link_is_external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
-                {% if link.url contains '://' %}
-                  target="_blank" rel="noopener noreferrer"
+          <h1 class="home-hero__name">
+            {% if site.title == 'blank' %}
+              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+              {{ site.last_name }}
+            {% else %}
+              {{ site.title }}
+            {% endif %}
+          </h1>
+          <p class="home-hero__subtitle">{{ page.subtitle }}</p>
+          {% if page.research_one_liner %}
+            <p class="home-hero__agenda">{{ page.research_one_liner }}</p>
+          {% endif %}
+          {% if page.hero_links %}
+            <div class="home-hero__links">
+              {% for link in page.hero_links %}
+                {% assign link_is_external = false %}
+                {% if link.url contains '://' or link.url contains 'mailto:' %}
+                  {% assign link_is_external = true %}
                 {% endif %}
-              >{{ link.label }}</a>
-            {% endfor %}
-          </div>
-        {% endif %}
+                <a
+                  href="{% if link_is_external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
+                  {% if link.url contains '://' %}
+                    target="_blank" rel="noopener noreferrer"
+                  {% endif %}
+                >{{ link.label }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
       </div>
 
       {% if page.profile.image %}
-        <div class="col-md-4 text-center">
-          <img src="{{ page.profile.image }}" class="home-hero__image" alt="Profile image">
+        <div class="col-lg-3 offset-lg-1 col-md-4">
+          <div class="home-hero__portrait">
+            <img src="{{ page.profile.image }}" class="home-hero__image" alt="Profile image">
+          </div>
         </div>
       {% endif %}
     </div>
@@ -63,15 +57,15 @@ layout: default
   </article>
 
   {% if page.social %}
-    <section class="home-social text-center social">
-      <div class="contact-icons">{% include social.liquid %}</div>
+    <section class="home-contact social">
       <div class="contact-note">{{ site.contact_note }}</div>
+      <div class="contact-icons">{% include social.liquid %}</div>
     </section>
   {% endif %}
 
   {% if site.latest_posts.enabled %}
     <section class="home-block">
-      <h2 class="home-block__title"><a href="{{ '/blog/' | relative_url }}">Latest Posts</a></h2>
+      <h2 class="home-block__title"><a href="{{ '/blog/' | relative_url }}">Writing</a></h2>
       {% include latest_posts.liquid %}
     </section>
   {% endif %}

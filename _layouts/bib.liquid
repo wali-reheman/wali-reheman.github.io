@@ -255,8 +255,16 @@
           <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0 pub-action" role="button">Slides</a>
         {% endif %}
       {% endif %}
-      {% if entry.website %}
-        <a href="{{ entry.website }}" class="btn btn-sm z-depth-0 pub-action" role="button">Website</a>
+      {% assign entry_website = entry.website | to_s | strip %}
+      {% assign hide_entry_website = false %}
+      {% if entry.job_market_paper and entry.job_market_paper != 'false' %}
+        {% assign hide_entry_website = true %}
+      {% endif %}
+      {% if entry_website contains 'state-vs-faith' %}
+        {% assign hide_entry_website = true %}
+      {% endif %}
+      {% if entry_website != '' and hide_entry_website == false %}
+        <a href="{{ entry_website }}" class="btn btn-sm z-depth-0 pub-action" role="button">Website</a>
       {% endif %}
     </div>
     {% if site.enable_publication_badges %}

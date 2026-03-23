@@ -4,23 +4,9 @@ title: Home
 nav: true
 permalink: /
 description: Political science PhD candidate at American University studying religion and politics, ethnic identity, and public opinion.
-subtitle: 🏫 <strong>Department of Government</strong> @ <a href='https://www.american.edu/'>American University</a>
+subtitle: <strong>Department of Government</strong>, <a href='https://www.american.edu/'>American University</a>
 eyebrow: Political Science PhD Candidate
-research_one_liner: I study how state-led secularization shapes religious identity, political behavior, and long-run backlash using survey methodology, ecological inference, and machine learning.
-research_areas:
-  - Religion and politics
-  - Ethnic identity
-  - Public opinion
-  - Political behavior
-hero_links:
-  - label: Research
-    url: /publications/
-  - label: Teaching
-    url: /teaching/
-  - label: CV
-    url: /cv/
-  - label: Email
-    url: mailto:rw8143a@american.edu
+research_one_liner: I study how state-led secularization reshapes religious identity and political behavior, using survey research, ecological inference, and computational methods.
 profile:
   align: right
   image: /assets/img/profile.png
@@ -34,20 +20,9 @@ social: true # includes social icons at the bottom of the page
 <section class="home-section home-featured">
   <h2>Research</h2>
   <p>
-    I am an Adjunct Instructor and PhD Candidate in <em>Political Science</em> at
-    <a href="https://www.american.edu/">American University</a>. My research focuses on religion and politics,
-    ethnic identity, political socialization, and public opinion. My dissertation, <em>State vs. Faith</em>,
-    examines how state-led secularization can reshape religious identity, collective action, and long-run political backlash.
-    You can browse the broader <a href="{{ '/publications/' | relative_url }}">research portfolio</a>
-    or request the latest draft by <a href="mailto:rw8143a@american.edu">email</a>.
+    My dissertation, <em>State vs. Faith</em>, studies how state-led secularization can reshape religious identity,
+    collective action, and long-run political backlash. You can browse the broader
+    <a href="{{ '/publications/' | relative_url }}">research portfolio</a> or request the latest draft by
+    <a href="mailto:rw8143a@american.edu">email</a>.
   </p>
-</section>
-
-<section class="home-section">
-  <h2>Current Collaborations</h2>
-  <ul>
-    <li>With <a href="https://www.american.edu/spa/faculty/dlublin.cfm">David Lublin</a>: institutions and ethnic-party support.</li>
-    <li>With <a href="https://www.american.edu/spa/faculty/suhay.cfm">Elizabeth Suhay</a>: meritocratic values across immigrant generations.</li>
-    <li>With <a href="https://www.american.edu/spa/faculty/sgrewal.cfm">Sharan Grewal</a>: radical-right effects on Muslim minority opinion in Europe.</li>
-  </ul>
 </section>

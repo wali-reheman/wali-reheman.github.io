@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+RUBY_PREFIX="/opt/homebrew/opt/ruby@3.3"
+RUBY_GEM_BIN="/opt/homebrew/lib/ruby/gems/3.3.0/bin"
+BUNDLER_VERSION="2.5.7"
+PYTHON_ENV_DIR="${ROOT_DIR}/vendor/preview-venv"
+
+if [[ ! -x "${RUBY_PREFIX}/bin/ruby" ]]; then
+  echo "Homebrew ruby@3.3 is not installed." >&2
+  echo "Run: brew install ruby@3.3" >&2
+  exit 1
+fi
+
+if [[ ! -x "${PYTHON_ENV_DIR}/bin/jupyter" ]]; then
+  if ! command -v python3 >/dev/null 2>&1; then
+    echo "python3 is required to create the local notebook preview environment." >&2
+    exit 1
+  fi
+  echo "Creating local preview Python environment..." >&2
+  python3 -m venv "${PYTHON_ENV_DIR}"
+  "${PYTHON_ENV_DIR}/bin/pip" install --upgrade pip nbconvert
+fi
+
+export PATH="${PYTHON_ENV_DIR}/bin:/opt/homebrew/bin:${RUBY_GEM_BIN}:${RUBY_PREFIX}/bin:${PATH}"
+
+cd "${ROOT_DIR}"
+
+if ! gem list -i bundler -v "${BUNDLER_VERSION}" >/dev/null 2>&1; then
+  echo "Installing bundler ${BUNDLER_VERSION}..." >&2
+  gem install bundler -v "${BUNDLER_VERSION}"
+fi
+
+if ! bundle _${BUNDLER_VERSION}_ check >/dev/null 2>&1; then
+  echo "Installing site gems..." >&2
+  bundle _${BUNDLER_VERSION}_ install
+fi
+
+echo "Preview available at http://localhost:4000"
+echo "Press Ctrl+C to stop the server."
+
+exec bundle _${BUNDLER_VERSION}_ exec jekyll serve --livereload --incremental --host 127.0.0.1 --port 4000 "$@"

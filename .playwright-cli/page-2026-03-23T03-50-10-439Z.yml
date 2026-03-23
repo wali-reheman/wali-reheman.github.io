@@ -1,0 +1,117 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "Wali Reheman" [ref=e4] [cursor=pointer]:
+          - /url: /
+        - list [ref=e6]:
+          - listitem [ref=e7]:
+            - link "Home" [ref=e8] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e9]:
+            - link "Research" [ref=e10] [cursor=pointer]:
+              - /url: /publications/
+          - listitem [ref=e11]:
+            - link "Teaching" [ref=e12] [cursor=pointer]:
+              - /url: /teaching/
+          - listitem [ref=e13]:
+            - link "CV" [ref=e14] [cursor=pointer]:
+              - /url: /cv/
+          - listitem [ref=e15]:
+            - link "Writing" [ref=e16] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=e17]:
+            - link "Code (current)" [ref=e18] [cursor=pointer]:
+              - /url: /repositories/
+              - text: Code
+              - generic [ref=e19]: (current)
+    - progressbar [ref=e20]
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - heading "Code" [level=1] [ref=e24]
+        - paragraph [ref=e25]: Selected teaching and research repositories hosted on GitHub.
+      - article [ref=e26]:
+        - paragraph [ref=e27]: I use GitHub to share teaching materials, reproducible workflows, and small research-support tools. The repositories below are the best entry points for current public work.
+        - heading "GitHub Profile" [level=2] [ref=e28]
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - link "wali-reheman profile" [ref=e34] [cursor=pointer]:
+              - /url: https://github.com/wali-reheman
+              - img "wali-reheman" [ref=e35]
+            - generic [ref=e36]:
+              - heading "wali-reheman" [level=5] [ref=e37]:
+                - link "wali-reheman" [ref=e38] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman
+              - paragraph [ref=e39]: Teaching materials, reproducible workflows, and research support code.
+          - generic [ref=e40]:
+            - generic [ref=e41]: GitHub profile
+            - generic [ref=e42]: Selected public repositories
+          - generic [ref=e43]:
+            - link "wali-reheman GitHub stats":
+              - /url: https://github.com/wali-reheman
+              - img "wali-reheman GitHub stats"
+          - generic [ref=e44]:
+            - link "Profile" [ref=e45] [cursor=pointer]:
+              - /url: https://github.com/wali-reheman
+            - link "wali-reheman repositories" [ref=e46] [cursor=pointer]:
+              - /url: https://github.com/wali-reheman?tab=repositories
+              - text: View repositories
+        - separator [ref=e47]
+        - heading "GitHub Trophies" [level=2] [ref=e48]
+        - link "wali-reheman" [ref=e51] [cursor=pointer]:
+          - /url: https://github.com/ryo-ma/github-profile-trophy
+          - img "wali-reheman" [ref=e53]
+        - separator [ref=e54]
+        - heading "Selected Repositories" [level=2] [ref=e55]
+        - generic [ref=e56]:
+          - generic [ref=e58]:
+            - link "wali-reheman/Extract-data-from-old-pdf repository" [ref=e59] [cursor=pointer]:
+              - /url: https://github.com/wali-reheman/Extract-data-from-old-pdf
+              - img "wali-reheman/Extract-data-from-old-pdf" [ref=e60]
+            - generic [ref=e61]:
+              - heading "Extract Data from Old PDF" [level=5] [ref=e62]:
+                - link "Extract Data from Old PDF" [ref=e63] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman/Extract-data-from-old-pdf
+              - paragraph [ref=e64]: wali-reheman/Extract-data-from-old-pdf
+              - paragraph [ref=e65]: Tools for extracting structured data from difficult archival and legacy PDF files.
+              - generic [ref=e66]:
+                - generic [ref=e67]: Python
+                - generic [ref=e68]: Data extraction
+                - generic [ref=e69]: OCR
+                - generic [ref=e70]: Archival workflows
+              - generic [ref=e71]:
+                - link "View on GitHub" [ref=e72] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman/Extract-data-from-old-pdf
+                - link "Stars" [ref=e73] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman/Extract-data-from-old-pdf/stargazers
+                - link "Recent activity" [ref=e74] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman/Extract-data-from-old-pdf/commits
+          - generic [ref=e76]:
+            - link "wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096 repository" [ref=e77] [cursor=pointer]:
+              - /url: https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096
+              - img "wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096" [ref=e78]
+            - generic [ref=e79]:
+              - heading "Conduct of Inquiry Lab" [level=5] [ref=e80]:
+                - link "Conduct of Inquiry Lab" [ref=e81] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096
+              - paragraph [ref=e82]: wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096
+              - paragraph [ref=e83]: Course materials, tutorials, and reproducible methods workflows for first-year political science training.
+              - generic [ref=e84]:
+                - generic [ref=e85]: Stata + R
+                - generic [ref=e86]: Teaching
+                - generic [ref=e87]: Methods
+                - generic [ref=e88]: Reproducibility
+              - generic [ref=e89]:
+                - link "View on GitHub" [ref=e90] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096
+                - link "Stars" [ref=e91] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/stargazers
+                - link "Recent activity" [ref=e92] [cursor=pointer]:
+                  - /url: https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/commits
+  - contentinfo [ref=e93]:
+    - generic [ref=e94]:
+      - text: © Copyright 2026 Wali Reheman. Hosted by
+      - link "GitHub Pages" [ref=e95] [cursor=pointer]:
+        - /url: https://pages.github.com/
+      - text: .

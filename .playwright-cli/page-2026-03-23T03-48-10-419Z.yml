@@ -1,0 +1,137 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - link "Wali Reheman" [ref=e4] [cursor=pointer]:
+          - /url: /
+        - list [ref=e6]:
+          - listitem [ref=e7]:
+            - link "Home (current)" [ref=e8] [cursor=pointer]:
+              - /url: /
+              - text: Home
+              - generic [ref=e9]: (current)
+          - listitem [ref=e10]:
+            - link "Research" [ref=e11] [cursor=pointer]:
+              - /url: /publications/
+          - listitem [ref=e12]:
+            - link "Teaching" [ref=e13] [cursor=pointer]:
+              - /url: /teaching/
+          - listitem [ref=e14]:
+            - link "CV" [ref=e15] [cursor=pointer]:
+              - /url: /cv/
+          - listitem [ref=e16]:
+            - link "Writing" [ref=e17] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=e18]:
+            - link "Code" [ref=e19] [cursor=pointer]:
+              - /url: /repositories/
+    - progressbar [ref=e20]
+  - main [ref=e21]:
+    - generic [ref=e24]:
+      - generic [ref=e26]:
+        - paragraph [ref=e27]: Political Science PhD Candidate
+        - heading "Wali Reheman" [level=1] [ref=e28]
+        - paragraph [ref=e29]:
+          - strong [ref=e30]: Department of Government
+          - text: ","
+          - link "American University" [ref=e31] [cursor=pointer]:
+            - /url: https://www.american.edu/
+        - paragraph [ref=e32]: I study how state-led secularization reshapes religious identity and political behavior, using survey research, ecological inference, and computational methods.
+        - generic [ref=e33]:
+          - link "Research" [ref=e34] [cursor=pointer]:
+            - /url: /publications/
+          - link "Teaching" [ref=e35] [cursor=pointer]:
+            - /url: /teaching/
+          - link "CV" [ref=e36] [cursor=pointer]:
+            - /url: /cv/
+          - link "Email" [ref=e37] [cursor=pointer]:
+            - /url: mailto:rw8143a@american.edu
+      - img "Profile image" [ref=e40]
+    - generic [ref=e41]:
+      - article [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - heading "Research" [level=2] [ref=e45]
+            - paragraph [ref=e46]:
+              - text: I am a PhD candidate and adjunct instructor in
+              - emphasis [ref=e47]: Political Science
+              - text: at
+              - link "American University" [ref=e48] [cursor=pointer]:
+                - /url: https://www.american.edu/
+              - text: . My work focuses on religion and politics, ethnic identity, political socialization, and public opinion. My dissertation,
+              - emphasis [ref=e49]: State vs. Faith
+              - text: ", examines how state-led secularization can reshape religious identity, collective action, and long-run political backlash. You can browse the broader"
+              - link "research portfolio" [ref=e50] [cursor=pointer]:
+                - /url: /publications/
+              - text: or request the latest draft by
+              - link "email" [ref=e51] [cursor=pointer]:
+                - /url: mailto:rw8143a@american.edu
+              - text: .
+          - generic [ref=e52]:
+            - heading "Current Collaborations" [level=2] [ref=e53]
+            - list [ref=e54]:
+              - listitem [ref=e55]:
+                - text: With
+                - link "David Lublin" [ref=e56] [cursor=pointer]:
+                  - /url: https://www.american.edu/spa/faculty/dlublin.cfm
+                - text: ": institutions and ethnic-party support."
+              - listitem [ref=e57]:
+                - text: With
+                - link "Elizabeth Suhay" [ref=e58] [cursor=pointer]:
+                  - /url: https://www.american.edu/spa/faculty/suhay.cfm
+                - text: ": meritocratic values across immigrant generations."
+              - listitem [ref=e59]:
+                - text: With
+                - link "Sharan Grewal" [ref=e60] [cursor=pointer]:
+                  - /url: https://www.american.edu/spa/faculty/sgrewal.cfm
+                - text: ": radical-right effects on Muslim minority opinion in Europe."
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - text: "Best way to reach me:"
+          - link "rw8143a@american.edu" [ref=e63] [cursor=pointer]:
+            - /url: mailto:rw8143a@american.edu
+          - text: .
+        - generic [ref=e64]:
+          - link "" [ref=e65] [cursor=pointer]:
+            - /url: mailto:%72%77%38%31%34%33%61@%61%6D%65%72%69%63%61%6E.%65%64%75
+            - generic [ref=e66]: 
+          - link "" [ref=e67] [cursor=pointer]:
+            - /url: https://github.com/wali-reheman
+            - generic [ref=e68]: 
+          - link "" [ref=e69] [cursor=pointer]:
+            - /url: https://twitter.com/RehemanW
+            - generic [ref=e70]: 
+          - link "" [ref=e71] [cursor=pointer]:
+            - /url: https://www.american.edu/profiles/students/rw8143a.cfm
+            - generic [ref=e72]: 
+      - generic [ref=e73]:
+        - heading "News" [level=2] [ref=e74]:
+          - link "News" [ref=e75] [cursor=pointer]:
+            - /url: /news/
+        - table [ref=e78]:
+          - rowgroup [ref=e79]:
+            - 'row "Sep 13, 2025 Conference: “State vs. Faith: State-Led Secularization, Religious Backlash and Political Islamism” (APSA 2025)" [ref=e80]':
+              - rowheader "Sep 13, 2025" [ref=e81]
+              - 'cell "Conference: “State vs. Faith: State-Led Secularization, Religious Backlash and Political Islamism” (APSA 2025)" [ref=e82]':
+                - strong [ref=e83]: Conference
+                - text: ": “State vs. Faith: State-Led Secularization, Religious Backlash and Political Islamism” (APSA 2025)"
+            - 'row "Dec 11, 2024 Workshop: State Islam in the Middle East, hosted by SEPAD 📍Lancaster,UK" [ref=e84]':
+              - rowheader "Dec 11, 2024" [ref=e85]
+              - 'cell "Workshop: State Islam in the Middle East, hosted by SEPAD 📍Lancaster,UK" [ref=e86]':
+                - strong [ref=e87]: Workshop
+                - text: ": State Islam in the Middle East, hosted by"
+                - link "SEPAD" [ref=e88] [cursor=pointer]:
+                  - /url: https://www.sepad.org.uk/
+                - text: 📍
+                - emphasis [ref=e89]: Lancaster,UK
+            - 'row "Apr 07, 2024 Working Paper: “State vs. Faith: Effect of Interplay between State and Religious Institution on Regime Preference” (Presented at MPSA 2024, WPSA 2024)" [ref=e90]':
+              - rowheader "Apr 07, 2024" [ref=e91]
+              - 'cell "Working Paper: “State vs. Faith: Effect of Interplay between State and Religious Institution on Regime Preference” (Presented at MPSA 2024, WPSA 2024)" [ref=e92]':
+                - strong [ref=e93]: Working Paper
+                - text: ": “State vs. Faith: Effect of Interplay between State and Religious Institution on Regime Preference” (Presented at MPSA 2024, WPSA 2024)"
+  - contentinfo [ref=e94]:
+    - generic [ref=e95]:
+      - text: © Copyright 2026 Wali Reheman. Hosted by
+      - link "GitHub Pages" [ref=e96] [cursor=pointer]:
+        - /url: https://pages.github.com/
+      - text: .

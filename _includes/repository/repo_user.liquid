@@ -1,28 +1,7 @@
 <div class="repo repo-profile p-2">
   <div class="card h-100 repo-card">
     <div class="card-body py-3">
-      <div class="d-flex align-items-center mb-2">
-        <a href="https://github.com/{{ include.username }}" class="mr-3" aria-label="{{ include.username }} profile">
-          <img
-            class="repo-avatar rounded-circle"
-            alt="{{ include.username }}"
-            src="https://github.com/{{ include.username }}.png?size=128"
-            loading="lazy"
-            onerror="this.style.display='none';"
-          >
-        </a>
-        <div>
-          <h5 class="card-title mb-1">
-            <a href="https://github.com/{{ include.username }}">{{ include.username }}</a>
-          </h5>
-          <p class="card-text small mb-0 text-muted">Teaching materials, reproducible workflows, and research support code.</p>
-        </div>
-      </div>
-      <div class="repo-meta d-flex flex-wrap align-items-center">
-        <span class="repo-pill repo-pill-primary">GitHub profile</span>
-        <span class="repo-pill">Selected public repositories</span>
-      </div>
-      <div class="repo-stats mb-3">
+      <div class="repo-stats mb-0 mx-auto">
         <a href="https://github.com/{{ include.username }}" aria-label="{{ include.username }} GitHub stats">
           {% if site.enable_darkmode %}
             <img
@@ -45,12 +24,6 @@
               loading="lazy"
             >
           {% endif %}
-        </a>
-      </div>
-      <div class="repo-actions">
-        <a href="https://github.com/{{ include.username }}" class="repo-action-link">Profile</a>
-        <a href="https://github.com/{{ include.username }}?tab=repositories" class="repo-action-link repo-action-link-muted" aria-label="{{ include.username }} repositories">
-          View repositories
         </a>
       </div>
     </div>
