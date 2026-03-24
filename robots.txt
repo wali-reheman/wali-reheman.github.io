@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://wali-reheman.com/sitemap.xml
+Sitemap: https://walireheman.com/sitemap.xml
