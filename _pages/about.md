@@ -21,6 +21,11 @@ social: true # includes social icons at the bottom of the page
     margin-bottom: 0.95rem;
   }
 
+  .home-featured p:not(:first-child) {
+    text-align: justify;
+    text-align-last: left;
+  }
+
   .home-featured p:last-child {
     margin-bottom: 0;
   }
