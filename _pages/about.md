@@ -17,27 +17,12 @@ social: true # includes social icons at the bottom of the page
 ---
 
 <style>
-  .home-featured {
-    max-width: 40rem;
-  }
-
   .home-featured p {
-    margin: 0 0 1rem;
-    line-height: 1.62;
-  }
-
-  .home-featured p:first-child {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.95rem;
   }
 
   .home-featured p:last-child {
     margin-bottom: 0;
-  }
-
-  @media (min-width: 768px) {
-    .home-main {
-      max-width: 820px;
-    }
   }
 </style>
 
