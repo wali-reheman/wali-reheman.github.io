@@ -9,7 +9,7 @@ description: Teaching experience, courses, and pedagogy in political science met
 
 <div class="teaching-page">
   <section class="teaching-block">
-    <h3>Teaching Interests</h3>
+    <h2>Teaching Interests</h2>
     <div class="interest-chips">
       <span>Politics and Religion</span>
       <span>R for Social Science</span>
@@ -18,7 +18,7 @@ description: Teaching experience, courses, and pedagogy in political science met
   </section>
 
   <section class="teaching-block">
-    <h3>Teaching Experience</h3>
+    <h2>Teaching Experience</h2>
 
     <article class="institution">
       <div class="course-card">
