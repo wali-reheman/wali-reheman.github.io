@@ -8,10 +8,6 @@ description: Teaching experience, courses, and pedagogy in political science met
 ---
 
 <div class="teaching-page">
-  <p class="page-lead">
-    I teach courses that combine substantive political questions with practical research skills, with a focus on analytical rigor and reproducible workflows.
-  </p>
-
   <section class="teaching-block">
     <h3>Teaching Interests</h3>
     <div class="interest-chips">
