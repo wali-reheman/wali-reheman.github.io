@@ -19,14 +19,14 @@ social: true # includes social icons at the bottom of the page
 <style>
   .home-featured p {
     margin-bottom: 1.05rem;
+    line-height: 1.58;
     text-wrap: pretty;
   }
 
   .home-featured p:not(:first-child) {
     hyphens: auto;
-    text-align: justify;
-    text-align-last: left;
-    text-justify: inter-word;
+    max-width: 66ch;
+    text-align: left;
   }
 
   .home-featured p:last-child {
@@ -34,8 +34,8 @@ social: true # includes social icons at the bottom of the page
   }
 
   @media (max-width: 575.98px) {
-    .home-featured p:not(:first-child) {
-      text-align: left;
+    .home-featured p {
+      line-height: 1.54;
     }
   }
 </style>
