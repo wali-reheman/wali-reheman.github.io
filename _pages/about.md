@@ -17,13 +17,12 @@ social: true # includes social icons at the bottom of the page
 ---
 
 <style>
-  .home-featured p {
-    margin-bottom: 0.95rem;
+  .home-featured {
+    max-width: 36rem;
   }
 
-  .home-featured p:not(:first-child) {
-    text-align: justify;
-    text-align-last: left;
+  .home-featured p {
+    margin-bottom: 0.95rem;
   }
 
   .home-featured p:last-child {
