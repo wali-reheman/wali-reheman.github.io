@@ -4,7 +4,7 @@ layout: default
 <section class="home-hero">
   <div class="container home-hero__inner">
     <div class="row align-items-start home-hero__row">
-      <div class="{% if page.profile.image %}col-lg-8 col-md-8{% else %}col-lg-9{% endif %}">
+      <div class="{% if page.profile.image %}col-lg-7 col-md-7{% else %}col-lg-9{% endif %}">
         <div class="home-hero__copy">
           {% if page.eyebrow %}
             <p class="home-hero__eyebrow">{{ page.eyebrow }}</p>
@@ -41,7 +41,7 @@ layout: default
       </div>
 
       {% if page.profile.image %}
-        <div class="col-lg-3 offset-lg-1 col-md-4">
+        <div class="col-lg-4 offset-lg-1 col-md-5">
           <div class="home-hero__portrait">
             <img src="{{ page.profile.image }}" class="home-hero__image" alt="Profile image">
           </div>
