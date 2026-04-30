@@ -24,8 +24,10 @@ social: true # includes social icons at the bottom of the page
   }
 
   .home-featured p:not(:first-child) {
+    -webkit-hyphens: auto;
     hyphens: auto;
-    max-width: 66ch;
+    hyphenate-limit-chars: 8 3 3;
+    max-width: 72ch;
     text-align: left;
   }
 
@@ -36,6 +38,15 @@ social: true # includes social icons at the bottom of the page
   @media (max-width: 575.98px) {
     .home-featured p {
       line-height: 1.54;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .home-featured p:not(:first-child) {
+      text-align: justify;
+      text-align-last: left;
+      text-justify: inter-word;
+      word-spacing: -0.015em;
     }
   }
 </style>
