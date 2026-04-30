@@ -7,11 +7,6 @@ nav_order: 5
 description: Selected teaching and research repositories hosted on GitHub.
 ---
 
-<p class="page-lead">
-  I use GitHub to share teaching materials, reproducible workflows, and small research-support tools.
-  The repositories below are the best entry points for current public work.
-</p>
-
 ## GitHub Profile
 
 {% if site.data.repositories.github_users %}
