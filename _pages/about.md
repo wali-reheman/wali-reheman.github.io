@@ -60,9 +60,9 @@ social: true # includes social icons at the bottom of the page
     junior fellow with the Association for Analytic Learning about Islam and Muslim Societies (AALIMS).
   </p>
   <p>
-    I broadly study how state-building campaigns make and remake ethnic and religious identities, and how those shifts
-    shape public opinion and political behavior, using survey research, ecological inference, multilevel modeling, and
-    computational methods.
+    I broadly study how institutional context and state-building campaigns make and remake ethnic and religious
+    identities, and how those shifts shape public opinion and political behavior, using survey research, ecological
+    inference, multilevel modeling, and computational methods.
   </p>
   <p>
     My dissertation, <em>State vs. Faith</em>, examines how state-led secularization campaigns reshape religious
