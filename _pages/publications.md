@@ -10,13 +10,6 @@ description: Job market paper and current working papers on religion and politic
 <!-- _pages/publications.md -->
 
 <div class="publications research-page">
-  <p class="page-lead">
-    My research examines how state-building campaigns reshape ethnic and religious identity, public opinion,
-    and political behavior. It draws on survey research, ecological inference, multilevel modeling, and
-    computational methods. For the latest job market paper draft or related questions, please
-    <a href="mailto:rw8143a@american.edu">reach out by email</a>.
-  </p>
-
   <div class="page-actions">
     <a href="mailto:rw8143a@american.edu" class="btn btn-sm z-depth-0 pub-action" role="button">Request Draft</a>
     <a href="{{ '/cv/' | relative_url }}" class="btn btn-sm z-depth-0 pub-action" role="button">View CV</a>
