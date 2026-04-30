@@ -3,31 +3,46 @@ layout: about
 title: Home
 nav: true
 permalink: /
-description: Political science PhD candidate at American University studying religion and politics, ethnic identity, and public opinion.
-subtitle: <strong>Department of Government</strong>, <a href='https://www.american.edu/'>American University</a>
+description: PhD Candidate and Adjunct Instructor in the Department of Government at American University studying religion and politics, ethnic identity, and public opinion.
+subtitle: <strong>Department of Government</strong><br>School of Public Affairs, <a href='https://www.american.edu/'>American University</a><br>4400 Massachusetts Avenue NW, Washington, DC 20016
 eyebrow: Political Science PhD Candidate
-research_one_liner: I study how state-building campaigns make and remake ethnic and religious identities, and how those shifts shape public opinion and political behavior, using survey research, ecological inference, multilevel modeling, and computational methods.
 profile:
   align: right
   image: /assets/img/profile.png
   image_circular: true # crops the image to make it circular
   more_info:
-news: true # includes a list of news items
+news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
+<style>
+  .home-featured p {
+    margin-bottom: 0.95rem;
+  }
+
+  .home-featured p:last-child {
+    margin-bottom: 0;
+  }
+</style>
+
 <section class="home-section home-featured">
-  <h2>Research</h2>
+  <p>
+    Hi 👋
+  </p>
+  <p>
+    I am a PhD Candidate and Adjunct Instructor in the Department of Government at American University. I am also a
+    junior fellow with the Association for Analytic Learning about Islam and Muslim Societies (AALIMS).
+  </p>
+  <p>
+    I broadly study how state-building campaigns make and remake ethnic and religious identities, and how those shifts
+    shape public opinion and political behavior, using survey research, ecological inference, multilevel modeling, and
+    computational methods.
+  </p>
   <p>
     My dissertation, <em>State vs. Faith</em>, examines how state-led secularization campaigns reshape religious
     identity, collective action, and long-run political backlash. Across its chapters, it asks how efforts to
     regulate, suppress, or recast religion can end up strengthening religious attachment and reorganizing
     political behavior.
-  </p>
-  <p>
-    You can browse the broader
-    <a href="{{ '/publications/' | relative_url }}">research portfolio</a> or request the latest draft by
-    <a href="mailto:rw8143a@american.edu">email</a>.
   </p>
 </section>
