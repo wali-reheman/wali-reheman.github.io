@@ -17,10 +17,6 @@ social: true # includes social icons at the bottom of the page
 ---
 
 <style>
-  .home-featured {
-    max-width: 36rem;
-  }
-
   .home-featured p {
     margin-bottom: 0.95rem;
   }
