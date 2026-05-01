@@ -393,7 +393,7 @@ inject_interactivity <- function(html) {
     '',
     '  function extractFileRefs(code){',
     '    const refs = [];',
-    '    const re = /[\"\\\']([^\"\\\']+\\.(csv|dta|sav|rda|rdata|rds|xlsx?|txt|tsv|json|png|pdf))[\"\\\']/gi;',
+    '    const re = /[\"\\\']([^\"\\\'\\s]+\\.(csv|dta|sav|rda|rdata|rds|xlsx?|txt|tsv|json|png|pdf))[\"\\\']/gi;',
     '    let m;',
     '    while((m = re.exec(code)) !== null){',
     '      if(m[1]) refs.push(m[1]);',

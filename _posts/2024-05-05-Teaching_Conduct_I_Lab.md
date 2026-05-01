@@ -55,7 +55,7 @@ thumbnail: assets/img/B-roll/icons_Data Analytics.jpg
     </div>
 
     <div class="resource-section">
-      <h3>Session 3: Basic Stata Operations</h3>
+      <h3>Session 3: Basic Stata Operations and Data Manipulation</h3>
       <p>Core Stata commands, sorting, graphing, and data export workflow.</p>
       <div class="btn-row">
         <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-3.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">Open Interactive Webpage</a>
@@ -97,7 +97,7 @@ thumbnail: assets/img/B-roll/icons_Data Analytics.jpg
     </div>
 
     <div class="resource-section">
-      <h3>Session 8: Plots in R (ggplot2)</h3>
+      <h3>Session 8: Plots in R with ggplot2</h3>
       <p>Layered visualization, aesthetics, and clean chart design in R.</p>
       <div class="btn-row">
         <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-8.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">Open Interactive Webpage</a>
@@ -113,7 +113,7 @@ thumbnail: assets/img/B-roll/icons_Data Analytics.jpg
     </div>
 
     <div class="resource-section">
-      <h3>Session 10: EDA Exercise</h3>
+      <h3>Session 10: Exploratory Data Analysis</h3>
       <p>Exploratory analysis workflow and project preparation.</p>
       <div class="btn-row">
         <a href="{{ '/assets/course_hub/conduct_inquiry_lab/interactive/session-10.html' | relative_url }}" class="download-btn" target="_blank" rel="noopener noreferrer">Open Interactive Webpage</a>
