@@ -71,6 +71,10 @@ social: true # includes social icons at the bottom of the page
     political behavior.
   </p>
   <p>
-    I am currently working with Dr. David Lublin, assisting in his work on minority representation and inclusion.
+    I am currently working with <a href="https://www.american.edu/spa/faculty/dlublin.cfm">David Lublin</a> on
+    institutions and ethnic-party support, <a href="https://www.american.edu/spa/faculty/suhay.cfm">Elizabeth Suhay</a>
+    on meritocratic values across immigrant generations, and
+    <a href="https://www.american.edu/spa/faculty/sgrewal.cfm">Sharan Grewal</a> on radical-right effects on Muslim
+    minority opinion in Europe.
   </p>
 </section>
