@@ -70,4 +70,7 @@ social: true # includes social icons at the bottom of the page
     regulate, suppress, or recast religion can end up strengthening religious attachment and reorganizing
     political behavior.
   </p>
+  <p>
+    I am currently working with Dr. David Lublin, assisting in his work on minority representation and inclusion.
+  </p>
 </section>
