@@ -10,10 +10,16 @@ description: Job market paper and current working papers on religion and politic
 <!-- _pages/publications.md -->
 
 <div class="publications research-page">
-  <div class="page-actions">
-    <a href="mailto:rw8143a@american.edu" class="btn btn-sm z-depth-0 pub-action" role="button">Request Draft</a>
-    <a href="{{ '/cv/' | relative_url }}" class="btn btn-sm z-depth-0 pub-action" role="button">View CV</a>
-  </div>
+  <section class="research-block">
+    <h3>Research Interests</h3>
+    <div class="interest-chips">
+      <span>Religion and Politics</span>
+      <span>Ethnic Identity</span>
+      <span>Public Opinion</span>
+      <span>Political Behavior</span>
+      <span>Secularization</span>
+    </div>
+  </section>
 
   <h2>Job Market Paper</h2>
 

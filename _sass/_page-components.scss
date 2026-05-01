@@ -27,17 +27,20 @@
   color: var(--global-text-color-light);
 }
 
-.teaching-page .teaching-block {
+.teaching-page .teaching-block,
+.research-page .research-block {
   margin-top: 1.2rem;
 }
 
-.teaching-page .interest-chips {
+.teaching-page .interest-chips,
+.research-page .interest-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
 }
 
-.teaching-page .interest-chips span {
+.teaching-page .interest-chips span,
+.research-page .interest-chips span {
   display: inline-block;
   border: 1px solid var(--global-theme-color);
   color: var(--global-theme-color);
