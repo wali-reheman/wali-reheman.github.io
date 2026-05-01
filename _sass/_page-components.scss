@@ -501,6 +501,7 @@
 
 .home-hero__subtitle {
   font-size: 15px;
+  line-height: 1.45;
   color: #5f6773;
   margin-bottom: 0.75rem;
 }
@@ -577,6 +578,11 @@
 
 .home-section p,
 .home-section ul {
+  margin-bottom: 0.95rem;
+}
+
+.home-section p:last-child,
+.home-section ul:last-child {
   margin-bottom: 0;
 }
 
@@ -697,8 +703,8 @@
 
   .home-hero__image {
     margin-top: 0.35rem;
-    height: 178px;
-    width: 178px;
+    height: 187px;
+    width: 187px;
   }
 
   .home-contact {

@@ -4,7 +4,7 @@ title: Home
 nav: true
 permalink: /
 description: PhD Candidate and Adjunct Instructor in the Department of Government at American University studying religion and politics, ethnic identity, and public opinion.
-subtitle: <strong>Department of Government</strong><br>School of Public Affairs, <a href='https://www.american.edu/'>American University</a><br>4400 Massachusetts Avenue NW<br>Washington, DC 20016
+subtitle: <strong>Department of Government</strong><br>School of Public Affairs<br><a href='https://www.american.edu/'>American University</a><br>4400 Massachusetts Avenue NW<br>Washington, DC 20016
 eyebrow: Political Science PhD Candidate
 profile:
   align: right
