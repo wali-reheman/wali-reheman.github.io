@@ -72,9 +72,9 @@ social: true # includes social icons at the bottom of the page
   </p>
   <p>
     I am currently working with <a href="https://davidlublin.com/">Dr. David Lublin</a> on
-    institutions and ethnic-party support, <a href="https://www.american.edu/spa/faculty/suhay.cfm">Dr. Elizabeth Suhay</a>
+    institutions and ethnic-party support, <a href="https://www.elizabethsuhay.com/">Dr. Elizabeth Suhay</a>
     on meritocratic values across immigrant generations, and
-    <a href="https://www.american.edu/spa/faculty/sgrewal.cfm">Dr. Sharan Grewal</a> on radical-right effects on Muslim
+    <a href="https://sharangrewal.com/">Dr. Sharan Grewal</a> on radical-right effects on Muslim
     minority opinion in Europe.
   </p>
 </section>
