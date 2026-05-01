@@ -11,7 +11,7 @@ description: Teaching experience, courses, and pedagogy in political science met
   <section class="teaching-block">
     <h2>Teaching Interests</h2>
     <div class="interest-chips">
-      <span>Politics and Religion</span>
+      <span>Religion and Politics</span>
       <span>R for Social Science</span>
       <span>Social Science Research Design</span>
     </div>
