@@ -7,20 +7,20 @@
             <img
               class="repo-img-light repo-stats-image"
               alt="{{ include.username }} GitHub stats"
-              src="https://github-readme-stats.vercel.app/api?username={{ include.username }}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&theme={{ site.repo_theme_light }}"
+              src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ include.username }}&theme=github"
               loading="lazy"
             >
             <img
               class="repo-img-dark repo-stats-image"
               alt="{{ include.username }} GitHub stats"
-              src="https://github-readme-stats.vercel.app/api?username={{ include.username }}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&theme={{ site.repo_theme_dark }}"
+              src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ include.username }}&theme=github_dark"
               loading="lazy"
             >
           {% else %}
             <img
               class="repo-stats-image"
               alt="{{ include.username }} GitHub stats"
-              src="https://github-readme-stats.vercel.app/api?username={{ include.username }}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&theme={{ site.repo_theme_light }}"
+              src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ include.username }}&theme=github"
               loading="lazy"
             >
           {% endif %}
