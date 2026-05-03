@@ -478,6 +478,13 @@
 
 .home-hero__row {
   row-gap: 1.1rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.home-hero__row > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .home-hero__copy {
@@ -554,12 +561,13 @@
 }
 
 .home-main {
-  max-width: 720px;
+  max-width: 770px;
   margin: 0 auto;
   padding: 1.65rem 0 2.1rem;
 }
 
 .home-content {
+  max-width: 720px;
   line-height: 1.5;
   font-size: 15px;
 }
