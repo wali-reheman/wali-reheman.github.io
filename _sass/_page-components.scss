@@ -562,6 +562,48 @@
   box-shadow: none;
 }
 
+.post-hero-row {
+  row-gap: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 1.4rem;
+}
+
+.post-hero-row > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.post-hero-row .post-title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: #1f2937;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.post-hero-row .post-description {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #5f6773;
+  margin-bottom: 0;
+}
+
+.post-hero-portrait {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-hero-image {
+  height: 160px;
+  width: 160px;
+  object-fit: cover;
+  border: 1px solid rgba(31, 41, 55, 0.12);
+  border-radius: 16px;
+  box-shadow: none;
+}
+
 .home-main {
   max-width: 770px;
   margin: 0 auto;
