@@ -4,7 +4,7 @@ permalink: /blog/
 title: Posts
 nav: true
 nav_order: 6
-description: Posts on research, teaching, and methods.
+description: Notes on teaching, graduate training, methods, and research practice.
 pagination:
   enabled: true
   collection: posts
@@ -16,10 +16,6 @@ pagination:
     before: 1 # The number of links before the current page
     after: 3 # The number of links after the current page
 ---
-
-<p class="owl-page-lede">
-  Notes on teaching, graduate training, methods, and research practice.
-</p>
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}
