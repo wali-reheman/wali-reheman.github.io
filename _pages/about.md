@@ -6,6 +6,18 @@ permalink: /
 description: PhD Candidate and Adjunct Instructor in the Department of Government at American University studying religion and politics, ethnic identity, and public opinion.
 subtitle: <strong>Department of Government</strong><br>School of Public Affairs<br><a href='https://www.american.edu/'>American University</a><br>4400 Massachusetts Avenue NW<br>Washington, DC 20016
 eyebrow: Political Science PhD Candidate
+research_one_liner: I study how states reshape religious and ethnic identity, and how those shifts travel into public opinion, political behavior, and long-run backlash.
+hero_links:
+  - label: Research
+    url: /publications/
+  - label: Teaching
+    url: /teaching/
+  - label: CV
+    url: /cv/
+  - label: Code
+    url: /code/
+  - label: Email
+    url: mailto:rw8143a@american.edu
 profile:
   align: right
   image: /assets/img/profile.png
@@ -16,65 +28,22 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-<style>
-  .home-featured p {
-    margin-bottom: 1.05rem;
-    line-height: 1.58;
-    text-wrap: pretty;
-  }
+<section class="owl-about">
+  <p>Hi 👋</p>
 
-  .home-featured p:not(:first-child) {
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    hyphenate-limit-chars: 8 3 3;
-    max-width: 72ch;
-    text-align: left;
-  }
-
-  .home-featured p:last-child {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 575.98px) {
-    .home-featured p {
-      line-height: 1.54;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .home-featured p:not(:first-child) {
-      text-align: justify;
-      text-align-last: left;
-      text-justify: inter-word;
-      word-spacing: -0.015em;
-    }
-  }
-</style>
-
-<section class="home-section home-featured">
   <p>
-    Hi 👋
+    I am a PhD Candidate and Adjunct Instructor in the Department of Government at American University. I am also a junior fellow with the Association for Analytic Learning about Islam and Muslim Societies (AALIMS).
   </p>
+
   <p>
-    I am a PhD Candidate and Adjunct Instructor in the Department of Government at American University. I am also a
-    junior fellow with the Association for Analytic Learning about Islam and Muslim Societies (AALIMS).
+    I broadly study how institutional context and state-building campaigns make and remake ethnic and religious identities, and how those shifts shape public opinion and political behavior.
   </p>
+
   <p>
-    I broadly study how institutional context and state-building campaigns make and remake ethnic and religious
-    identities, and how those shifts shape public opinion and political behavior, using survey research, ecological
-    inference, multilevel modeling, and computational methods.
+    My dissertation, <em>State vs. Faith</em>, examines how state-led secularization campaigns reshape religious identity, collective action, and long-run political backlash. Across its chapters, it asks how efforts to regulate, suppress, or recast religion can end up strengthening religious attachment and reorganizing political behavior.
   </p>
+
   <p>
-    My dissertation, <em>State vs. Faith</em>, examines how state-led secularization campaigns reshape religious
-    identity, collective action, and long-run political backlash. Across its chapters, it asks how efforts to
-    regulate, suppress, or recast religion can end up strengthening religious attachment and reorganizing
-    political behavior.
-  </p>
-  <p>
-    I am currently working with <a href="https://davidlublin.com/">Dr. David Lublin</a> on
-    institutions and ethnic-party support, <a href="https://www.elizabethsuhay.com/">Dr. Elizabeth Suhay</a>
-    on meritocratic values across immigrant generations, and
-    <a href="https://sharangrewal.com/">Dr. Sharan Grewal</a> on radical-right effects on Muslim
-    minority opinion in Europe.
+    I am currently working with <a href="https://davidlublin.com/" target="_blank" rel="noopener noreferrer">Dr. David Lublin</a> on institutions and ethnic-party support, <a href="https://www.elizabethsuhay.com/" target="_blank" rel="noopener noreferrer">Dr. Elizabeth Suhay</a> on meritocratic values across immigrant generations, and <a href="https://sharangrewal.com/" target="_blank" rel="noopener noreferrer">Dr. Sharan Grewal</a> on radical-right effects on Muslim minority opinion in Europe.
   </p>
 </section>

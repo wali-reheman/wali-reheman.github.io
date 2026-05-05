@@ -3,12 +3,12 @@ layout: page
 permalink: /teaching/
 title: Teaching
 nav: true
-nav_order: 2
+nav_order: 3
 description: Teaching experience, courses, and pedagogy in political science methods and comparative politics.
 ---
 
 <div class="teaching-page">
-  <section class="teaching-block">
+  <section class="teaching-block teaching-interests">
     <h2>Teaching Interests</h2>
     <div class="interest-chips">
       <span>Religion and Politics</span>
@@ -17,10 +17,10 @@ description: Teaching experience, courses, and pedagogy in political science met
     </div>
   </section>
 
-  <section class="teaching-block">
+  <section class="teaching-block teaching-experience">
     <h2>Teaching Experience</h2>
 
-    <article class="institution">
+    <article class="institution institution--primary">
       <div class="course-card">
         <div class="course-top">
           <div>

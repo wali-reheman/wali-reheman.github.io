@@ -3,7 +3,7 @@ layout: page
 permalink: /blog/
 title: Posts
 nav: true
-nav_order: 4
+nav_order: 6
 description: Posts on research, teaching, and methods.
 pagination:
   enabled: true
@@ -16,6 +16,10 @@ pagination:
     before: 1 # The number of links before the current page
     after: 3 # The number of links after the current page
 ---
+
+<p class="owl-page-lede">
+  Notes on teaching, graduate training, methods, and research practice.
+</p>
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}

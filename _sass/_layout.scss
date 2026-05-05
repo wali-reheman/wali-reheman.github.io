@@ -18,17 +18,185 @@ body {
 }
 
 body.fixed-top-nav {
-  // Add some padding for the nav-bar.
   padding-top: 56px;
 }
 
 body.sticky-bottom-footer {
-  // Remove padding below footer.
   padding-bottom: 0;
+}
+
+body > footer.sticky-bottom {
+  margin-top: 0 !important;
+  border-top: 1px solid #e4e4e0;
+  padding: 24px 0;
+  background: #f7f7f4;
+}
+
+body > footer.sticky-bottom .container {
+  color: #666;
+  font-size: 13px;
 }
 
 .container {
   max-width: $max-content-width;
+}
+
+.owl-banner {
+  height: clamp(210px, 18vw, 270px);
+  margin-top: -3rem;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    url("/assets/img/site-banner.png") center / cover no-repeat;
+}
+
+.owl-banner--subpage {
+  height: clamp(200px, 18vw, 270px);
+}
+
+.owl-page {
+  display: grid;
+  grid-template-columns: 234px minmax(0, 704px);
+  column-gap: 42px;
+  align-items: start;
+  width: min(100%, 958px);
+  margin: 0 auto;
+  padding: 0 15px 4rem;
+}
+
+.owl-page--home {
+  margin-top: -68px;
+}
+
+.owl-page--subpage {
+  margin-top: -44px;
+}
+
+.owl-profile {
+  position: sticky;
+  top: 84px;
+  z-index: 1;
+  color: #2b2b2b;
+}
+
+.owl-profile__image {
+  display: block;
+  width: 214px;
+  height: 214px;
+  margin: 0 0 24px;
+  border: 5px solid #fff;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.owl-profile__name {
+  margin: 0 0 2px;
+  color: #2b2b2b;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.owl-profile__role {
+  margin: 0 0 26px;
+  color: #303030;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.owl-profile__email {
+  margin: 0 0 28px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.owl-profile__affiliation {
+  margin: 0 0 28px;
+  color: #303030;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.owl-profile__affiliation p {
+  margin: 0 0 4px;
+}
+
+.owl-profile__links {
+  display: grid;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.owl-profile__links a {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.owl-profile__links i,
+.owl-profile__links img {
+  width: 22px;
+  min-width: 22px;
+  color: #444;
+  font-size: 18px;
+  text-align: center;
+}
+
+.owl-profile__links img {
+  height: 22px;
+  object-fit: contain;
+}
+
+.owl-main {
+  min-width: 0;
+  padding-top: 132px;
+}
+
+.owl-page--subpage .owl-main {
+  padding-top: 84px;
+}
+
+.owl-about h1,
+.post-title {
+  margin: 0 0 12px;
+  color: #202020;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.16;
+}
+
+.owl-lede {
+  margin: 0 0 32px;
+  color: #2b2b2b;
+  font-size: 22px;
+  line-height: 1.12;
+}
+
+.owl-about p,
+.post article p,
+.post-description,
+.post li {
+  color: #303030;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.owl-about p {
+  margin: 0 0 24px;
+}
+
+.post-header {
+  margin-bottom: 28px;
+}
+
+.post-description {
+  margin-bottom: 0;
+}
+
+.owl-extra-block {
+  margin-top: 44px;
 }
 
 // Profile
@@ -38,16 +206,139 @@ body.sticky-bottom-footer {
   }
 }
 
-// TODO: redefine content layout.
-
 /******************************************************************************
  * Publications
  ******************************************************************************/
 
-// TODO: redefine publications layout.
+.publications h2,
+.post article h2 {
+  margin-top: 2.2rem;
+  color: #202020;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
 
 /*****************************************************************************
 * Projects
 *****************************************************************************/
 
-// TODO: redefine projects layout.
+@media (max-width: 991.98px) {
+  .owl-banner {
+    height: 250px;
+    margin-top: -2rem;
+  }
+
+  .owl-page,
+  .owl-page--home,
+  .owl-page--subpage {
+    grid-template-columns: 1fr;
+    width: min(100%, 690px);
+    margin-top: -70px;
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .owl-profile {
+    position: static;
+    margin-bottom: 34px;
+  }
+
+  .owl-profile__image {
+    width: 190px;
+    height: 190px;
+  }
+
+  .owl-main,
+  .owl-page--subpage .owl-main {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .owl-banner {
+    height: 118px;
+    margin-top: -1.5rem;
+    background-size: auto 100%;
+  }
+
+  .owl-page,
+  .owl-page--home,
+  .owl-page--subpage {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: -34px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .owl-page--subpage {
+    margin-top: 0;
+    padding-top: 24px;
+  }
+
+  .owl-page--subpage .owl-profile {
+    display: none;
+  }
+
+  .owl-profile {
+    margin-bottom: 30px;
+  }
+
+  .owl-profile__image {
+    width: 138px;
+    height: 138px;
+    margin-bottom: 16px;
+    border-width: 4px;
+  }
+
+  .owl-profile__name {
+    font-size: 24px;
+  }
+
+  .owl-profile__role,
+  .owl-profile__email,
+  .owl-profile__affiliation,
+  .owl-profile__links {
+    font-size: 15px;
+  }
+
+  .owl-profile__role {
+    margin-bottom: 20px;
+  }
+
+  .owl-profile__email,
+  .owl-profile__affiliation {
+    margin-bottom: 22px;
+  }
+
+  .owl-about h1,
+  .post-title {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .owl-main {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .owl-main p,
+  .owl-main li,
+  .owl-main h1,
+  .owl-main h2,
+  .owl-main h3 {
+    overflow-wrap: break-word;
+  }
+
+  .owl-lede {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}

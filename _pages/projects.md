@@ -1,10 +1,10 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Research projects, teaching materials, and computational work.
 nav: false
-nav_order: 3
+nav_order: 2
 display_categories: [work, fun]
 horizontal: false
 ---

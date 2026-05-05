@@ -21,31 +21,77 @@
     {% include header.liquid %}
 
     <!-- Content -->
-    <div class="container mt-5" role="main">
-      {% if page.toc and page.toc.sidebar %}
-        {% if page.toc.sidebar == 'right' %}
-          <div class="row">
-            <!-- main content area -->
-            <div class="col-sm-9">{{ content }}</div>
-            <!-- sidebar, which will move to the top on a small screen -->
-            <div class="col-sm-3">
-              <nav id="toc-sidebar" class="sticky-top"></nav>
-            </div>
-          </div>
-        {% else %}
-          <div class="row">
-            <!-- sidebar, which will move to the top on a small screen -->
-            <div class="col-sm-3">
-              <nav id="toc-sidebar" class="sticky-top"></nav>
-            </div>
-            <!-- main content area -->
-            <div class="col-sm-9">{{ content }}</div>
-          </div>
-        {% endif %}
-      {% else %}
+    {% assign home_page = site.pages | where: 'permalink', '/' | first %}
+    {% assign use_identity_shell = true %}
+    {% if page.url == '/' or page.url == '/404.html' %}
+      {% assign use_identity_shell = false %}
+    {% endif %}
+    {% assign use_page_toc_sidebar = false %}
+    {% if page.layout != 'post' and page.toc and page.toc.sidebar %}
+      {% assign use_page_toc_sidebar = true %}
+    {% endif %}
+
+    {% if use_identity_shell %}
+      <section class="owl-banner owl-banner--subpage" aria-label="Site banner"></section>
+      <div class="owl-page owl-page--subpage">
+        {% include owl_profile.liquid profile_image=home_page.profile.image role=home_page.eyebrow %}
+        <main class="owl-main" id="content">
+          {% if use_page_toc_sidebar %}
+            {% if page.toc.sidebar == 'right' %}
+              <div class="row">
+                <!-- main content area -->
+                <div class="col-sm-9">{{ content }}</div>
+                <!-- sidebar, which will move to the top on a small screen -->
+                <div class="col-sm-3">
+                  <nav id="toc-sidebar" class="sticky-top"></nav>
+                </div>
+              </div>
+            {% else %}
+              <div class="row">
+                <!-- sidebar, which will move to the top on a small screen -->
+                <div class="col-sm-3">
+                  <nav id="toc-sidebar" class="sticky-top"></nav>
+                </div>
+                <!-- main content area -->
+                <div class="col-sm-9">{{ content }}</div>
+              </div>
+            {% endif %}
+          {% else %}
+            {{ content }}
+          {% endif %}
+        </main>
+      </div>
+    {% elsif page.url == '/' %}
+      <div role="main">
         {{ content }}
-      {% endif %}
-    </div>
+      </div>
+    {% else %}
+      <div class="container mt-5" role="main">
+        {% if use_page_toc_sidebar %}
+          {% if page.toc.sidebar == 'right' %}
+            <div class="row">
+              <!-- main content area -->
+              <div class="col-sm-9">{{ content }}</div>
+              <!-- sidebar, which will move to the top on a small screen -->
+              <div class="col-sm-3">
+                <nav id="toc-sidebar" class="sticky-top"></nav>
+              </div>
+            </div>
+          {% else %}
+            <div class="row">
+              <!-- sidebar, which will move to the top on a small screen -->
+              <div class="col-sm-3">
+                <nav id="toc-sidebar" class="sticky-top"></nav>
+              </div>
+              <!-- main content area -->
+              <div class="col-sm-9">{{ content }}</div>
+            </div>
+          {% endif %}
+        {% else %}
+          {{ content }}
+        {% endif %}
+      </div>
+    {% endif %}
 
     <!-- Footer -->
     {% include footer.liquid %}

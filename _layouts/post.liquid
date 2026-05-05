@@ -50,17 +50,31 @@ layout: default
     </p>
   </header>
 
-  <article class="post-content">
-    {% if page.toc and page.toc.beginning %}
-      <div id="table-of-contents">
-        {% toc %}
+  <div class="{% if url_beginning == '/blog/' %}post-reading-layout{% endif %}">
+    <article class="post-content">
+      {% if page.toc and page.toc.beginning %}
+        <div id="table-of-contents">
+          {% toc %}
+        </div>
+        <hr>
+      {% endif %}
+      <div id="markdown-content">
+        {{ content }}
       </div>
-      <hr>
+    </article>
+
+    {% if url_beginning == '/blog/' %}
+      <aside class="post-toc-panel" aria-label="Article table of contents">
+        <div class="post-toc-panel__inner">
+          <div class="post-toc-panel__label">On this page</div>
+          <div class="post-toc-progress" aria-hidden="true">
+            <span id="post-toc-progress-bar"></span>
+          </div>
+          <nav id="post-dynamic-toc"></nav>
+        </div>
+      </aside>
     {% endif %}
-    <div id="markdown-content">
-      {{ content }}
-    </div>
-  </article>
+  </div>
 
   {% if page.citation %}
     {% include citation.liquid %}
@@ -86,3 +100,69 @@ layout: default
     {% include giscus.liquid %}
   {% endif %}
 </div>
+
+{% if url_beginning == '/blog/' %}
+  <script>
+    (() => {
+      const content = document.querySelector('#markdown-content');
+      const toc = document.querySelector('#post-dynamic-toc');
+      const progressBar = document.querySelector('#post-toc-progress-bar');
+      if (!content || !toc || !progressBar) return;
+
+      const headings = Array.from(content.querySelectorAll('h2, h3')).filter((heading) => heading.textContent.trim());
+      if (!headings.length) {
+        const panel = document.querySelector('.post-toc-panel');
+        if (panel) panel.remove();
+        return;
+      }
+
+      const slugCounts = new Map();
+      const slugify = (text) => {
+        const base = text
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
+          .replace(/^-+|-+$/g, '') || 'section';
+        const count = slugCounts.get(base) || 0;
+        slugCounts.set(base, count + 1);
+        return count ? `${base}-${count + 1}` : base;
+      };
+
+      headings.forEach((heading) => {
+        if (!heading.id) heading.id = slugify(heading.textContent);
+        const link = document.createElement('a');
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent;
+        link.className = `post-toc-link post-toc-link--${heading.tagName.toLowerCase()}`;
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', `#${heading.id}`);
+        });
+        toc.appendChild(link);
+      });
+
+      const tocLinks = Array.from(toc.querySelectorAll('a'));
+      const setActive = () => {
+        const offset = 120;
+        let activeIndex = 0;
+        headings.forEach((heading, index) => {
+          if (heading.getBoundingClientRect().top - offset <= 0) activeIndex = index;
+        });
+        tocLinks.forEach((link, index) => link.classList.toggle('is-active', index === activeIndex));
+      };
+
+      const updateProgress = () => {
+        const rect = content.getBoundingClientRect();
+        const total = Math.max(content.offsetHeight - window.innerHeight * 0.55, 1);
+        const read = Math.min(Math.max(-rect.top + 80, 0), total);
+        progressBar.style.width = `${(read / total) * 100}%`;
+        setActive();
+      };
+
+      updateProgress();
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+    })();
+  </script>
+{% endif %}

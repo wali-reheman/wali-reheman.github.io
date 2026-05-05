@@ -138,5 +138,3 @@ thumbnail: assets/img/B-roll/icons_Data Analytics.jpg
 
   </div>
 </div>
-
-{% include figure.liquid loading="eager" path="assets/img/B-roll/icons_Data Analytics.jpg" class="img-fluid rounded z-depth-1" %}

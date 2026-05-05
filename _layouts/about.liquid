@@ -1,79 +1,28 @@
 ---
 layout: default
 ---
-<section class="home-hero">
-  <div class="container home-hero__inner">
-    <div class="row align-items-start home-hero__row">
-      <div class="{% if page.profile.image %}col-lg-7 col-md-7{% else %}col-lg-9{% endif %}">
-        <div class="home-hero__copy">
-          {% if page.eyebrow %}
-            <p class="home-hero__eyebrow">{{ page.eyebrow }}</p>
-          {% endif %}
-          <h1 class="home-hero__name">
-            {% if site.title == 'blank' %}
-              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-              {{ site.last_name }}
-            {% else %}
-              {{ site.title }}
-            {% endif %}
-          </h1>
-          <p class="home-hero__subtitle">{{ page.subtitle }}</p>
-          {% if page.research_one_liner %}
-            <p class="home-hero__agenda">{{ page.research_one_liner }}</p>
-          {% endif %}
-          {% if page.hero_links %}
-            <div class="home-hero__links">
-              {% for link in page.hero_links %}
-                {% assign link_is_external = false %}
-                {% if link.url contains '://' or link.url contains 'mailto:' %}
-                  {% assign link_is_external = true %}
-                {% endif %}
-                <a
-                  href="{% if link_is_external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
-                  {% if link.url contains '://' %}
-                    target="_blank" rel="noopener noreferrer"
-                  {% endif %}
-                >{{ link.label }}</a>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </div>
-      </div>
+<section class="owl-banner" aria-label="Site banner"></section>
 
-      {% if page.profile.image %}
-        <div class="col-lg-4 offset-lg-1 col-md-5">
-          <div class="home-hero__portrait">
-            <img src="{{ page.profile.image }}" class="home-hero__image" alt="Profile image">
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-</section>
+<div class="owl-page owl-page--home">
+  {% include owl_profile.liquid profile_image=page.profile.image role=page.eyebrow %}
 
-<div class="container home-main">
-  <article class="home-content">
-    <div class="clearfix">{{ content }}</div>
-  </article>
+  <main class="owl-main" id="content">
+    <article>
+      <div class="clearfix">{{ content }}</div>
+    </article>
 
-  {% if page.social %}
-    <section class="home-contact social">
-      <div class="contact-note">{{ site.contact_note }}</div>
-      <div class="contact-icons">{% include social.liquid %}</div>
-    </section>
-  {% endif %}
+    {% if site.latest_posts.enabled %}
+      <section class="owl-extra-block">
+        <h2 class="home-block__title"><a href="{{ '/blog/' | relative_url }}">Posts</a></h2>
+        {% include latest_posts.liquid %}
+      </section>
+    {% endif %}
 
-  {% if site.latest_posts.enabled %}
-    <section class="home-block">
-      <h2 class="home-block__title"><a href="{{ '/blog/' | relative_url }}">Posts</a></h2>
-      {% include latest_posts.liquid %}
-    </section>
-  {% endif %}
-
-  {% if page.news and site.announcements.enabled %}
-    <section class="home-block home-news">
-      <h2 class="home-block__title"><a href="{{ '/news/' | relative_url }}">News</a></h2>
-      {% include news.liquid limit=true %}
-    </section>
-  {% endif %}
+    {% if page.news and site.announcements.enabled %}
+      <section class="owl-extra-block home-news">
+        <h2 class="home-block__title"><a href="{{ '/news/' | relative_url }}">News</a></h2>
+        {% include news.liquid limit=true %}
+      </section>
+    {% endif %}
+  </main>
 </div>

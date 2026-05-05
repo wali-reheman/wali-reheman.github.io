@@ -1,0 +1,50 @@
+<aside class="owl-profile" aria-label="Profile summary">
+  <img class="owl-profile__image" src="{{ include.profile_image | default: '/assets/img/profile.png' | relative_url }}" alt="Portrait of {{ site.title }}">
+
+  <h2 class="owl-profile__name">{{ site.title }}</h2>
+  <p class="owl-profile__role">{{ include.role | default: 'Political Science PhD Candidate' }}</p>
+
+  {% if site.email %}
+    <p class="owl-profile__email">
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </p>
+  {% endif %}
+
+  <div class="owl-profile__affiliation">
+    <p>Department of Government</p>
+    <p>American University</p>
+  </div>
+
+  <nav class="owl-profile__links" aria-label="Academic profiles">
+    {% if site.scholar_userid %}
+      <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-google-scholar" aria-hidden="true"></i>
+        <span>Google Scholar</span>
+      </a>
+    {% endif %}
+    {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <span>GitHub</span>
+      </a>
+    {% endif %}
+    {% if site.work_url %}
+      <a href="{{ site.work_url }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ '/assets/img/AU_mark.png' | relative_url }}" alt="" aria-hidden="true">
+        <span>AU Profile</span>
+      </a>
+    {% endif %}
+    {% if site.x_username %}
+      <a href="https://twitter.com/{{ site.x_username }}" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        <span>X / Twitter</span>
+      </a>
+    {% endif %}
+    {% if site.linkedin_username %}
+      <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        <span>LinkedIn</span>
+      </a>
+    {% endif %}
+  </nav>
+</aside>
