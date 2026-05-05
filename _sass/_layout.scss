@@ -42,15 +42,16 @@ body > footer.sticky-bottom .container {
 }
 
 .owl-banner {
-  height: clamp(210px, 18vw, 270px);
+  height: clamp(225px, 18.65vw, 360px);
   margin-top: -3rem;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
-    url("/assets/img/site-banner.png") center / cover no-repeat;
+    url("/assets/img/site-banner.png") center top / 100% auto no-repeat;
+  background-color: #f4efe7;
 }
 
 .owl-banner--subpage {
-  height: clamp(200px, 18vw, 270px);
+  height: clamp(210px, 18.65vw, 340px);
 }
 
 .owl-page {
@@ -64,11 +65,11 @@ body > footer.sticky-bottom .container {
 }
 
 .owl-page--home {
-  margin-top: -68px;
+  margin-top: -44px;
 }
 
 .owl-page--subpage {
-  margin-top: -44px;
+  margin-top: -20px;
 }
 
 .owl-profile {
@@ -225,7 +226,7 @@ body > footer.sticky-bottom .container {
 
 @media (max-width: 991.98px) {
   .owl-banner {
-    height: 250px;
+    height: clamp(170px, 18.65vw, 225px);
     margin-top: -2rem;
   }
 

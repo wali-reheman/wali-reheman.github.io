@@ -244,7 +244,6 @@ plugins:
   - jekyll-imagemagick
   - jekyll-jupyter-notebook
   - jekyll-link-attributes
-  - jekyll-minifier
   - jekyll-paginate-v2
   - jekyll/scholar
   - jekyll-sitemap
@@ -268,7 +267,7 @@ sass:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  exclude: ["robots.txt"]
+  exclude: ["robots.txt", "assets/course_hub/**/*.Rmd"]
   uglifier_args:
     harmony: true
 

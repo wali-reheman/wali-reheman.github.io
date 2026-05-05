@@ -918,7 +918,8 @@
   line-height: 1.45;
 }
 
-.publication-card-row .abstract {
+.publication-card-row .abstract:not(.hidden),
+.publication-card-row .abstract.hidden.open {
   margin-top: 14px;
   border: 1px solid #e1e1e1;
   border-left: 3px solid #d12d2d;
@@ -928,12 +929,20 @@
 }
 
 .publications ol.bibliography div.abstract.hidden {
+  display: none;
+  max-height: none;
+  margin: 0;
   border: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: none;
 }
 
 .publications ol.bibliography div.abstract.hidden.open {
+  display: block;
   border: 1px solid #e1e1e1;
   border-left: 3px solid #d12d2d;
+  padding: 14px 16px;
 }
 
 .publications ol.bibliography div.abstract.hidden p {
@@ -1101,8 +1110,8 @@
 
 .teaching-page .teaching-interests {
   max-width: 620px;
-  border-bottom: 1px solid #e7e7e7;
-  padding-bottom: 26px;
+  border-bottom: 0;
+  padding-bottom: 22px;
 }
 
 .teaching-page .role,
@@ -1232,10 +1241,10 @@
 
 .github-profile-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  gap: 16px;
-  align-items: center;
-  max-width: 650px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+  max-width: 760px;
 }
 
 .github-profile-grid .repo {
@@ -1243,24 +1252,34 @@
 }
 
 .github-profile-grid .repo-card {
-  height: auto;
+  height: 100%;
   border: 0;
   background: transparent;
 }
 
+.github-profile-grid__stats,
+.github-profile-grid__trophies {
+  min-height: 188px;
+}
+
+.github-profile-grid__stats .repo,
+.github-profile-grid__trophies .repo {
+  display: flex;
+  align-items: center;
+}
+
 .code-section--profile .repo-stats-image {
-  max-height: 176px;
+  width: 100%;
+  max-height: none;
   object-fit: contain;
   background: #242424;
 }
 
 .code-section--profile .repo-profile .card-body {
-  padding: 0;
-}
-
-.github-profile-grid__trophies .repo {
   display: flex;
   align-items: center;
+  min-height: 188px;
+  padding: 0;
 }
 
 .github-profile-grid__trophies .repo > a {
@@ -1276,12 +1295,13 @@
   width: 100%;
   height: 100%;
   min-height: 0;
-  max-height: 176px;
+  max-height: 188px;
   object-fit: contain;
 }
 
 .repositories .repo,
 .code-page .repositories .repo {
+  max-width: 100%;
   width: 100%;
   padding: 0 !important;
 }
@@ -1359,7 +1379,7 @@
 }
 
 .code-section--repos {
-  max-width: 610px;
+  max-width: 760px;
 }
 
 .code-section--repos .repo-preview-link {
@@ -1377,7 +1397,8 @@
 }
 
 .code-section--repos .repo-card .card-body {
-  min-height: 218px;
+  min-height: 0;
+  height: 100%;
 }
 
 .code-section--repos .repo-description {
@@ -1413,6 +1434,34 @@
 .repo-action-link-muted {
   border-color: #dedede;
   color: #666;
+}
+
+@media (max-width: 1199.98px) {
+  .github-profile-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .code-page .repositories {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .github-profile-grid,
+  .code-page .repositories {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .repo-card .card-title {
+    font-size: 19px;
+  }
+
+  .code-section--repos .repo-card .card-text,
+  .repo-description {
+    font-size: 14px;
+  }
 }
 
 .cv-page .page-actions {

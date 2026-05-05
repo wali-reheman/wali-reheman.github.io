@@ -1,26 +1,27 @@
 <div class="repo repo-profile p-2">
   <div class="card h-100 repo-card">
     <div class="card-body py-3">
+      {% assign repo_stats_base_url = site.repo_stats_base_url | default: 'https://github-readme-stats-sigma-five.vercel.app' %}
       <div class="repo-stats mb-0 mx-auto">
         <a href="https://github.com/{{ include.username }}" aria-label="{{ include.username }} GitHub stats">
           {% if site.enable_darkmode %}
             <img
               class="repo-img-light repo-stats-image"
               alt="{{ include.username }} GitHub stats"
-              src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ include.username }}&theme=apprentice"
+              src="{{ repo_stats_base_url }}/api?username={{ include.username }}&show_icons=true&hide_title=true&hide_border=true&include_all_commits=true&rank_icon=github&card_width=420&theme={{ site.repo_theme_light }}"
               loading="lazy"
             >
             <img
               class="repo-img-dark repo-stats-image"
               alt="{{ include.username }} GitHub stats"
-              src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ include.username }}&theme=apprentice"
+              src="{{ repo_stats_base_url }}/api?username={{ include.username }}&show_icons=true&hide_title=true&hide_border=true&include_all_commits=true&rank_icon=github&card_width=420&theme={{ site.repo_theme_dark }}"
               loading="lazy"
             >
           {% else %}
             <img
               class="repo-stats-image"
               alt="{{ include.username }} GitHub stats"
-              src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ include.username }}&theme=apprentice"
+              src="{{ repo_stats_base_url }}/api?username={{ include.username }}&show_icons=true&hide_title=true&hide_border=true&include_all_commits=true&rank_icon=github&card_width=420&theme={{ site.repo_theme_light }}"
               loading="lazy"
             >
           {% endif %}
