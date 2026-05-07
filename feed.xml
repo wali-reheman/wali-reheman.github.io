@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://walireheman.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://walireheman.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-07T03:30:03+00:00</updated><id>https://walireheman.com/feed.xml</id><title type="html">Wali Reheman</title><subtitle>Political science PhD candidate at American University studying religion and politics, ethnic identity, public opinion, and the political consequences of state-led secularization.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://walireheman.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://walireheman.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-07T03:33:37+00:00</updated><id>https://walireheman.com/feed.xml</id><title type="html">Wali Reheman</title><subtitle>Political science PhD candidate at American University studying religion and politics, ethnic identity, public opinion, and the political consequences of state-led secularization.
 </subtitle><entry><title type="html">Course Hub for Conduct of Inquiry I Lab - SPA 096</title><link href="https://walireheman.com/blog/2024/teaching-conduct-i-lab/" rel="alternate" type="text/html" title="Course Hub for Conduct of Inquiry I Lab - SPA 096" /><published>2024-05-05T15:59:00+00:00</published><updated>2024-05-05T15:59:00+00:00</updated><id>https://walireheman.com/blog/2024/Teaching_Conduct_I_Lab</id><content type="html" xml:base="https://walireheman.com/blog/2024/teaching-conduct-i-lab/"><![CDATA[<div class="course-hub-wrap">
   <p class="course-intro">
     This lab supplements <strong>SPA 612: Conduct of Inquiry I</strong> with hands-on training in R and Stata,
@@ -287,7 +287,7 @@
 <ul>
   <li>When you run a regression, make sure you can explain in plain language: <strong>what is each coefficient, why is the standard error what it is, and what does the p-value actually tell you?</strong></li>
   <li>Practice explaining your findings to someone outside your field. If you can’t, you don’t understand it well enough yet.</li>
-  <li>Read <strong><a href="https://nickCHK.github.io/the-effect/">The Effect</a></strong> by Nick Huntington-Klein — an excellent free online book that teaches you to read regression like a pro.</li>
+  <li>Read <strong><a href="https://theeffectbook.net/">The Effect</a></strong> by Nick Huntington-Klein — an excellent free online book that teaches you to read regression like a pro.</li>
 </ul>
 
 <h3 id="5-collaborate-and-ask-questions">5. Collaborate and Ask Questions</h3>
@@ -332,7 +332,6 @@
 </code></pre></div>    </div>
   </li>
   <li>This will help you keep track of each step and make it easier to share your work with advisors or collaborators.</li>
-  <li>Learn <strong><a href="https://bschneider.shinyapps.io/rflow/">Dr. Workflow’s project-oriented approach</a></strong> for managing R-based research projects.</li>
 </ul>
 
 <h3 id="9-engage-with-your-research-community">9. Engage with Your Research Community</h3>
