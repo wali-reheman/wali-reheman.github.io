@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://walireheman.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://walireheman.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-07T03:33:37+00:00</updated><id>https://walireheman.com/feed.xml</id><title type="html">Wali Reheman</title><subtitle>Political science PhD candidate at American University studying religion and politics, ethnic identity, public opinion, and the political consequences of state-led secularization.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://walireheman.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://walireheman.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-07T03:54:56+00:00</updated><id>https://walireheman.com/feed.xml</id><title type="html">Wali Reheman</title><subtitle>Political science PhD candidate at American University studying religion and politics, ethnic identity, public opinion, and the political consequences of state-led secularization.
 </subtitle><entry><title type="html">Course Hub for Conduct of Inquiry I Lab - SPA 096</title><link href="https://walireheman.com/blog/2024/teaching-conduct-i-lab/" rel="alternate" type="text/html" title="Course Hub for Conduct of Inquiry I Lab - SPA 096" /><published>2024-05-05T15:59:00+00:00</published><updated>2024-05-05T15:59:00+00:00</updated><id>https://walireheman.com/blog/2024/Teaching_Conduct_I_Lab</id><content type="html" xml:base="https://walireheman.com/blog/2024/teaching-conduct-i-lab/"><![CDATA[<div class="course-hub-wrap">
   <p class="course-intro">
     This lab supplements <strong>SPA 612: Conduct of Inquiry I</strong> with hands-on training in R and Stata,
@@ -152,7 +152,7 @@
 <p>If I have to pick one book to recommend to social science students for a foundational understanding of statistics, it would be:</p>
 
 <ul>
-  <li><strong><a href="https://avehtari.github.io/ROS-Examples/index.html">Regression and Other Stories</a></strong> by Andrew Gelman, Jennifer Hill, and Aki Vehtari — <a href="https://www.amazon.com/Regression-Other-Stories-Analytical-Techniques/dp/1107673997">buy on Amazon</a></li>
+  <li><strong><a href="https://avehtari.github.io/ROS-Examples/index.html">Regression and Other Stories</a></strong> by Andrew Gelman, Jennifer Hill, and Aki Vehtari — the companion website also links to purchase options.</li>
 </ul>
 
 <blockquote>
@@ -166,7 +166,7 @@
 
 <ul>
   <li><strong><a href="https://www.rethinking-ed.org/">Statistical Rethinking</a></strong> by Richard McElreath — a masterful introduction to Bayesian statistics with a computational-first philosophy</li>
-  <li><strong><a href="https://www.penguinrandomhouse.com/books/669440/the-art-of-statistics-by-david-spiegelhalter/">The Art of Statistics</a></strong> by David Spiegelhalter — how to learn from data, written for a general audience but deeply informative for scientists</li>
+  <li><strong><a href="https://books.google.com/books/about/The_Art_of_Statistics.html?id=O7ULvgEACAAJ">The Art of Statistics</a></strong> by David Spiegelhalter — how to learn from data, written for a general audience but deeply informative for scientists</li>
   <li><strong><a href="https://mixtape.scunning.com/">Causal Inference: The Mixtape</a></strong> by Scott Cunningham — a freely accessible introduction to causal inference methods (DiD, RDD, IV, SCM) essential for political scientists</li>
 </ul>
 
@@ -214,7 +214,7 @@
       <td>Global development indicators</td>
     </tr>
     <tr>
-      <td><strong><a href="https://www.pewresearch.org/download-datasets/">Pew Research Center</a></strong></td>
+      <td><strong><a href="https://www.pewresearch.org/datasets/">Pew Research Center</a></strong></td>
       <td>Public opinion surveys, globally</td>
     </tr>
     <tr>
@@ -258,7 +258,7 @@
   <li>Pick <strong>one</strong> statistical software (R, Python, Stata, etc.) and stick with it until you’re comfortable with the basics. Don’t spread yourself thin trying to learn everything at once.</li>
   <li>Focus on common tasks: data cleaning, descriptive statistics, simple plots, and standard regression models.</li>
   <li><strong><a href="https://rstudio.cloud/">RStudio Cloud</a></strong> is a great way to get started without installing anything.</li>
-  <li><strong><a href="https://www.stata.com/links/stat tutorials-and-resources/">Stata Tutorial</a></strong> for those using Stata.</li>
+  <li><strong><a href="https://www.stata.com/learn/">Stata Tutorial</a></strong> — official Stata learning resources for those getting started with Stata.</li>
 </ul>
 
 <h3 id="2-embrace-exploratory-data-analysis-eda">2. Embrace Exploratory Data Analysis (EDA)</h3>
@@ -351,7 +351,7 @@
 <ul>
   <li>Expect to make mistakes — that is part of the process.</li>
   <li>Each time you get stuck, view it as a chance to deepen your understanding.</li>
-  <li><strong><a href="https://www.carolDweck.org/books-and-media/mindset">Mindset: The New Psychology of Success</a></strong> by Carol Dweck — the book that spawned the “growth mindset” literature, essential reading for any PhD student.</li>
+  <li><strong><a href="https://www.penguinrandomhouse.com/books/44330/mindset-by-carol-s-dweck-phd/">Mindset: The New Psychology of Success</a></strong> by Carol Dweck — the book that spawned the “growth mindset” literature, essential reading for any PhD student.</li>
 </ul>
 
 <hr />
