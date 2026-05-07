@@ -42,9 +42,11 @@ body > footer.sticky-bottom .container {
 }
 
 .owl-banner {
-  height: clamp(340px, 35vw, 560px);
-  margin-top: 20px;
-  margin-bottom: 20px;
+  aspect-ratio: 1714 / 365;
+  height: auto;
+  max-height: 420px;
+  margin-top: 0;
+  margin-bottom: 0;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
     url("/assets/img/site-banner-openai-ultrawide.png") center center / contain no-repeat;
@@ -62,7 +64,7 @@ body > footer.sticky-bottom .container {
 }
 
 .owl-page--home {
-  margin-top: -100px;
+  margin-top: -80px;
 }
 
 .owl-page--subpage {
@@ -151,7 +153,7 @@ body > footer.sticky-bottom .container {
 }
 
 .owl-page--subpage .owl-main {
-  padding-top: 24px;
+  padding-top: 44px;
 }
 
 .owl-about h1,
@@ -223,6 +225,7 @@ body > footer.sticky-bottom .container {
 
 @media (max-width: 991.98px) {
   .owl-banner {
+    aspect-ratio: auto;
     height: clamp(205px, 23.9vw, 285px);
     margin-top: 0 !important;
     margin-bottom: 20px !important;
@@ -261,6 +264,7 @@ body > footer.sticky-bottom .container {
   }
 
   .owl-banner {
+    aspect-ratio: auto;
     height: 118px;
     margin-top: 0 !important;
     margin-bottom: 20px !important;
