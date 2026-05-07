@@ -743,13 +743,20 @@
   margin-bottom: 10px;
 }
 
-.owl-page-lede,
-.owl-main .post-description {
+.owl-page-lede {
   max-width: 680px;
   margin: 0 0 32px;
   color: #2b2b2b;
   font-size: 21px;
   line-height: 1.22;
+}
+
+.owl-main .post-description {
+  max-width: 680px;
+  margin: 0 0 24px;
+  color: #6b6b6b;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .owl-content-section {
