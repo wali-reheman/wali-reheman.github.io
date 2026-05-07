@@ -52,22 +52,16 @@ body > footer.sticky-bottom .container {
 
 .owl-banner--subpage {
   height: clamp(340px, 35vw, 560px);
-  margin-top: 0;
+  margin-top: 0 !important;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
     url("/assets/img/site-banner-openai-wide.png") center top / 100% auto no-repeat;
   background-color: #f4efe7;
 }
 
-// When banner precedes a simple container (post layout), neutralize the -3rem pull
-// so the banner sits flush with the content below
-.owl-banner ~ .container.mt-5 {
-  margin-top: 0;
-}
-
 .owl-banner--home {
   height: clamp(285px, 23.9vw, 430px);
-  margin-top: 0;
+  margin-top: 0 !important;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
     url("/assets/img/site-banner-openai-wide.png") center top / 100% auto no-repeat;
