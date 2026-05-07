@@ -51,7 +51,19 @@ body > footer.sticky-bottom .container {
 }
 
 .owl-banner--subpage {
-  height: clamp(270px, 23.9vw, 410px);
+  height: clamp(340px, 35vw, 560px);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    url("/assets/img/site-banner-openai-wide.png") center top / 100% auto no-repeat;
+  background-color: #f4efe7;
+}
+
+.owl-banner--home {
+  height: clamp(285px, 23.9vw, 430px);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
+    url("/assets/img/site-banner-openai-wide.png") center top / 100% auto no-repeat;
+  background-color: #f4efe7;
 }
 
 .owl-page {
@@ -225,8 +237,14 @@ body > footer.sticky-bottom .container {
 *****************************************************************************/
 
 @media (max-width: 991.98px) {
-  .owl-banner {
+  .owl-banner,
+  .owl-banner--home {
     height: clamp(205px, 23.9vw, 285px);
+    margin-top: -2rem;
+  }
+
+  .owl-banner--subpage {
+    height: clamp(240px, 30vw, 380px);
     margin-top: -2rem;
   }
 
@@ -262,10 +280,15 @@ body > footer.sticky-bottom .container {
     overflow-x: hidden;
   }
 
-  .owl-banner {
+  .owl-banner,
+  .owl-banner--home {
     height: 118px;
     margin-top: -1.5rem;
-    background-size: auto 100%;
+  }
+
+  .owl-banner--subpage {
+    height: 160px;
+    margin-top: -1.5rem;
   }
 
   .owl-page,
