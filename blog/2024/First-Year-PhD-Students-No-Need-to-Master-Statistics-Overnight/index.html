@@ -420,7 +420,7 @@
     
     <p class="post-meta">
       May 04, 2024
-        ·   6 min read
+        ·   10 min read
       
           ·  
         
@@ -439,134 +439,264 @@
       <div id="markdown-content">
         <h2 id="introduction-to-practical-statistical-learning">Introduction to Practical Statistical Learning</h2>
 
-<p>Embarking on your journey as a first-year PhD student can be overwhelming, especially when you’re faced with the seemingly daunting realm of statistics. But here’s a reassuring truth: you don’t need to be an advanced statistician to excel in research. Instead of focusing on highly technical methods right from the start, you can develop a strong foundation by taking a practical approach to statistical learning.</p>
+<blockquote>
+  <p><em>“The best time to plant a tree was 20 years ago. The second best time is now.”</em>
+— Chinese Proverb</p>
+</blockquote>
 
-<p>As students, we sometimes fall into the trap of believing that mastering complex statistical concepts is the only way to conduct rigorous research. In reality, understanding the essentials and applying them effectively is far more valuable. The goal should be to develop a clear comprehension of statistical inference, explore data thoughtfully, and apply appropriate models for your research questions.</p>
+<p>Embarking on your journey as a first-year PhD student can be overwhelming, especially when you’re faced with the seemingly daunting realm of statistics. But here’s an reassuring truth: <strong>you don’t need to be an advanced statistician to excel in research.</strong> Instead of focusing on highly technical methods right from the start, you can develop a strong foundation by taking a practical, incremental approach to statistical learning.</p>
 
-<p>This blog will guide you through practical strategies for approaching statistical inference, including resources, tools, and best practices that can build your confidence. We will explore the significance of understanding your data, introduce foundational resources like “Regression and Other Stories,” and discuss practical ways to implement statistical models, even if you’re not an expert in advanced techniques. By adopting this mindset, you’ll be better equipped to handle real-world data challenges and contribute valuable insights to the field.</p>
+<p>As students, we sometimes fall into the trap of believing that mastering complex statistical concepts is the only path to conducting rigorous research. This trap is especially pervasive in political science, where the methodological bar keeps rising. In reality, understanding the essentials deeply and applying them effectively is far more valuable than chasing every new method. The goal should be to develop a clear comprehension of statistical inference, explore data thoughtfully, and apply models that serve your research questions — not the other way around.</p>
 
-<p>Ultimately, remember that learning statistics is a gradual process, and it’s important to build skills over time. With persistence, curiosity, and a practical approach, you’ll find yourself making meaningful progress in statistical learning.</p>
+<blockquote>
+  <p><em>“Statistical thinking will one day be as necessary for efficient citizenship as the ability to read and write.”</em>
+— H.G. Wells</p>
+</blockquote>
+
+<p>This blog will guide you through practical strategies for approaching statistical inference, including resources, tools, and best practices that can build your confidence over time. We will explore the significance of understanding your data, introduce foundational resources, and discuss practical ways to implement statistical models — even if you’re not an expert in advanced techniques yet. By adopting this mindset, you’ll be better equipped to handle real-world data challenges and contribute meaningful insights to the field.</p>
+
+<p>Ultimately, remember that learning statistics is a <strong>marathon, not a sprint</strong>. With persistence, curiosity, and a practical approach, you’ll find yourself making meaningful progress before you realize it.</p>
 
 <hr>
 
-<h2 id="basic-knowledge">Basic Knowledge</h2>
+<h2 id="basic-knowledge-start-with-one-book">Basic Knowledge: Start with One Book</h2>
 
 <p>If I have to pick one book to recommend to social science students for a foundational understanding of statistics, it would be:</p>
 
 <ul>
-  <li><a href="https://avehtari.github.io/ROS-Examples/index.html" rel="external nofollow noopener" target="_blank">Regression and Other Stories</a></li>
+  <li>
+<strong><a href="https://avehtari.github.io/ROS-Examples/index.html" rel="external nofollow noopener" target="_blank">Regression and Other Stories</a></strong> by Andrew Gelman, Jennifer Hill, and Aki Vehtari — <a href="https://www.amazon.com/Regression-Other-Stories-Analytical-Techniques/dp/1107673997" rel="external nofollow noopener" target="_blank">buy on Amazon</a>
+</li>
 </ul>
 
-<p>This book provides a practical introduction to statistical modeling and data analysis from a Bayesian perspective, which complements frequentist methods by emphasizing predictions and Bayesian model averaging. Co-authored by Andrew Gelman, Jennifer Hill, and Aki Vehtari, the text builds on simple foundations to develop an intuitive understanding of regression models. It’s particularly useful for those who want a deep dive into the philosophy and application of statistics in the social sciences. The accompanying examples and code in R make it accessible and practically oriented, ensuring that readers not only understand statistical concepts but also know how to implement them in real-world scenarios.</p>
+<blockquote>
+  <p><em>“The world is complicated, and models that are built on real data with genuine scientific content tend to do better than models built on clever mathematical tricks.”</em>
+— Andrew Gelman</p>
+</blockquote>
+
+<p>This book provides a <strong>practical introduction to statistical modeling and data analysis from a Bayesian perspective</strong>, which complements frequentist methods by emphasizing predictions, uncertainty quantification, and Bayesian model averaging. Co-authored by three of the most influential applied statisticians in social science, the text builds from simple foundations to develop an intuitive understanding of regression models. It’s particularly useful for those who want a deep dive into the philosophy and application of statistics in the social sciences. The accompanying examples and code in R make it accessible and practically oriented, ensuring that readers not only understand statistical concepts but also know how to implement them in real-world scenarios.</p>
+
+<p><strong>Additional reading:</strong></p>
+
+<ul>
+  <li>
+<strong><a href="https://www.rethinking-ed.org/" rel="external nofollow noopener" target="_blank">Statistical Rethinking</a></strong> by Richard McElreath — a masterful introduction to Bayesian statistics with a computational-first philosophy</li>
+  <li>
+<strong><a href="https://www.penguinrandomhouse.com/books/669440/the-art-of-statistics-by-david-spiegelhalter/" rel="external nofollow noopener" target="_blank">The Art of Statistics</a></strong> by David Spiegelhalter — how to learn from data, written for a general audience but deeply informative for scientists</li>
+  <li>
+<strong><a href="https://mixtape.scunning.com/" rel="external nofollow noopener" target="_blank">Causal Inference: The Mixtape</a></strong> by Scott Cunningham — a freely accessible introduction to causal inference methods (DiD, RDD, IV, SCM) essential for political scientists</li>
+</ul>
 
 <hr>
 
 <h2 id="look-at-your-data">Look at Your Data</h2>
 
+<blockquote>
+  <p><em>“Always visualize your data before you run a single model. The number of mistakes you catch early will surprise you.”</em>
+— Hadley Wickham</p>
+</blockquote>
+
 <h3 id="statistical-inference-based-on-observational-data">Statistical Inference Based on Observational Data</h3>
 
-<p>As a student, we are at a really early stage of our career, it might be hard for us to get first-hand data. Starting from existing datasets might be helpful, there are always good research published using existing observational datasets. Dr. Yiqing XU has a very useful checklist for conducting research using observational data:</p>
+<p>As first-year students, it is often hard to collect first-hand data. You might not have the resources or the time yet. The good news: <strong>starting from existing datasets is not a shortcut — it’s how most of us learn.</strong> There is always good research published using existing observational datasets, and working with them teaches you the craft of data analysis from the ground up.</p>
+
+<p>Dr. Yiqing Xu has an excellent resource for this:</p>
 
 <ul>
-  <li><a href="https://yiqingxu.org/public/checklist.pdf" rel="external nofollow noopener" target="_blank">A Basic Checklist for Observational Studies in Political Science</a></li>
+  <li>
+<strong><a href="https://yiqingxu.org/public/checklist.pdf" rel="external nofollow noopener" target="_blank">A Basic Checklist for Observational Studies in Political Science</a></strong> — a practical guide to designing and executing observational research with rigor</li>
 </ul>
+
+<p>This checklist covers the essentials: research design, data quality, variable operationalization, model specification, and robustness checks. Internalize it early and your advisors will notice the difference.</p>
+
+<p><strong>Data repositories worth knowing:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Repository</th>
+      <th>What it offers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="https://www.icpsr.umich.edu/" rel="external nofollow noopener" target="_blank">ICPSR</a></strong></td>
+      <td>Social science datasets; requires institutional access</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://dataverse.harvard.edu/" rel="external nofollow noopener" target="_blank">Harvard Dataverse</a></strong></td>
+      <td>Free, open-access data from published research</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://data.worldbank.org/" rel="external nofollow noopener" target="_blank">World Bank Open Data</a></strong></td>
+      <td>Global development indicators</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://www.pewresearch.org/download-datasets/" rel="external nofollow noopener" target="_blank">Pew Research Center</a></strong></td>
+      <td>Public opinion surveys, globally</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://www.gu.se/en/quality-government/qog-data" rel="external nofollow noopener" target="_blank">Qog (Quality of Government)</a></strong></td>
+      <td>Cross-national governance and political variables</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://gss.norc.org/" rel="external nofollow noopener" target="_blank">GSS (General Social Survey)</a></strong></td>
+      <td>US social trends since 1972 — essential for American politics</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="quotes-to-live-by">Quotes to Live By</h2>
+
+<blockquote>
+  <p><em>“All models are wrong, but some are useful.”</em>
+— George Box</p>
+</blockquote>
+
+<blockquote>
+  <p><em>“The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data.”</em>
+— John Tukey</p>
+</blockquote>
+
+<blockquote>
+  <p><em>“Correlation does not imply causation.”</em> is taught in every intro stats class. What is harder to teach — and harder to learn — is <em>which methods can actually help you distinguish the two, and when.</em> That is the craft you are here to develop.</p>
+</blockquote>
 
 <hr>
 
 <h2 id="additional-tips-for-first-year-phd-students">Additional Tips for First-Year PhD Students</h2>
 
-<p>Below are some suggestions to help you get comfortable with statistical learning and research during your first year:</p>
+<p>Below are some concrete suggestions to help you get comfortable with statistical learning and research during your first year:</p>
 
-<ol>
-  <li>
-    <p><strong>Start With Familiar Tools</strong></p>
-
-    <ul>
-      <li>Pick one statistical software (R, Python, Stata, etc.) and stick to it until you’re comfortable with the basics.</li>
-      <li>Focus on common tasks: data cleaning, descriptive statistics, simple plots, and standard regression models.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Embrace Exploratory Data Analysis (EDA)</strong></p>
-
-    <ul>
-      <li>Always begin by exploring your dataset: check for missing values, outliers, and distributions of key variables.</li>
-      <li>Create simple visualizations (histograms, scatter plots) to get an intuitive feel for the data before diving into complex models.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Set Realistic Goals</strong></p>
-
-    <ul>
-      <li>Avoid the pressure to use cutting-edge techniques right away. Work step by step, mastering one concept at a time.</li>
-      <li>Schedule weekly goals, such as learning a specific R function or replicating a simple analysis from a journal article.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Focus on Interpretation, Not Just Computation</strong></p>
-
-    <ul>
-      <li>When you run a regression, make sure you understand the meaning of coefficients, standard errors, and p-values.</li>
-      <li>Practice explaining your findings in plain language. This helps you see if you actually understand what the model is telling you.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Collaborate and Ask Questions</strong></p>
-
-    <ul>
-      <li>Share your analysis process with peers—collaboration often leads to insights you might not catch alone.</li>
-      <li>Don’t be shy about asking for help. Online forums (like StackOverflow for coding questions) are great resources if you feel stuck.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Document Your Steps</strong></p>
-
-    <ul>
-      <li>Keep a detailed log of your code, decisions, and reasoning. It helps when you revisit a project months later.</li>
-      <li>Version control tools like Git (with GitHub) can save you headaches and help you track changes over time.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Learn from Existing Projects</strong></p>
-
-    <ul>
-      <li>Explore data repositories (e.g., ICPSR, World Bank Open Data) to find datasets related to your field.</li>
-      <li>Attempt to replicate results from published studies. Replication hones your analytical skills and deepens your understanding of methods.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Stay Organized</strong></p>
-
-    <ul>
-      <li>Design a clear folder structure for your research projects, separating raw data, cleaned data, code, and outputs.</li>
-      <li>This will help you keep track of each step in your analysis and make it easier to share your work with advisors or collaborators.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Engage with Your Research Community</strong></p>
-
-    <ul>
-      <li>Attend seminars, workshops, or brown-bag discussions in your department.</li>
-      <li>These sessions often reveal new methods, provide feedback on ongoing research, and offer networking opportunities.</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Develop a Growth Mindset</strong></p>
-  </li>
-</ol>
+<h3 id="1-start-with-familiar-tools">1. Start With Familiar Tools</h3>
 
 <ul>
-  <li>Expect to make mistakes; that is part of the learning curve.</li>
+  <li>Pick <strong>one</strong> statistical software (R, Python, Stata, etc.) and stick with it until you’re comfortable with the basics. Don’t spread yourself thin trying to learn everything at once.</li>
+  <li>Focus on common tasks: data cleaning, descriptive statistics, simple plots, and standard regression models.</li>
+  <li>
+<strong><a href="https://rstudio.cloud/" rel="external nofollow noopener" target="_blank">RStudio Cloud</a></strong> is a great way to get started without installing anything.</li>
+  <li>
+<strong><a href="https://www.stata.com/links/stat%20tutorials-and-resources/" rel="external nofollow noopener" target="_blank">Stata Tutorial</a></strong> for those using Stata.</li>
+</ul>
+
+<h3 id="2-embrace-exploratory-data-analysis-eda">2. Embrace Exploratory Data Analysis (EDA)</h3>
+
+<blockquote>
+  <p><em>“Exploratory data analysis is a detective’s job. You’re looking for clues, not building a case.”</em></p>
+</blockquote>
+
+<ul>
+  <li>Always begin by exploring your dataset: check for <strong>missing values</strong>, <strong>outliers</strong>, and the <strong>distributions</strong> of key variables.</li>
+  <li>Create simple visualizations (histograms, scatter plots, box plots) to get an intuitive feel for the data <strong>before</strong> diving into complex models.</li>
+  <li>John Tukey’s book <strong><a href="https://www.pearson.com/en-us/subject-catalog/p/Exploratory-Data-Analysis/P200000003211" rel="external nofollow noopener" target="_blank">Exploratory Data Analysis</a></strong> is the definitive text — worth reading even in 2024.</li>
+  <li>Hadley Wickham’s <strong><a href="https://r4ds.had.co.nz/" rel="external nofollow noopener" target="_blank">R for Data Science</a></strong> is the modern practical companion.</li>
+</ul>
+
+<h3 id="3-set-realistic-goals">3. Set Realistic Goals</h3>
+
+<ul>
+  <li>Avoid the pressure to use cutting-edge techniques right away. <strong>Master one concept at a time</strong>, then move on.</li>
+  <li>Schedule weekly micro-goals, such as: learning one new R function, replicating a table from a published article, or reading one methods paper closely.</li>
+  <li>Track your learning in a lab notebook or a simple Markdown file. Progress compounds.</li>
+</ul>
+
+<h3 id="4-focus-on-interpretation-not-just-computation">4. Focus on Interpretation, Not Just Computation</h3>
+
+<ul>
+  <li>When you run a regression, make sure you can explain in plain language: <strong>what is each coefficient, why is the standard error what it is, and what does the p-value actually tell you?</strong>
+</li>
+  <li>Practice explaining your findings to someone outside your field. If you can’t, you don’t understand it well enough yet.</li>
+  <li>Read <strong><a href="https://nickCHK.github.io/the-effect/" rel="external nofollow noopener" target="_blank">The Effect</a></strong> by Nick Huntington-Klein — an excellent free online book that teaches you to read regression like a pro.</li>
+</ul>
+
+<h3 id="5-collaborate-and-ask-questions">5. Collaborate and Ask Questions</h3>
+
+<ul>
+  <li>Share your analysis process with peers. <strong>Collaboration often reveals insights you miss alone.</strong>
+</li>
+  <li>Don’t be shy about asking for help. Online forums are great resources:
+    <ul>
+      <li>
+<strong><a href="https://stackoverflow.com/" rel="external nofollow noopener" target="_blank">Stack Overflow</a></strong> for coding questions</li>
+      <li>
+<strong><a href="https://stats.stackexchange.com/" rel="external nofollow noopener" target="_blank">Cross Validated (Stack Exchange)</a></strong> for statistics and methods questions</li>
+      <li>
+<strong><a href="https://www.reddit.com/r/phdstatistics/" rel="external nofollow noopener" target="_blank">r/PHdStatistics</a></strong> for PhD-specific struggles</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="6-document-your-steps">6. Document Your Steps</h3>
+
+<ul>
+  <li>Keep a detailed log of your code, decisions, and reasoning. It helps enormously when you revisit a project months later.</li>
+  <li>Use <strong>version control with Git</strong> (hosted on <a href="https://github.com/" rel="external nofollow noopener" target="_blank">GitHub</a>). It tracks changes, enables collaboration, and is a non-negotiable skill in modern academia.</li>
+  <li>
+<strong><a href="https://happygitwithr.com/" rel="external nofollow noopener" target="_blank">Happy Git and GitHub for the useR</a></strong> by Jenny Bryan is the best guide for R users.</li>
+</ul>
+
+<h3 id="7-learn-from-existing-projects">7. Learn from Existing Projects</h3>
+
+<ul>
+  <li>Explore data repositories (ICPSR, World Bank, Pew) to find datasets related to your field of interest.</li>
+  <li>Attempt to <strong>replicate results</strong> from published studies. Replication hones your analytical skills and deepens your understanding of methods.</li>
+  <li>The <strong>APSA <a href="https://www.theaqs.org/data" rel="external nofollow noopener" target="_blank">Replication Repository</a></strong> and <strong><a href="https://dataverse.harvard.edu/" rel="external nofollow noopener" target="_blank">Harvard Dataverse</a></strong> are good places to start.</li>
+</ul>
+
+<h3 id="8-stay-organized">8. Stay Organized</h3>
+
+<ul>
+  <li>Design a <strong>clear folder structure</strong> for each research project:
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>project/
+├── raw_data/
+├── cleaned_data/
+├── code/
+├── figures/
+└── paper/
+</code></pre></div>    </div>
+  </li>
+  <li>This will help you keep track of each step and make it easier to share your work with advisors or collaborators.</li>
+  <li>Learn <strong><a href="https://bschneider.shinyapps.io/rflow/" rel="external nofollow noopener" target="_blank">Dr. Workflow’s project-oriented approach</a></strong> for managing R-based research projects.</li>
+</ul>
+
+<h3 id="9-engage-with-your-research-community">9. Engage with Your Research Community</h3>
+
+<ul>
+  <li>Attend <strong>seminars, workshops, and brown-bag discussions</strong> in your department.</li>
+  <li>Present your work early, even in informal settings. Feedback is how you improve.</li>
+  <li>Join methods reading groups. If your department doesn’t have one, start one.</li>
+</ul>
+
+<h3 id="10-develop-a-growth-mindset">10. Develop a Growth Mindset</h3>
+
+<blockquote>
+  <p><em>“In the PhD, the goal is not to know everything. The goal is to learn how to figure things out.”</em></p>
+</blockquote>
+
+<ul>
+  <li>Expect to make mistakes — that is part of the process.</li>
   <li>Each time you get stuck, view it as a chance to deepen your understanding.</li>
+  <li>
+<strong><a href="https://www.carolDweck.org/books-and-media/mindset" rel="external nofollow noopener" target="_blank">Mindset: The New Psychology of Success</a></strong> by Carol Dweck — the book that spawned the “growth mindset” literature, essential reading for any PhD student.</li>
 </ul>
 
 <hr>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Starting a PhD in the social sciences doesn’t mean you need to become an expert statistician overnight. By focusing on practical strategies, building a solid foundation with resources like <em>Regression and Other Stories</em>, and leveraging existing datasets, you’ll gain the confidence to handle real-world data challenges. The key is to stay curious, be patient with yourself, and approach learning statistics as an ongoing process.</p>
+<blockquote>
+  <p><em>“Progress is not achieved by luck or accident, but by working on a daily basis with constant persistence and humility.”</em>
+— Epictetus</p>
+</blockquote>
 
-<p>Remember: <strong>it’s not about memorizing every formula</strong>—it’s about knowing how to think about data, ask the right questions, and apply the methods that best serve your research. Keep exploring, keep testing your ideas, and you’ll gradually develop the intuition and skill set you need to excel.</p>
+<p>Starting a PhD in the social sciences does not mean you need to become an expert statistician overnight. By focusing on practical strategies, building a solid foundation with resources like <em>Regression and Other Stories</em>, and leveraging existing datasets, you’ll gain the confidence to handle real-world data challenges. The key is to <strong>stay curious, be patient with yourself, and approach learning statistics as an ongoing process.</strong></p>
+
+<p>Remember: <strong>it’s not about memorizing every formula</strong> — it’s about knowing how to think about data, ask the right questions, and apply the methods that best serve your research question. Keep exploring, keep testing your ideas, and you’ll gradually develop the intuition and skill set you need to excel.</p>
+
+<p>Welcome to the PhD. It is hard. It is also worth it.</p>
 
       </div>
     </article>
