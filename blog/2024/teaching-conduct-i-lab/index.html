@@ -140,7 +140,7 @@
   <link rel="shortcut icon" href="/assets/img/favicon.png?32ac82b8ddf6a458149d813b855c1274">
   <link rel="apple-touch-icon" href="/assets/img/favicon.png?32ac82b8ddf6a458149d813b855c1274">
 
-<link rel="stylesheet" href="/assets/css/main.css?91728054e0fe24e444f073feef812f76">
+<link rel="stylesheet" href="/assets/css/main.css?fc3ae1cb51deb5bae7b15e43b109fb44">
 <link rel="canonical" href="https://walireheman.com/blog/2024/teaching-conduct-i-lab/">
 
 <!-- Dark Mode -->
@@ -636,11 +636,12 @@
 
       const slugCounts = new Map();
       const slugify = (text) => {
-        const base = text
-          .toLowerCase()
-          .trim()
-          .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
-          .replace(/^-+|-+$/g, '') || 'section';
+        const base =
+          text
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
+            .replace(/^-+|-+$/g, '') || 'section';
         const count = slugCounts.get(base) || 0;
         slugCounts.set(base, count + 1);
         return count ? `${base}-${count + 1}` : base;
