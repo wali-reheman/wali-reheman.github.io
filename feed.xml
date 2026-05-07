@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://walireheman.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://walireheman.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-07T03:54:56+00:00</updated><id>https://walireheman.com/feed.xml</id><title type="html">Wali Reheman</title><subtitle>Political science PhD candidate at American University studying religion and politics, ethnic identity, public opinion, and the political consequences of state-led secularization.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://walireheman.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://walireheman.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-07T04:04:54+00:00</updated><id>https://walireheman.com/feed.xml</id><title type="html">Wali Reheman</title><subtitle>Political science PhD candidate at American University studying religion and politics, ethnic identity, public opinion, and the political consequences of state-led secularization.
 </subtitle><entry><title type="html">Course Hub for Conduct of Inquiry I Lab - SPA 096</title><link href="https://walireheman.com/blog/2024/teaching-conduct-i-lab/" rel="alternate" type="text/html" title="Course Hub for Conduct of Inquiry I Lab - SPA 096" /><published>2024-05-05T15:59:00+00:00</published><updated>2024-05-05T15:59:00+00:00</updated><id>https://walireheman.com/blog/2024/Teaching_Conduct_I_Lab</id><content type="html" xml:base="https://walireheman.com/blog/2024/teaching-conduct-i-lab/"><![CDATA[<div class="course-hub-wrap">
   <p class="course-intro">
     This lab supplements <strong>SPA 612: Conduct of Inquiry I</strong> with hands-on training in R and Stata,
@@ -165,7 +165,7 @@
 <p><strong>Additional reading:</strong></p>
 
 <ul>
-  <li><strong><a href="https://www.rethinking-ed.org/">Statistical Rethinking</a></strong> by Richard McElreath — a masterful introduction to Bayesian statistics with a computational-first philosophy</li>
+  <li><strong><a href="https://xcelab.net/rm/">Statistical Rethinking</a></strong> by Richard McElreath — a masterful introduction to Bayesian statistics with a computational-first philosophy</li>
   <li><strong><a href="https://books.google.com/books/about/The_Art_of_Statistics.html?id=O7ULvgEACAAJ">The Art of Statistics</a></strong> by David Spiegelhalter — how to learn from data, written for a general audience but deeply informative for scientists</li>
   <li><strong><a href="https://mixtape.scunning.com/">Causal Inference: The Mixtape</a></strong> by Scott Cunningham — a freely accessible introduction to causal inference methods (DiD, RDD, IV, SCM) essential for political scientists</li>
 </ul>
@@ -271,7 +271,7 @@
   <li>Always begin by exploring your dataset: check for <strong>missing values</strong>, <strong>outliers</strong>, and the <strong>distributions</strong> of key variables.</li>
   <li>Create simple visualizations (histograms, scatter plots, box plots) to get an intuitive feel for the data <strong>before</strong> diving into complex models.</li>
   <li>John Tukey’s book <strong><a href="https://www.pearson.com/en-us/subject-catalog/p/Exploratory-Data-Analysis/P200000003211">Exploratory Data Analysis</a></strong> is the definitive text — worth reading even in 2024.</li>
-  <li>Hadley Wickham’s <strong><a href="https://r4ds.had.co.nz/">R for Data Science</a></strong> is the modern practical companion.</li>
+  <li>Hadley Wickham’s <strong><a href="https://r4ds.hadley.nz/">R for Data Science (2nd ed)</a></strong> — the current, definitive edition of the modern R workflow companion.</li>
 </ul>
 
 <h3 id="3-set-realistic-goals">3. Set Realistic Goals</h3>
