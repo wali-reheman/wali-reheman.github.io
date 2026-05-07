@@ -42,7 +42,7 @@ This book provides a **practical introduction to statistical modeling and data a
 
 **Additional reading:**
 
-- **[Statistical Rethinking](https://www.rethinking-ed.org/)** by Richard McElreath — a masterful introduction to Bayesian statistics with a computational-first philosophy
+- **[Statistical Rethinking](https://xcelab.net/rm/)** by Richard McElreath — a masterful introduction to Bayesian statistics with a computational-first philosophy
 - **[The Art of Statistics](https://books.google.com/books/about/The_Art_of_Statistics.html?id=O7ULvgEACAAJ)** by David Spiegelhalter — how to learn from data, written for a general audience but deeply informative for scientists
 - **[Causal Inference: The Mixtape](https://mixtape.scunning.com/)** by Scott Cunningham — a freely accessible introduction to causal inference methods (DiD, RDD, IV, SCM) essential for political scientists
 
@@ -106,7 +106,7 @@ Below are some concrete suggestions to help you get comfortable with statistical
 - Always begin by exploring your dataset: check for **missing values**, **outliers**, and the **distributions** of key variables.
 - Create simple visualizations (histograms, scatter plots, box plots) to get an intuitive feel for the data **before** diving into complex models.
 - John Tukey's book **[Exploratory Data Analysis](https://www.pearson.com/en-us/subject-catalog/p/Exploratory-Data-Analysis/P200000003211)** is the definitive text — worth reading even in 2024.
-- Hadley Wickham's **[R for Data Science](https://r4ds.had.co.nz/)** is the modern practical companion.
+- Hadley Wickham's **[R for Data Science (2nd ed)](https://r4ds.hadley.nz/)** — the current, definitive edition of the modern R workflow companion.
 
 ### 3. Set Realistic Goals
 
