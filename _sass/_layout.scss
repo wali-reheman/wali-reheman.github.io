@@ -43,7 +43,7 @@ body > footer.sticky-bottom .container {
 
 .owl-banner {
   height: clamp(285px, 23.9vw, 430px);
-  margin-top: -10px;
+  margin-top: -20px;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
     url("/assets/img/site-banner.png") center top / auto 100% no-repeat;
@@ -52,7 +52,7 @@ body > footer.sticky-bottom .container {
 
 .owl-banner--subpage {
   height: clamp(340px, 35vw, 560px);
-  margin-top: -10px;
+  margin-top: -20px;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
     url("/assets/img/site-banner.png") center top / auto 100% no-repeat;
@@ -61,7 +61,7 @@ body > footer.sticky-bottom .container {
 
 .owl-banner--home {
   height: clamp(340px, 35vw, 560px);
-  margin-top: -10px;
+  margin-top: -20px;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03)),
     url("/assets/img/site-banner.png") center top / auto 100% no-repeat;
@@ -304,7 +304,7 @@ body > footer.sticky-bottom .container {
   }
 
   .owl-page--subpage {
-    margin-top: -10px;
+    margin-top: -20px;
     padding-top: 24px;
   }
 
