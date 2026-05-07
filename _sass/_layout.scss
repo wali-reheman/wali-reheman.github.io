@@ -225,7 +225,7 @@ body > footer.sticky-bottom .container {
   .owl-banner {
     height: clamp(205px, 23.9vw, 285px);
     margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: -50px !important;
   }
 
   .owl-page,
@@ -263,7 +263,7 @@ body > footer.sticky-bottom .container {
   .owl-banner {
     height: 118px;
     margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: -50px !important;
   }
 
   .owl-page,
