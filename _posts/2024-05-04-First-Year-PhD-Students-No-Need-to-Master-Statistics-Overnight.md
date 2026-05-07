@@ -33,7 +33,7 @@ Ultimately, remember that learning statistics is a **marathon, not a sprint**. W
 
 If I have to pick one book to recommend to social science students for a foundational understanding of statistics, it would be:
 
-- **[Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html)** by Andrew Gelman, Jennifer Hill, and Aki Vehtari — [buy on Amazon](https://www.amazon.com/Regression-Other-Stories-Analytical-Techniques/dp/1107673997)
+- **[Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html)** by Andrew Gelman, Jennifer Hill, and Aki Vehtari — the companion website also links to purchase options.
 
 > _"The world is complicated, and models that are built on real data with genuine scientific content tend to do better than models built on clever mathematical tricks."_
 > — Andrew Gelman
@@ -43,7 +43,7 @@ This book provides a **practical introduction to statistical modeling and data a
 **Additional reading:**
 
 - **[Statistical Rethinking](https://www.rethinking-ed.org/)** by Richard McElreath — a masterful introduction to Bayesian statistics with a computational-first philosophy
-- **[The Art of Statistics](https://www.penguinrandomhouse.com/books/669440/the-art-of-statistics-by-david-spiegelhalter/)** by David Spiegelhalter — how to learn from data, written for a general audience but deeply informative for scientists
+- **[The Art of Statistics](https://books.google.com/books/about/The_Art_of_Statistics.html?id=O7ULvgEACAAJ)** by David Spiegelhalter — how to learn from data, written for a general audience but deeply informative for scientists
 - **[Causal Inference: The Mixtape](https://mixtape.scunning.com/)** by Scott Cunningham — a freely accessible introduction to causal inference methods (DiD, RDD, IV, SCM) essential for political scientists
 
 ---
@@ -70,7 +70,7 @@ This checklist covers the essentials: research design, data quality, variable op
 | **[ICPSR](https://www.icpsr.umich.edu/)**                                           | Social science datasets; requires institutional access        |
 | **[Harvard Dataverse](https://dataverse.harvard.edu/)**                             | Free, open-access data from published research                |
 | **[World Bank Open Data](https://data.worldbank.org/)**                             | Global development indicators                                 |
-| **[Pew Research Center](https://www.pewresearch.org/download-datasets/)**           | Public opinion surveys, globally                              |
+| **[Pew Research Center](https://www.pewresearch.org/datasets/)**                    | Public opinion surveys, globally                              |
 | **[Qog (Quality of Government)](https://www.gu.se/en/quality-government/qog-data)** | Cross-national governance and political variables             |
 | **[GSS (General Social Survey)](https://gss.norc.org/)**                            | US social trends since 1972 — essential for American politics |
 
@@ -97,7 +97,7 @@ Below are some concrete suggestions to help you get comfortable with statistical
 - Pick **one** statistical software (R, Python, Stata, etc.) and stick with it until you're comfortable with the basics. Don't spread yourself thin trying to learn everything at once.
 - Focus on common tasks: data cleaning, descriptive statistics, simple plots, and standard regression models.
 - **[RStudio Cloud](https://rstudio.cloud/)** is a great way to get started without installing anything.
-- **[Stata Tutorial](https://www.stata.com/links/stat tutorials-and-resources/)** for those using Stata.
+- **[Stata Tutorial](https://www.stata.com/learn/)** — official Stata learning resources for those getting started with Stata.
 
 ### 2. Embrace Exploratory Data Analysis (EDA)
 
@@ -165,7 +165,7 @@ Below are some concrete suggestions to help you get comfortable with statistical
 
 - Expect to make mistakes — that is part of the process.
 - Each time you get stuck, view it as a chance to deepen your understanding.
-- **[Mindset: The New Psychology of Success](https://www.carolDweck.org/books-and-media/mindset)** by Carol Dweck — the book that spawned the "growth mindset" literature, essential reading for any PhD student.
+- **[Mindset: The New Psychology of Success](https://www.penguinrandomhouse.com/books/44330/mindset-by-carol-s-dweck-phd/)** by Carol Dweck — the book that spawned the "growth mindset" literature, essential reading for any PhD student.
 
 ---
 
