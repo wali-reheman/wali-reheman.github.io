@@ -109,7 +109,7 @@ x_username: RehemanW # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
-contact_note: "Best way to reach me: <a href=\"mailto:rw8143a@american.edu\">rw8143a@american.edu</a>."
+contact_note: 'Best way to reach me: <a href="mailto:rw8143a@american.edu">rw8143a@american.edu</a>.'
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification

@@ -1,5 +1,9 @@
 <aside class="owl-profile" aria-label="Profile summary">
-  <img class="owl-profile__image" src="{{ include.profile_image | default: '/assets/img/profile.png' | relative_url }}" alt="Portrait of {{ site.title }}">
+  <img
+    class="owl-profile__image"
+    src="{{ include.profile_image | default: '/assets/img/profile.png' | relative_url }}"
+    alt="Portrait of {{ site.title }}"
+  >
 
   <h2 class="owl-profile__name">{{ site.title }}</h2>
   <p class="owl-profile__role">{{ include.role | default: 'Political Science PhD Candidate' }}</p>

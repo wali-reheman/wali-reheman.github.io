@@ -30,6 +30,7 @@ description: Selected teaching and research repositories hosted on GitHub.
     </div>
 
     {% endif %}
+
   </section>
 
   <section class="code-section code-section--repos">
@@ -43,5 +44,6 @@ description: Selected teaching and research repositories hosted on GitHub.
       {% endfor %}
     </div>
     {% endif %}
+
   </section>
 </div>

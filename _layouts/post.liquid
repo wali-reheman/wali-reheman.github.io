@@ -118,11 +118,12 @@ layout: default
 
       const slugCounts = new Map();
       const slugify = (text) => {
-        const base = text
-          .toLowerCase()
-          .trim()
-          .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
-          .replace(/^-+|-+$/g, '') || 'section';
+        const base =
+          text
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '-')
+            .replace(/^-+|-+$/g, '') || 'section';
         const count = slugCounts.get(base) || 0;
         slugCounts.set(base, count + 1);
         return count ? `${base}-${count + 1}` : base;

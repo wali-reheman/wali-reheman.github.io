@@ -13,14 +13,14 @@ toc:
 
 ## Introduction to Practical Statistical Learning
 
-> *"The best time to plant a tree was 20 years ago. The second best time is now."*
+> _"The best time to plant a tree was 20 years ago. The second best time is now."_
 > — Chinese Proverb
 
 Embarking on your journey as a first-year PhD student can be overwhelming, especially when you're faced with the seemingly daunting realm of statistics. But here's an reassuring truth: **you don't need to be an advanced statistician to excel in research.** Instead of focusing on highly technical methods right from the start, you can develop a strong foundation by taking a practical, incremental approach to statistical learning.
 
 As students, we sometimes fall into the trap of believing that mastering complex statistical concepts is the only path to conducting rigorous research. This trap is especially pervasive in political science, where the methodological bar keeps rising. In reality, understanding the essentials deeply and applying them effectively is far more valuable than chasing every new method. The goal should be to develop a clear comprehension of statistical inference, explore data thoughtfully, and apply models that serve your research questions — not the other way around.
 
-> *"Statistical thinking will one day be as necessary for efficient citizenship as the ability to read and write."*
+> _"Statistical thinking will one day be as necessary for efficient citizenship as the ability to read and write."_
 > — H.G. Wells
 
 This blog will guide you through practical strategies for approaching statistical inference, including resources, tools, and best practices that can build your confidence over time. We will explore the significance of understanding your data, introduce foundational resources, and discuss practical ways to implement statistical models — even if you're not an expert in advanced techniques yet. By adopting this mindset, you'll be better equipped to handle real-world data challenges and contribute meaningful insights to the field.
@@ -35,7 +35,7 @@ If I have to pick one book to recommend to social science students for a foundat
 
 - **[Regression and Other Stories](https://avehtari.github.io/ROS-Examples/index.html)** by Andrew Gelman, Jennifer Hill, and Aki Vehtari — [buy on Amazon](https://www.amazon.com/Regression-Other-Stories-Analytical-Techniques/dp/1107673997)
 
-> *"The world is complicated, and models that are built on real data with genuine scientific content tend to do better than models built on clever mathematical tricks."*
+> _"The world is complicated, and models that are built on real data with genuine scientific content tend to do better than models built on clever mathematical tricks."_
 > — Andrew Gelman
 
 This book provides a **practical introduction to statistical modeling and data analysis from a Bayesian perspective**, which complements frequentist methods by emphasizing predictions, uncertainty quantification, and Bayesian model averaging. Co-authored by three of the most influential applied statisticians in social science, the text builds from simple foundations to develop an intuitive understanding of regression models. It's particularly useful for those who want a deep dive into the philosophy and application of statistics in the social sciences. The accompanying examples and code in R make it accessible and practically oriented, ensuring that readers not only understand statistical concepts but also know how to implement them in real-world scenarios.
@@ -50,7 +50,7 @@ This book provides a **practical introduction to statistical modeling and data a
 
 ## Look at Your Data
 
-> *"Always visualize your data before you run a single model. The number of mistakes you catch early will surprise you."*
+> _"Always visualize your data before you run a single model. The number of mistakes you catch early will surprise you."_
 > — Hadley Wickham
 
 ### Statistical Inference Based on Observational Data
@@ -65,26 +65,26 @@ This checklist covers the essentials: research design, data quality, variable op
 
 **Data repositories worth knowing:**
 
-| Repository | What it offers |
-|---|---|
-| **[ICPSR](https://www.icpsr.umich.edu/)** | Social science datasets; requires institutional access |
-| **[Harvard Dataverse](https://dataverse.harvard.edu/)** | Free, open-access data from published research |
-| **[World Bank Open Data](https://data.worldbank.org/)** | Global development indicators |
-| **[Pew Research Center](https://www.pewresearch.org/download-datasets/)** | Public opinion surveys, globally |
-| **[Qog (Quality of Government)](https://www.gu.se/en/quality-government/qog-data)** | Cross-national governance and political variables |
-| **[GSS (General Social Survey)](https://gss.norc.org/)** | US social trends since 1972 — essential for American politics |
+| Repository                                                                          | What it offers                                                |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **[ICPSR](https://www.icpsr.umich.edu/)**                                           | Social science datasets; requires institutional access        |
+| **[Harvard Dataverse](https://dataverse.harvard.edu/)**                             | Free, open-access data from published research                |
+| **[World Bank Open Data](https://data.worldbank.org/)**                             | Global development indicators                                 |
+| **[Pew Research Center](https://www.pewresearch.org/download-datasets/)**           | Public opinion surveys, globally                              |
+| **[Qog (Quality of Government)](https://www.gu.se/en/quality-government/qog-data)** | Cross-national governance and political variables             |
+| **[GSS (General Social Survey)](https://gss.norc.org/)**                            | US social trends since 1972 — essential for American politics |
 
 ---
 
 ## Quotes to Live By
 
-> *"All models are wrong, but some are useful."*
+> _"All models are wrong, but some are useful."_
 > — George Box
 
-> *"The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data."*
+> _"The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data."_
 > — John Tukey
 
-> *"Correlation does not imply causation."* is taught in every intro stats class. What is harder to teach — and harder to learn — is *which methods can actually help you distinguish the two, and when.* That is the craft you are here to develop.
+> _"Correlation does not imply causation."_ is taught in every intro stats class. What is harder to teach — and harder to learn — is _which methods can actually help you distinguish the two, and when._ That is the craft you are here to develop.
 
 ---
 
@@ -101,7 +101,7 @@ Below are some concrete suggestions to help you get comfortable with statistical
 
 ### 2. Embrace Exploratory Data Analysis (EDA)
 
-> *"Exploratory data analysis is a detective's job. You're looking for clues, not building a case."*
+> _"Exploratory data analysis is a detective's job. You're looking for clues, not building a case."_
 
 - Always begin by exploring your dataset: check for **missing values**, **outliers**, and the **distributions** of key variables.
 - Create simple visualizations (histograms, scatter plots, box plots) to get an intuitive feel for the data **before** diving into complex models.
@@ -162,7 +162,7 @@ Below are some concrete suggestions to help you get comfortable with statistical
 
 ### 10. Develop a Growth Mindset
 
-> *"In the PhD, the goal is not to know everything. The goal is to learn how to figure things out."*
+> _"In the PhD, the goal is not to know everything. The goal is to learn how to figure things out."_
 
 - Expect to make mistakes — that is part of the process.
 - Each time you get stuck, view it as a chance to deepen your understanding.
@@ -172,10 +172,10 @@ Below are some concrete suggestions to help you get comfortable with statistical
 
 ## Conclusion
 
-> *"Progress is not achieved by luck or accident, but by working on a daily basis with constant persistence and humility."*
+> _"Progress is not achieved by luck or accident, but by working on a daily basis with constant persistence and humility."_
 > — Epictetus
 
-Starting a PhD in the social sciences does not mean you need to become an expert statistician overnight. By focusing on practical strategies, building a solid foundation with resources like *Regression and Other Stories*, and leveraging existing datasets, you'll gain the confidence to handle real-world data challenges. The key is to **stay curious, be patient with yourself, and approach learning statistics as an ongoing process.**
+Starting a PhD in the social sciences does not mean you need to become an expert statistician overnight. By focusing on practical strategies, building a solid foundation with resources like _Regression and Other Stories_, and leveraging existing datasets, you'll gain the confidence to handle real-world data challenges. The key is to **stay curious, be patient with yourself, and approach learning statistics as an ongoing process.**
 
 Remember: **it's not about memorizing every formula** — it's about knowing how to think about data, ask the right questions, and apply the methods that best serve your research question. Keep exploring, keep testing your ideas, and you'll gradually develop the intuition and skill set you need to excel.
 

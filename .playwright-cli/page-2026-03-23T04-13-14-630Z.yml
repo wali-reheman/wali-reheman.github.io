@@ -1,76 +1,76 @@
 - generic [active] [ref=e1]:
-  - button "Toggle dark mode" [ref=e2] [cursor=pointer]:
-    - img [ref=e3]
-  - generic [ref=e5]:
-    - banner [ref=e6]:
-      - generic [ref=e7]:
-        - link "Mighty Alex Avatar" [ref=e8] [cursor=pointer]:
-          - /url: /
-          - img "Mighty Alex Avatar" [ref=e9]
-        - heading "Aleksandar Tasevski @mightyalex" [level=1] [ref=e10]:
-          - generic [ref=e11]: Aleksandar Tasevski
-          - generic [ref=e12]: "@mightyalex"
-        - paragraph [ref=e13]: Two decades of helping tech companies build better products. I work across the full spectrum—from concept to development—creating clean, user-friendly solutions.
-    - main [ref=e14]:
-      - generic [ref=e15]:
-        - heading "Companies I Work With" [level=2] [ref=e16]
-        - generic [ref=e17]:
-          - article [ref=e18]:
-            - img "Adobe logo" [ref=e19]
-            - heading "Adobe Inc." [level=3] [ref=e20]:
-              - link "Adobe Inc." [ref=e21] [cursor=pointer]:
-                - /url: https://www.adobe.com
-            - paragraph [ref=e22]: Plugin development partner.
-          - article [ref=e23]:
-            - img "Grammarly logo" [ref=e24]
-            - heading "Grammarly Inc." [level=3] [ref=e25]:
-              - link "Grammarly Inc." [ref=e26] [cursor=pointer]:
-                - /url: https://www.grammarly.com
-            - paragraph [ref=e27]: Product development consultant.
-          - article [ref=e28]:
-            - img "Your Company" [ref=e29]
-            - heading "Your Company" [level=3] [ref=e30]:
-              - link "Your Company" [ref=e31] [cursor=pointer]:
-                - /url: "#"
-            - paragraph [ref=e32]: Looking for a product designer who ships? I blend empathy, design craft, and technical understanding to deliver user-centered solutions.
-      - generic [ref=e33]:
-        - heading "Services I Offer" [level=2] [ref=e34]
-        - generic [ref=e35]:
-          - article [ref=e36]:
-            - img [ref=e37]
-            - heading "Product Design" [level=3] [ref=e40]:
-              - link "Product Design" [ref=e41] [cursor=pointer]:
-                - /url: "#"
-            - paragraph [ref=e42]: I help you figure out what to build and how to build it. My approach combines strong design fundamentals with practical technical knowledge so we can ship something people love.
-          - article [ref=e43]:
-            - img [ref=e44]
-            - heading "Web App Development" [level=3] [ref=e48]:
-              - link "Web App Development" [ref=e49] [cursor=pointer]:
-                - /url: "#"
-            - paragraph [ref=e50]: I create web applications that do exactly what they need to do - no bloat, no unnecessary features. Just clean code, thoughtful interfaces, and solutions that make sense.
-          - article [ref=e51]:
-            - img [ref=e52]
-            - heading "Plugin Development" [level=3] [ref=e55]:
-              - link "Plugin Development" [ref=e56] [cursor=pointer]:
-                - /url: "#"
-            - paragraph [ref=e57]: I build efficient plugins that solve real problems. Adobe and Grammarly trust my code because it works reliably and respects how people actually use software.
-    - contentinfo [ref=e58]:
-      - generic [ref=e59]:
-        - generic [ref=e60]:
-          - link "Follow me on X" [ref=e61] [cursor=pointer]:
-            - /url: https://x.com/mightyalex
-            - text: X
-          - link "Connect with me on LinkedIn" [ref=e62] [cursor=pointer]:
-            - /url: https://www.linkedin.com/in/aleksandartasevski
-            - text: LinkedIn
-          - link "Check out my GitHub" [ref=e63] [cursor=pointer]:
-            - /url: https://github.com/perfectflow
-            - text: GitHub
-          - link "Send me an email" [ref=e64] [cursor=pointer]:
-            - /url: "#"
-            - text: Email
-        - generic [ref=e65]:
-          - img "Mighty Alex Logo" [ref=e66]
-          - link "Check out my website" [ref=e67] [cursor=pointer]:
-            - /url: https://mighty.tools
-            - text: Mighty Tools
+    - button "Toggle dark mode" [ref=e2] [cursor=pointer]:
+        - img [ref=e3]
+    - generic [ref=e5]:
+        - banner [ref=e6]:
+            - generic [ref=e7]:
+                - link "Mighty Alex Avatar" [ref=e8] [cursor=pointer]:
+                    - /url: /
+                    - img "Mighty Alex Avatar" [ref=e9]
+                - heading "Aleksandar Tasevski @mightyalex" [level=1] [ref=e10]:
+                    - generic [ref=e11]: Aleksandar Tasevski
+                    - generic [ref=e12]: "@mightyalex"
+                - paragraph [ref=e13]: Two decades of helping tech companies build better products. I work across the full spectrum—from concept to development—creating clean, user-friendly solutions.
+        - main [ref=e14]:
+            - generic [ref=e15]:
+                - heading "Companies I Work With" [level=2] [ref=e16]
+                - generic [ref=e17]:
+                    - article [ref=e18]:
+                        - img "Adobe logo" [ref=e19]
+                        - heading "Adobe Inc." [level=3] [ref=e20]:
+                            - link "Adobe Inc." [ref=e21] [cursor=pointer]:
+                                - /url: https://www.adobe.com
+                        - paragraph [ref=e22]: Plugin development partner.
+                    - article [ref=e23]:
+                        - img "Grammarly logo" [ref=e24]
+                        - heading "Grammarly Inc." [level=3] [ref=e25]:
+                            - link "Grammarly Inc." [ref=e26] [cursor=pointer]:
+                                - /url: https://www.grammarly.com
+                        - paragraph [ref=e27]: Product development consultant.
+                    - article [ref=e28]:
+                        - img "Your Company" [ref=e29]
+                        - heading "Your Company" [level=3] [ref=e30]:
+                            - link "Your Company" [ref=e31] [cursor=pointer]:
+                                - /url: "#"
+                        - paragraph [ref=e32]: Looking for a product designer who ships? I blend empathy, design craft, and technical understanding to deliver user-centered solutions.
+            - generic [ref=e33]:
+                - heading "Services I Offer" [level=2] [ref=e34]
+                - generic [ref=e35]:
+                    - article [ref=e36]:
+                        - img [ref=e37]
+                        - heading "Product Design" [level=3] [ref=e40]:
+                            - link "Product Design" [ref=e41] [cursor=pointer]:
+                                - /url: "#"
+                        - paragraph [ref=e42]: I help you figure out what to build and how to build it. My approach combines strong design fundamentals with practical technical knowledge so we can ship something people love.
+                    - article [ref=e43]:
+                        - img [ref=e44]
+                        - heading "Web App Development" [level=3] [ref=e48]:
+                            - link "Web App Development" [ref=e49] [cursor=pointer]:
+                                - /url: "#"
+                        - paragraph [ref=e50]: I create web applications that do exactly what they need to do - no bloat, no unnecessary features. Just clean code, thoughtful interfaces, and solutions that make sense.
+                    - article [ref=e51]:
+                        - img [ref=e52]
+                        - heading "Plugin Development" [level=3] [ref=e55]:
+                            - link "Plugin Development" [ref=e56] [cursor=pointer]:
+                                - /url: "#"
+                        - paragraph [ref=e57]: I build efficient plugins that solve real problems. Adobe and Grammarly trust my code because it works reliably and respects how people actually use software.
+        - contentinfo [ref=e58]:
+            - generic [ref=e59]:
+                - generic [ref=e60]:
+                    - link "Follow me on X" [ref=e61] [cursor=pointer]:
+                        - /url: https://x.com/mightyalex
+                        - text: X
+                    - link "Connect with me on LinkedIn" [ref=e62] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/aleksandartasevski
+                        - text: LinkedIn
+                    - link "Check out my GitHub" [ref=e63] [cursor=pointer]:
+                        - /url: https://github.com/perfectflow
+                        - text: GitHub
+                    - link "Send me an email" [ref=e64] [cursor=pointer]:
+                        - /url: "#"
+                        - text: Email
+                - generic [ref=e65]:
+                    - img "Mighty Alex Logo" [ref=e66]
+                    - link "Check out my website" [ref=e67] [cursor=pointer]:
+                        - /url: https://mighty.tools
+                        - text: Mighty Tools
