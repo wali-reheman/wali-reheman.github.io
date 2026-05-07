@@ -22,88 +22,84 @@ layout: default
   </style>
 {% endif %}
 
-<section class="owl-banner owl-banner--subpage" aria-label="Site banner"></section>
-
 {% assign url_beginning = page.url | slice: 0, 6 %}
 
 <div class="post">
-  <div class="owl-page owl-page--subpage">
-    <main class="owl-main" id="content">
-      <header class="post-header">
-        {% if url_beginning == '/blog/' %}
-          <a class="post-back-link" href="{{ '/blog/' | relative_url }}">Back to Posts</a>
-        {% endif %}
-        <h1 class="post-title">{{ page.title }}</h1>
-        {% if page.description and page.description != '' %}
-          <p class="post-dek">{{ page.description }}</p>
-        {% endif %}
-        <p class="post-meta">
-          {{ page.date | date: '%B %d, %Y' }}
-          &nbsp; &middot; &nbsp; {{ read_time }} min read
-          {% if primary_label != '' %}
-            &nbsp; &middot; &nbsp;
-            {% if primary_type == 'tag' %}
-              # {{ primary_label }}
-            {% else %}
-              {{ primary_label }}
-            {% endif %}
+  <div class="container mt-5" role="main">
+    <header class="post-header">
+      {% if url_beginning == '/blog/' %}
+        <a class="post-back-link" href="{{ '/blog/' | relative_url }}">Back to Posts</a>
+      {% endif %}
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.description and page.description != '' %}
+        <p class="post-dek">{{ page.description }}</p>
+      {% endif %}
+      <p class="post-meta">
+        {{ page.date | date: '%B %d, %Y' }}
+        &nbsp; &middot; &nbsp; {{ read_time }} min read
+        {% if primary_label != '' %}
+          &nbsp; &middot; &nbsp;
+          {% if primary_type == 'tag' %}
+            # {{ primary_label }}
+          {% else %}
+            {{ primary_label }}
           {% endif %}
-          {% if page.author %}by {{ page.author }}{% endif %}
-          {% if page.last_updated %}, last updated in {{ page.last_updated | date: '%B %d, %Y' }}{% endif %}
-          {% if page.meta %}• {{ page.meta }}{% endif %}
-        </p>
-      </header>
+        {% endif %}
+        {% if page.author %}by {{ page.author }}{% endif %}
+        {% if page.last_updated %}, last updated in {{ page.last_updated | date: '%B %d, %Y' }}{% endif %}
+        {% if page.meta %}• {{ page.meta }}{% endif %}
+      </p>
+    </header>
 
-      <div class="{% if url_beginning == '/blog/' %}post-reading-layout{% endif %}">
-        <article class="post-content">
-          {% if page.toc and page.toc.beginning %}
-            <div id="table-of-contents">
-              {% toc %}
-            </div>
-            <hr>
-          {% endif %}
-          <div id="markdown-content">
-            {{ content }}
+    <div class="{% if url_beginning == '/blog/' %}post-reading-layout{% endif %}">
+      <article class="post-content">
+        {% if page.toc and page.toc.beginning %}
+          <div id="table-of-contents">
+            {% toc %}
           </div>
-        </article>
-
-        {% if url_beginning == '/blog/' %}
-          <aside class="post-toc-panel" aria-label="Article table of contents">
-            <div class="post-toc-panel__inner">
-              <div class="post-toc-panel__label">On this page</div>
-              <div class="post-toc-progress" aria-hidden="true">
-                <span id="post-toc-progress-bar"></span>
-              </div>
-              <nav id="post-dynamic-toc"></nav>
-            </div>
-          </aside>
+          <hr>
         {% endif %}
-      </div>
-
-      {% if page.citation %}
-        {% include citation.liquid %}
-      {% endif %}
-
-      {% if page.related_publications %}
-        <h2>References</h2>
-        <div class="publications">
-          {% bibliography --cited_in_order %}
+        <div id="markdown-content">
+          {{ content }}
         </div>
-      {% endif %}
+      </article>
 
-      {% if site.related_blog_posts.enabled %}
-        {% if page.related_posts == null or page.related_posts %}
-          {% include related_posts.liquid %}
-        {% endif %}
+      {% if url_beginning == '/blog/' %}
+        <aside class="post-toc-panel" aria-label="Article table of contents">
+          <div class="post-toc-panel__inner">
+            <div class="post-toc-panel__label">On this page</div>
+            <div class="post-toc-progress" aria-hidden="true">
+              <span id="post-toc-progress-bar"></span>
+            </div>
+            <nav id="post-dynamic-toc"></nav>
+          </div>
+        </aside>
       {% endif %}
+    </div>
 
-      {% if site.disqus_shortname and page.disqus_comments %}
-        {% include disqus.liquid %}
+    {% if page.citation %}
+      {% include citation.liquid %}
+    {% endif %}
+
+    {% if page.related_publications %}
+      <h2>References</h2>
+      <div class="publications">
+        {% bibliography --cited_in_order %}
+      </div>
+    {% endif %}
+
+    {% if site.related_blog_posts.enabled %}
+      {% if page.related_posts == null or page.related_posts %}
+        {% include related_posts.liquid %}
       {% endif %}
-      {% if site.giscus and page.giscus_comments %}
-        {% include giscus.liquid %}
-      {% endif %}
-    </main>
+    {% endif %}
+
+    {% if site.disqus_shortname and page.disqus_comments %}
+      {% include disqus.liquid %}
+    {% endif %}
+    {% if site.giscus and page.giscus_comments %}
+      {% include giscus.liquid %}
+    {% endif %}
   </div>
 </div>
 
