@@ -118,7 +118,7 @@ Below are some concrete suggestions to help you get comfortable with statistical
 
 - When you run a regression, make sure you can explain in plain language: **what is each coefficient, why is the standard error what it is, and what does the p-value actually tell you?**
 - Practice explaining your findings to someone outside your field. If you can't, you don't understand it well enough yet.
-- Read **[The Effect](https://nickCHK.github.io/the-effect/)** by Nick Huntington-Klein — an excellent free online book that teaches you to read regression like a pro.
+- Read **[The Effect](https://theeffectbook.net/)** by Nick Huntington-Klein — an excellent free online book that teaches you to read regression like a pro.
 
 ### 5. Collaborate and Ask Questions
 
@@ -152,7 +152,6 @@ Below are some concrete suggestions to help you get comfortable with statistical
   └── paper/
   ```
 - This will help you keep track of each step and make it easier to share your work with advisors or collaborators.
-- Learn **[Dr. Workflow's project-oriented approach](https://bschneider.shinyapps.io/rflow/)** for managing R-based research projects.
 
 ### 9. Engage with Your Research Community
 
