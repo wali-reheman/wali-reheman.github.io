@@ -140,7 +140,7 @@
   <link rel="shortcut icon" href="/assets/img/favicon.png?32ac82b8ddf6a458149d813b855c1274">
   <link rel="apple-touch-icon" href="/assets/img/favicon.png?32ac82b8ddf6a458149d813b855c1274">
 
-<link rel="stylesheet" href="/assets/css/main.css?92a6b9a7fc44062280795cf93ed0edf7">
+<link rel="stylesheet" href="/assets/css/main.css?30dcbf649a926f88b23543aa2d8e0976">
 <link rel="canonical" href="https://walireheman.com/code/">
 
 <!-- Dark Mode -->
@@ -248,8 +248,6 @@
             
           
             
-          
-            
               
                 
                 
@@ -261,8 +259,6 @@
                   </a>
                 </li>
               
-            
-          
             
           
             
@@ -321,8 +317,6 @@
                   </a>
                 </li>
               
-            
-          
             
           
             
@@ -511,7 +505,7 @@
       </div>
       <div class="repo-actions">
         <a href="https://github.com/wali-reheman/Extract-data-from-old-pdf" class="repo-action-link" rel="external nofollow noopener" target="_blank">View on GitHub</a>
-        <a href="https://github.com/wali-reheman/Extract-data-from-old-pdf/stargazers" class="repo-action-link repo-action-link-muted" rel="external nofollow noopener" target="_blank">Stars</a>
+        <a href="https://github.com/wali-reheman/Extract-data-from-old-pdf" class="repo-action-link repo-action-link-muted repo-stars-link" data-repo="wali-reheman/Extract-data-from-old-pdf" rel="external nofollow noopener" target="_blank">Stars</a>
         <a href="https://github.com/wali-reheman/Extract-data-from-old-pdf/commits" class="repo-action-link repo-action-link-muted" rel="external nofollow noopener" target="_blank">Recent activity</a>
       </div>
     </div>
@@ -555,7 +549,7 @@
       </div>
       <div class="repo-actions">
         <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096" class="repo-action-link" rel="external nofollow noopener" target="_blank">View on GitHub</a>
-        <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/stargazers" class="repo-action-link repo-action-link-muted" rel="external nofollow noopener" target="_blank">Stars</a>
+        <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096" class="repo-action-link repo-action-link-muted repo-stars-link" data-repo="wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096" rel="external nofollow noopener" target="_blank">Stars</a>
         <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096/commits" class="repo-action-link repo-action-link-muted" rel="external nofollow noopener" target="_blank">Recent activity</a>
       </div>
     </div>
@@ -564,6 +558,26 @@
 
       
     </div>
+
+    <script>
+      // GitHub's stargazers page requires a login, so the Stars button links to the repo page and shows the live count.
+      document.querySelectorAll(".repo-stars-link[data-repo]").forEach(function (link) {
+        fetch(["https://api.github.com", "repos", link.dataset.repo].join("/"))
+          .then(function (response) {
+            return response.ok ? response.json() : null;
+          })
+          .then(function (repo) {
+            if (repo && typeof repo.stargazers_count === "number") {
+              var count = repo.stargazers_count;
+              var label = count + (count === 1 ? " star" : " stars") + " on GitHub";
+              link.textContent = "\u2605 " + count;
+              link.setAttribute("aria-label", label);
+              link.setAttribute("title", label);
+            }
+          })
+          .catch(function () {});
+      });
+    </script>
     
 
   </section>
