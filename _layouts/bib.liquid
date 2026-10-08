@@ -51,12 +51,19 @@
     {% elsif entry.school %}
       {% assign venue_label = entry.school %}
     {% endif %}
-    <div class="pub-meta-row">
-      <span class="pub-status pub-status-{{ status_slug }}">{{ status_text }}</span>
-      {% if venue_label != '' %}
-        <span class="pub-venue">{{ venue_label }}</span>
-      {% endif %}
-    </div>
+    {% comment %} Published entries sit under their own Publications heading and show the journal below the author, so they skip the status/venue row. {% endcomment %}
+    {% assign entry_is_published = false %}
+    {% if entry.published and entry.published != 'false' %}
+      {% assign entry_is_published = true %}
+    {% endif %}
+    {% unless entry_is_published %}
+      <div class="pub-meta-row">
+        <span class="pub-status pub-status-{{ status_slug }}">{{ status_text }}</span>
+        {% if venue_label != '' %}
+          <span class="pub-venue">{{ venue_label }}</span>
+        {% endif %}
+      </div>
+    {% endunless %}
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
