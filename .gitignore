@@ -12,3 +12,6 @@ node_modules/
 vendor
 .idea
 .jekyll-python/
+
+# CV LaTeX source stays local: its comments note where each version was sent
+assets/pdf/*.tex

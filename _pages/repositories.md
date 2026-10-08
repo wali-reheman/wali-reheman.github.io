@@ -43,6 +43,26 @@ description: Selected teaching and research repositories hosted on GitHub.
         {% include repository/repo.liquid repository=repo %}
       {% endfor %}
     </div>
+
+    <script>
+      // GitHub's stargazers page requires a login, so the Stars button links to the repo page and shows the live count.
+      document.querySelectorAll(".repo-stars-link[data-repo]").forEach(function (link) {
+        fetch(["https://api.github.com", "repos", link.dataset.repo].join("/"))
+          .then(function (response) {
+            return response.ok ? response.json() : null;
+          })
+          .then(function (repo) {
+            if (repo && typeof repo.stargazers_count === "number") {
+              var count = repo.stargazers_count;
+              var label = count + (count === 1 ? " star" : " stars") + " on GitHub";
+              link.textContent = "\u2605 " + count;
+              link.setAttribute("aria-label", label);
+              link.setAttribute("title", label);
+            }
+          })
+          .catch(function () {});
+      });
+    </script>
     {% endif %}
 
   </section>
