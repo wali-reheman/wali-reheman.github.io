@@ -285,14 +285,6 @@ div#notebook {
   transition: 200ms ease !important;
 }
 
-
-.btn-sm {
-  font-size: inherit;
-  font-weight: normal;
-  height: inherit;
-  line-height: inherit;
-}
-
 button.close {
   border: 0px none;
   font-family: sans-serif;
@@ -389,21 +381,6 @@ textarea {
   background-color: #ffffff;
   font-weight: normal;
   border: 1px solid #dedede;
-}
-
-.toolbar select,
-.toolbar label {
-  width: auto;
-  vertical-align: middle;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  display: inline;
-  font-size: 92%;
-  margin-left: 10px;
-  padding: 0px;
-  background: #e5e5e5 !important;
-  background-color: #e5e5e5 !important;
-  border: 2px solid #e5e5e5 !important;
 }
 
 ::-webkit-input-placeholder {
