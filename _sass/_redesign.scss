@@ -1,0 +1,455 @@
+/* Redesign overrides. Imported last in assets/css/main.scss. Delete this file and its import to roll back. */
+$rd-red: #d12d2d;
+$rd-red-dark: #9f2020;
+$rd-ink: #202020;
+$rd-body: #303030;
+$rd-muted: #828282;
+$rd-rule: #e6e6e6;
+
+@mixin rd-h2 {
+  margin: 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid $rd-ink !important;
+  padding: 0 0 10px !important;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 22px !important;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $rd-ink;
+}
+
+@mixin rd-link {
+  display: inline-flex;
+  align-items: center;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  color: $rd-red !important;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  cursor: pointer;
+  &:hover {
+    color: $rd-red-dark !important;
+    background: none !important;
+  }
+}
+
+/* Home */
+.owl-about p {
+  max-width: 38em;
+  font-size: 18px;
+  line-height: 1.65;
+  color: $rd-body;
+}
+.owl-profile__name {
+  margin-bottom: 4px;
+  color: $rd-ink;
+}
+.owl-profile__role {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+.owl-profile__email {
+  margin: 0 0 20px;
+  font-size: 15px;
+}
+.owl-profile__affiliation {
+  margin: 0 0 22px;
+  border-left: 3px solid $rd-red;
+  padding: 2px 0 2px 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  p {
+    margin: 0;
+  }
+  strong {
+    color: $rd-ink;
+  }
+}
+.owl-profile__links a {
+  color: $rd-body;
+  text-decoration: none;
+  &:hover {
+    color: $rd-red;
+    text-decoration: none;
+  }
+}
+
+/* Research */
+.publications .owl-content-section {
+  margin-top: 56px;
+}
+.publications .owl-content-section:first-child,
+.publications .owl-content-section:first-of-type {
+  margin-top: 0;
+}
+.publications .owl-content-section h2 {
+  @include rd-h2;
+}
+.publications ol.bibliography {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.publications ol.bibliography > li {
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.publications ol.bibliography > li::before {
+  content: none !important;
+  display: none !important;
+}
+.publication-card-row {
+  display: block !important;
+  position: relative;
+  margin: 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid $rd-rule !important;
+  border-radius: 0 !important;
+  padding: 24px 0 26px 76px !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.publication-card-row > [class*="col"] {
+  /* Bootstrap makes columns position:relative, which would anchor .pub-year to the column; keep it anchored to the row. */
+  position: static;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: auto;
+  max-width: none;
+  padding: 0;
+}
+.pub-year {
+  position: absolute;
+  left: 0;
+  top: 29px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9a9a9a;
+  font-variant-numeric: tabular-nums;
+}
+.pub-meta-row {
+  order: -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 8px;
+  margin: 0 0 8px;
+}
+.publication-card-row .title {
+  order: 0;
+  max-width: 34em;
+  margin: 0 0 8px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: $rd-ink;
+}
+.publication-card-row .author {
+  order: 1;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: $rd-body;
+}
+.publication-card-row .author em {
+  font-style: normal;
+  font-weight: 700;
+}
+.publication-card-row .periodical {
+  order: 2;
+  margin: 2px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #505050;
+}
+.publication-card-row .periodical-note {
+  order: 3;
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: $rd-muted;
+}
+.publication-card-row .links {
+  order: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 14px;
+}
+.publication-card-row .abstract.hidden,
+.publication-card-row .bibtex.hidden {
+  order: 5;
+}
+.pub-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #245d9b !important;
+  &::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+}
+.pub-status-under-review,
+.pub-status-job-market-paper {
+  color: #0076df !important;
+}
+.pub-status-forthcoming {
+  color: #9a5b00 !important;
+}
+.pub-status-published {
+  color: #1e7d32 !important;
+}
+.pub-venue {
+  font-size: 13px;
+  font-weight: 600;
+  color: $rd-muted;
+  &::before {
+    content: "\00b7\00a0";
+  }
+}
+.publication-card-row .links .btn.pub-action {
+  @include rd-link;
+}
+.publication-card-row .links .btn.pub-action:not(.pub-action-abstract)::after {
+  content: " \2197";
+  margin-left: 4px;
+}
+.publication-card-row .links .pub-action-abstract::after {
+  content: "+";
+  margin-left: 6px;
+  font-weight: 800;
+}
+.publications ol.bibliography div.abstract.hidden.open,
+.publications .owl-content-section:first-of-type ol.bibliography div.abstract.hidden {
+  display: block !important;
+  max-width: 38em;
+  margin: 16px 0 0;
+  border: 0 !important;
+  border-left: 3px solid $rd-red !important;
+  border-radius: 0 !important;
+  padding: 2px 0 2px 16px !important;
+  background: none !important;
+  p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #3a3a3a;
+  }
+}
+.publications .owl-content-section:first-of-type a.abstract {
+  display: none !important;
+}
+
+/* Teaching */
+.teaching-page .t-section + .t-section {
+  margin-top: 56px;
+}
+.teaching-page .t-section h2 {
+  @include rd-h2;
+}
+.teaching-page .t-interests {
+  margin: 0;
+  padding-top: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $rd-body;
+}
+.teaching-page .t-interests span + span::before {
+  content: "/";
+  margin: 0 12px;
+  color: #cfcfcf;
+}
+.teaching-page .t-row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 0 20px;
+  border-bottom: 1px solid $rd-rule;
+  padding: 24px 0 26px;
+}
+.teaching-page .t-terms {
+  padding-top: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #9a9a9a;
+  span {
+    display: block;
+  }
+}
+.teaching-page .t-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 8px;
+  margin-bottom: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $rd-red;
+  &::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    order: -1;
+  }
+}
+.teaching-page .t-meta--guest {
+  color: #0076df;
+}
+.teaching-page .t-code {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: $rd-muted;
+}
+.teaching-page .t-body h3 {
+  margin: 0 0 4px;
+  border: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: $rd-ink;
+}
+.teaching-page .t-org {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: $rd-muted;
+}
+.teaching-page .t-note {
+  max-width: 38em;
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: $rd-body;
+}
+.teaching-page .t-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 14px;
+  a {
+    @include rd-link;
+    &::after {
+      content: " \2197";
+      margin-left: 4px;
+    }
+  }
+}
+
+/* Code */
+.code-section h2 {
+  @include rd-h2;
+}
+.code-section + .code-section {
+  margin-top: 56px;
+}
+.code-section--profile .github-profile-grid {
+  padding-top: 20px;
+}
+.code-page .code-section--repos .repositories {
+  display: block !important;
+}
+.repo-row {
+  border-bottom: 1px solid $rd-rule;
+  padding: 24px 0 26px;
+}
+.repo-row__lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $rd-red;
+  &::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+}
+.repo-row__title {
+  margin: 0 0 4px;
+  border: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  a {
+    color: $rd-ink;
+    text-decoration: none;
+    &:hover {
+      color: $rd-red;
+    }
+  }
+}
+.repo-row__id {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  color: $rd-muted;
+}
+.repo-row__desc {
+  max-width: 38em;
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: $rd-body;
+}
+.repo-row__tags {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  color: $rd-muted;
+}
+.repo-row__link {
+  @include rd-link;
+  margin-top: 14px;
+  &::after {
+    content: " \2197";
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .publication-card-row {
+    padding-left: 0 !important;
+  }
+  .pub-year {
+    position: static;
+    margin-bottom: 6px;
+  }
+  .teaching-page .t-row {
+    grid-template-columns: 1fr;
+  }
+  .teaching-page .t-terms {
+    display: flex;
+    gap: 12px;
+    padding: 0 0 8px;
+  }
+}

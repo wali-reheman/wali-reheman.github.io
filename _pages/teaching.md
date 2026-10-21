@@ -8,54 +8,40 @@ description: Teaching experience, courses, and pedagogy in political science met
 ---
 
 <div class="teaching-page">
-  <section class="teaching-block teaching-interests">
+  <section class="t-section">
     <h2>Teaching Interests</h2>
-    <div class="interest-chips">
+    <p class="t-interests">
       <span>Religion and Politics</span>
       <span>Public Opinion</span>
       <span>R for Social Science</span>
       <span>Social Science Research Design</span>
-    </div>
+    </p>
   </section>
 
-  <section class="teaching-block teaching-experience">
+  <section class="t-section">
     <h2>Teaching Experience</h2>
 
-    <article class="institution institution--primary">
-      <div class="course-card">
-        <div class="course-top">
-          <div>
-            <h5 id="american-university">Conduct of Inquiry Lab</h5>
-            <p class="course-org">American University</p>
-            <p class="term">Fall 2024; Fall 2025</p>
-          </div>
-          <div class="badges">
-            <span class="role">Instructor of Record</span>
-            <span class="code">SPA-096</span>
-          </div>
-        </div>
-        <p class="course-note">A hands-on methods course on research design and causal inference. Students learn to wrangle, visualize, and analyze data in R and Stata, and to ask what a design can and cannot show about cause and effect.</p>
-        <div class="course-links">
-          <a href="{{ '/blog/2024/teaching-conduct-i-lab/' | relative_url }}" target="_blank" rel="noopener noreferrer">Syllabus + Handouts</a>
+    <article class="t-row">
+      <div class="t-terms"><span>Fall 2025</span><span>Fall 2024</span></div>
+      <div class="t-body">
+        <div class="t-meta"><span class="t-role">Instructor of Record</span><span class="t-code">&middot; SPA-096</span></div>
+        <h3 id="american-university">Conduct of Inquiry Lab</h3>
+        <p class="t-org">American University</p>
+        <p class="t-note">A hands-on methods course on research design and causal inference. Students learn to wrangle, visualize, and analyze data in R and Stata, and to ask what a design can and cannot show about cause and effect.</p>
+        <div class="t-links">
+          <a href="{{ '/blog/2024/teaching-conduct-i-lab/' | relative_url }}">Syllabus + Handouts</a>
           <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096" target="_blank" rel="noopener noreferrer">Interactive Tutorials</a>
         </div>
       </div>
     </article>
 
-    <article class="institution">
-      <div class="course-card">
-        <div class="course-top">
-          <div>
-            <h5 id="columbia-university">Chinese Politics</h5>
-            <p class="course-org">Columbia University</p>
-            <p class="term">Spring 2023; Spring 2024</p>
-          </div>
-          <div class="badges">
-            <span class="role role-guest">Guest Lecturer</span>
-            <span class="code">GU4471</span>
-          </div>
-        </div>
-        <p class="course-note">Lecture 12: State and Society - Minority Policies in China.</p>
+    <article class="t-row">
+      <div class="t-terms"><span>Spring 2024</span><span>Spring 2023</span></div>
+      <div class="t-body">
+        <div class="t-meta t-meta--guest"><span class="t-role">Guest Lecturer</span><span class="t-code">&middot; GU4471</span></div>
+        <h3 id="columbia-university">Chinese Politics</h3>
+        <p class="t-org">Columbia University</p>
+        <p class="t-note">Lecture 12: State and Society - Minority Policies in China.</p>
       </div>
     </article>
 

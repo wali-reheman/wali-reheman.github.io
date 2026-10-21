@@ -24,6 +24,7 @@
 
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{{ entry_col_class }}">
+    <div class="pub-year">{{ entry.year }}</div>
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     {% assign status_text = entry.status | strip %}
@@ -380,7 +381,7 @@
       <div class="bibtex hidden">
         {% highlight bibtex %}
         {{- entry.bibtex | hideCustomBibtex -}}
-        {% endhighlight %}
+      {% endhighlight %}
       </div>
     {% endif %}
 

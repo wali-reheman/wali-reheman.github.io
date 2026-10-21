@@ -5,40 +5,24 @@
 {% assign repo_language = include.repository.language %}
 {% assign repo_tags = include.repository.tags %}
 
-<div class="repo p-2">
-  <div class="card h-100 repo-card">
-    <a href="https://github.com/{{ repo_id }}" class="repo-preview-link" aria-label="{{ repo_id }} repository">
-      <img
-        class="repo-preview w-100"
-        alt="{{ repo_id }}"
-        src="https://opengraph.githubassets.com/1/{{ repo_id }}"
-        loading="lazy"
-        onerror="this.onerror=null;this.src='{{ '/assets/img/github-repo-placeholder.svg' | relative_url }}';"
-      >
-    </a>
-    <div class="card-body py-3">
-      <h5 class="card-title mb-1">
-        <a href="https://github.com/{{ repo_id }}">{{ repo_title }}</a>
-      </h5>
-      <p class="card-text small mb-2 text-muted">{{ repo_id }}</p>
-      {% if repo_description %}
-        <p class="repo-description mb-3">{{ repo_description }}</p>
-      {% endif %}
-      <div class="repo-meta d-flex flex-wrap align-items-center">
-        {% if repo_language %}
-          <span class="repo-pill repo-pill-primary">{{ repo_language }}</span>
-        {% endif %}
-        {% if repo_tags %}
-          {% for tag in repo_tags limit: 3 %}
-            <span class="repo-pill">{{ tag }}</span>
-          {% endfor %}
-        {% endif %}
-      </div>
-      <div class="repo-actions">
-        <a href="https://github.com/{{ repo_id }}" class="repo-action-link">View on GitHub</a>
-        <a href="https://github.com/{{ repo_id }}" class="repo-action-link repo-action-link-muted repo-stars-link" data-repo="{{ repo_id }}">Stars</a>
-        <a href="https://github.com/{{ repo_id }}/commits" class="repo-action-link repo-action-link-muted">Recent activity</a>
-      </div>
-    </div>
-  </div>
-</div>
+<article class="repo-row">
+  {% if repo_language %}
+    <div class="repo-row__lang">{{ repo_language }}</div>
+  {% endif %}
+  <h3 class="repo-row__title">
+    <a href="https://github.com/{{ repo_id }}">{{ repo_title }}</a>
+  </h3>
+  <p class="repo-row__id">{{ repo_id }}</p>
+  {% if repo_description %}
+    <p class="repo-row__desc">{{ repo_description }}</p>
+  {% endif %}
+  {% if repo_tags %}
+    <p class="repo-row__tags">
+      {% for tag in repo_tags limit: 3 -%}
+        {{- tag -}}
+        {%- unless forloop.last %} &middot; {% endunless -%}
+      {%- endfor %}
+    </p>
+  {% endif %}
+  <a href="https://github.com/{{ repo_id }}" class="repo-row__link">View on GitHub</a>
+</article>
