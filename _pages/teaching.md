@@ -12,6 +12,7 @@ description: Teaching experience, courses, and pedagogy in political science met
     <h2>Teaching Interests</h2>
     <div class="interest-chips">
       <span>Religion and Politics</span>
+      <span>Public Opinion</span>
       <span>R for Social Science</span>
       <span>Social Science Research Design</span>
     </div>
@@ -33,7 +34,7 @@ description: Teaching experience, courses, and pedagogy in political science met
             <span class="code">SPA-096</span>
           </div>
         </div>
-        <p class="course-note">Lab supplement for first-year methods training in R and Stata, including data wrangling, visualization, and introductory quantitative analysis.</p>
+        <p class="course-note">A hands-on methods course on research design and causal inference. Students learn to wrangle, visualize, and analyze data in R and Stata, and to ask what a design can and cannot show about cause and effect.</p>
         <div class="course-links">
           <a href="{{ '/blog/2024/teaching-conduct-i-lab/' | relative_url }}" target="_blank" rel="noopener noreferrer">Syllabus + Handouts</a>
           <a href="https://github.com/wali-reheman/Conduct-of-Inquiry-I-Lab---SPA-096" target="_blank" rel="noopener noreferrer">Interactive Tutorials</a>
