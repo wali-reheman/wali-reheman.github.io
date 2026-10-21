@@ -27,7 +27,7 @@ description: Job market paper, publications, and current working papers on relig
   <section class="owl-content-section">
     <h2>Work in Progress</h2>
 
-    {% bibliography --query @*[work_in_progress=true]* %}
+    {% bibliography --group_by none --query @*[work_in_progress=true]* %}
 
   </section>
 </div>

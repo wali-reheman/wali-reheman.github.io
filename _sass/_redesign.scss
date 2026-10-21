@@ -156,6 +156,10 @@ $rd-rule: #e6e6e6;
   line-height: 1.25;
   color: $rd-ink;
 }
+/* The older `.publications ol.bibliography li .title { font-weight: bolder }` outranks the rule above and only reaches regular weight on the light body text. */
+.publications ol.bibliography li .publication-card-row .title {
+  font-weight: 700;
+}
 .publication-card-row .author {
   order: 1;
   font-size: 15.5px;

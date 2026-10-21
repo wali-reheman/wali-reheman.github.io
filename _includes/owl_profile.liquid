@@ -26,6 +26,12 @@
         <span>Google Scholar</span>
       </a>
     {% endif %}
+    {% if site.orcid_id %}
+      <a href="https://orcid.org/{{ site.orcid_id }}" target="_blank" rel="noopener noreferrer">
+        <i class="ai ai-orcid" aria-hidden="true"></i>
+        <span>ORCID</span>
+      </a>
+    {% endif %}
     {% if site.github_username %}
       <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-github" aria-hidden="true"></i>
