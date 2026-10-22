@@ -1463,6 +1463,22 @@
   text-decoration: none;
 }
 
+/* Below desktop width every other page stacks the profile above one column. The post grid above is more specific than that rule, so posts kept two columns plus the side table of contents and squeezed the text to about 200px. */
+@media (max-width: 991.98px) {
+  .owl-page--subpage:has(.post-reading-layout) {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 690px);
+  }
+
+  .post-reading-layout {
+    display: block;
+  }
+
+  .post-toc-panel {
+    display: none;
+  }
+}
+
 @media (max-width: 575.98px) {
   .owl-page-lede,
   .owl-main .post-description {
@@ -1522,12 +1538,6 @@
 
   .teaching-page .badges {
     justify-content: flex-start;
-  }
-
-  /* The sidebar is hidden on phones; without this the two-column grid above keeps the post inside the 234px sidebar column. */
-  .owl-page--subpage:has(.post-reading-layout) {
-    grid-template-columns: minmax(0, 1fr);
-    width: 100%;
   }
 
   .post-reading-layout {

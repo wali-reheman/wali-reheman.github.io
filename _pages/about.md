@@ -20,7 +20,7 @@ hero_links:
     url: mailto:rw8143a@american.edu
 profile:
   align: right
-  image: /assets/img/profile.png
+  image: /assets/img/profile.webp
   image_circular: true # crops the image to make it circular
   more_info:
 news: false # includes a list of news items
