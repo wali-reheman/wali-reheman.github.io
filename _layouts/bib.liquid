@@ -32,7 +32,7 @@
     {% assign note_down = entry.note | downcase %}
     {% if status_text == '' %}
       {% if abbr_down contains 'r&r' or note_down contains 'r&r' or note_down contains 'revise' %}
-        {% assign status_text = 'R&R' %}
+        {% assign status_text = 'Revise and Resubmit' %}
       {% elsif entry.type == 'article' and entry.journal %}
         {% assign status_text = 'Published' %}
       {% elsif abbr_down contains 'published' %}
